@@ -15,6 +15,17 @@ const steps = [
   { who: "Claude Code", text: "إعادة بناء بـ Next.js 16 + Tailwind 4 + Recharts (نفس عدّة المصانع)، عشر صفحات مشاريع مولَّدة ثابتاً، رسوم بلوحة ألوان مُتحقَّق منها لعمى الألوان، مخطط SVG للمنصة، لوحة أوامر Ctrl+K، سيرة قابلة للطباعة، وصفحة إنجليزية. ثم GitHub → Vercel.", tone: "ai" },
 ];
 
+const session2 = [
+  { who: "المالك", text: "«run /mcp» ثم «use them all».", tone: "user" },
+  { who: "Claude Code", text: "فحص ثمانية خوادم MCP بنداء قراءة واحد لكل خادم: درايف وكانفا ونوشن وكروم تعمل؛ فيرسل وجيميل والتقويم وأدسبايرر تحتاج تسجيل دخول من المالك. رابط تفويض فيرسل فُتح في كروم.", tone: "ai" },
+  { who: "المالك", text: "افتح واجهة في كروم لأتحدث معك بشكل أفضل، نسخة من هذه المحادثة.", tone: "user" },
+  { who: "Claude Code", text: "صفحة «مرآة الجلسة»: نسخة مقروءة من المحادثة بعربية صحيحة، مع صندوق كتابة ينسخ الرد للصقه في الطرفية. تُحدَّث بعد كل تبادل.", tone: "ai" },
+  { who: "المالك", text: "هل يمكنني مراسلتك من الويب؟ وهل تصبح موديلاً باسم kazoya داخل كيرسر بعد انتهاء اشتراكه؟", tone: "user" },
+  { who: "Claude Code", text: "من الويب: نعم عبر Remote Control (/rc) باشتراك Pro أو Max. داخل كيرسر: لا يمكن كموديل لأن Claude Code ليس API، واستخدام الاشتراك كخلفية لأداة خارجية مخالف لشروط Anthropic؛ البديل إضافة Claude Code الرسمية داخل كيرسر.", tone: "ai" },
+  { who: "المالك", text: "كيرسر أوقفني: Total usage limit reached. وسألته: في أي محادثة أنشأت هذا المشروع؟", tone: "user" },
+  { who: "Claude Code", text: "حدّ كيرسر قرار مالي للمالك ولا يُعالَج من هنا. أما المشروع فأنشأه Claude Code لا كيرسر، في جلسة صباح 2026-09-16 التي بدأت بـ«هلا تفحصت المشروع وشغلته واعطيتني الرابط»؛ تُستأنف بـ claude --resume.", tone: "ai" },
+];
+
 const decisions = [
   "لا بريد ولا هاتف في السيرة أو الموقع؛ يضيفهما المالك قبل الإرسال.",
   "ملف القدرات الداخلي (خارج الحزمة) استُخدم للخلفية المؤسسية ومُيّز كمصدر منفصل.",
@@ -40,6 +51,17 @@ export default function JournalPage() {
 
       <ol className="grid gap-3">
         {steps.map((s, i) => (
+          <li key={i} className={`card reveal p-5 ${s.tone === "user" ? "border-info/30" : ""}`}>
+            <div className={`text-xs font-bold ${s.tone === "user" ? "text-info" : "text-primary"}`}>{s.who}</div>
+            <p className="mt-1 text-sm">{s.text}</p>
+          </li>
+        ))}
+      </ol>
+
+      <div className="mt-14" />
+      <SectionHeading eyebrow="الجلسة الثانية · 2026-09-16" title="خوادم MCP ومرآة الجلسة" lead="جلسة مساء اليوم نفسه: ربط الأدوات الخارجية، وحل مشكلة قراءة العربية في الطرفية بصفحة مرآة تُحدَّث بعد كل رد." />
+      <ol className="grid gap-3">
+        {session2.map((s, i) => (
           <li key={i} className={`card reveal p-5 ${s.tone === "user" ? "border-info/30" : ""}`}>
             <div className={`text-xs font-bold ${s.tone === "user" ? "text-info" : "text-primary"}`}>{s.who}</div>
             <p className="mt-1 text-sm">{s.text}</p>

@@ -20,3 +20,5 @@ build.log
 /files/
 # Original kit (contains local paths and client phone numbers) — never publish
 /kit/
+
+.vercel
