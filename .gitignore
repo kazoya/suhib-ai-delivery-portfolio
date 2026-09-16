@@ -1,0 +1,22 @@
+/node_modules
+/.next/
+/out/
+/build
+.DS_Store
+*.pem
+npm-debug.log*
+.env*
+!.env.example
+.vercel
+.cursor/
+*.tsbuildinfo
+next-env.d.ts
+build.log
+# Master Brain local files — never publish
+/project.json
+/brain.json
+/BRAIN.md
+/journal/
+/files/
+# Original kit (contains local paths and client phone numbers) — never publish
+/kit/

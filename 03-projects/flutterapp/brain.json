@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "updated": "2026-09-10T12:10:53.507Z",
+  "sections": {
+    "done": [],
+    "findings": [
+      {
+        "id": "b-9c302d27",
+        "text": "README.md excerpt: # flutter_app A new Flutter project. ## Getting Started This project is a starting point for a Flutter application. A few resources to get you started if this is your first Flutter project: - [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter) - [Write your first  | CLAUDE.md present (600 chars excerpted).",
+        "date": "2026-09-10T12:10:53.507Z",
+        "by": "claude",
+        "source": "seed"
+      }
+    ],
+    "current": [],
+    "next": [],
+    "improvements": [],
+    "suggestions": [],
+    "decisions": [],
+    "blockers": [],
+    "constraints": []
+  }
+}

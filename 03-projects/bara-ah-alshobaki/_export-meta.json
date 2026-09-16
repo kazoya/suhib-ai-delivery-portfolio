@@ -1,0 +1,21 @@
+﻿{
+    "id":  "bara-ah-alshobaki",
+    "sourcePath":  "C:\\bara.ah_alshobaki",
+    "exported":  "2026-09-14T16:30:49.6038136+03:00",
+    "files":  [
+                  "project.json",
+                  "brain.json",
+                  "BRAIN.md",
+                  "CLAUDE.md",
+                  "AGENTS.md",
+                  "README.md",
+                  "journal/20260913-1911-demo-shipped-to-github-vercel-ab8a.md",
+                  "journal/20260913-2306-phase-a-foundation-claude-review-fixes-c453.md",
+                  "journal/20260913-2313-pass-2-security-fixes-legal-drafts-1076.md",
+                  "package.meta.json"
+              ],
+    "stackMarkers":  [
+                         "package.json",
+                         "next.config.ts"
+                     ]
+}

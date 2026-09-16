@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "updated": "2026-09-10T12:10:53.470Z",
+  "sections": {
+    "done": [],
+    "findings": [
+      {
+        "id": "b-8fd5f709",
+        "text": "package.json name=rz-packaging version=0.1.0 | README.md excerpt: # RZ / الهدف الدولية — تصور رقمي للتعبئة والتغليف تصور أولي مستقل لمنظومة رقمية وأتمتة عروض لشركة **الهدف الدولية للاستيراد والصناعة (RZ)** بعد مراجعة [rz.jo](https://www.rz.jo/) و[alhadaf-int.com](https://alhadaf-int.com/). هذا **ليس** نظاماً رسمياً للشركة. أرقام العروض والمخزون | AGENTS.md present (600 chars excerpted). | git repository present",
+        "date": "2026-09-10T12:10:53.470Z",
+        "by": "claude",
+        "source": "seed"
+      }
+    ],
+    "current": [],
+    "next": [],
+    "improvements": [],
+    "suggestions": [],
+    "decisions": [],
+    "blockers": [],
+    "constraints": []
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "updated": "2026-09-12T14:00:57.322Z",
+  "learned": [
+    {
+      "id": "le-1550703b",
+      "text": "Master Brain platform root is C:\\master-brain (port 127.0.0.1:4545). Kit zips stay in C:\\project1\\master. Default project id is project1-commerce-intelligence. QMS (saqrandrakan) is dormant. Never print MB_PASSWORD or MB_OPS_TOKEN. Never overwrite an existing CLAUDE.md.",
+      "date": "2026-09-10T12:10:53.540Z",
+      "by": "claude",
+      "project": "project1-commerce-intelligence"
+    },
+    {
+      "id": "le-3ad38c01",
+      "text": "Arabic in Windows Terminal/conhost/Cursor looks reversed because they paint logical order LTR. Working setup: Git mintty -o Bidi=2 (not default 1 — default disables bidi on Claude Code's alternate screen) + winpty + font Courier New or Simplified Arabic Fixed (Cascadia/Consolas draw boxes). Proven launcher: C:\\Belt\\scripts\\claude-ar.ps1; ArabBank copy: C:\\ArabBank\\files\\arabic-terminal\\Open-ArabicClaude.ps1.",
+      "date": "2026-09-12T11:29:30.802Z",
+      "by": "other",
+      "name": "mintty-arabic-bidi",
+      "project": "arabbank"
+    },
+    {
+      "id": "le-6291b075",
+      "text": "C:\\master هو مقر التوجيه والتعاون. منصة العقل تبقى نسخة واحدة في C:\\master-brain على 4545. الجسر منفصل على 4560.",
+      "date": "2026-09-12T14:00:57.322Z",
+      "by": "other",
+      "project": "master"
+    }
+  ],
+  "skills": [
+    {
+      "id": "sk-e754cac9",
+      "text": "RCTC Role/Context/Task/Constraints is the command template in Project1 Master Brain UI.",
+      "date": "2026-09-10T18:59:08.688Z",
+      "by": "fable",
+      "name": "rctc-method",
+      "source": "C:\\rctc-skill",
+      "url": "https://github.com/kazoya/rctc-skill",
+      "status": "installed",
+      "notes": "Used as command placeholder on /master, not as a new npm plugin.",
+      "project": "project1-commerce-intelligence"
+    },
+    {
+      "id": "sk-cad62498",
+      "text": "مهارة غرفة التعاون المحمولة: سجل JSON ذري بين Cursor وClaude وCodex وChatGPT على المنفذ 4560.",
+      "date": "2026-09-12T14:00:49.526Z",
+      "by": "other",
+      "name": "agent-collaboration-bridge",
+      "source": "C:\\project1\\master\\agent-collaboration-bridge-skill.zip",
+      "status": "installed",
+      "notes": "Installed under C:\\master .cursor/.claude/.agents skills and user .claude/skills if missing."
+    }
+  ],
+  "tools": [
+    {
+      "id": "to-31d1e630",
+      "text": "Local Master Brain HTTP + MCP + CLI",
+      "date": "2026-09-10T12:10:53.540Z",
+      "by": "claude",
+      "name": "master-brain",
+      "source": "C:\\master-brain",
+      "status": "installed"
+    }
+  ],
+  "capabilities": [],
+  "requests": []
+}

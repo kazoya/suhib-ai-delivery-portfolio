@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "updated": "2026-09-10T12:10:53.509Z",
+  "sections": {
+    "done": [],
+    "findings": [
+      {
+        "id": "b-4e4607eb",
+        "text": "README.md excerpt: # qms_sms_gateway يتكون المشروع الآن من جزأين: - تطبيق Flutter/Android الحالي لإرسال SMS وواتساب من الهاتف. - [خدمة WhatsApp الثنائية الاتجاه](backend/README.md) المبنية على PHP وMariaDB وWhatsApp Cloud API وOpenAI. A new Flutter project. ## Getting Started This project is a star | CLAUDE.md present (600 chars excerpted).",
+        "date": "2026-09-10T12:10:53.509Z",
+        "by": "claude",
+        "source": "seed"
+      }
+    ],
+    "current": [],
+    "next": [],
+    "improvements": [],
+    "suggestions": [],
+    "decisions": [],
+    "blockers": [],
+    "constraints": []
+  }
+}

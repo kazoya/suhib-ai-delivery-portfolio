@@ -1,0 +1,21 @@
+﻿{
+    "id":  "factories",
+    "sourcePath":  "C:\\Factories",
+    "exported":  "2026-09-14T16:30:49.8203817+03:00",
+    "files":  [
+                  "project.json",
+                  "brain.json",
+                  "BRAIN.md",
+                  "CLAUDE.md",
+                  "journal/20260912-2307-تعبئة-نموذج-samsung-innovation-campus-0909.md",
+                  "journal/20260912-2315-sic-submit-لم-يُرسل-من-الأتمتة-b652.md",
+                  "journal/20260914-0759-حالة-aci-نسخ-فقط-لا-فيرسيل-ولا-zip-24e6.md",
+                  "journal/20260914-0845-دمج-المثالية-في-aci-zip-تحسين-d281.md",
+                  "journal/20260914-0938-دمج-تحسينات-المثالية-ونشر-فيرسيل-3ee1.md",
+                  "journal/20260914-1016-فصل-المثالية-وبناء-aci-للكيماويات-الزراع-d1b1.md",
+                  "journal/20260914-1131-خلفية-زراعية-لـ-aci-zip-تحسين-d50f.md"
+              ],
+    "stackMarkers":  [
+
+                     ]
+}

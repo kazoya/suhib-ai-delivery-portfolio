@@ -1,0 +1,18 @@
+﻿{
+    "id":  "muqasa-jo",
+    "sourcePath":  "C:\\muqasa",
+    "exported":  "2026-09-14T16:30:50.0954157+03:00",
+    "files":  [
+                  "project.json",
+                  "brain.json",
+                  "BRAIN.md",
+                  "CLAUDE.md",
+                  "README.md",
+                  "PORTFOLIO.md",
+                  "package.meta.json"
+              ],
+    "stackMarkers":  [
+                         "package.json",
+                         "next.config.ts"
+                     ]
+}

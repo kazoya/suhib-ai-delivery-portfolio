@@ -1,0 +1,14 @@
+﻿{
+    "id":  "mytasks",
+    "sourcePath":  "C:\\MyTasks",
+    "exported":  "2026-09-14T16:30:50.1325346+03:00",
+    "files":  [
+                  "project.json",
+                  "brain.json",
+                  "BRAIN.md",
+                  "CLAUDE.md"
+              ],
+    "stackMarkers":  [
+
+                     ]
+}

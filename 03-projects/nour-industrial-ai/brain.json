@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "updated": "2026-09-10T12:10:53.458Z",
+  "sections": {
+    "done": [],
+    "findings": [
+      {
+        "id": "b-fbb23184",
+        "text": "package.json name=nour-industrial-ai version=0.1.0 | README.md excerpt: # نور العرب — تصور الذكاء الصناعي منصة عرض تفاعلية ومقترح أولي مستقل لشركة **نور العرب للصناعات البلاستيكية — الأردن**. ليست نظاماً رسمياً تابعاً للشركة، ولا تفترض أن العمليات الحالية تعمل بالصورة المعروضة. الهدف أن يرى فريق الإدارة كيف يمكن ربط المبيعات وعروض الأسعار والإنتاج وا | AGENTS.md present (600 chars excerpted). | git repository present",
+        "date": "2026-09-10T12:10:53.458Z",
+        "by": "claude",
+        "source": "seed"
+      }
+    ],
+    "current": [],
+    "next": [],
+    "improvements": [],
+    "suggestions": [],
+    "decisions": [],
+    "blockers": [],
+    "constraints": []
+  }
+}

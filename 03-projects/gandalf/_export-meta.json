@@ -1,0 +1,14 @@
+﻿{
+    "id":  "gandalf",
+    "sourcePath":  "C:\\gandalf",
+    "exported":  "2026-09-14T16:30:49.8827784+03:00",
+    "files":  [
+                  "project.json",
+                  "brain.json",
+                  "BRAIN.md",
+                  "CLAUDE.md"
+              ],
+    "stackMarkers":  [
+                         "requirements.txt"
+                     ]
+}

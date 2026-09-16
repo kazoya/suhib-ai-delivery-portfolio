@@ -1,0 +1,29 @@
+{
+  "id": "saqrandrakan",
+  "name": {
+    "ar": "نظام الجودة (QMS) — مجمّد",
+    "en": "QMS (frozen)"
+  },
+  "description": {
+    "ar": "اكتُشف من claude+codex+cursor — C:\\atalkingQMS",
+    "en": "Discovered via claude+codex+cursor — C:\\atalkingQMS"
+  },
+  "status": "dormant",
+  "priority": 5,
+  "revenue": "unknown",
+  "progress": 0,
+  "tags": [
+    "discovered",
+    "claude",
+    "codex",
+    "cursor",
+    "node",
+    "python",
+    "nextjs"
+  ],
+  "sessions": [],
+  "links": [],
+  "owner": "Suhib Asrawi",
+  "created": "2026-09-10T12:10:53.268Z",
+  "updated": "2026-09-10T12:10:53.522Z"
+}

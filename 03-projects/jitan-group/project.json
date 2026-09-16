@@ -1,0 +1,28 @@
+{
+  "id": "jitan-group",
+  "name": {
+    "ar": "jitan-group",
+    "en": "jitan-group"
+  },
+  "description": {
+    "ar": "اكتُشف من claude+codex+cursor — C:\\jitan_group",
+    "en": "Discovered via claude+codex+cursor — C:\\jitan_group"
+  },
+  "status": "open",
+  "priority": 3,
+  "revenue": "unknown",
+  "progress": 0,
+  "tags": [
+    "discovered",
+    "claude",
+    "codex",
+    "cursor",
+    "node",
+    "nextjs"
+  ],
+  "sessions": [],
+  "links": [],
+  "owner": "Suhib Asrawi",
+  "created": "2026-09-10T12:10:53.319Z",
+  "updated": "2026-09-10T12:10:53.319Z"
+}

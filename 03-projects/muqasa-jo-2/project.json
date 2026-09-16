@@ -1,0 +1,30 @@
+{
+  "id": "muqasa-jo-2",
+  "name": {
+    "ar": "Muqasa-Jo",
+    "en": "Muqasa-Jo"
+  },
+  "description": {
+    "ar": "اكتُشف من claude+codex+continue+cursor+vscode — C:\\muqasa-jo",
+    "en": "Discovered via claude+codex+continue+cursor+vscode — C:\\muqasa-jo"
+  },
+  "status": "open",
+  "priority": 3,
+  "revenue": "unknown",
+  "progress": 0,
+  "tags": [
+    "discovered",
+    "claude",
+    "codex",
+    "continue",
+    "cursor",
+    "vscode",
+    "node",
+    "nextjs"
+  ],
+  "sessions": [],
+  "links": [],
+  "owner": "Suhib Asrawi",
+  "created": "2026-09-10T12:10:53.191Z",
+  "updated": "2026-09-10T12:10:53.191Z"
+}

@@ -1,0 +1,15 @@
+﻿{
+    "id":  "fluttersmsgateway",
+    "sourcePath":  "C:\\atalkingQMS\\flutter_sms_gateway",
+    "exported":  "2026-09-14T16:30:49.8660067+03:00",
+    "files":  [
+                  "project.json",
+                  "brain.json",
+                  "BRAIN.md",
+                  "CLAUDE.md",
+                  "README.md"
+              ],
+    "stackMarkers":  [
+                         "pubspec.yaml"
+                     ]
+}

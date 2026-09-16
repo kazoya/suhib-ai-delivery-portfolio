@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "updated": "2026-09-12T14:55:42.990Z",
+  "sections": {
+    "done": [
+      {
+        "id": "b-25299d79",
+        "text": "عقد celebrity-self-service-roles + تنفيذ BE (أدوار/login/self-update) + قفل FE (Auth/Login/my-celebrities/CelebrityEditPage) على فرع feat/celebrity-self-service-roles — غير منشور بعد",
+        "date": "2026-09-10T17:03:57.192Z",
+        "by": "fable",
+        "source": "mcp"
+      },
+      {
+        "id": "b-b2d606f2",
+        "text": "Influencer Collab Hub wave 2 (Claude Opus 5): auto-enroll السفراء عبر syncRoles مع إعادة استخدام ReferralCodeService، لوحتا إدارة (مراجعة حسابات الآيبان + طلبات الصرف) مع صلاحيتين جديدتين، PayoutReviewService بآلة حالة مقفولة، وإصلاح احتساب held_for_payout عند الدفع، و6 ملفات اختبارات Feature — لم تُنفَّذ بعد (لا يوجد vendor/ ولا .env في هذه النسخة)",
+        "date": "2026-09-12T14:55:42.909Z",
+        "by": "human",
+        "source": "cli"
+      }
+    ],
+    "findings": [
+      {
+        "id": "b-4c5aff42",
+        "text": "package.json name=site-creator-vinext-starter version=0.1.0 | README.md excerpt: # دعم ريشة 360 مركز مساعدة عربي يسهّل رحلة الزائر والموهبة والمؤثر والشركة في منصة ريشة 360، مع فصل المحتوى العام عن ملفات الموظفين والإدارة. ## الواجهة العامة - اختيار المسار: زائر، موهبة/مؤثر، أو شركة. - بحث عربي داخل الموضوعات المسموحة للمسار. - خطوات واضحة وروابط مباشرة إلى ص | CLAUDE.md present (600 chars excerpted). | git repository present",
+        "date": "2026-09-10T12:10:53.419Z",
+        "by": "claude",
+        "source": "seed"
+      },
+      {
+        "id": "b-b469b7c9",
+        "text": "my-celebrities كان يفلتر فقط بـ created_by فيظهر قائمة فارغة لحساب المشهور؛ صار يشمل celebrities.id = users.celebrity_id، وshow يرفض غير المالك/الرابط",
+        "date": "2026-09-10T17:05:46.815Z",
+        "by": "fable",
+        "source": "mcp",
+        "evidence": "app/Actions/Front/Celebrity/GetAllCelebritiesAction.php + ShowCelebrityAction.php"
+      }
+    ],
+    "current": [
+      {
+        "id": "b-113555b0",
+        "text": "feat/celebrity-self-service-roles: backend جاهز محلياً؛ frontend شبه جاهز وينتظر قفل واجهة my-celebrities ثم نشر",
+        "date": "2026-09-10T16:59:53.852Z",
+        "by": "fable",
+        "source": "mcp"
+      },
+      {
+        "id": "b-1e267e95",
+        "text": "feat/influencer-collab-hub: نواة العروض/الاتفاقيات/المهام/المحفظة/المتابعين ولوحة /influencer — يتبقى أدمن + واجهة شركة + اختبارات",
+        "date": "2026-09-12T14:43:21.961Z",
+        "by": "fable",
+        "source": "mcp"
+      }
+    ],
+    "next": [
+      {
+        "id": "b-d845e368",
+        "text": "عند الطلب: commit + PR لـ BE(main) و FE(staging)، ثم Forge migrate + deploy لأدوار celebrity/talent ودخول المشاهير والتعديل الذاتي",
+        "date": "2026-09-10T17:03:56.983Z",
+        "by": "fable",
+        "source": "mcp"
+      },
+      {
+        "id": "b-1204dd3b",
+        "text": "تشغيل composer install + .env محلي ثم php artisan test --filter=InfluencerCollab للتحقق من اختبارات Influencer Collab Hub قبل أي PR",
+        "date": "2026-09-12T14:55:42.990Z",
+        "by": "human",
+        "source": "cli"
+      }
+    ],
+    "improvements": [],
+    "suggestions": [],
+    "decisions": [],
+    "blockers": [],
+    "constraints": []
+  }
+}

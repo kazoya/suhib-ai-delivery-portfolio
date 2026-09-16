@@ -1,0 +1,16 @@
+﻿{
+    "id":  "arcsolverweb",
+    "sourcePath":  "C:\\arc_solver_web",
+    "exported":  "2026-09-14T16:30:49.5274694+03:00",
+    "files":  [
+                  "project.json",
+                  "brain.json",
+                  "BRAIN.md",
+                  "CLAUDE.md",
+                  "package.meta.json"
+              ],
+    "stackMarkers":  [
+                         "package.json",
+                         "requirements.txt"
+                     ]
+}

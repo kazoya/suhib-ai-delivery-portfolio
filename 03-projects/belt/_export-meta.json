@@ -1,0 +1,16 @@
+﻿{
+    "id":  "belt",
+    "sourcePath":  "C:\\Belt",
+    "exported":  "2026-09-14T16:30:49.6248604+03:00",
+    "files":  [
+                  "project.json",
+                  "brain.json",
+                  "BRAIN.md",
+                  "CLAUDE.md",
+                  "PORTFOLIO.md",
+                  "journal/20260912-1427-arabic-correct-powershell-cmd-terminal-m-cf71.md"
+              ],
+    "stackMarkers":  [
+
+                     ]
+}

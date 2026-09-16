@@ -1,0 +1,26 @@
+{
+  "id": "wathiqa",
+  "name": {
+    "ar": "وثيقة",
+    "en": "Wathiqa"
+  },
+  "description": {
+    "ar": "اكتُشف من cursor — C:\\Wathiqa",
+    "en": "Discovered via cursor — C:\\Wathiqa"
+  },
+  "status": "open",
+  "priority": 2,
+  "revenue": "unknown",
+  "progress": 0,
+  "tags": [
+    "discovered",
+    "cursor",
+    "node",
+    "nextjs"
+  ],
+  "sessions": [],
+  "links": [],
+  "owner": "Suhib Asrawi",
+  "created": "2026-09-10T12:10:53.168Z",
+  "updated": "2026-09-10T12:13:44.985Z"
+}

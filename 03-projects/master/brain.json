@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "updated": "2026-09-12T14:06:24.670Z",
+  "sections": {
+    "done": [
+      {
+        "id": "b-cae26579",
+        "text": "مقر C:\\master مسجّل في ماستر برين (id=master). جسر التعاون يعمل على 127.0.0.1:4560. الأدوار: Cursor مدير/منفّذ، Claude Code كود، Codex وثائق، ChatGPT صور ومكتب. المنصة الأصلية بقيت في C:\\master-brain دون نسخ ثانية.",
+        "date": "2026-09-12T14:00:42.912Z",
+        "by": "other",
+        "source": "mcp"
+      },
+      {
+        "id": "b-73cf8502",
+        "text": "طُبّقت تحسينات Claude Code: مخزن رسائل واحد، تحقق حقل to مع inbox، اتفاقية CLAIM/RELEASE وسكربت claims.ps1.",
+        "date": "2026-09-12T14:06:24.657Z",
+        "by": "other",
+        "source": "mcp"
+      }
+    ],
+    "findings": [
+      {
+        "id": "b-331f2b51",
+        "text": "ثلاث نسخ من حزمة الجسر تعني ثلاثة مخازن إن لم يُضبط ACB_HOME. جلسة Claude Code xhigh نفّذت مراجعة فقط ثم نفّذ Cursor الدمج.",
+        "date": "2026-09-12T14:06:24.670Z",
+        "by": "other",
+        "source": "mcp"
+      }
+    ],
+    "current": [
+      {
+        "id": "b-55ae0f82",
+        "text": "جسر حي. بانتظار مراجعة Claude Code لـ files/claude-code-review.md ورد from=claude في السجل.",
+        "date": "2026-09-12T14:00:45.684Z",
+        "by": "other",
+        "source": "mcp"
+      }
+    ],
+    "next": [
+      {
+        "id": "b-a61a4920",
+        "text": "افتح C:\\master في Cursor وClaude Code وCodex. استخدم prompts/chatgpt/MASTER_PROMPT.md للصور. اقرأ الجسر قبل كل مهمة.",
+        "date": "2026-09-12T14:00:47.438Z",
+        "by": "other",
+        "source": "mcp"
+      }
+    ],
+    "improvements": [],
+    "suggestions": [
+      {
+        "id": "b-0125120c",
+        "text": "اكتب config.json للجسر بـ UTF-8 بلا BOM (Node JSON.parse يفشل مع BOM فيبدأ الوكلاء الافتراضيون بدون cursor).",
+        "date": "2026-09-12T14:00:49.505Z",
+        "by": "other",
+        "source": "mcp",
+        "status": "proposed",
+        "evidence": "config.json was once written with UTF-8 BOM so loadConfig fell back to default agents and rejected from=cursor."
+      }
+    ],
+    "decisions": [
+      {
+        "id": "b-cd01f6a0",
+        "text": "Cursor Auto هو المدير والمنفّذ. Claude Code أعمق مراجعة كود. Codex وChatGPT استشارة وتحسين وصور وإدارة مكتب. لا تُنسخ منصة Master Brain إلى C:\\master حتى لا يتصادم المنفذ 4545.",
+        "date": "2026-09-12T14:00:44.156Z",
+        "by": "other",
+        "source": "mcp"
+      }
+    ],
+    "blockers": [],
+    "constraints": []
+  }
+}

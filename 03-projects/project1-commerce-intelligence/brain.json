@@ -1,0 +1,119 @@
+{
+  "version": 1,
+  "updated": "2026-09-14T10:41:09.110Z",
+  "sections": {
+    "done": [
+      {
+        "id": "b-38edb31f",
+        "text": "Public bilingual landing + owner console theme/locale (AR RTL, EN LTR, light/dark). Master page RCTC template. Kill-switch UI cannot emit buyHalt:false.",
+        "date": "2026-09-10T18:59:02.598Z",
+        "by": "human",
+        "source": "mcp"
+      },
+      {
+        "id": "b-f8f85b13",
+        "text": "Low-cost pack local loop: CSV preview/validate, ops pricing fixture, local draft statuses, TEMPLATE copy. Evidence: pnpm test 40/40, pnpm prove:csv. buyHalt true. HANDOFF for Claude: docs/brain/LOW_COST_HANDOFF.md.",
+        "date": "2026-09-11T11:34:56.038Z",
+        "by": "fable",
+        "source": "mcp"
+      },
+      {
+        "id": "b-6e7dfadb",
+        "text": "Owner Readiness Center (Pack V2 S1): dynamic OwnerTasks from DB/connectors/quotes; UI on /overview and /readiness; POST /api/readiness/recheck with same-origin; docs/brain/READINESS_CENTER.md. Evidence: pnpm test 49/49, pnpm prove:readiness.",
+        "date": "2026-09-12T21:56:38.977Z",
+        "by": "fable",
+        "source": "mcp"
+      }
+    ],
+    "findings": [
+      {
+        "id": "b-905ac708",
+        "text": "package.json name=project1-commerce-intelligence version=0.1.0 | README.md excerpt: # Project1 Commerce Intelligence منصة تشغيل خاصة. المستودع: **https://github.com/kazoya/Project1** (خاص على حساب kazoya). التوثيق الحي في `docs/brain/`. تقرير حلقة المحاكاة: `docs/brain/COMMERCE_LOOP.md`. قيود ثابتة: `buyHalt=true`، لا شراء حي، لا إجراء مدفوع، لا كتابة للأسواق بل | AGENTS.md present (600 chars excerpted). | git repository present",
+        "date": "2026-09-10T12:10:53.395Z",
+        "by": "claude",
+        "source": "seed"
+      }
+    ],
+    "current": [
+      {
+        "id": "b-766e8dcd",
+        "text": "Master Brain command channel being wired at /master with requireOwner (NextAuth OWNER_EMAIL).",
+        "date": "2026-09-10T12:10:53.518Z",
+        "by": "claude",
+        "source": "seed"
+      }
+    ],
+    "next": [
+      {
+        "id": "b-cfb87f81",
+        "text": "Owner: put eBay App ID / Cert ID in .env.local then reply `ebay app ids in .env.local`. Keep buyHalt on.",
+        "date": "2026-09-10T12:10:53.520Z",
+        "by": "claude",
+        "source": "seed"
+      },
+      {
+        "id": "b-df74b214",
+        "text": "S2: Discovery topN by category — SavedSearch/DiscoveryRun over existing DiscoveryConfig; one allowed source + CSV; no fake sales ranks; wire filters into readiness task discovery.category_or_market_missing.",
+        "date": "2026-09-12T21:56:42.444Z",
+        "by": "fable",
+        "source": "mcp"
+      }
+    ],
+    "improvements": [],
+    "suggestions": [
+      {
+        "id": "b-80b4cd85",
+        "text": "Keep Command Center on /master and commerce docs on /brain so the two minds stay separate.",
+        "date": "2026-09-10T12:13:45.256Z",
+        "by": "sonnet",
+        "source": "cli",
+        "status": "proposed"
+      },
+      {
+        "id": "b-ca257827",
+        "text": "Add Origin/CSRF checks on owner JSON writes (kill-switch, jobs) without lifting buyHalt.",
+        "date": "2026-09-10T18:59:02.276Z",
+        "by": "fable",
+        "source": "mcp",
+        "status": "proposed",
+        "evidence": "Opus UI review 2026-09-10"
+      },
+      {
+        "id": "b-6ff4f0fa",
+        "text": "When posting from Cursor into the collab room, always run pnpm collab list first so ChatGPT/Claude pastes stay in order.",
+        "date": "2026-09-11T09:18:15.351Z",
+        "by": "fable",
+        "source": "mcp",
+        "status": "proposed"
+      },
+      {
+        "id": "b-28e3ad4f",
+        "text": "When committing quote CSV, look up ProductCandidate by exact csv: dedup source instead of contains(candidateId) so DEMO-001 cannot match DEMO-0010.",
+        "date": "2026-09-11T11:34:55.805Z",
+        "by": "fable",
+        "source": "mcp",
+        "status": "proposed",
+        "evidence": "csv-commit finds candidates with source.contains(candidateId); prefer exact source key csv:marketplace::id::variant"
+      },
+      {
+        "id": "b-446c789a",
+        "text": "Next revenue gate (still blocked by policy): Production eBay MAD exemption/endpoint, seller account OAuth, explicit owner lift of buyHalt + spend cap > 0, and a non-Shein/Temu supplier with real shipping. Until then keep iterating SANDBOX discovery → quote CSV → LOCAL_READY → simulate-buy only.",
+        "date": "2026-09-14T10:41:09.109Z",
+        "by": "fable",
+        "source": "mcp",
+        "status": "proposed"
+      }
+    ],
+    "decisions": [],
+    "blockers": [],
+    "constraints": [
+      {
+        "id": "b-84c622ab",
+        "text": "buyHalt=true. Simulation / dry-run only. Do not lift buyHalt. Do not live-publish. eBay keys only in .env.local; never print them.",
+        "date": "2026-09-10T12:10:53.516Z",
+        "by": "human",
+        "source": "seed"
+      }
+    ]
+  }
+}

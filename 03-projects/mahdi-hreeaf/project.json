@@ -1,0 +1,26 @@
+{
+  "id": "mahdi-hreeaf",
+  "name": {
+    "ar": "mahdi-hreeaf",
+    "en": "mahdi-hreeaf"
+  },
+  "description": {
+    "ar": "اكتُشف من claude+cursor — C:\\mahdi",
+    "en": "Discovered via claude+cursor — C:\\mahdi"
+  },
+  "status": "open",
+  "priority": 3,
+  "revenue": "unknown",
+  "progress": 0,
+  "tags": [
+    "discovered",
+    "claude",
+    "cursor",
+    "node"
+  ],
+  "sessions": [],
+  "links": [],
+  "owner": "Suhib Asrawi",
+  "created": "2026-09-10T12:10:53.362Z",
+  "updated": "2026-09-10T12:10:53.362Z"
+}

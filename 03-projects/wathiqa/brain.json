@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "updated": "2026-09-10T12:10:53.533Z",
+  "sections": {
+    "done": [],
+    "findings": [
+      {
+        "id": "b-b6eeff11",
+        "text": "package.json name=wathiqa version=1.0.0 | README.md excerpt: # وثيقة — Wathiqa وكيل يقرأ ملف PDF ويجيب بأسلوب محادثة واتساب. ## العرض التسويقي 1. ارفع PDF حتى **40 ميغا**. 2. اسأل الوكيل عن محتوى الملف لمدة **ساعة كاملة مجاناً**. 3. اشترك عبر **PayPal** على `innervision2016@gmail.com` من 12 دولاراً شهرياً. ## التشغيل ```bash npm install np | CLAUDE.md present (600 chars excerpted). | git repository present",
+        "date": "2026-09-10T12:10:53.402Z",
+        "by": "claude",
+        "source": "seed"
+      }
+    ],
+    "current": [],
+    "next": [],
+    "improvements": [],
+    "suggestions": [],
+    "decisions": [],
+    "blockers": [],
+    "constraints": [
+      {
+        "id": "b-064ab560",
+        "text": "Canonical URL https://wathiqa-eight.vercel.app. Do not subscribe. Do not deploy unless owner says `deploy wathiqa`. Live POST /api/paypal/ipn was 404 at last check; local IPN stub never grants paid.",
+        "date": "2026-09-10T12:10:53.533Z",
+        "by": "human",
+        "source": "seed"
+      }
+    ]
+  }
+}

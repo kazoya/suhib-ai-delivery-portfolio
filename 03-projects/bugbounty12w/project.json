@@ -1,0 +1,25 @@
+{
+  "id": "bugbounty12w",
+  "name": {
+    "ar": "bug_bounty_12w",
+    "en": "bug_bounty_12w"
+  },
+  "description": {
+    "ar": "اكتُشف من codex+cursor — C:\\ArabBank\\bug_bounty_12w",
+    "en": "Discovered via codex+cursor — C:\\ArabBank\\bug_bounty_12w"
+  },
+  "status": "open",
+  "priority": 3,
+  "revenue": "unknown",
+  "progress": 0,
+  "tags": [
+    "discovered",
+    "codex",
+    "cursor"
+  ],
+  "sessions": [],
+  "links": [],
+  "owner": "Suhib Asrawi",
+  "created": "2026-09-10T12:10:53.174Z",
+  "updated": "2026-09-10T12:10:53.174Z"
+}

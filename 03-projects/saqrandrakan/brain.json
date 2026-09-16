@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "updated": "2026-09-10T12:10:53.526Z",
+  "sections": {
+    "done": [],
+    "findings": [
+      {
+        "id": "b-7b278bab",
+        "text": "package.json name=saqrandrakan version=1.0.0 | README.md excerpt: # Saqr & Rakan - Multi-Brand Agricultural Export Platform A modern, multi-brand website supporting three agricultural export businesses: - Fresh Anatolia (freshanatolia.com) - WA Apple (waapple.org) - Amon Vegetables (amon-vegetables.com) ## Features - 🌾 Multi-brand support with | CLAUDE.md present (600 chars excerpted). | git repository present",
+        "date": "2026-09-10T12:10:53.450Z",
+        "by": "claude",
+        "source": "seed"
+      }
+    ],
+    "current": [],
+    "next": [],
+    "improvements": [],
+    "suggestions": [],
+    "decisions": [],
+    "blockers": [],
+    "constraints": [
+      {
+        "id": "b-5e453d88",
+        "text": "FROZEN BY OWNER — NO ACTION. List only. Do not edit code, deploy, or open hunts on this tree.",
+        "date": "2026-09-10T12:10:53.526Z",
+        "by": "human",
+        "source": "seed"
+      }
+    ]
+  }
+}

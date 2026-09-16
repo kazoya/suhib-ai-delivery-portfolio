@@ -1,0 +1,24 @@
+{
+  "id": "controlling-ai",
+  "name": {
+    "ar": "المتحكم الهندسي",
+    "en": "Engineering controller"
+  },
+  "description": {
+    "ar": "اكتُشف من cursor — C:\\projectz\\controllingAI",
+    "en": "Discovered via cursor — C:\\projectz\\controllingAI"
+  },
+  "status": "open",
+  "priority": 2,
+  "revenue": "unknown",
+  "progress": 0,
+  "tags": [
+    "discovered",
+    "cursor"
+  ],
+  "sessions": [],
+  "links": [],
+  "owner": "Suhib Asrawi",
+  "created": "2026-09-10T12:10:53.389Z",
+  "updated": "2026-09-10T12:13:45.188Z"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "rz-packaging",
+  "name": {
+    "ar": "rz-packaging",
+    "en": "rz-packaging"
+  },
+  "description": {
+    "ar": "اكتُشف من claude+codex+cursor — C:\\rz",
+    "en": "Discovered via claude+codex+cursor — C:\\rz"
+  },
+  "status": "open",
+  "priority": 3,
+  "revenue": "unknown",
+  "progress": 0,
+  "tags": [
+    "discovered",
+    "claude",
+    "codex",
+    "cursor",
+    "node",
+    "nextjs"
+  ],
+  "sessions": [],
+  "links": [],
+  "owner": "Suhib Asrawi",
+  "created": "2026-09-10T12:10:53.308Z",
+  "updated": "2026-09-10T12:10:53.308Z"
+}

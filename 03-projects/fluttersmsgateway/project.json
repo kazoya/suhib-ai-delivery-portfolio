@@ -1,0 +1,25 @@
+{
+  "id": "fluttersmsgateway",
+  "name": {
+    "ar": "flutter_sms_gateway",
+    "en": "flutter_sms_gateway"
+  },
+  "description": {
+    "ar": "اكتُشف من codex — C:\\atalkingQMS\\flutter_sms_gateway",
+    "en": "Discovered via codex — C:\\atalkingQMS\\flutter_sms_gateway"
+  },
+  "status": "dormant",
+  "priority": 5,
+  "revenue": "unknown",
+  "progress": 0,
+  "tags": [
+    "discovered",
+    "codex",
+    "flutter"
+  ],
+  "sessions": [],
+  "links": [],
+  "owner": "Suhib Asrawi",
+  "created": "2026-09-10T12:10:53.384Z",
+  "updated": "2026-09-10T12:10:53.528Z"
+}

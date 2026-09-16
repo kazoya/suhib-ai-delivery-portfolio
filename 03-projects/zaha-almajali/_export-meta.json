@@ -1,0 +1,17 @@
+﻿{
+    "id":  "zaha-almajali",
+    "sourcePath":  "C:\\zahaalmajali",
+    "exported":  "2026-09-14T16:30:50.4652951+03:00",
+    "files":  [
+                  "project.json",
+                  "brain.json",
+                  "BRAIN.md",
+                  "CLAUDE.md",
+                  "AGENTS.md",
+                  "package.meta.json"
+              ],
+    "stackMarkers":  [
+                         "package.json",
+                         "next.config.ts"
+                     ]
+}

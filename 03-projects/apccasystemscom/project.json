@@ -1,0 +1,25 @@
+{
+  "id": "apccasystemscom",
+  "name": {
+    "ar": "apccasystems.com",
+    "en": "apccasystems.com"
+  },
+  "description": {
+    "ar": "اكتُشف من cursor — C:\\apccasystems.com",
+    "en": "Discovered via cursor — C:\\apccasystems.com"
+  },
+  "status": "open",
+  "priority": 3,
+  "revenue": "unknown",
+  "progress": 0,
+  "tags": [
+    "discovered",
+    "cursor",
+    "web"
+  ],
+  "sessions": [],
+  "links": [],
+  "owner": "Suhib Asrawi",
+  "created": "2026-09-10T12:10:53.351Z",
+  "updated": "2026-09-10T12:10:53.351Z"
+}

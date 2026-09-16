@@ -1,0 +1,355 @@
+﻿### سياق Master Brain — 2026-09-14 16:30
+
+## ذكاء التجارة — Project1 (`project1-commerce-intelligence`) — مفتوح · 83% · أولوية1
+المشروع الافتراضي للتواصل عبر ماستر برين وواجهة Next.js على المنفذ 3002. Dry Run: buyHalt=true، لا نشر حيّ.
+**ما تم إنجازه:**
+- Public bilingual landing + owner console theme/locale (AR RTL, EN LTR, light/dark). Master page RCTC template. Kill-switch UI cannot emit buyHalt:false.
+- Low-cost pack local loop: CSV preview/validate, ops pricing fixture, local draft statuses, TEMPLATE copy. Evidence: pnpm test 40/40, pnpm prove:csv. buyHalt true. HANDOFF for Claude: docs/brain/LOW_COST_HANDOFF.md.
+- Owner Readiness Center (Pack V2 S1): dynamic OwnerTasks from DB/connectors/quotes; UI on /overview and /readiness; POST /api/readiness/recheck with same-origin; docs/brain/READINESS_CENTER.md. Evidence: pnpm test 49/49, pnpm prove:readiness.
+**ما توصلنا إليه:**
+- package.json name=project1-commerce-intelligence version=0.1.0 | README.md excerpt: # Project1 Commerce Intelligence منصة تشغيل خاصة. المستودع: **https://github.com/kazoya/Project1** (خاص على حساب kazoya). التوثيق الحي في `docs/brain/`. تقرير حلقة المحاكاة: `docs/brain/COMMERCE_LOOP.md`. قيود ثابتة: `buyHalt=true`، لا شراء حي، لا إجراء مدفوع، لا كتابة للأسواق بل | AGENTS.md present (600 chars excerpted). | git repository present
+**ما نعمل عليه حالياً:**
+- Master Brain command channel being wired at /master with requireOwner (NextAuth OWNER_EMAIL).
+**الخطوات التالية:**
+- Owner: put eBay App ID / Cert ID in .env.local then reply `ebay app ids in .env.local`. Keep buyHalt on.
+- S2: Discovery topN by category — SavedSearch/DiscoveryRun over existing DiscoveryConfig; one allowed source + CSV; no fake sales ranks; wire filters into readiness task discovery.category_or_market_missing.
+**مقترحات النماذج (Claude / Opus / Fable…):**
+- Keep Command Center on /master and commerce docs on /brain so the two minds stay separate. (كلود سونيت, proposed)
+- Add Origin/CSRF checks on owner JSON writes (kill-switch, jobs) without lifting buyHalt. (كلود فابل, proposed)
+- When posting from Cursor into the collab room, always run pnpm collab list first so ChatGPT/Claude pastes stay in order. (كلود فابل, proposed)
+- When committing quote CSV, look up ProductCandidate by exact csv: dedup source instead of contains(candidateId) so DEMO-001 cannot match DEMO-0010. (كلود فابل, proposed)
+- Next revenue gate (still blocked by policy): Production eBay MAD exemption/endpoint, seller account OAuth, explicit owner lift of buyHalt + spend cap > 0, and a non-Shein/Temu supplier with real shipping. Until then keep iterating SANDBOX discovery → quote CSV → LOCAL_READY → simulate-buy only. (كلود فابل, proposed)
+**القيود والقواعد:**
+- buyHalt=true. Simulation / dry-run only. Do not lift buyHalt. Do not live-publish. eBay keys only in .env.local; never print them.
+**آخر السجل:**
+- 2026-09-14 · Google×Discovery owner zip pack (83%)
+- 2026-09-14 · Sim loop LOCAL_READY + simulated purchase (82%)
+- 2026-09-14 · Local draft after eBay — costs incomplete (76%)
+- 2026-09-14 · eBay Sandbox verified — discovery filters saved (75%)
+- 2026-09-13 · S1 hardened S2 S3 started (70%)
+
+## المقر الرئيسي / Master HQ (`master`) — مفتوح · 70% · أولوية1
+المقر الرئيسي للتعاون بين Cursor وClaude Code وCodex وChatGPT: Cursor مدير التنفيذ، Claude Code عمق الكود، الباقي صور وتحسين وإدارة مكتب.
+**ما تم إنجازه:**
+- مقر C:\master مسجّل في ماستر برين (id=master). جسر التعاون يعمل على 127.0.0.1:4560. الأدوار: Cursor مدير/منفّذ، Claude Code كود، Codex وثائق، ChatGPT صور ومكتب. المنصة الأصلية بقيت في C:\master-brain دون نسخ ثانية.
+- طُبّقت تحسينات Claude Code: مخزن رسائل واحد، تحقق حقل to مع inbox، اتفاقية CLAIM/RELEASE وسكربت claims.ps1.
+**ما توصلنا إليه:**
+- ثلاث نسخ من حزمة الجسر تعني ثلاثة مخازن إن لم يُضبط ACB_HOME. جلسة Claude Code xhigh نفّذت مراجعة فقط ثم نفّذ Cursor الدمج.
+**ما نعمل عليه حالياً:**
+- جسر حي. بانتظار مراجعة Claude Code لـ files/claude-code-review.md ورد from=claude في السجل.
+**الخطوات التالية:**
+- افتح C:\master في Cursor وClaude Code وCodex. استخدم prompts/chatgpt/MASTER_PROMPT.md للصور. اقرأ الجسر قبل كل مهمة.
+**مقترحات النماذج (Claude / Opus / Fable…):**
+- اكتب config.json للجسر بـ UTF-8 بلا BOM (Node JSON.parse يفشل مع BOM فيبدأ الوكلاء الافتراضيون بدون cursor). (أخرى, proposed)
+**القرارات المعتمدة:**
+- Cursor Auto هو المدير والمنفّذ. Claude Code أعمق مراجعة كود. Codex وChatGPT استشارة وتحسين وصور وإدارة مكتب. لا تُنسخ منصة Master Brain إلى C:\master حتى لا يتصادم المنفذ 4545.
+**آخر السجل:**
+- 2026-09-12 · Applied Claude T1-T3 on live bridge (70%)
+- 2026-09-12 · Master HQ workspace and collaboration bridge (45%)
+
+## عرب بنك / لوحة التشغيل (`arabbank`) — مفتوح · 46% · أولوية2
+اكتُشف من aider+claude+codex+cursor+vscode — C:\ArabBank
+**ما تم إنجازه:**
+- ملف مستقل kazoyan محفوظ: مهندس برمجيات + نبذة Laravel/Next.js/Node + 10 مهارات. سيرة بعيد على /u/suhib_asrawi محدّثة بنفس التقنيات.
+- طرفية mintty لـ Claude Code بعربي مقروء (Bidi=2 + winpty + Simplified Arabic Fixed). المشغّل: files/arabic-terminal/Open-ArabicClaude.ps1
+**ما توصلنا إليه:**
+- 2026-09-12 18:24Z Kaggriculture v15 1430.5→1434.3 bounce. v16 1381.7 unchanged. HOLD no v17.
+- 2026-09-12 19:39Z Kaggriculture v16 1381.7→1385.6 bounce. v15 1434.3 unchanged. HOLD no v17.
+- 2026-09-12 19:38Z Kaggriculture v16 1381.7→1385.6 bounce. v15 1434.3 unchanged. HOLD no v17.
+- 2026-09-12 20:24Z abort recover: v16 still 1385.6; v15 bounced 1434.3	o1435.3. HOLD no v17.
+- 2026-09-12 20:28Z Kaggriculture v16 1385.6 unchanged; v15 1434.3→1435.3 bounce. HOLD no v17.
+- 2026-09-12 21:18Z abort recover: v16 still 1385.6; v15 bounced 1435.3	o1439.2. HOLD no v17.
+- 2026-09-12 21:28Z Kaggriculture v16 1385.6 unchanged; v15 1435.3→1439.2 bounce. HOLD no v17.
+- 2026-09-12 21:33Z abort recover: v16 bounced 1385.6	o1390.3; v15 still 1439.2. HOLD no v17.
+**ما نعمل عليه حالياً:**
+- Kaggriculture displayed v16 1385.6 / v15 1434.3. Watcher re-armed UntilNotMatch 1385.6. HOLD no v17. 30m loop pid 26408 ALIVE.
+- 30m tick: Kaggriculture v16 1385.6 unchanged / v15 1434.3 unchanged. HOLD no v17. Watcher 1385.6 and 30m loop alive.
+- Kaggriculture displayed v16 1385.6 / v15 1435.3. Watcher UntilNotMatch 1385.6 PID 10448. HOLD no v17. 30m this-chat re-armed after abort.
+- 30m tick: Kaggriculture v16 1385.6 unchanged / v15 1435.3 (bounce from 1434.3). HOLD no v17. Watcher 1385.6 and 30m loop alive.
+- 30m tick: Kaggriculture v16 1385.6 unchanged / v15 1435.3 unchanged. HOLD no v17. Watcher 1385.6 and 30m loop alive.
+- Kaggriculture displayed v16 1385.6 / v15 1439.2. Watcher UntilNotMatch 1385.6 PID 10448. HOLD no v17. 30m this-chat re-armed after abort.
+- 30m tick: Kaggriculture v16 1385.6 unchanged / v15 1439.2 (bounce from 1435.3). HOLD no v17. Watcher 1385.6 and 30m loop alive.
+- Kaggriculture displayed v16 1390.3 / v15 1439.2. Watcher re-armed UntilNotMatch 1390.3. HOLD no v17. 30m this-chat re-armed after abort.
+**الخطوات التالية:**
+- HUMAN_GATE: تأكيد جوال مستقل/حسوب، توثيق الهوية، ترقية خطة مستقل. لا ترفع هوية ولا تضغط تفعيل OTP.
+**العوائق:**
+- توثيق الهوية وتأكيد الجوال على حسوب/مستقل يحتاجان OTP ووثائق من المشغّل. اسم مستخدم بعيد KAZOYA محجوز.
+**آخر السجل:**
+- 2026-09-14 · Bugcrowd live ranking + 6h watch
+- 2026-09-13 · Abort recover v16 1390.3 bounce
+- 2026-09-13 · 30m tick v15 1439.2 bounce
+- 2026-09-13 · Abort recover v15 1439.2 bounce
+- 2026-09-12 · 30m tick v16 1385.6 unchanged
+
+## براءة الشوبكي (`bara-ah-alshobaki`) — بانتظار ردّك · 92% · أولوية2
+منصة تجريبية فاخرة لمنتجات غذائية حرفية أردنية: زيوت وخل ومستخلصات نباتية.
+**ما تم إنجازه:**
+- Bilingual Next.js 16 premium demo live on Vercel (muqasa) and GitHub (kazoya/bara-ah-alshobaki) with vote section, i18n, theme controls, handoff zip
+**الخطوات التالية:**
+- Await client assets: product photos with لوغو براءة, SVG logo, real phone/email, product names/prices/SKUs
+**مقترحات النماذج (Claude / Opus / Fable…):**
+- After Claude Pass 2: keep ALLOW_MOCK_PAYMENTS off on shared Preview unless actively testing unlock; document CSP hash sync when preferenceScript changes. (أخرى, proposed)
+**القيود والقواعد:**
+- No invented certifications/awards; contact and images remain DEMO placeholders until client provides real materials
+**آخر السجل:**
+- 2026-09-13 · Pass-2 security fixes + legal drafts (92%)
+- 2026-09-13 · Phase A foundation + Claude review fixes (90%)
+- 2026-09-13 · Demo shipped to GitHub + Vercel (85%)
+
+## المتحكم الهندسي (`controlling-ai`) — مفتوح · 0% · أولوية2
+اكتُشف من cursor — C:\projectz\controllingAI
+**ما توصلنا إليه:**
+- CLAUDE.md present (600 chars excerpted).
+**ما نعمل عليه حالياً:**
+- Commander folder C:\projectz\controllingAI. Cash/engineering first. QMS frozen. Standing hunt elsewhere must not starve Project1/Wathiqa.
+
+## وثيقة (`wathiqa`) — مفتوح · 0% · أولوية2
+اكتُشف من cursor — C:\Wathiqa
+**ما توصلنا إليه:**
+- package.json name=wathiqa version=1.0.0 | README.md excerpt: # وثيقة — Wathiqa وكيل يقرأ ملف PDF ويجيب بأسلوب محادثة واتساب. ## العرض التسويقي 1. ارفع PDF حتى **40 ميغا**. 2. اسأل الوكيل عن محتوى الملف لمدة **ساعة كاملة مجاناً**. 3. اشترك عبر **PayPal** على `innervision2016@gmail.com` من 12 دولاراً شهرياً. ## التشغيل ```bash npm install np | CLAUDE.md present (600 chars excerpted). | git repository present
+**القيود والقواعد:**
+- Canonical URL https://wathiqa-eight.vercel.app. Do not subscribe. Do not deploy unless owner says `deploy wathiqa`. Live POST /api/paypal/ipn was 404 at last check; local IPN stub never grants paid.
+
+## المصانع (`factories`) — مفتوح · 85% · أولوية3
+اكتُشف من claude+cursor — C:\Factories
+**ما تم إنجازه:**
+- دُمج AlMithaliya في C:\Factories\ACI (نقل .git + node_modules) وحُذف C:\Factories\AlMithaliya. حزمة تحسين: files\al-mithaliya-improvement-handoff.zip (~285 KB). الإنتاج ما زال https://al-mithaliya-dairy.vercel.app
+- إرسال al-mithaliya-improvement-handoff.zip لوكيل التحسين؛ عند عودة التعديلات دمجها في C:\Factories\ACI ثم push/Vercel.
+- حزمة AlMithaliya-Improved مدمجة ومنشورة: https://al-mithaliya-dairy.vercel.app (commit 7037dc9)
+- C:\Factories\ACI = مؤسسة صناعات الكيماويات الزراعية (aci.com.jo). المثالية عادت إلى C:\Factories\AlMithaliya. GitHub kazoya/ACI.
+- ACI منشور: https://aci-agrochemicals.vercel.app · GitHub kazoya/ACI · Vercel READY
+**ما توصلنا إليه:**
+- CLAUDE.md present (600 chars excerpted).
+- نموذج Samsung Levant SIC 2026 JO مطمّر في iframe mena.samsung.com/levant/samsung-innovation-campus-2026-jo. التعبئة تمّت عبر UIA على نافذة Comet. ComboBox النموذج قد يظهر bounding box على شريط التبويبات — لا تُضغط click_input على ComboBox إذا top<80.
+- ACI (C:\Factories\ACI): بدأ 2026-09-14 كنسخة من AlMithaliya ثم توقف قبل إعادة العلامة/المحتوى/النشر/الـ ZIP. المثالية منشورة: https://al-mithaliya-dairy.vercel.app
+**مقترحات النماذج (Claude / Opus / Fable…):**
+- بعد عودة تحسينات الوكيل: اقترح فصل صفحات المصنع الذكي العامة إن لم تخدم سرد الألبان، واستبدالها بمسار «من الحليب إلى الرف» أعمق مع صور خط حقيقية. (كلود أوبوس, proposed)
+**آخر السجل:**
+- 2026-09-14 · خلفية زراعية لـ ACI + ZIP تحسين
+- 2026-09-14 · فصل المثالية وبناء ACI للكيماويات الزراعية (85%)
+- 2026-09-14 · دمج تحسينات المثالية ونشر فيرسيل (75%)
+- 2026-09-14 · دمج المثالية في ACI + ZIP تحسين
+- 2026-09-14 · حالة ACI: نسخ فقط — لا فيرسيل ولا ZIP
+
+## site-creator-vinext-starter (`site-creator-vinext-starter`) — مفتوح · 78% · أولوية3
+اكتُشف من claude+codex+cursor — C:\Users\pscx9\Documents\Risha360
+**ما تم إنجازه:**
+- عقد celebrity-self-service-roles + تنفيذ BE (أدوار/login/self-update) + قفل FE (Auth/Login/my-celebrities/CelebrityEditPage) على فرع feat/celebrity-self-service-roles — غير منشور بعد
+- Influencer Collab Hub wave 2 (Claude Opus 5): auto-enroll السفراء عبر syncRoles مع إعادة استخدام ReferralCodeService، لوحتا إدارة (مراجعة حسابات الآيبان + طلبات الصرف) مع صلاحيتين جديدتين، PayoutReviewService بآلة حالة مقفولة، وإصلاح احتساب held_for_payout عند الدفع، و6 ملفات اختبارات Feature — لم تُنفَّذ بعد (لا يوجد vendor/ ولا .env في هذه النسخة)
+**ما توصلنا إليه:**
+- package.json name=site-creator-vinext-starter version=0.1.0 | README.md excerpt: # دعم ريشة 360 مركز مساعدة عربي يسهّل رحلة الزائر والموهبة والمؤثر والشركة في منصة ريشة 360، مع فصل المحتوى العام عن ملفات الموظفين والإدارة. ## الواجهة العامة - اختيار المسار: زائر، موهبة/مؤثر، أو شركة. - بحث عربي داخل الموضوعات المسموحة للمسار. - خطوات واضحة وروابط مباشرة إلى ص | CLAUDE.md present (600 chars excerpted). | git repository present
+- my-celebrities كان يفلتر فقط بـ created_by فيظهر قائمة فارغة لحساب المشهور؛ صار يشمل celebrities.id = users.celebrity_id، وshow يرفض غير المالك/الرابط
+**ما نعمل عليه حالياً:**
+- feat/celebrity-self-service-roles: backend جاهز محلياً؛ frontend شبه جاهز وينتظر قفل واجهة my-celebrities ثم نشر
+- feat/influencer-collab-hub: نواة العروض/الاتفاقيات/المهام/المحفظة/المتابعين ولوحة /influencer — يتبقى أدمن + واجهة شركة + اختبارات
+**الخطوات التالية:**
+- عند الطلب: commit + PR لـ BE(main) و FE(staging)، ثم Forge migrate + deploy لأدوار celebrity/talent ودخول المشاهير والتعديل الذاتي
+- تشغيل composer install + .env محلي ثم php artisan test --filter=InfluencerCollab للتحقق من اختبارات Influencer Collab Hub قبل أي PR
+**آخر السجل:**
+- 2026-09-13 · حزمة إحاطة المدير المضغوطة
+- 2026-09-13 · Mint missing promo for innervision
+- 2026-09-12 · Push influencer hub + WIP paid slots (78%)
+- 2026-09-12 · Claude Code trust + collab hub wave (72%)
+- 2026-09-12 · Influencer Collab Hub — لوحات الإدارة والاختبارات والتسجيل التلقائي للسفراء (88%)
+
+## Belt (`belt`) — مفتوح · 0% · أولوية3
+اكتُشف من claude+codex+cursor — C:\Belt
+**ما توصلنا إليه:**
+- CLAUDE.md present (600 chars excerpted). | git repository present
+**آخر السجل:**
+- 2026-09-12 · Arabic-correct PowerShell/CMD terminal (mintty bidi) + desktop shortcuts
+
+## AI_Pro (`aipro`) — مفتوح · 0% · أولوية3
+اكتُشف من codex — C:\AI_Pro
+**ما توصلنا إليه:**
+- CLAUDE.md present (600 chars excerpted). | git repository present
+
+## dashboard (`dashboard`) — مفتوح · 0% · أولوية3
+اكتُشف من الملفات — C:\Users\pscx9\.cursor\portfolio\dashboard
+**ما توصلنا إليه:**
+- CLAUDE.md present (600 chars excerpted).
+
+## mahdi-hreeaf (`mahdi-hreeaf`) — مفتوح · 0% · أولوية3
+اكتُشف من claude+cursor — C:\mahdi
+**ما توصلنا إليه:**
+- package.json name=mahdi-hreeaf version=0.2.0 | package.json description: Mahdi Al-Bannai — Hybrid rentier employment research & decision-support (portable) | README.md excerpt: # Mahdi HREEAF — Hybrid Rentier Employment Research مستودع **خاص** قابل للنقل: عقل المشروع (`project-brain/`) + بوابة Vercel (`apps/portal/`) + **Claude Code** كمستشار تدقيق محلي. ## البدء السريع ```powershell cd C:\mahdi npm run setup npm run dev ``` بوابة محلية: [http://localho | CLAUDE.md present (600 chars excerpted). | git repository present
+
+## gandalf (`gandalf`) — مفتوح · 0% · أولوية3
+اكتُشف من cursor — C:\gandalf
+**ما توصلنا إليه:**
+- CLAUDE.md present (600 chars excerpted).
+
+## apccasystems.com (`apccasystemscom`) — مفتوح · 0% · أولوية3
+اكتُشف من cursor — C:\apccasystems.com
+**ما توصلنا إليه:**
+- CLAUDE.md present (600 chars excerpted).
+
+## APCA-SmartHelp (`apca-smarthelp`) — مفتوح · 0% · أولوية3
+اكتُشف من cursor — C:\Belt\APCA-SmartHelp
+**ما توصلنا إليه:**
+- README.md excerpt: # APCA SmartHelp © 2026 APCA Systems — Amal Al-Hayat for Systems & Electronic Control.   Developed by Suhib Asrawi. All rights reserved.   **Rights contact:** innervision2016@gmail.com Local-first **PDF → semantic help** system inspired by JavaHelp / CHM / JAR HelpSets, with hybr | CLAUDE.md present (600 chars excerpted). | git repository present
+
+## MyTasks (`mytasks`) — مفتوح · 0% · أولوية3
+اكتُشف من cursor — C:\MyTasks
+**ما توصلنا إليه:**
+- CLAUDE.md present (600 chars excerpted).
+
+## esolutionsv (`esolutionsv`) — مفتوح · 0% · أولوية3
+اكتُشف من cursor — C:\esolutionsv
+**ما توصلنا إليه:**
+- package.json name=esolutionsv version=0.1.0 | README.md excerpt: # وادي السيليكون للحلول الإلكترونية — تصور رقمي تصور أولي مستقل لمنصة مبيعات وتسليم لشركة **Silicon Valley for Electronic Solutions** (علامة eSolutionsV)، بعد مراجعة [esolutionsv.com](https://www.esolutionsv.com/). هذا **ليس** نظاماً رسمياً للشركة. أرقام الفرص والتسليم داخل المنص | CLAUDE.md present (600 chars excerpted). | git repository present
+
+## smart-agent-hub (`smart-agent-hub`) — مفتوح · 0% · أولوية3
+اكتُشف من codex+cursor — C:\AIPRO
+**ما توصلنا إليه:**
+- package.json name=smart-agent-hub version=0.1.0 | README.md excerpt: # Smart Agent Hub - منصة إدارة الوكلاء الذكية منصة متكاملة لإدارة وكلاء الذكاء الاصطناعي الذين يعملون كوسطاء بين مقدمي الخدمات والعملاء، مع تكامل واتساب وقاعدة بيانات متقدمة. ## 🚀 المميزات الرئيسية ### للآدمن - ✅ لوحة تحكم شاملة لإدارة الوكلاء - ✅ إنشاء وتعديل الوكلاء مع قواعد س | AGENTS.md present (600 chars excerpted). | git repository present
+
+## the-farm-dairy (`the-farm-dairy`) — مفتوح · 0% · أولوية3
+اكتُشف من claude+codex+cursor — C:\thefarmdairy
+**ما توصلنا إليه:**
+- package.json name=the-farm-dairy version=0.1.0 | README.md excerpt: # المزرعة للألبان — تصور التحول الرقمي تصور أولي مستقل لمنظومة رقمية وأتمتة لشركة **المزرعة للألبان** في الأردن، مبني بعد مراجعة الموقع العام [mazraadairy.com](https://mazraadairy.com/). هذا **ليس** نظاماً رسمياً للشركة. الأرقام التشغيلية داخل المنصة **بيانات تجريبية**. حصة السوق | AGENTS.md present (600 chars excerpted). | git repository present
+
+## jitan-group (`jitan-group`) — مفتوح · 0% · أولوية3
+اكتُشف من claude+codex+cursor — C:\jitan_group
+**ما توصلنا إليه:**
+- package.json name=jitan-group version=0.1.0 | README.md excerpt: # مجموعة جيتان — تصور رقمي تصور أولي مستقل لمنظومة رقمية وأتمتة لـ **مجموعة جيتان** وعلاماتها: **برادايس**، **فلافل هاوس**، **داليا**، و**سيلين** (Cilin Trading على الموقع)، بعد مراجعة [jitangroup.com](https://jitangroup.com/) و[paradisebakeries.com](https://www.paradisebakeries. | AGENTS.md present (600 chars excerpted). | git repository present
+
+## gepico (`gepico`) — مفتوح · 0% · أولوية3
+اكتُشف من claude+codex+cursor — C:\gepico
+**ما توصلنا إليه:**
+- package.json name=gepico version=0.1.0 | README.md excerpt: # GEPICO — تصور التحول الرقمي تصور أولي مستقل لمنظومة رقمية وأتمتة لـ **مؤسسة الخليج الفنية الصناعية (GEPICO)** في الأردن، مبني بعد مراجعة الموقع العام [gepico.com](https://gepico.com/). هذا **ليس** نظاماً رسمياً للشركة. الأرقام التشغيلية داخل المنصة **بيانات تجريبية**. ## التشغي | AGENTS.md present (600 chars excerpted). | git repository present
+
+## rz-packaging (`rz-packaging`) — مفتوح · 0% · أولوية3
+اكتُشف من claude+codex+cursor — C:\rz
+**ما توصلنا إليه:**
+- package.json name=rz-packaging version=0.1.0 | README.md excerpt: # RZ / الهدف الدولية — تصور رقمي للتعبئة والتغليف تصور أولي مستقل لمنظومة رقمية وأتمتة عروض لشركة **الهدف الدولية للاستيراد والصناعة (RZ)** بعد مراجعة [rz.jo](https://www.rz.jo/) و[alhadaf-int.com](https://alhadaf-int.com/). هذا **ليس** نظاماً رسمياً للشركة. أرقام العروض والمخزون | AGENTS.md present (600 chars excerpted). | git repository present
+
+## chatbase (`chatbase`) — مفتوح · 0% · أولوية3
+اكتُشف من cursor — C:\airealpro\chatbase
+**ما توصلنا إليه:**
+- README.md excerpt: # OmniAgent (AI-Native SaaS Blueprint) ## Ultra Pro Max Plus Infinity Edition > **عقل هندسي (وضع التنفيذ):** اقرأ `PORTFOLIO.md` أولاً. هذا README رؤية. القرص اليوم: وثائق + مجلدات فارغة — لا كود تشغيل. > **Repository Base:** `C:\airealpro\chatbase`   > **Template Archetype:** Bo | CLAUDE.md present (600 chars excerpted).
+
+## crf-audit (`crf-audit`) — مفتوح · 0% · أولوية3
+اكتُشف من cursor — C:\CRF Audit
+**ما توصلنا إليه:**
+- package.json name=crf-audit version=0.1.0 | README.md excerpt: # CRF Audit Platform منصة تصور رقمية عربية (RTL) لتدقيق امتثال **Cybersecurity Regulatory Framework (CRF)** لقطاع CST. ## المصدر - `CRF Audit Form.xlsx` — الأوراق: Cover · Company's Details · Audit · Audit Result - ورقة **Audit**: 215 ضابطاً عبر 6 مجالات مع طرق حل وأدلة مقترحة ## | CLAUDE.md present (600 chars excerpted). | git repository present
+
+## arc_solver_web (`arcsolverweb`) — مفتوح · 0% · أولوية3
+اكتُشف من codex+cursor — C:\arc_solver_web
+**ما توصلنا إليه:**
+- package.json name=arc_solver_web version=1.0.0 | CLAUDE.md present (600 chars excerpted). | git repository present
+
+## nour-industrial-ai (`nour-industrial-ai`) — مفتوح · 0% · أولوية3
+اكتُشف من claude+codex+cursor — C:\NoorPlasticFactory
+**ما توصلنا إليه:**
+- package.json name=nour-industrial-ai version=0.1.0 | README.md excerpt: # نور العرب — تصور الذكاء الصناعي منصة عرض تفاعلية ومقترح أولي مستقل لشركة **نور العرب للصناعات البلاستيكية — الأردن**. ليست نظاماً رسمياً تابعاً للشركة، ولا تفترض أن العمليات الحالية تعمل بالصورة المعروضة. الهدف أن يرى فريق الإدارة كيف يمكن ربط المبيعات وعروض الأسعار والإنتاج وا | AGENTS.md present (600 chars excerpted). | git repository present
+
+## al-majjarra (`al-majjarra`) — مفتوح · 0% · أولوية3
+اكتُشف من claude+codex+cursor — C:\almajjarra
+**ما توصلنا إليه:**
+- package.json name=al-majjarra version=0.1.0 | README.md excerpt: # المجرة لحلول الأعمال الزراعية — تصور رقمي تصور أولي مستقل لمنظومة رقمية وأتمتة لشركة **المجرة لحلول الأعمال الزراعية** (علامة Galaxy)، بعد مراجعة [almajjarra.com](https://almajjarra.com/). هذا **ليس** نظاماً رسمياً للشركة. أرقام الماء والإنتاج داخل المنصة **بيانات تجريبية**. مي | AGENTS.md present (600 chars excerpted). | git repository present
+
+## AlMara3i (`almara3i`) — مفتوح · 0% · أولوية3
+اكتُشف من cursor — C:\AlMara3i
+**ما توصلنا إليه:**
+- CLAUDE.md present (600 chars excerpted).
+
+## attmp (`attmp`) — مفتوح · 0% · أولوية3
+اكتُشف من codex+cursor — C:\attmp
+**ما توصلنا إليه:**
+- CLAUDE.md present (600 chars excerpted). | git repository present
+
+## banoon-kids (`banoon-kids`) — مفتوح · 0% · أولوية3
+اكتُشف من codex+cursor — C:\Factories\Banoon
+**ما توصلنا إليه:**
+- package.json name=banoon-kids version=0.1.0 | README.md excerpt: # بنون كيدز — تصور رقمي للمبيعات والمدارس تصور أولي مستقل لمنصة عربية لعلامة **بنون كيدز** التابعة لـ**شركة دلتا للصناعات البلاستيكية**، بعد مراجعة [banoonkids.com](https://www.banoonkids.com/). هذا **ليس** نظاماً رسمياً للشركة. أرقام المدارس والكراتين داخل المنصة **بيانات تجريبي | AGENTS.md present (146 chars excerpted). | git repository present
+
+## albayrouty (`albayrouty`) — مفتوح · 0% · أولوية3
+اكتُشف من codex+cursor — C:\Factories\albayrouty
+**ما توصلنا إليه:**
+- package.json name=albayrouty version=0.1.0 | README.md excerpt: # البيروتي — تصور رقمي للمبيعات مصدر عام: https://albayrouty.com/ هذا ليس نظاماً رسمياً للشركة. | AGENTS.md present (144 chars excerpted). | git repository present
+
+## arc_prize_2026 (`arcprize2026`) — مفتوح · 0% · أولوية3
+اكتُشف من cursor — C:\ArabBank\arc_prize_2026
+**ما توصلنا إليه:**
+- README.md excerpt: # ARC Prize 2026 Paper Track Goal: build a serious paper-track submission around a reproducible ARC reasoning system, not a one-off notebook. ## Working Thesis ARC tasks are best attacked as **program synthesis under visual invariants**, but the winning paper should explain *why* | CLAUDE.md present (600 chars excerpted).
+
+## rctc-skill (`rctc-skill`) — مفتوح · 0% · أولوية3
+اكتُشف من claude+codex+cursor — C:\rctc-skill
+**ما توصلنا إليه:**
+- README.md excerpt: # 🧠 RCTC Method — Sohaib's Prompt Engineering Skill <div align="center"> ![RCTC Banner](https://img.shields.io/badge/RCTC-Sohaib's%20Method-6C3483?style=for-the-badge&logo=anthropic&logoColor=white) ![Version](https://img.shields.io/badge/version-1.0.0-brightgreen?style=for-the- | CLAUDE.md present (600 chars excerpted). | git repository present
+
+## zaha-almajali (`zaha-almajali`) — مفتوح · 0% · أولوية3
+اكتُشف من claude+codex+cursor — C:\zahaalmajali
+**ما توصلنا إليه:**
+- package.json name=zaha-almajali version=0.1.0 | AGENTS.md present (600 chars excerpted). | git repository present
+
+## khudhni (`khudhni`) — مفتوح · 0% · أولوية3
+اكتُشف من claude — C:\ArabBank\khudhni
+**ما توصلنا إليه:**
+- README.md excerpt: # خذني بطريقك — Khudhni Bi Tariqak **Slug:** `khudhni`   **Status:** Walking skeleton (2026-09-04). **Not launch-ready.** No real payments. منصة أردنية لمشاركة رحلات **مجدولة ومتكررة** (ممر يومي)، وليست أوبر عند الطلب. ## التشغيل المحلي PHP المحمول (لأن PHP على ويندوز هنا بلا امت | CLAUDE.md present (600 chars excerpted). | git repository present
+
+## ghayari (`ghayari`) — مفتوح · 0% · أولوية3
+اكتُشف من claude+codex+cursor — C:\ArabBank\ghayari
+**ما توصلنا إليه:**
+- package.json name=ghayari version=0.1.0 | README.md excerpt: # غياري / Ghayari Lebanon-first marketplace for auto parts: search by OEM or vehicle, compare **part + delivery = total**, order COD, follow a real timeline. Launch geography: **Beirut and suburbs**. Arabic RTL first. This repository is independent of خذني بطريقك. ## Slice you ca | AGENTS.md present (600 chars excerpted). | git repository present
+
+## project-iso (`project-iso`) — مفتوح · 0% · أولوية3
+اكتُشف من claude+codex — C:\projectIso
+**ما توصلنا إليه:**
+- package.json name=project-iso version=0.1.0 | README.md excerpt: # Project ISO رفيق دراسة عربي RTL بأسلوب مصانع المجرة/بنون (Next.js 16، shadcn/radix-nova، صدق المصدر). ## ماذا يوجد في المجلد | ملف | الحقيقة | |-----|---------| | Advisera ISO 42001 LI | الكورس الحي على training.advisera.com (عداد 0.77%) | | PECB ISO 22301 PDFs | كتيبات تسويق + | AGENTS.md present (600 chars excerpted).
+
+## apcasystems (`apcasystems`) — مفتوح · 0% · أولوية3
+اكتُشف من cursor — C:\apcasystems
+**ما توصلنا إليه:**
+- CLAUDE.md present (600 chars excerpted).
+
+## Muqasa-Jo (`muqasa-jo-2`) — مفتوح · 0% · أولوية3
+اكتُشف من claude+codex+continue+cursor+vscode — C:\muqasa-jo
+**ما توصلنا إليه:**
+- package.json name=Muqasa-Jo version=0.1.0 | README.md excerpt: # Muqasa-Jo This is a NextJS starter for Muqasa-Jo, an online auction platform. To get started, take a look at src/app/page.tsx. | CLAUDE.md present (600 chars excerpted). | git repository present
+
+## Muqasa-Jo (`muqasa-jo`) — مفتوح · 0% · أولوية3
+اكتُشف من claude+codex+continue+cursor+vscode — C:\muqasa
+**ما توصلنا إليه:**
+- package.json name=Muqasa-Jo version=0.1.0 | README.md excerpt: # Muqasa-Jo This is a NextJS starter for Muqasa-Jo, an online auction platform. To get started, take a look at src/app/page.tsx. | CLAUDE.md present (600 chars excerpted). | git repository present
+
+## nextn (`nextn`) — مفتوح · 0% · أولوية3
+اكتُشف من codex+cursor — C:\Hissah-github
+**ما توصلنا إليه:**
+- package.json name=nextn version=0.1.0 | README.md excerpt: # Hissah Hissah is an Arabic-first tutoring marketplace that connects students, parents, verified teachers, and administrators through one web platform and one Flutter mobile app. Production target: - Web: `https://hissah.vercel.app` - Repository: `https://github.com/Suhib-byte/H | CLAUDE.md present (600 chars excerpted). | git repository present
+
+## bug_bounty_12w (`bugbounty12w`) — مفتوح · 0% · أولوية3
+اكتُشف من codex+cursor — C:\ArabBank\bug_bounty_12w
+**ما توصلنا إليه:**
+- README.md excerpt: # Bug Bounty 12-Week → HackerOne Top 1000 **Source of truth:** `curriculum/bug_bounty_12w.json`   **Integrations:** OpenClaw (coach) + GreatMinds (tasks/habits) --- ## Quick links - **Authorized testing prompts (reduce refusals):** `tools/AUTHORIZED_TESTING_PROMPTS.md` - **Which  | CLAUDE.md present (600 chars excerpted). | git repository present
+
+## flutter_sms_gateway (`fluttersmsgateway`) — سكون · 0% · أولوية5
+اكتُشف من codex — C:\atalkingQMS\flutter_sms_gateway
+**ما توصلنا إليه:**
+- README.md excerpt: # qms_sms_gateway يتكون المشروع الآن من جزأين: - تطبيق Flutter/Android الحالي لإرسال SMS وواتساب من الهاتف. - [خدمة WhatsApp الثنائية الاتجاه](backend/README.md) المبنية على PHP وMariaDB وWhatsApp Cloud API وOpenAI. A new Flutter project. ## Getting Started This project is a star | CLAUDE.md present (600 chars excerpted).
+
+## نظام الجودة (QMS) — مجمّد (`saqrandrakan`) — سكون · 0% · أولوية5
+اكتُشف من claude+codex+cursor — C:\atalkingQMS
+**ما توصلنا إليه:**
+- package.json name=saqrandrakan version=1.0.0 | README.md excerpt: # Saqr & Rakan - Multi-Brand Agricultural Export Platform A modern, multi-brand website supporting three agricultural export businesses: - Fresh Anatolia (freshanatolia.com) - WA Apple (waapple.org) - Amon Vegetables (amon-vegetables.com) ## Features - 🌾 Multi-brand support with | CLAUDE.md present (600 chars excerpted). | git repository present
+**القيود والقواعد:**
+- FROZEN BY OWNER — NO ACTION. List only. Do not edit code, deploy, or open hunts on this tree.
+
+## flutter_app (`flutterapp`) — سكون · 0% · أولوية5
+اكتُشف من cursor — C:\restaurant\hot_restaurant_ordering\flutter_app
+**ما توصلنا إليه:**
+- README.md excerpt: # flutter_app A new Flutter project. ## Getting Started This project is a starting point for a Flutter application. A few resources to get you started if this is your first Flutter project: - [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter) - [Write your first  | CLAUDE.md present (600 chars excerpted).
+
+## أكاديمية أبكا لمهارات وسلامة الذكاء الاصطناعي الصناعي (`giz-apca-industrial-ai`) — مفتوح · 85% · أولوية-
+**ما تم إنجازه:**
+- Gate B golden journey live (AR/EN) on Vercel with tests+build green
+**الخطوات التالية:**
+- Gate C: retrieval evaluation fixtures + Postgres/auth adapters for multi-tenant pilot
+**مقترحات النماذج (Claude / Opus / Fable…):**
+- Add Postgres + real auth adapters behind existing domain types before pilot with live TVET institutions; keep mock AI as default for rehearsals. (أخرى, proposed)
+**آخر السجل:**
+- 2026-09-14 · GitHub + Vercel production live (85%)
+- 2026-09-14 · Gate B golden vertical slice implemented (70%)
+
+_قواعد: اقرأ السياق أعلاه قبل العمل. بعد أي تقدّم سجّله في Master Brain (mb log / add_journal_entry) وانسب أي مقترح إلى النموذج الذي قدّمه._

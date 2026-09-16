@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "updated": "2026-09-10T12:10:53.430Z",
+  "sections": {
+    "done": [],
+    "findings": [
+      {
+        "id": "b-ea4f9802",
+        "text": "README.md excerpt: # خذني بطريقك — Khudhni Bi Tariqak **Slug:** `khudhni`   **Status:** Walking skeleton (2026-09-04). **Not launch-ready.** No real payments. منصة أردنية لمشاركة رحلات **مجدولة ومتكررة** (ممر يومي)، وليست أوبر عند الطلب. ## التشغيل المحلي PHP المحمول (لأن PHP على ويندوز هنا بلا امت | CLAUDE.md present (600 chars excerpted). | git repository present",
+        "date": "2026-09-10T12:10:53.430Z",
+        "by": "claude",
+        "source": "seed"
+      }
+    ],
+    "current": [],
+    "next": [],
+    "improvements": [],
+    "suggestions": [],
+    "decisions": [],
+    "blockers": [],
+    "constraints": []
+  }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "id":  "wathiqa",
+    "sourcePath":  "C:\\Wathiqa",
+    "exported":  "2026-09-14T16:30:50.4365722+03:00",
+    "files":  [
+                  "project.json",
+                  "brain.json",
+                  "BRAIN.md",
+                  "CLAUDE.md",
+                  "README.md",
+                  "package.meta.json"
+              ],
+    "stackMarkers":  [
+                         "package.json",
+                         "next.config.ts"
+                     ]
+}

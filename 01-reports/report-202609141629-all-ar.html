@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>تقرير محفظة صهيب — جاهز لبناء البروفايل — ماستر برين — منصة المتابعة والعقل الهندسي</title>
+<style>
+  :root{--navy:#0f1b33;--navy2:#1f2a44;--gold:#c8ad73;--ink:#1a1f2b;--muted:#6b7280;--line:#e5e7eb;--bg:#f6f7fa;--card:#fff}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Segoe UI",Tahoma,"Noto Naskh Arabic",Arial,sans-serif;font-size:13px;line-height:1.55}
+  .page{max-width:1100px;margin:0 auto;padding:24px}
+  .cover{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;border-radius:14px;padding:26px 28px;display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
+  .cover h1{margin:0 0 6px;font-size:24px;letter-spacing:.2px}
+  .cover .sub{color:var(--gold);font-weight:600}
+  .cover .meta-lines{font-size:12px;opacity:.9;margin-top:8px}
+  .btn{background:var(--gold);color:var(--navy);border:0;border-radius:8px;padding:9px 14px;font-weight:700;cursor:pointer;font-family:inherit}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .kpi .v{font-size:26px;font-weight:800;color:var(--navy)}
+  .kpi .k{color:var(--muted);font-size:12px}
+  h2{font-size:18px;margin:26px 0 10px;color:var(--navy);border-bottom:2px solid var(--gold);padding-bottom:6px}
+  h2.group{margin-top:30px;break-after:avoid;page-break-after:avoid}
+  h3{margin:0;font-size:16px;color:var(--navy)}
+  h4{margin:0 0 8px;font-size:13px;color:var(--navy2);text-transform:uppercase;letter-spacing:.4px}
+  table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:start;vertical-align:top}
+  th{background:#eef1f7;color:var(--navy2);font-weight:700;font-size:12px}
+  tr:last-child td{border-bottom:0}
+  .num{text-align:center;white-space:nowrap}
+  .mono{font-family:Consolas,"Courier New",monospace;font-size:11.5px}
+  td.mono{white-space:nowrap}
+  .small{font-size:11px}
+  .muted{color:var(--muted)}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .badge{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11px;font-weight:700;color:var(--c);background:color-mix(in srgb,var(--c) 14%,white);border:1px solid color-mix(in srgb,var(--c) 40%,white);white-space:nowrap}
+  .chip{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;background:#eef1f7;color:var(--navy2);white-space:nowrap}
+  .bar{position:relative;height:16px;background:#e9ecf3;border-radius:999px;min-width:120px;overflow:hidden}
+  .bar .fill{height:100%;background:linear-gradient(90deg,var(--gold),#e2cf9a)}
+  .bar span{position:absolute;inset:0;font-size:10.5px;font-weight:700;display:flex;align-items:center;justify-content:center;color:var(--navy)}
+  .project{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:14px 0;page-break-inside:avoid}
+  .project header{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;border-bottom:1px dashed var(--line);padding-bottom:10px;margin-bottom:12px}
+  .project .meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end;min-width:280px}
+  .desc{margin:4px 0 0;color:var(--muted)}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .sec{margin-bottom:10px}
+  .sec-t{font-weight:700;color:var(--navy2);margin-bottom:3px}
+  ul{margin:0;padding-inline-start:18px}
+  li{margin:2px 0}
+  .entries td .body{color:#374151;margin-top:3px;font-size:12px;white-space:pre-wrap}
+  footer{margin-top:28px;color:var(--muted);font-size:11px;text-align:center}
+  @media print{
+    @page{size:A4;margin:12mm}
+    body{background:#fff;font-size:11px}
+    .page{padding:0;max-width:none}
+    .btn{display:none}
+    .cols{grid-template-columns:1fr}
+    .cover{border-radius:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .badge,.bar .fill,th,.kpi{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .project{break-inside:avoid}
+  }
+  @media (max-width:800px){.kpis{grid-template-columns:repeat(2,1fr)}.cols,.grid3{grid-template-columns:1fr}.cover{flex-direction:column}}
+</style>
+</head>
+<body><div class="page">
+  <div class="cover">
+    <div>
+      <div class="sub">ماستر برين — منصة المتابعة والعقل الهندسي</div>
+      <h1>تقرير محفظة صهيب — جاهز لبناء البروفايل</h1>
+      <div class="meta-lines">الفترة: <strong>2026-01-01 → 2026-09-14</strong> &nbsp;·&nbsp; تاريخ الإصدار: 2026-09-14 16:29<br>المرشّحات: التجميع: status</div>
+    </div>
+    <button class="btn" onclick="window.print()">طباعة / حفظ PDF</button>
+  </div>
+  <div class="kpis"><div class="kpi"><div class="v">46</div><div class="k">المشاريع</div></div><div class="kpi"><div class="v">12%</div><div class="k">متوسط التقدّم</div></div><div class="kpi"><div class="v">99</div><div class="k">مدخلات السجل في الفترة</div></div><div class="kpi"><div class="v">9</div><div class="k">مقترحات النماذج</div></div></div>
+  <h2>الملخص التنفيذي</h2>
+  <div class="grid3">
+    <table><thead><tr><th>التوزيع حسب الحالة</th><th class="num">#</th></tr></thead><tbody><tr><td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">42</td></tr><tr><td><span class="badge" style="--c:#f59e0b">بانتظار ردّك</span></td><td class="num">1</td></tr><tr><td><span class="badge" style="--c:#6b7280">سكون</span></td><td class="num">3</td></tr></tbody></table>
+    <table><thead><tr><th>طبيعة التقدّم (أنواع المدخلات)</th><th class="num">#</th></tr></thead><tbody><tr><td>↗ تقدّم</td><td class="num">84</td></tr><tr><td>✦ إنجاز رئيسي</td><td class="num">12</td></tr><tr><td>⊘ عائق</td><td class="num">2</td></tr><tr><td>▪ ملاحظة</td><td class="num">1</td></tr></tbody></table>
+    <table><thead><tr><th>المقترحات حسب النموذج</th><th class="num">#</th></tr></thead><tbody><tr><td><span class="badge model" style="--c:#c8ad73">كلود فابل</span></td><td class="num">4</td></tr><tr><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td><td class="num">3</td></tr><tr><td><span class="badge model" style="--c:#60a5fa">كلود سونيت</span></td><td class="num">1</td></tr><tr><td><span class="badge model" style="--c:#a78bfa">كلود أوبوس</span></td><td class="num">1</td></tr></tbody></table>
+  </div>
+  <h2>المشاريع</h2>
+  <table><thead><tr><th>المشروع</th><th>الحالة</th><th class="num">الأولوية</th><th>التقدّم</th><th class="num">تغيّر التقدّم في الفترة</th><th class="num">مدخلات</th><th>آخر نشاط</th></tr></thead><tbody><tr>
+    <td><strong>ذكاء التجارة — Project1</strong><br><span class="muted mono">project1-commerce-intelligence</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">1</td>
+    <td><div class="bar"><div class="fill" style="width:83%"></div><span>83%</span></div></td>
+    <td class="num">+83%</td>
+    <td class="num">12</td><td class="mono">2026-09-14</td></tr><tr>
+    <td><strong>المقر الرئيسي / Master HQ</strong><br><span class="muted mono">master</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">1</td>
+    <td><div class="bar"><div class="fill" style="width:70%"></div><span>70%</span></div></td>
+    <td class="num">+70%</td>
+    <td class="num">2</td><td class="mono">2026-09-12</td></tr><tr>
+    <td><strong>عرب بنك / لوحة التشغيل</strong><br><span class="muted mono">arabbank</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">2</td>
+    <td><div class="bar"><div class="fill" style="width:46%"></div><span>46%</span></div></td>
+    <td class="num">+46%</td>
+    <td class="num">61</td><td class="mono">2026-09-14</td></tr><tr>
+    <td><strong>المتحكم الهندسي</strong><br><span class="muted mono">controlling-ai</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">2</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>وثيقة</strong><br><span class="muted mono">wathiqa</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">2</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>المصانع</strong><br><span class="muted mono">factories</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">3</td>
+    <td><div class="bar"><div class="fill" style="width:85%"></div><span>85%</span></div></td>
+    <td class="num">+85%</td>
+    <td class="num">7</td><td class="mono">2026-09-14</td></tr><tr>
+    <td><strong>site-creator-vinext-starter</strong><br><span class="muted mono">site-creator-vinext-starter</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">3</td>
+    <td><div class="bar"><div class="fill" style="width:78%"></div><span>78%</span></div></td>
+    <td class="num">+78%</td>
+    <td class="num">11</td><td class="mono">2026-09-13</td></tr><tr>
+    <td><strong>Belt</strong><br><span class="muted mono">belt</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">3</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">1</td><td class="mono">2026-09-12</td></tr><tr>
+    <td><strong>AI_Pro</strong><br><span class="muted mono">aipro</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">3</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>dashboard</strong><br><span class="muted mono">dashboard</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">3</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>mahdi-hreeaf</strong><br><span class="muted mono">mahdi-hreeaf</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">3</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>gandalf</strong><br><span class="muted mono">gandalf</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">3</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>apccasystems.com</strong><br><span class="muted mono">apccasystemscom</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">3</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>APCA-SmartHelp</strong><br><span class="muted mono">apca-smarthelp</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">3</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>MyTasks</strong><br><span class="muted mono">mytasks</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">3</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>esolutionsv</strong><br><span class="muted mono">esolutionsv</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">3</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>smart-agent-hub</strong><br><span class="muted mono">smart-agent-hub</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">3</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>the-farm-dairy</strong><br><span class="muted mono">the-farm-dairy</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">3</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>jitan-group</strong><br><span class="muted mono">jitan-group</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">3</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>gepico</strong><br><span class="muted mono">gepico</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">3</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>rz-packaging</strong><br><span class="muted mono">rz-packaging</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">3</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>chatbase</strong><br><span class="muted mono">chatbase</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">3</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>crf-audit</strong><br><span class="muted mono">crf-audit</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">3</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>arc_solver_web</strong><br><span class="muted mono">arcsolverweb</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">3</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>nour-industrial-ai</strong><br><span class="muted mono">nour-industrial-ai</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">3</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>al-majjarra</strong><br><span class="muted mono">al-majjarra</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">3</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>AlMara3i</strong><br><span class="muted mono">almara3i</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">3</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>attmp</strong><br><span class="muted mono">attmp</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">3</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>banoon-kids</strong><br><span class="muted mono">banoon-kids</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">3</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>albayrouty</strong><br><span class="muted mono">albayrouty</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">3</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>arc_prize_2026</strong><br><span class="muted mono">arcprize2026</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">3</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>rctc-skill</strong><br><span class="muted mono">rctc-skill</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">3</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>zaha-almajali</strong><br><span class="muted mono">zaha-almajali</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">3</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>khudhni</strong><br><span class="muted mono">khudhni</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">3</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>ghayari</strong><br><span class="muted mono">ghayari</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">3</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>project-iso</strong><br><span class="muted mono">project-iso</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">3</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>apcasystems</strong><br><span class="muted mono">apcasystems</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">3</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>Muqasa-Jo</strong><br><span class="muted mono">muqasa-jo-2</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">3</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>Muqasa-Jo</strong><br><span class="muted mono">muqasa-jo</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">3</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>nextn</strong><br><span class="muted mono">nextn</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">3</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>bug_bounty_12w</strong><br><span class="muted mono">bugbounty12w</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">3</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>أكاديمية أبكا لمهارات وسلامة الذكاء الاصطناعي الصناعي</strong><br><span class="muted mono">giz-apca-industrial-ai</span></td>
+    <td><span class="badge" style="--c:#60a5fa">مفتوح</span></td><td class="num">—</td>
+    <td><div class="bar"><div class="fill" style="width:85%"></div><span>85%</span></div></td>
+    <td class="num">+85%</td>
+    <td class="num">2</td><td class="mono">2026-09-14</td></tr><tr>
+    <td><strong>براءة الشوبكي</strong><br><span class="muted mono">bara-ah-alshobaki</span></td>
+    <td><span class="badge" style="--c:#f59e0b">بانتظار ردّك</span></td><td class="num">2</td>
+    <td><div class="bar"><div class="fill" style="width:92%"></div><span>92%</span></div></td>
+    <td class="num">+92%</td>
+    <td class="num">3</td><td class="mono">2026-09-13</td></tr><tr>
+    <td><strong>flutter_sms_gateway</strong><br><span class="muted mono">fluttersmsgateway</span></td>
+    <td><span class="badge" style="--c:#6b7280">سكون</span></td><td class="num">5</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>نظام الجودة (QMS) — مجمّد</strong><br><span class="muted mono">saqrandrakan</span></td>
+    <td><span class="badge" style="--c:#6b7280">سكون</span></td><td class="num">5</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr><tr>
+    <td><strong>flutter_app</strong><br><span class="muted mono">flutterapp</span></td>
+    <td><span class="badge" style="--c:#6b7280">سكون</span></td><td class="num">5</td>
+    <td><div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></td>
+    <td class="num">0%</td>
+    <td class="num">0</td><td class="mono">2026-09-10</td></tr></tbody></table>
+  
+    <h2 class="group">مفتوح <span class="muted">(42)</span></h2>
+    
+    <section class="project">
+      <header>
+        <div><h3>ذكاء التجارة — Project1 <span class="muted mono">project1-commerce-intelligence</span></h3>
+        <p class="desc">المشروع الافتراضي للتواصل عبر ماستر برين وواجهة Next.js على المنفذ 3002. Dry Run: buyHalt=true، لا نشر حيّ.</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 1</span> <div class="bar"><div class="fill" style="width:83%"></div><span>83%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">✓ ما تم إنجازه <span class="muted">(3)</span></div><ul><li>Public bilingual landing + owner console theme/locale (AR RTL, EN LTR, light/dark). Master page RCTC template. Kill-switch UI cannot emit buyHalt:false. <span class="muted mono small">2026-09-10</span></li><li>Low-cost pack local loop: CSV preview/validate, ops pricing fixture, local draft statuses, TEMPLATE copy. Evidence: pnpm test 40/40, pnpm prove:csv. buyHalt true. HANDOFF for Claude: docs/brain/LOW_COST_HANDOFF.md. <span class="muted mono small">2026-09-11</span></li><li>Owner Readiness Center (Pack V2 S1): dynamic OwnerTasks from DB/connectors/quotes; UI on /overview and /readiness; POST /api/readiness/recheck with same-origin; docs/brain/READINESS_CENTER.md. Evidence: pnpm test 49/49, pnpm prove:readiness. <span class="muted mono small">2026-09-13</span></li></ul></div><div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>package.json name=project1-commerce-intelligence version=0.1.0 | README.md excerpt: # Project1 Commerce Intelligence منصة تشغيل خاصة. المستودع: **https://github.com/kazoya/Project1** (خاص على حساب kazoya). التوثيق الحي في `docs/brain/`. تقرير حلقة المحاكاة: `docs/brain/COMMERCE_LOOP.md`. قيود ثابتة: `buyHalt=true`، لا شراء حي، لا إجراء مدفوع، لا كتابة للأسواق بل | AGENTS.md present (600 chars excerpted). | git repository present <span class="muted mono small">2026-09-10</span></li></ul></div><div class="sec"><div class="sec-t">◐ ما نعمل عليه حالياً <span class="muted">(1)</span></div><ul><li>Master Brain command channel being wired at /master with requireOwner (NextAuth OWNER_EMAIL). <span class="muted mono small">2026-09-10</span></li></ul></div><div class="sec"><div class="sec-t">▹ الخطوات التالية <span class="muted">(2)</span></div><ul><li>Owner: put eBay App ID / Cert ID in .env.local then reply `ebay app ids in .env.local`. Keep buyHalt on. <span class="muted mono small">2026-09-10</span></li><li>S2: Discovery topN by category — SavedSearch/DiscoveryRun over existing DiscoveryConfig; one allowed source + CSV; no fake sales ranks; wire filters into readiness task discovery.category_or_market_missing. <span class="muted mono small">2026-09-13</span></li></ul></div><div class="sec"><div class="sec-t">✦ مقترحات النماذج (Claude / Opus / Fable…) <span class="muted">(5)</span></div><ul><li>Keep Command Center on /master and commerce docs on /brain so the two minds stay separate. <span class="badge model" style="--c:#60a5fa">كلود سونيت</span> <span class="muted mono small">2026-09-10</span></li><li>Add Origin/CSRF checks on owner JSON writes (kill-switch, jobs) without lifting buyHalt. <span class="badge model" style="--c:#c8ad73">كلود فابل</span> <span class="muted mono small">2026-09-10</span></li><li>When posting from Cursor into the collab room, always run pnpm collab list first so ChatGPT/Claude pastes stay in order. <span class="badge model" style="--c:#c8ad73">كلود فابل</span> <span class="muted mono small">2026-09-11</span></li><li>When committing quote CSV, look up ProductCandidate by exact csv: dedup source instead of contains(candidateId) so DEMO-001 cannot match DEMO-0010. <span class="badge model" style="--c:#c8ad73">كلود فابل</span> <span class="muted mono small">2026-09-11</span></li><li>Next revenue gate (still blocked by policy): Production eBay MAD exemption/endpoint, seller account OAuth, explicit owner lift of buyHalt + spend cap &gt; 0, and a non-Shein/Temu supplier with real shipping. Until then keep iterating SANDBOX discovery → quote CSV → LOCAL_READY → simulate-buy only. <span class="badge model" style="--c:#c8ad73">كلود فابل</span> <span class="muted mono small">2026-09-14</span></li></ul></div><div class="sec"><div class="sec-t">≡ القيود والقواعد <span class="muted">(1)</span></div><ul><li>buyHalt=true. Simulation / dry-run only. Do not lift buyHalt. Do not live-publish. eBay keys only in .env.local; never print them. <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(12)</span></h4>
+          <table class="entries"><thead><tr><th>التاريخ</th><th>النوع</th><th>العنوان</th><th>التقدّم</th><th>النموذج</th></tr></thead><tbody>
+          <tr><td class="mono">2026-09-14 16:19</td><td>↗ تقدّم</td><td><strong>Google×Discovery owner zip pack</strong><div class="body">Created owner zip pack focused on Google login vs discovery honesty:<br>`docs/Project1_Google_Login_And_Discovery_Pack.zip` (~32KB)<br>Folder: `docs/owner-google-discovery-pack/`<br>Key message documented: Google = owner identity only; eBay Browse = POPULARITY_SIGNAL; not automatic bestsellers via Google.</div></td><td class="num">83%</td><td><span class="badge model" style="--c:#c8ad73">كلود فابل</span></td></tr><tr><td class="mono">2026-09-14 13:40</td><td>✦ إنجاز رئيسي</td><td><strong>Sim loop LOCAL_READY + simulated purchase</strong><div class="body">## Completed sim loop (buyHalt stays true)<br>1. Costs: dutyStatus=INCLUDED + shipping on `sim-product-usb`; match CONFIRMED; imageUseAllowed=true<br>2. Pricing ops: variableCost=870 → markupFloor≈1228.8 / marginFloor≈1339.08 (sim units)<br>3. Local draft status: **LOCAL_READY** (marketplaceWrite=false)<br>4. Simulated purchase: **ok** (purchaseId created, dataPlane=SIMULATION) after liquidity unlock<br>5. Quote CSV by product id now works (`findCandidateForQuote` exact id + csv externalId)<br>6. Readiness: connectionsVerified=1; image null offers cleared<br><br>Still not live money: Production eBay disabled; buyHalt; no marketplace write.</div></td><td class="num">82%</td><td><span class="badge model" style="--c:#c8ad73">كلود فابل</span></td></tr><tr><td class="mono">2026-09-14 13:30</td><td>↗ تقدّم</td><td><strong>Local draft after eBay — costs incomplete</strong><div class="body">Created TEMPLATE content + local listing draft for `sim-product-usb` (USB-C Hub). Draft status `COSTS_INCOMPLETE` — needs complete supplier quote (shipping not empty). Still simulation only; marketplaceWrite=false.</div></td><td class="num">76%</td><td><span class="badge model" style="--c:#c8ad73">كلود فابل</span></td></tr><tr><td class="mono">2026-09-14 13:29</td><td>✦ إنجاز رئيسي</td><td><strong>eBay Sandbox verified — discovery filters saved</strong><div class="body">## Done<br>- Root cause: UI/DB connector had empty/wrong encrypted creds while `.env.local` SBX keys were valid.<br>- Synced sandbox App/Cert from env into `ConnectorAccount`; probe → `SANDBOX_VERIFIED` (Browse returned 3 items).<br>- Live `/api/connectors/search` eBay returned HTTP 200.<br>- Saved DiscoveryConfig: accessories / US / JO / topN=10.<br>- Readiness recheck: eBay probe task VERIFIED; discovery.category_or_market_missing VERIFIED; open HUMAN tasks = 0.<br>- Production keyset remains disabled (MAD notifications) — not blocking sandbox.<br><br>## Honesty<br>- `buyHalt=true`, `marketplaceWrite=false`. Project cannot earn live marketplace money by itself under current policy.<br>- Next sim path: supplier quote → deterministic price → TEMPLATE content → local draft → simulated order.<br><br>## Evidence<br>- probe status SANDBOX_VERIFIED; readiness snapshot tasks verified for ebay.probe_failed and discovery.filters.</div></td><td class="num">75%</td><td><span class="badge model" style="--c:#c8ad73">كلود فابل</span></td></tr><tr><td class="mono">2026-09-13 01:04</td><td>↗ تقدّم</td><td><strong>S1 hardened S2 S3 started</strong><div class="body">Hardened S1 Postgres persistence+lock; S2 discovery topN; S3 research platforms+RFQ draft unsent. Vitest 52/52. prove:readiness ok. UI owner e2e NOT_RUN. Claude/Codex unavailable this turn. buyHalt true.</div></td><td class="num">70%</td><td><span class="badge model" style="--c:#c8ad73">كلود فابل</span></td></tr><tr><td class="mono">2026-09-13 00:56</td><td>↗ تقدّم</td><td><strong>Readiness center S1 delivered</strong><div class="body">S1 Owner Readiness Center shipped: /overview+/readiness, dynamic tasks from real checks, dedupeKey merge, buyHalt informational. Vitest 49/49, prove:readiness ok. No live buy/publish. Next: S2 discovery topN by category.</div></td><td class="num">66%</td><td><span class="badge model" style="--c:#c8ad73">كلود فابل</span></td></tr><tr><td class="mono">2026-09-13 00:38</td><td>↗ تقدّم</td><td><strong>AI handoff zip pack for other models</strong><div class="body">Created docs/ai-handoff-pack + zip Project1_AI_Handoff_Full_Pack.zip for sending to any AI: goal, detailed mechanism, capabilities, done/blocked/next, file map, plus brain/low-cost/collaboration copies. No secrets.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#c8ad73">كلود فابل</span></td></tr><tr><td class="mono">2026-09-11 14:41</td><td>↗ تقدّم</td><td><strong>Claude review gaps patched on CSV loop</strong><div class="body">Claude Code Reviewer PASS WITH GAPS on CSV slice. Patched G1 exact externalId match, G2 seller duty amount, G3 feeSource, G4 negative rates. Vitest 43/43, prove:csv ok. buyHalt true.</div></td><td class="num">63%</td><td><span class="badge model" style="--c:#c8ad73">كلود فابل</span></td></tr><tr><td class="mono">2026-09-11 14:34</td><td>↗ تقدّم</td><td><strong>Low-cost CSV pricing local preview</strong><div class="body">Implemented pack CSV preview/commit, ops economics (without mutating computeFloor), local listing draft with marketplaceWrite=false, TEMPLATE content, budget board cap 0. Vitest 40/40. pnpm prove:csv ok. buyHalt unchanged. DB commit path unverified. Claude review pending via HANDOFF docs/brain/LOW_COST_HANDOFF.md.</div></td><td class="num">62%</td><td><span class="badge model" style="--c:#c8ad73">كلود فابل</span></td></tr><tr><td class="mono">2026-09-11 12:18</td><td>↗ تقدّم</td><td><strong>Three-agent collab bridge with failover</strong><div class="body">Three-agent collaboration room (cursor, chatgpt, claude) with quota failover, following AgentCollaborationBridge JSON log method. UI on /master, CLI pnpm collab, master prompts in docs/collaboration. buyHalt unchanged.</div></td><td class="num">58%</td><td><span class="badge model" style="--c:#c8ad73">كلود فابل</span></td></tr><tr><td class="mono">2026-09-10 21:59</td><td>✦ إنجاز رئيسي</td><td><strong>Global luxury AR/EN console UI</strong><div class="body">Luxury bilingual console: public / landing, AR/EN cookie, light/dark theme tokens, RCTC command placeholder on /master, skills catalog excerpt. buyHalt unchanged. Vitest 28/28. Playwright 4/4 (landing public, overview→login, health 403, liveness 200). Hostile UI review PASS (Opus): no lift-halt findings. Browser MCP unavailable this session; HTTP+Playwright used.</div></td><td class="num">55%</td><td><span class="badge model" style="--c:#c8ad73">كلود فابل</span></td></tr><tr><td class="mono">2026-09-10 15:10</td><td>✦ إنجاز رئيسي</td><td><strong>Master Brain registered as default</strong><div class="body">Platform installed at C:\master-brain. This repo is the default project (priority 1). Command UI will live at /master behind ownerSession.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#d97757">كلود (عام)</span></td></tr>
+          </tbody></table>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>المقر الرئيسي / Master HQ <span class="muted mono">master</span></h3>
+        <p class="desc">المقر الرئيسي للتعاون بين Cursor وClaude Code وCodex وChatGPT: Cursor مدير التنفيذ، Claude Code عمق الكود، الباقي صور وتحسين وإدارة مكتب.</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 1</span> <div class="bar"><div class="fill" style="width:70%"></div><span>70%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">✓ ما تم إنجازه <span class="muted">(2)</span></div><ul><li>مقر C:\master مسجّل في ماستر برين (id=master). جسر التعاون يعمل على 127.0.0.1:4560. الأدوار: Cursor مدير/منفّذ، Claude Code كود، Codex وثائق، ChatGPT صور ومكتب. المنصة الأصلية بقيت في C:\master-brain دون نسخ ثانية. <span class="muted mono small">2026-09-12</span></li><li>طُبّقت تحسينات Claude Code: مخزن رسائل واحد، تحقق حقل to مع inbox، اتفاقية CLAIM/RELEASE وسكربت claims.ps1. <span class="muted mono small">2026-09-12</span></li></ul></div><div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>ثلاث نسخ من حزمة الجسر تعني ثلاثة مخازن إن لم يُضبط ACB_HOME. جلسة Claude Code xhigh نفّذت مراجعة فقط ثم نفّذ Cursor الدمج. <span class="muted mono small">2026-09-12</span></li></ul></div><div class="sec"><div class="sec-t">◐ ما نعمل عليه حالياً <span class="muted">(1)</span></div><ul><li>جسر حي. بانتظار مراجعة Claude Code لـ files/claude-code-review.md ورد from=claude في السجل. <span class="muted mono small">2026-09-12</span></li></ul></div><div class="sec"><div class="sec-t">▹ الخطوات التالية <span class="muted">(1)</span></div><ul><li>افتح C:\master في Cursor وClaude Code وCodex. استخدم prompts/chatgpt/MASTER_PROMPT.md للصور. اقرأ الجسر قبل كل مهمة. <span class="muted mono small">2026-09-12</span></li></ul></div><div class="sec"><div class="sec-t">✦ مقترحات النماذج (Claude / Opus / Fable…) <span class="muted">(1)</span></div><ul><li>اكتب config.json للجسر بـ UTF-8 بلا BOM (Node JSON.parse يفشل مع BOM فيبدأ الوكلاء الافتراضيون بدون cursor). <span class="badge model" style="--c:#9ca3af">أخرى</span> <span class="muted mono small">2026-09-12</span></li></ul></div><div class="sec"><div class="sec-t">◆ القرارات المعتمدة <span class="muted">(1)</span></div><ul><li>Cursor Auto هو المدير والمنفّذ. Claude Code أعمق مراجعة كود. Codex وChatGPT استشارة وتحسين وصور وإدارة مكتب. لا تُنسخ منصة Master Brain إلى C:\master حتى لا يتصادم المنفذ 4545. <span class="muted mono small">2026-09-12</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(2)</span></h4>
+          <table class="entries"><thead><tr><th>التاريخ</th><th>النوع</th><th>العنوان</th><th>التقدّم</th><th>النموذج</th></tr></thead><tbody>
+          <tr><td class="mono">2026-09-12 17:06</td><td>↗ تقدّم</td><td><strong>Applied Claude T1-T3 on live bridge</strong><div class="body">Applied Claude Code review T1-T3: canonical store C:\master\bridge via ACB_HOME, to-validation + inbox CLI, CLAIM/RELEASE + claims.ps1. Live collaboration at http://127.0.0.1:4560. Status returning to open.</div></td><td class="num">70%</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 17:00</td><td>✦ إنجاز رئيسي</td><td><strong>Master HQ workspace and collaboration bridge</strong><div class="body">Created C:\master as Master HQ. Installed Agent Collaboration Bridge on 127.0.0.1:4560 with agents cursor/claude/codex/chatgpt/human. Did not duplicate C:\master-brain. Posted first Cursor director message. Dispatching Claude Code for a bounded architecture review.</div></td><td class="num">45%</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr>
+          </tbody></table>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>عرب بنك / لوحة التشغيل <span class="muted mono">arabbank</span></h3>
+        <p class="desc">اكتُشف من aider+claude+codex+cursor+vscode — C:\ArabBank</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 2</span> <div class="bar"><div class="fill" style="width:46%"></div><span>46%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">✓ ما تم إنجازه <span class="muted">(2)</span></div><ul><li>ملف مستقل kazoyan محفوظ: مهندس برمجيات + نبذة Laravel/Next.js/Node + 10 مهارات. سيرة بعيد على /u/suhib_asrawi محدّثة بنفس التقنيات. <span class="muted mono small">2026-09-11</span></li><li>طرفية mintty لـ Claude Code بعربي مقروء (Bidi=2 + winpty + Simplified Arabic Fixed). المشغّل: files/arabic-terminal/Open-ArabicClaude.ps1 <span class="muted mono small">2026-09-12</span></li></ul></div><div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(23)</span></div><ul><li>2026-09-12 15:49Z: v16 still 1386.7; v15 bounced 1429.1\to1433.2. HOLD no v17. <span class="muted mono small">2026-09-12</span></li><li>2026-09-12 16:41Z: v16 still 1389.3; v15 decayed 1433.2\to1426.3. HOLD no v17. <span class="muted mono small">2026-09-12</span></li><li>2026-09-12 17:14Z: v16 still 1384.6; v15 bounced 1426.3\to1430.5. HOLD no v17. <span class="muted mono small">2026-09-12</span></li><li>2026-09-12 17:49Z Kaggriculture v16 1384.6→1381.7 decay. v15 1430.5 unchanged. HOLD no v17. <span class="muted mono small">2026-09-12</span></li><li>2026-09-12 18:24Z Kaggriculture v15 1430.5→1434.3 bounce. v16 1381.7 unchanged. HOLD no v17. <span class="muted mono small">2026-09-12</span></li><li>2026-09-12 19:39Z Kaggriculture v16 1381.7→1385.6 bounce. v15 1434.3 unchanged. HOLD no v17. <span class="muted mono small">2026-09-12</span></li><li>2026-09-12 19:38Z Kaggriculture v16 1381.7→1385.6 bounce. v15 1434.3 unchanged. HOLD no v17. <span class="muted mono small">2026-09-12</span></li><li>2026-09-12 20:24Z abort recover: v16 still 1385.6; v15 bounced 1434.3	o1435.3. HOLD no v17. <span class="muted mono small">2026-09-12</span></li><li>2026-09-12 20:28Z Kaggriculture v16 1385.6 unchanged; v15 1434.3→1435.3 bounce. HOLD no v17. <span class="muted mono small">2026-09-12</span></li><li>2026-09-12 21:18Z abort recover: v16 still 1385.6; v15 bounced 1435.3	o1439.2. HOLD no v17. <span class="muted mono small">2026-09-13</span></li><li>2026-09-12 21:28Z Kaggriculture v16 1385.6 unchanged; v15 1435.3→1439.2 bounce. HOLD no v17. <span class="muted mono small">2026-09-13</span></li><li>2026-09-12 21:33Z abort recover: v16 bounced 1385.6	o1390.3; v15 still 1439.2. HOLD no v17. <span class="muted mono small">2026-09-13</span></li></ul></div><div class="sec"><div class="sec-t">◐ ما نعمل عليه حالياً <span class="muted">(57)</span></div><ul><li>v16 1384.6 / v15 1430.5 HOLD no v17. Watcher 44580 UntilNotMatch 1384.6 ALIVE. 30m loop re-armed 17:14Z. Highest remaining EV still HUMAN_GATE: komoju C ready or identity tab ready. <span class="muted mono small">2026-09-12</span></li><li>Kaggriculture displayed v16 1381.7 / v15 1430.5. Watcher UntilNotMatch 1381.7 PID 27784. HOLD no v17. 30m this-chat re-armed after abort. <span class="muted mono small">2026-09-12</span></li><li>Kaggriculture displayed v16 1381.7 / v15 1434.3. Watcher UntilNotMatch 1381.7 PID 27784. HOLD no v17. 30m this-chat re-armed after abort. <span class="muted mono small">2026-09-12</span></li><li>Kaggriculture displayed v16 1385.6 / v15 1434.3. Watcher UntilNotMatch 1385.6. HOLD no v17. 30m this-chat re-armed after abort. <span class="muted mono small">2026-09-12</span></li><li>Kaggriculture displayed v16 1385.6 / v15 1434.3. Watcher re-armed UntilNotMatch 1385.6. HOLD no v17. 30m loop pid 26408 ALIVE. <span class="muted mono small">2026-09-12</span></li><li>30m tick: Kaggriculture v16 1385.6 unchanged / v15 1434.3 unchanged. HOLD no v17. Watcher 1385.6 and 30m loop alive. <span class="muted mono small">2026-09-12</span></li><li>Kaggriculture displayed v16 1385.6 / v15 1435.3. Watcher UntilNotMatch 1385.6 PID 10448. HOLD no v17. 30m this-chat re-armed after abort. <span class="muted mono small">2026-09-12</span></li><li>30m tick: Kaggriculture v16 1385.6 unchanged / v15 1435.3 (bounce from 1434.3). HOLD no v17. Watcher 1385.6 and 30m loop alive. <span class="muted mono small">2026-09-12</span></li><li>30m tick: Kaggriculture v16 1385.6 unchanged / v15 1435.3 unchanged. HOLD no v17. Watcher 1385.6 and 30m loop alive. <span class="muted mono small">2026-09-12</span></li><li>Kaggriculture displayed v16 1385.6 / v15 1439.2. Watcher UntilNotMatch 1385.6 PID 10448. HOLD no v17. 30m this-chat re-armed after abort. <span class="muted mono small">2026-09-13</span></li><li>30m tick: Kaggriculture v16 1385.6 unchanged / v15 1439.2 (bounce from 1435.3). HOLD no v17. Watcher 1385.6 and 30m loop alive. <span class="muted mono small">2026-09-13</span></li><li>Kaggriculture displayed v16 1390.3 / v15 1439.2. Watcher re-armed UntilNotMatch 1390.3. HOLD no v17. 30m this-chat re-armed after abort. <span class="muted mono small">2026-09-13</span></li></ul></div><div class="sec"><div class="sec-t">▹ الخطوات التالية <span class="muted">(1)</span></div><ul><li>HUMAN_GATE: تأكيد جوال مستقل/حسوب، توثيق الهوية، ترقية خطة مستقل. لا ترفع هوية ولا تضغط تفعيل OTP. <span class="muted mono small">2026-09-11</span></li></ul></div><div class="sec"><div class="sec-t">⊘ العوائق <span class="muted">(1)</span></div><ul><li>توثيق الهوية وتأكيد الجوال على حسوب/مستقل يحتاجان OTP ووثائق من المشغّل. اسم مستخدم بعيد KAZOYA محجوز. <span class="muted mono small">2026-09-11</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(61)</span></h4>
+          <table class="entries"><thead><tr><th>التاريخ</th><th>النوع</th><th>العنوان</th><th>التقدّم</th><th>النموذج</th></tr></thead><tbody>
+          <tr><td class="mono">2026-09-14 16:08</td><td>↗ تقدّم</td><td><strong>Bugcrowd live ranking + 6h watch</strong><div class="body">Fetched Bugcrowd public engagements page 1 (278 total). Wrote live ranking ranked_programs_live_20260914.md. Top EV: Bitso, Blockchain.com, LaunchDarkly, Zendesk, OpenAI Safety, Fireblocks. Prior submissions already exist for Bitdefender + LaunchDarkly (2026-06-26). Armed watch-bugcrowd.ps1 every 6h.<br><br>HUMAN_GATE: operator picks ONE program for intake/scope lock before any testing. Suggested replies: `bugcrowd pick Bitso` / `bugcrowd pick Fireblocks` / `bugcrowd pick HostGator LATAM`.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-13 00:34</td><td>↗ تقدّم</td><td><strong>Abort recover v16 1390.3 bounce</strong><div class="body">30m this-chat loop aborted ~21:31Z (~2m). Recovered once. Stale watcher PID 10448 UntilNotMatch 1385.6 stopped.<br><br>Live tick 2026-09-12T21:33:30Z: v16 1385.6\to1390.3 bounce (ref 56011909). v15 1439.2 unchanged. HOLD no v17.<br><br>0926 HTTP 503. RAM 0.35 GB — no LightGBM. Other session claimed 30m PID 26408 ALIVE at 21:28Z; this-chat loop was aborted.<br><br>Re-arm UntilNotMatch 1390.3 + 30m loop once.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-13 00:29</td><td>↗ تقدّم</td><td><strong>30m tick v15 1439.2 bounce</strong><div class="body">30m tick 2026-09-12T21:28:33Z. v16 1385.6 unchanged. v15 1435.3\to1439.2 bounce. HOLD no v17.<br><br>0926 SSL fail. RAM 0.86 GB — no LightGBM. Owner inbox empty. Watcher PID 10448 UntilNotMatch 1385.6 ALIVE. 30m loop PID 26408 ALIVE — do not stack.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-13 00:18</td><td>↗ تقدّم</td><td><strong>Abort recover v15 1439.2 bounce</strong><div class="body">30m this-chat loop aborted ~21:17Z (~12m). Recovered once. Watcher PID 10448 UntilNotMatch 1385.6 ALIVE — do not stack.<br><br>Live tick 2026-09-12T21:18:23Z: v16 1385.6 unchanged. v15 1435.3\to1439.2 bounce (ref 55975727). HOLD no v17.<br><br>0926 HTTP 503. RAM 0.31 GB — no LightGBM. Re-armed 30m loop once.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 23:58</td><td>↗ تقدّم</td><td><strong>30m tick v16 1385.6 unchanged</strong><div class="body">30m tick 2026-09-12T20:57:50Z. LIVE unchanged v16 1385.6 / v15 1435.3. HOLD no v17.<br><br>0926 SSL fail. RAM 0.87 GB — no LightGBM. Owner inbox empty. Watcher PID 10448 UntilNotMatch 1385.6 ALIVE. 30m loop PID 26408 ALIVE — do not stack.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 23:29</td><td>↗ تقدّم</td><td><strong>30m tick v15 1435.3 bounce</strong><div class="body">30m tick 2026-09-12T20:27:51Z. v16 1385.6 unchanged. v15 1434.3\to1435.3 bounce. HOLD no v17.<br><br>0926 SSL fail. RAM 1.44 GB — no LightGBM. Owner inbox empty. Watcher PID 10448 UntilNotMatch 1385.6 ALIVE. 30m loop PID 26408 ALIVE — do not stack.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 23:25</td><td>↗ تقدّم</td><td><strong>Abort recover v15 1435.3 bounce</strong><div class="body">30m this-chat loop aborted ~20:19Z (~4m). Recovered once. Watcher PID 10448 UntilNotMatch 1385.6 ALIVE — do not stack.<br><br>Live tick 2026-09-12T20:24:16Z: v16 1385.6 unchanged. v15 1434.3\to1435.3 bounce (ref 55975727). HOLD no v17.<br><br>0926 HTTP 503. RAM 0.59 GB — no LightGBM. Re-armed 30m loop once.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 22:58</td><td>↗ تقدّم</td><td><strong>30m tick v16 1385.6 unchanged</strong><div class="body">30m tick 2026-09-12T19:58:03Z. LIVE unchanged v16 1385.6 / v15 1434.3. HOLD no v17.<br><br>0926 SSL fail. RAM 0.46 GB — no LightGBM. Owner inbox empty. Watcher PID 10448 UntilNotMatch 1385.6 ALIVE. 30m loop PID 26408 ALIVE — do not stack.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 22:40</td><td>↗ تقدّم</td><td><strong>Watcher v16 1385.6 bounce</strong><div class="body">Score watcher fired 2026-09-12T19:38:34Z. Live tick 2026-09-12T19:38:57Z: v16 1381.7\to1385.6 bounce (ref 56011909). v15 1434.3 unchanged. HOLD no v17.<br><br>0926 SSL trust fail. RAM ~1 GB — no LightGBM. Owner inbox empty. 30m loop PID 26408 ALIVE — do not stack.<br><br>Re-arm UntilNotMatch 1385.6.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 22:39</td><td>↗ تقدّم</td><td><strong>Abort recover 19:39Z v16 1385.6 bounce</strong><div class="body">30m this-chat loop aborted ~19:38Z (~4m). Recovered once. Stale watcher PID 27784 UntilNotMatch 1381.7 is dead (likely fired on bounce) — do not stack.<br><br>Live tick 2026-09-12T19:39:11Z: v16 1381.7\to1385.6 bounce. v15 1434.3 unchanged. HOLD no v17. 0926 HTTP 503. RAM 0.88 GB — no LightGBM.<br><br>Re-armed UntilNotMatch 1385.6 + 30m loop once.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 21:24</td><td>↗ تقدّم</td><td><strong>Abort recover 18:24Z v15 1434.3 bounce</strong><div class="body">30m this-chat loop aborted ~18:22Z (~2m). Recovered once. Watcher PID 27784 UntilNotMatch 1381.7 kept — v16 unchanged, do not stack.<br><br>Live tick 2026-09-12T18:24:10Z: v16 1381.7 unchanged. v15 1430.5\to1434.3 bounce. HOLD no v17. 0926 HTTP 503. RAM 1.07 GB — no LightGBM.<br><br>Re-armed 30m loop once.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 20:49</td><td>↗ تقدّم</td><td><strong>Abort recover 17:49Z v16 1381.7 decay</strong><div class="body">30m this-chat loop aborted ~17:46Z (~2m). Recovered once. Parallel already re-armed watcher PID 27784 UntilNotMatch 1381.7 — do not stack.<br><br>Live tick 2026-09-12T17:49:08Z: v16 1384.6\to1381.7 decay. v15 1430.5 unchanged. HOLD no v17. 0926 HTTP 503. RAM 0.40 GB — no LightGBM.<br><br>Other session claimed 30m PID 26408 ALIVE (wrapper). This-chat while(1) was aborted — re-armed 30m once.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 20:14</td><td>↗ تقدّم</td><td><strong>Abort recover 17:14Z v15 1430.5 bounce</strong><div class="body">30m loop aborted ~17:13Z (~3m). Recovered once. Watcher 44580 kept.<br><br>Live tick 2026-09-12T17:14:08Z: v16 1384.6 (decay already logged 17:12Z). v15 1426.3\to1430.5 bounce. HOLD no v17. 0926 HTTP 503. RAM 1.01 GB — no LightGBM.<br><br>Re-armed 30m loop once. Do not stack watcher.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 19:41</td><td>↗ تقدّم</td><td><strong>Abort recover 16:41Z v15 1426.3</strong><div class="body">30m loop aborted ~16:39Z (~3m). Recovered once. Watcher 34628 kept.<br><br>Live tick 2026-09-12T16:41:03Z: v16 1389.3 unchanged. v15 1433.2\to1426.3 decay. HOLD no v17. 0926 HTTP 503. RAM 0.60 GB — no LightGBM.<br><br>Re-armed 30m loop once. Do not stack watcher.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 18:49</td><td>↗ تقدّم</td><td><strong>Abort recover 15:49Z v15 1433.2 bounce</strong><div class="body">30m loop aborted ~15:44Z (~4m). Recovered once. Watcher 45272 kept.<br><br>Live tick 2026-09-12T15:49:08Z: v16 1386.7 unchanged. v15 1429.1\to1433.2 bounce. HOLD no v17. 0926 HTTP 503. RAM 0.33 GB — no LightGBM.<br><br>Re-armed 30m loop once. Do not stack watcher.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 18:05</td><td>↗ تقدّم</td><td><strong>Abort recover 15:04Z v16 1386.7</strong><div class="body">30m loop aborted ~15:04Z (~5m). Recovered once.<br><br>Live tick 2026-09-12T15:04:07Z: v16 1389.5\to1386.7 decay. v15 1429.1 unchanged. HOLD no v17. 0926 HTTP 503. RAM 0.48 GB — no LightGBM.<br><br>Stopped stale UntilNotMatch 1389.5 PID 32200. Re-armed UntilNotMatch 1386.7 + 30m loop once.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 17:54</td><td>↗ تقدّم</td><td><strong>Abort recover 14:54Z v15 1429.1</strong><div class="body">30m loop aborted ~14:53Z (~4m). Recovered once. Watcher 25708 kept.<br><br>Live tick 2026-09-12T14:54:07Z: v16 1392.8 unchanged. v15 1432.8\to1429.1 decay. HOLD no v17. 0926 HTTP 503. RAM 0.77 GB — no LightGBM.<br><br>Re-armed 30m loop once. Do not stack watcher.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 17:44</td><td>↗ تقدّم</td><td><strong>Abort recover 14:44Z v15 1432.8</strong><div class="body">30m loop aborted ~14:43Z (~4m). Recovered once. Watcher 25708 kept.<br><br>Live tick 2026-09-12T14:44:05Z: v16 1392.8 unchanged. v15 1435.3\to1432.8 decay. HOLD no v17. 0926 HTTP 503. RAM 0.98 GB — no LightGBM.<br><br>Re-armed 30m loop once. Do not stack watcher.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 16:21</td><td>↗ تقدّم</td><td><strong>Abort recover 13:20Z v15 1435.3</strong><div class="body">30m loop aborted ~13:19Z (~2.7m). Recovered once. Watcher 25708 kept.<br><br>Live tick 2026-09-12T13:20:49Z: v16 1392.8 unchanged. v15 1437.9	o1435.3 decay. HOLD no v17. 0926 HTTP 503. RAM 0.74 GB — no LightGBM.<br><br>Re-armed 30m loop once. Do not stack watcher.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 15:55</td><td>↗ تقدّم</td><td><strong>v16 decay 1392.8 abort recover</strong><div class="body">30m loop aborted ~12:54Z. v16 MATERIAL decay 1395.6	o1392.8. v15 1437.9 unchanged. HOLD no v17.<br><br>Stopped stale UntilNotMatch 1395.6 watcher PID 27540. Re-armed UntilNotMatch 1392.8 + 30m loop once. 0926 HTTP 503. RAM 1.23 GB — no LightGBM.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 15:36</td><td>↗ تقدّم</td><td><strong>Abort recover 12:35Z v15 1437.9</strong><div class="body">30m loop aborted ~12:35Z (~3m). Recovered once. Watcher 27540 kept.<br><br>Live tick 2026-09-12T12:35:48Z: v16 1395.6 unchanged. v15 1441.7	o1437.9 decay. HOLD no v17. 0926 HTTP 503. RAM 2.00 GB — no LightGBM.<br><br>Re-armed 30m loop once. Do not stack watcher.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 14:51</td><td>↗ تقدّم</td><td><strong>Abort recover 11:50Z v15 1446.3</strong><div class="body">30m loop + v16 watcher aborted ~11:50Z (~13m). Recovered once.<br><br>Live tick 2026-09-12T11:50:50Z: v16 1395.6 unchanged. v15 1449.9	o1446.3 decay. HOLD no v17. 0926 HTTP 503. RAM 1.01 GB — no LightGBM.<br><br>Re-armed UntilNotMatch 1395.6 + 30m loop once.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 14:31</td><td>↗ تقدّم</td><td><strong>Abort recover 11:30Z boards unchanged</strong><div class="body">30m loop + v16 watcher aborted ~11:29Z (~2m after re-arm). Recovered once.<br><br>Live tick 2026-09-12T11:30:50Z: v16 1395.6 unchanged. v15 1449.9 unchanged. HOLD no v17. 0926 HTTP 503. RAM 0.46 GB — no LightGBM.<br><br>Re-armed UntilNotMatch 1395.6 + 30m loop once.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 14:29</td><td>↗ تقدّم</td><td><strong>طرفية mintty لعربي Claude Code</strong><div class="body">Opened a maximized mintty window (Bidi=2, Simplified Arabic Fixed, winpty) running Claude Code in C:\ArabBank so Arabic is not reversed. Launcher: C:\ArabBank\files\arabic-terminal\Open-ArabicClaude.ps1 (same recipe as C:\Belt\scripts\claude-ar.ps1). WT/conhost still flip Arabic; use this mintty, not Cursor&#39;s terminal. Re-armed the dead 30m hunt loop once; v16 watcher UntilNotMatch 1395.6 was already alive. HOLD no v17.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 14:26</td><td>↗ تقدّم</td><td><strong>Abort recover 11:26Z v15 1449.9</strong><div class="body">30m loop + v16 watcher aborted ~11:23Z. Recovered once.<br><br>Live tick 2026-09-12T11:26:05Z: v16 1395.6 unchanged (56011909). v15 1454.4→1449.9 decay (55975727). HOLD no v17. 0926 HTTP 503. RAM 0.63 GB — no LightGBM.<br><br>Re-armed UntilNotMatch 1395.6 + 30m loop once. No Claude round 7. No ID upload.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 14:21</td><td>↗ تقدّم</td><td><strong>Kaggriculture v16 decay 1395.6</strong><div class="body">Watcher: v16 1399.5→1395.6 decay. v15 1458.8→1454.4 decay. HOLD no v17. Re-armed UntilNotMatch 1395.6. 30m loop ALIVE — do not stack. RAM 0.01 GB — no LightGBM.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 14:08</td><td>↗ تقدّم</td><td><strong>Abort recover v15 decay 1458.8</strong><div class="body">Abort recover 11:07Z: 30m loop + v16 watcher died. v16 1399.5 unchanged. v15 1459.4→1458.8 decay. HOLD no v17. 0926 503. RAM 1.40 GB — no LightGBM. Re-armed UntilNotMatch 1399.5 + 30m loop once. Claude inbox still round-6 scout; no new please_cursor.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 13:36</td><td>↗ تقدّم</td><td><strong>30m tick live unchanged 1399.5</strong><div class="body">30m tick 10:36Z: LIVE unchanged v16 1399.5 / v15 1459.4. HOLD no v17. 0926 503. RAM 1.46 GB — no LightGBM. Watcher 1399.5 ALIVE. 30m loop ALIVE — do not stack. Claude inbox still round-6 scout; no new please_cursor.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 13:34</td><td>↗ تقدّم</td><td><strong>Kaggriculture v16 decay 1399.5</strong><div class="body">Watcher: v16 1404.9→1399.5 decay. v15 1459.4 unchanged. HOLD no v17. Re-armed UntilNotMatch 1399.5. 30m loop ALIVE — do not stack. RAM 1.79 GB — no LightGBM.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 13:09</td><td>↗ تقدّم</td><td><strong>Kaggriculture v16 decay 1404.9</strong><div class="body">Watcher: v16 1407.6→1404.9 decay. v15 1459.4 unchanged. HOLD no v17. Re-armed UntilNotMatch 1404.9. 30m loop ALIVE — do not stack. RAM 1.98 GB — no LightGBM.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 13:06</td><td>↗ تقدّم</td><td><strong>30m tick live unchanged 1407.6</strong><div class="body">30m tick 10:06Z: LIVE unchanged v16 1407.6 / v15 1459.4. HOLD no v17. 0926 503. RAM 0.52 GB — no LightGBM. Watcher 1407.6 ALIVE. 30m loop ALIVE — do not stack. Claude inbox still round-6 scout; no new please_cursor.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 12:36</td><td>↗ تقدّم</td><td><strong>30m tick live unchanged 1407.6</strong><div class="body">30m tick 09:36Z: LIVE unchanged v16 1407.6 / v15 1459.4. HOLD no v17. 0926 503. RAM 1.06 GB — no LightGBM. Watcher 1407.6 ALIVE. 30m loop ALIVE — do not stack. Claude inbox still round-6 scout; no new please_cursor.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 12:35</td><td>↗ تقدّم</td><td><strong>Kaggriculture v16 bounce 1407.6</strong><div class="body">Watcher: v16 1404.1→1407.6 bounce. v15 1455.4→1459.4 bounce. HOLD no v17. Re-armed UntilNotMatch 1407.6. 30m loop ALIVE — do not stack. RAM 1.44 GB — no LightGBM.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 12:07</td><td>↗ تقدّم</td><td><strong>30m tick live unchanged 1404.1</strong><div class="body">30m tick 09:06Z: LIVE unchanged v16 1404.1 / v15 1455.4. HOLD no v17. 0926 503. RAM 1.44 GB — no LightGBM. Watcher 1404.1 ALIVE. 30m loop ALIVE — do not stack. Claude inbox still round-6 scout; no new please_cursor.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 11:37</td><td>↗ تقدّم</td><td><strong>30m tick live unchanged 1404.1</strong><div class="body">30m tick 08:36Z: LIVE unchanged v16 1404.1 / v15 1455.4. HOLD no v17. 0926 503. RAM 1.53 GB — no LightGBM. Watcher 1404.1 ALIVE. 30m loop ALIVE — do not stack. Claude inbox still round-6 scout; no new please_cursor.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 11:06</td><td>↗ تقدّم</td><td><strong>30m tick live unchanged 1404.1</strong><div class="body">30m tick 08:06Z: LIVE unchanged v16 1404.1 / v15 1455.4. HOLD no v17. 0926 503. RAM 1.55 GB — no LightGBM. Watcher 1404.1 ALIVE. 30m loop ALIVE — do not stack. Claude inbox still round-6 scout; no new please_cursor.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 10:36</td><td>↗ تقدّم</td><td><strong>30m tick live unchanged 1404.1</strong><div class="body">30m tick 07:36Z: LIVE unchanged v16 1404.1 / v15 1455.4. HOLD no v17. 0926 503. RAM 1.68 GB — no LightGBM. Watcher 1404.1 ALIVE. 30m loop ALIVE — do not stack. Claude inbox still round-6 scout; no new please_cursor.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 10:31</td><td>↗ تقدّم</td><td><strong>Kaggriculture v16 decay 1404.1</strong><div class="body">Watcher: v16 1408.1→1404.1 decay. v15 1459.6→1455.4 decay. HOLD no v17. Re-armed UntilNotMatch 1404.1. 30m loop ALIVE — do not stack. RAM 1.86 GB — no LightGBM.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 10:06</td><td>↗ تقدّم</td><td><strong>30m tick live unchanged 1408.1</strong><div class="body">30m tick 07:06Z: LIVE unchanged v16 1408.1 / v15 1459.6. HOLD no v17. 0926 503. RAM 1.64 GB — no LightGBM. Watcher 1408.1 ALIVE. 30m loop ALIVE — do not stack. Claude inbox still round-6 scout; no new please_cursor.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 09:37</td><td>↗ تقدّم</td><td><strong>30m tick live unchanged 1408.1</strong><div class="body">30m tick 06:36Z: LIVE unchanged v16 1408.1 / v15 1459.6. HOLD no v17. 0926 503. RAM 1.30 GB — no LightGBM. Watcher 1408.1 ALIVE. 30m loop ALIVE — do not stack. Claude inbox still round-6 scout; no new please_cursor.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 09:06</td><td>↗ تقدّم</td><td><strong>30m tick live unchanged 1408.1</strong><div class="body">30m tick 06:06Z: LIVE unchanged v16 1408.1 / v15 1459.6. HOLD no v17. 0926 503. RAM 1.45 GB — no LightGBM. Watcher 1408.1 ALIVE. 30m loop ALIVE — do not stack. Claude inbox still round-6 scout; no new please_cursor.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 08:59</td><td>↗ تقدّم</td><td><strong>Kaggriculture v16 bounce 1408.1</strong><div class="body">Watcher: v16 1404.0→1408.1 bounce. v15 1463.3→1459.6 decay. HOLD no v17. Re-armed UntilNotMatch 1408.1. 30m loop ALIVE — do not stack. RAM 0.49 GB — no LightGBM.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 08:36</td><td>↗ تقدّم</td><td><strong>30m tick v15 bounce 1463.3</strong><div class="body">30m tick 05:36Z: v16 1404.0 unchanged. v15 1459.5→1463.3 bounce. HOLD no v17. 0926 503. RAM 0.91 GB — no LightGBM. Watcher 1404.0 ALIVE. 30m loop ALIVE — do not stack. Claude inbox still round-6 scout; no new please_cursor.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 08:06</td><td>↗ تقدّم</td><td><strong>30m tick live unchanged 1404.0</strong><div class="body">30m tick 05:06Z: LIVE unchanged v16 1404.0 / v15 1459.5. HOLD no v17. 0926 503. RAM 0.98 GB — no LightGBM. Watcher 1404.0 ALIVE. 30m loop ALIVE — do not stack. Claude inbox still round-6 scout; no new please_cursor.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 07:36</td><td>↗ تقدّم</td><td><strong>30m tick live unchanged 1404.0</strong><div class="body">30m tick 04:36Z: LIVE unchanged v16 1404.0 / v15 1459.5. HOLD no v17. 0926 503. RAM 0.75 GB — no LightGBM. Watcher 1404.0 ALIVE. 30m loop ALIVE — do not stack. Claude inbox still round-6 scout; no new please_cursor.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 07:07</td><td>↗ تقدّم</td><td><strong>30m tick live unchanged 1404.0</strong><div class="body">30m tick 04:06Z: LIVE unchanged v16 1404.0 / v15 1459.5. HOLD no v17. 0926 503. RAM 0.96 GB — no LightGBM. Watcher 1404.0 ALIVE. 30m loop ALIVE — do not stack. Claude inbox still round-6 scout; no new please_cursor.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 06:58</td><td>↗ تقدّم</td><td><strong>Kaggriculture v16 decay 1404.0</strong><div class="body">Watcher: v16 1408.5→1404.0 decay. v15 1459.5 unchanged. HOLD no v17. Re-armed UntilNotMatch 1404.0. 30m loop ALIVE — do not stack. RAM 0.82 GB — no LightGBM.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 06:45</td><td>↗ تقدّم</td><td><strong>Kaggriculture v16 decay 1408.5</strong><div class="body">Watcher: v16 1412.3	o1408.5 decay. v15 1459.5 unchanged. HOLD no v17. Re-armed UntilNotMatch 1408.5. 30m loop ALIVE — do not stack. 0926 503. RAM 1.02 GB — no LightGBM.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 06:36</td><td>↗ تقدّم</td><td><strong>30m tick v15 decay 1459.5</strong><div class="body">30m tick 03:36Z: v16 1412.3 unchanged. v15 1463.8	o1459.5 decay. HOLD no v17. 0926 503. RAM 1.10 GB — no LightGBM. Watcher 1412.3 ALIVE. 30m loop ALIVE — do not stack.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 06:06</td><td>↗ تقدّم</td><td><strong>30m tick v15 decay 1463.8</strong><div class="body">30m tick 03:06Z: v16 1412.3 unchanged. v15 1467.4	o1463.8 decay. HOLD no v17. 0926 503. RAM 1.01 GB — no LightGBM. Watcher 1412.3 ALIVE. 30m loop ALIVE — do not stack.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 05:46</td><td>↗ تقدّم</td><td><strong>Kaggriculture v16 decay 1412.3</strong><div class="body">Watcher: v16 1416.0	o1412.3 decay. v15 1467.4 unchanged. HOLD no v17. Re-armed UntilNotMatch 1412.3. 30m loop ALIVE — do not stack. 0926 503. RAM 0.77 GB — no LightGBM.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 05:36</td><td>↗ تقدّم</td><td><strong>30m tick v15 decay 1467.4</strong><div class="body">30m tick 02:36Z: v16 1416.0 unchanged. v15 1469.8	o1467.4 decay. HOLD no v17. 0926 503. RAM 0.90 GB — no LightGBM. Watcher 1416.0 ALIVE. 30m loop ALIVE — do not stack.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 05:18</td><td>↗ تقدّم</td><td><strong>Kaggriculture dual decay 1416.0</strong><div class="body">Watcher: v16 1419.8	o1416.0 decay. v15 1473.8	o1469.8 decay. HOLD no v17. Re-armed UntilNotMatch 1416.0. 30m loop ALIVE — do not stack. 0926 503. RAM 1.16 GB — no LightGBM.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 04:06</td><td>↗ تقدّم</td><td><strong>30m tick v15 decay 1473.8</strong><div class="body">30m tick 01:06Z: v16 1419.8 unchanged. v15 1476.9	o1473.8 decay. HOLD no v17. 0926 503. RAM 1.20 GB — no LightGBM. Watcher 1419.8 ALIVE. 30m loop ALIVE — do not stack.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 03:17</td><td>↗ تقدّم</td><td><strong>Kaggriculture v16 decay 1419.8</strong><div class="body">Watcher: v16 1421.5	o1419.8 decay. v15 1476.9 unchanged. HOLD no v17. Re-armed UntilNotMatch 1419.8. 30m loop ALIVE — do not stack. 0926 503. RAM 1.64 GB — no LightGBM.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 02:07</td><td>↗ تقدّم</td><td><strong>30m tick dual bounce 1421.5</strong><div class="body">30m tick 23:06Z: v16 1417.1	o1421.5 bounce. v15 1473.0	o1476.9 bounce. HOLD no v17. 0926 503. RAM 1.53 GB — no LightGBM. Stopped stale 1417.1 watcher; re-armed UntilNotMatch 1421.5. 30m loop ALIVE — do not stack.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 01:07</td><td>↗ تقدّم</td><td><strong>30m tick v15 bounce 1473.0</strong><div class="body">30m tick 22:06Z: v16 1417.1 unchanged. v15 1468.9	o1473.0 bounce. HOLD no v17. 0926 503. RAM 1.41 GB — no LightGBM. Watcher 1417.1 ALIVE. 30m loop ALIVE — do not stack. Claude 6/100 no new please_cursor.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 00:48</td><td>↗ تقدّم</td><td><strong>Kaggriculture v16 bounce 1417.1</strong><div class="body">Watcher: v16 1412.4	o1417.1 bounce. v15 1468.9 unchanged. HOLD no v17. Re-armed UntilNotMatch 1417.1. 30m loop PID 1992 ALIVE — do not stack. No LightGBM. No 0926 hunt.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-11 17:24</td><td>↗ تقدّم</td><td><strong>30m hunt reports + Claude round 6</strong><div class="body">Operator ordered 30m reports + Cursor-Claude dialogue. Hunts not stopped. Round 6 dispatched. Identity day-3 follow-up blocked on login wall (no ID upload). 0926 still 503. Kaggriculture v16 1417.8 v15 1464.1 HOLD no v17.</div></td><td class="num">46%</td><td><span class="badge model" style="--c:#c8ad73">كلود فابل</span></td></tr><tr><td class="mono">2026-09-11 15:11</td><td>↗ تقدّم</td><td><strong>Mostaql kazoyan + Baeed suhib_asrawi profiles saved</strong><div class="body">Operator asked to complete Baeed https://baaeed.com/u/KAZOYA and Mostaql profile.<br><br>Mostaql kazoyan: saved. Title مهندس برمجيات. Bio Laravel/Next.js/Node/PHP/PostgreSQL. Skills 10 (Laravel, Next.js, PHP, JS, Flutter, SQL Server, PostgreSQL, API, node.js, web design). Public https://mostaql.com/u/kazoyan verified. Did not click phone OTP, identity, or paid plan.<br><br>Baeed: account saved as job seeker / مهندس برمجيات / username suhib_asrawi. CV on https://baaeed.com/u/suhib_asrawi saved with matching bio + Laravel/Next.js in experience + education title. Username KAZOYA rejected (already taken); /u/KAZOYA remains a thin stale slug. Did not click توثيق الهوية.</div></td><td class="num">45%</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-10 23:21</td><td>↗ تقدّم</td><td><strong>Kaggriculture decay 1425.7 / 1493.4 — auto-hunt is watch+gates</strong><div class="body">Live tick 20:20Z: v16 1436.7→1425.7, v15 1511.5→1493.4. HOLD no v17. Standing hunt is score-watch + heartbeat, not a new-exploit factory. Highest EV still HUMAN_GATE: KOMOJU C session or Mostaql paid plan. Holmes 17 Sep, Dojo 28 Sep. RAM 0.58 GB no LightGBM. Watcher re-armed UntilNotMatch 1425.7.</div></td><td class="num">40%</td><td><span class="badge model" style="--c:#d97757">كلود (عام)</span></td></tr>
+          </tbody></table>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>المتحكم الهندسي <span class="muted mono">controlling-ai</span></h3>
+        <p class="desc">اكتُشف من cursor — C:\projectz\controllingAI</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 2</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>CLAUDE.md present (600 chars excerpted). <span class="muted mono small">2026-09-10</span></li></ul></div><div class="sec"><div class="sec-t">◐ ما نعمل عليه حالياً <span class="muted">(1)</span></div><ul><li>Commander folder C:\projectz\controllingAI. Cash/engineering first. QMS frozen. Standing hunt elsewhere must not starve Project1/Wathiqa. <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>وثيقة <span class="muted mono">wathiqa</span></h3>
+        <p class="desc">اكتُشف من cursor — C:\Wathiqa</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 2</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>package.json name=wathiqa version=1.0.0 | README.md excerpt: # وثيقة — Wathiqa وكيل يقرأ ملف PDF ويجيب بأسلوب محادثة واتساب. ## العرض التسويقي 1. ارفع PDF حتى **40 ميغا**. 2. اسأل الوكيل عن محتوى الملف لمدة **ساعة كاملة مجاناً**. 3. اشترك عبر **PayPal** على `innervision2016@gmail.com` من 12 دولاراً شهرياً. ## التشغيل ```bash npm install np | CLAUDE.md present (600 chars excerpted). | git repository present <span class="muted mono small">2026-09-10</span></li></ul></div><div class="sec"><div class="sec-t">≡ القيود والقواعد <span class="muted">(1)</span></div><ul><li>Canonical URL https://wathiqa-eight.vercel.app. Do not subscribe. Do not deploy unless owner says `deploy wathiqa`. Live POST /api/paypal/ipn was 404 at last check; local IPN stub never grants paid. <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>المصانع <span class="muted mono">factories</span></h3>
+        <p class="desc">اكتُشف من claude+cursor — C:\Factories</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 3</span> <div class="bar"><div class="fill" style="width:85%"></div><span>85%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">✓ ما تم إنجازه <span class="muted">(5)</span></div><ul><li>دُمج AlMithaliya في C:\Factories\ACI (نقل .git + node_modules) وحُذف C:\Factories\AlMithaliya. حزمة تحسين: files\al-mithaliya-improvement-handoff.zip (~285 KB). الإنتاج ما زال https://al-mithaliya-dairy.vercel.app <span class="muted mono small">2026-09-14</span></li><li>إرسال al-mithaliya-improvement-handoff.zip لوكيل التحسين؛ عند عودة التعديلات دمجها في C:\Factories\ACI ثم push/Vercel. <span class="muted mono small">2026-09-14</span></li><li>حزمة AlMithaliya-Improved مدمجة ومنشورة: https://al-mithaliya-dairy.vercel.app (commit 7037dc9) <span class="muted mono small">2026-09-14</span></li><li>C:\Factories\ACI = مؤسسة صناعات الكيماويات الزراعية (aci.com.jo). المثالية عادت إلى C:\Factories\AlMithaliya. GitHub kazoya/ACI. <span class="muted mono small">2026-09-14</span></li><li>ACI منشور: https://aci-agrochemicals.vercel.app · GitHub kazoya/ACI · Vercel READY <span class="muted mono small">2026-09-14</span></li></ul></div><div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(3)</span></div><ul><li>CLAUDE.md present (600 chars excerpted). <span class="muted mono small">2026-09-10</span></li><li>نموذج Samsung Levant SIC 2026 JO مطمّر في iframe mena.samsung.com/levant/samsung-innovation-campus-2026-jo. التعبئة تمّت عبر UIA على نافذة Comet. ComboBox النموذج قد يظهر bounding box على شريط التبويبات — لا تُضغط click_input على ComboBox إذا top&lt;80. <span class="muted mono small">2026-09-12</span></li><li>ACI (C:\Factories\ACI): بدأ 2026-09-14 كنسخة من AlMithaliya ثم توقف قبل إعادة العلامة/المحتوى/النشر/الـ ZIP. المثالية منشورة: https://al-mithaliya-dairy.vercel.app <span class="muted mono small">2026-09-14</span></li></ul></div><div class="sec"><div class="sec-t">✦ مقترحات النماذج (Claude / Opus / Fable…) <span class="muted">(1)</span></div><ul><li>بعد عودة تحسينات الوكيل: اقترح فصل صفحات المصنع الذكي العامة إن لم تخدم سرد الألبان، واستبدالها بمسار «من الحليب إلى الرف» أعمق مع صور خط حقيقية. <span class="badge model" style="--c:#a78bfa">كلود أوبوس</span> <span class="muted mono small">2026-09-14</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(7)</span></h4>
+          <table class="entries"><thead><tr><th>التاريخ</th><th>النوع</th><th>العنوان</th><th>التقدّم</th><th>النموذج</th></tr></thead><tbody>
+          <tr><td class="mono">2026-09-14 11:31</td><td>↗ تقدّم</td><td><strong>خلفية زراعية لـ ACI + ZIP تحسين</strong><div class="body">خلفية زراعية احترافية على بطل ACI (public/images/hero-agriculture.png) + تدرج أخضر.<br><br>ZIP لوكيل التحسين:<br>C:\Factories\ACI\files\aci-improvement-handoff.zip (~0.57 MB)<br><br>الإنتاج بعد الدفع: https://aci-agrochemicals.vercel.app</div></td><td class="num">—</td><td><span class="badge model" style="--c:#a78bfa">كلود أوبوس</span></td></tr><tr><td class="mono">2026-09-14 10:16</td><td>✦ إنجاز رئيسي</td><td><strong>فصل المثالية وبناء ACI للكيماويات الزراعية</strong><div class="body">تأكيد: ACI ≠ المثالية.<br><br>- أُعيدت المثالية إلى C:\Factories\AlMithaliya (Git/GitHub كما هما)<br>- بُنيت منصة ACI في C:\Factories\ACI لمؤسسة صناعات الكيماويات الزراعية (aci.com.jo)<br>- واتساب مبيعات: +962798230054 · مكتب منشور: +96265548224 · واتساب مبرمج مرفوع: +962787523192<br>- GitHub: https://github.com/kazoya/ACI<br>- Vercel: قيد الربط (aci-agrochemicals)</div></td><td class="num">85%</td><td><span class="badge model" style="--c:#a78bfa">كلود أوبوس</span></td></tr><tr><td class="mono">2026-09-14 09:38</td><td>✦ إنجاز رئيسي</td><td><strong>دمج تحسينات المثالية ونشر فيرسيل</strong><div class="body">دُمجت حزمة AlMithaliya-Improved.zip في C:\Factories\ACI.<br><br>- lint + build نجحا<br>- commit 7037dc9 ودُفع إلى kazoya/AlMithaliya<br>- Vercel production READY: https://al-mithaliya-dairy.vercel.app (dpl_DSmc5GrZzXi8ypS5615FgihyXEb6)<br><br>أبرز التحسينات: صفحة رئيسية للمبيعات، قائمة جانبية قابلة للطي، تنظيف بقايا بنون، noindex، تقييم آيزو أنظف.</div></td><td class="num">75%</td><td><span class="badge model" style="--c:#a78bfa">كلود أوبوس</span></td></tr><tr><td class="mono">2026-09-14 08:45</td><td>✦ إنجاز رئيسي</td><td><strong>دمج المثالية في ACI + ZIP تحسين</strong><div class="body">تأكيد: ACI وAlMithaliya كانا نفس المشروع (122 ملفاً متطابقاً). نُقل .git وnode_modules إلى C:\Factories\ACI، حُذف C:\Factories\AlMithaliya.<br><br>ZIP التحسين: C:\Factories\ACI\files\al-mithaliya-improvement-handoff.zip (~285 KB) — يحوي handoff-docs + source.<br><br>فيرسيل لم يتغير: https://al-mithaliya-dairy.vercel.app · GitHub kazoya/AlMithaliya</div></td><td class="num">—</td><td><span class="badge model" style="--c:#a78bfa">كلود أوبوس</span></td></tr><tr><td class="mono">2026-09-14 07:59</td><td>⊘ عائق</td><td><strong>حالة ACI: نسخ فقط — لا فيرسيل ولا ZIP</strong><div class="body">طلب المستخدم 2026-09-14 07:43: منصة لـ aci.com.jo بأسلوب AlMithaliya + ملف مضغوط لوكيل التحسين.<br><br>ما تم: نسخ هيكل المثالية إلى C:\Factories\ACI (robocopy) ثم توقّف العمل (انقطاع الجلسة/حد الاستخدام).<br><br>الوضع الحالي:<br>- C:\Factories\ACI ما زال بعلامة المثالية للألبان (نفس package.json)<br>- لا Git لمشروع ACI<br>- لا مشروع Vercel باسم ACI<br>- لا ملف handoff ZIP<br><br>المثالية نفسها مكتملة: https://al-mithaliya-dairy.vercel.app (READY) · github.com/kazoya/AlMithaliya</div></td><td class="num">—</td><td><span class="badge model" style="--c:#a78bfa">كلود أوبوس</span></td></tr><tr><td class="mono">2026-09-12 23:15</td><td>⊘ عائق</td><td><strong>SIC Submit لم يُرسل من الأتمتة</strong><div class="body">طلب المستخدم كبس Submit. الزر ظاهر داخل iframe سامسونج؛ نقرات UIA وWin32 وصلت لإحداثيات الزر لكن الصفحة لم تُرسل. النموذج ما زال Register for Innovation Campus. الخطوة التالية: كبسة ماوس يدوية من المستخدم.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-12 23:07</td><td>▪ ملاحظة</td><td><strong>تعبئة نموذج Samsung Innovation Campus</strong><div class="body">عبّئت نموذج تسجيل SIC 2026 JO في تبويب Comet من السيرة ATS والمشاريع (مقاصة، APCA، مصانع). بدون Submit. العمر 30+ (تخرج 2002). المدرسة الثانوية ليست في السيرة.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr>
+          </tbody></table>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>site-creator-vinext-starter <span class="muted mono">site-creator-vinext-starter</span></h3>
+        <p class="desc">اكتُشف من claude+codex+cursor — C:\Users\pscx9\Documents\Risha360</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 3</span> <div class="bar"><div class="fill" style="width:78%"></div><span>78%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">✓ ما تم إنجازه <span class="muted">(2)</span></div><ul><li>عقد celebrity-self-service-roles + تنفيذ BE (أدوار/login/self-update) + قفل FE (Auth/Login/my-celebrities/CelebrityEditPage) على فرع feat/celebrity-self-service-roles — غير منشور بعد <span class="muted mono small">2026-09-10</span></li><li>Influencer Collab Hub wave 2 (Claude Opus 5): auto-enroll السفراء عبر syncRoles مع إعادة استخدام ReferralCodeService، لوحتا إدارة (مراجعة حسابات الآيبان + طلبات الصرف) مع صلاحيتين جديدتين، PayoutReviewService بآلة حالة مقفولة، وإصلاح احتساب held_for_payout عند الدفع، و6 ملفات اختبارات Feature — لم تُنفَّذ بعد (لا يوجد vendor/ ولا .env في هذه النسخة) <span class="muted mono small">2026-09-12</span></li></ul></div><div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(2)</span></div><ul><li>package.json name=site-creator-vinext-starter version=0.1.0 | README.md excerpt: # دعم ريشة 360 مركز مساعدة عربي يسهّل رحلة الزائر والموهبة والمؤثر والشركة في منصة ريشة 360، مع فصل المحتوى العام عن ملفات الموظفين والإدارة. ## الواجهة العامة - اختيار المسار: زائر، موهبة/مؤثر، أو شركة. - بحث عربي داخل الموضوعات المسموحة للمسار. - خطوات واضحة وروابط مباشرة إلى ص | CLAUDE.md present (600 chars excerpted). | git repository present <span class="muted mono small">2026-09-10</span></li><li>my-celebrities كان يفلتر فقط بـ created_by فيظهر قائمة فارغة لحساب المشهور؛ صار يشمل celebrities.id = users.celebrity_id، وshow يرفض غير المالك/الرابط <span class="muted mono small">2026-09-10</span></li></ul></div><div class="sec"><div class="sec-t">◐ ما نعمل عليه حالياً <span class="muted">(2)</span></div><ul><li>feat/celebrity-self-service-roles: backend جاهز محلياً؛ frontend شبه جاهز وينتظر قفل واجهة my-celebrities ثم نشر <span class="muted mono small">2026-09-10</span></li><li>feat/influencer-collab-hub: نواة العروض/الاتفاقيات/المهام/المحفظة/المتابعين ولوحة /influencer — يتبقى أدمن + واجهة شركة + اختبارات <span class="muted mono small">2026-09-12</span></li></ul></div><div class="sec"><div class="sec-t">▹ الخطوات التالية <span class="muted">(2)</span></div><ul><li>عند الطلب: commit + PR لـ BE(main) و FE(staging)، ثم Forge migrate + deploy لأدوار celebrity/talent ودخول المشاهير والتعديل الذاتي <span class="muted mono small">2026-09-10</span></li><li>تشغيل composer install + .env محلي ثم php artisan test --filter=InfluencerCollab للتحقق من اختبارات Influencer Collab Hub قبل أي PR <span class="muted mono small">2026-09-12</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(11)</span></h4>
+          <table class="entries"><thead><tr><th>التاريخ</th><th>النوع</th><th>العنوان</th><th>التقدّم</th><th>النموذج</th></tr></thead><tbody>
+          <tr><td class="mono">2026-09-13 13:19</td><td>↗ تقدّم</td><td><strong>حزمة إحاطة المدير المضغوطة</strong><div class="body">أنشئت حزمة إحاطة للمدير (HTML عربي + نموذج تعليقات) مع تمييز الميزات التي تحتاج اشتراكاً باللون الأحمر ووسم «قيد الإنشاء»، ثم ضغطها في files/Risha360-Manager-Briefing-2026-09-13.zip</div></td><td class="num">—</td><td><span class="badge model" style="--c:#c8ad73">كلود فابل</span></td></tr><tr><td class="mono">2026-09-13 12:37</td><td>↗ تقدّم</td><td><strong>Mint missing promo for innervision</strong><div class="body">Production: innervision2016@gmail.com (user 15, celebrity 60) had celebrity role but NO ambassador_profile / referral code. Root cause: AutoEnrollAmbassadorService is only on feat/influencer-collab-hub (not deployed; prod=ce79801). Minted ambassador_profile id=1 + code PEHL3KDJ. No active referral campaign on prod.</div></td><td class="num">—</td><td><span class="badge model" style="--c:#c8ad73">كلود فابل</span></td></tr><tr><td class="mono">2026-09-12 18:22</td><td>↗ تقدّم</td><td><strong>Push influencer hub + WIP paid slots</strong><div class="body">Marked paid/provider-gated paths as visible &quot;قيد التطوير&quot; (auto payouts, percent entitlements, official social sync, points-to-cash). Pushed feat/influencer-collab-hub on both Resha-Backend (86c2f81) and Resha-Frontend (b5447db).</div></td><td class="num">78%</td><td><span class="badge model" style="--c:#c8ad73">كلود فابل</span></td></tr><tr><td class="mono">2026-09-12 18:13</td><td>↗ تقدّم</td><td><strong>Claude Code trust + collab hub wave</strong><div class="body">## Done<br>- Diagnosed Claude trust rejection: `hasTrustDialogAccepted: false` for `.tmp/Resha-Backend`; set true in `~/.claude.json`.<br>- Reran Claude Code successfully (exit 0, ~7m) on backend prompt; verified admin bank/payout desks + tests (static; no vendor/.env).<br>- Claude fixed PayoutLifecycleTest admin FK fixture.<br>- Cursor FE: `/company-collab` create/list offers + agreements; influencer agreements tab wired; navbar link.<br><br>## Evidence<br>- Terminal: Claude run log in docs/ai-handoff/claude-run-log.txt<br>- BE branch feat/influencer-collab-hub admin routes + tests/Feature/InfluencerCollab<br>- FE modules/company-collab + modules/influencer-hub<br><br>## Next<br>- composer install + local migrate + php artisan test --filter=InfluencerCollab<br>- Fix Cursor-owned bugs Claude flagged (submitProof Throwable, payout race, needs_changes status)<br>- Follower form + notification inbox; no prod migrate/deploy yet</div></td><td class="num">72%</td><td><span class="badge model" style="--c:#c8ad73">كلود فابل</span></td></tr><tr><td class="mono">2026-09-12 17:55</td><td>↗ تقدّم</td><td><strong>Influencer Collab Hub — لوحات الإدارة والاختبارات والتسجيل التلقائي للسفراء</strong></td><td class="num">88%</td><td><span class="badge model" style="--c:#a78bfa">كلود أوبوس</span></td></tr><tr><td class="mono">2026-09-12 17:43</td><td>↗ تقدّم</td><td><strong>بدء منظومة لوحة المؤثر والتعاون</strong><div class="body">بدء منظومة لوحة المؤثر المتكاملة على فرع feat/influencer-collab-hub.<br><br>**موجود ويُعاد استخدامه:** أدوار celebrity/talent، إحالات/نقاط السفير، إشعارات mail+database، Spatie media.<br><br>**أُنجز:** ترحيلات (عروض/اتفاقيات/مهام/أدلة/محفظة/آيبان/صرف/متابعون شهري/مراجعة شهرية)، APIs حقيقية، لوحة FE /influencer، قبول عرض→اتفاقية→مهمة، اعتماد دليل→استحقاق ثابت، تذكير شهري مجدول، auto-enroll سفير عند التفعيل.<br><br>**متوقف/لاحق:** واجهة شركة لإنشاء العروض، أدمن Blade للاعتماد والصرف، نسب العمولة، مزود صرف آلي، اختبارات PHPUnit، ثقة Claude Code workspace.<br><br>لا نشر إنتاج في هذه المهمة.</div></td><td class="num">45%</td><td><span class="badge model" style="--c:#c8ad73">كلود فابل</span></td></tr><tr><td class="mono">2026-09-10 23:23</td><td>✦ إنجاز رئيسي</td><td><strong>نشر أدوار المشاهير على الإنتاج</strong><div class="body">نُشرت أدوار الدخول الذاتي: BE PR #3 و FE PR #26، Forge على ce79801 / 652d826، migration 2026_09_10_190001 Ran، assignments=1 لمستخدم مربوط.</div></td><td class="num">85%</td><td><span class="badge model" style="--c:#c8ad73">كلود فابل</span></td></tr><tr><td class="mono">2026-09-10 19:59</td><td>↗ تقدّم</td><td><strong>أدوار الدخول الذاتي للمشاهير — تنفيذ محلي</strong><div class="body">فرع feat/celebrity-self-service-roles على BE+FE.<br><br>**Backend:** أدوار celebrity/talent + migration backfill، login/middleware على public_app_roles، syncRoles عند الدعوة/التفعيل/تغيير type، endpoint POST celebrity-account/self/update مع رفض الحقول المحظورة.<br><br>**Frontend:** AuthContext + LoginForm، profileApi self mode، قفل CelebrityEditPage، وتوجيه updateMyCelebrity لمسار self. جاري قفل واجهة my-celebrities (النوع/الجنسية/المتابعين/التراخيص/الميلاد).<br><br>**التالي:** إكمال قفل my-celebrities، ثم commit/PR/deploy + migrate عند الطلب.<br><br>**ملاحظة:** لا يمكن قراءة باقي استهلاك موديلات Cursor من الأدوات المتاحة.</div></td><td class="num">55%</td><td><span class="badge model" style="--c:#c8ad73">كلود فابل</span></td></tr><tr><td class="mono">2026-09-10 17:54</td><td>✦ إنجاز رئيسي</td><td><strong>نشر إصلاح تفعيل الحساب على الإنتاج</strong><div class="body">نُشر إصلاح تفعيل الحساب: دمج PR #25 Frontend و PR #2 Backend، سحب على Forge، build + pm2 restart. الإنتاج على FE 9ff9d39 و BE 263eb31.</div></td><td class="num">0%</td><td><span class="badge model" style="--c:#c8ad73">كلود فابل</span></td></tr><tr><td class="mono">2026-09-10 17:24</td><td>↗ تقدّم</td><td><strong>إصلاح تفعيل الحساب بعد الموافقة</strong><div class="body">أصلح خطأ تفعيل الحساب: الـ API كان يعيد البريد تحت مفتاح invite بينما الواجهة تقرأ data، فظهر عنوان «غير صالح» مع رسالة «رابط التفعيل صالح». صار FE يقرأ data|invite، والـ BE يوحّد على data، مع جسر نسيت كلمة المرور وتجهيز البريد في login/forgot-password.</div></td><td class="num">0%</td><td><span class="badge model" style="--c:#c8ad73">كلود فابل</span></td></tr><tr><td class="mono">2026-09-10 17:13</td><td>↗ تقدّم</td><td><strong>تحديث نص ظهور الزوج/الزوجة في تسجيل المواهب</strong><div class="body">غيّر spouseVisibility في i18n/messages/ar.ts من «ظهور زوجتك في الوسط الفني» إلى «ظهور زوجك - زوجتك في الوسط الفني» على فرع feat/ux-week1-journey-polish في Resha-Frontend.</div></td><td class="num">0%</td><td><span class="badge model" style="--c:#c8ad73">كلود فابل</span></td></tr>
+          </tbody></table>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>Belt <span class="muted mono">belt</span></h3>
+        <p class="desc">اكتُشف من claude+codex+cursor — C:\Belt</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 3</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>CLAUDE.md present (600 chars excerpted). | git repository present <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(1)</span></h4>
+          <table class="entries"><thead><tr><th>التاريخ</th><th>النوع</th><th>العنوان</th><th>التقدّم</th><th>النموذج</th></tr></thead><tbody>
+          <tr><td class="mono">2026-09-12 14:27</td><td>↗ تقدّم</td><td><strong>Arabic-correct PowerShell/CMD terminal (mintty bidi) + desktop shortcuts</strong></td><td class="num">—</td><td><span class="badge model" style="--c:#a78bfa">كلود أوبوس</span></td></tr>
+          </tbody></table>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>AI_Pro <span class="muted mono">aipro</span></h3>
+        <p class="desc">اكتُشف من codex — C:\AI_Pro</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 3</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>CLAUDE.md present (600 chars excerpted). | git repository present <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>dashboard <span class="muted mono">dashboard</span></h3>
+        <p class="desc">اكتُشف من الملفات — C:\Users\pscx9\.cursor\portfolio\dashboard</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 3</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>CLAUDE.md present (600 chars excerpted). <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>mahdi-hreeaf <span class="muted mono">mahdi-hreeaf</span></h3>
+        <p class="desc">اكتُشف من claude+cursor — C:\mahdi</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 3</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>package.json name=mahdi-hreeaf version=0.2.0 | package.json description: Mahdi Al-Bannai — Hybrid rentier employment research &amp; decision-support (portable) | README.md excerpt: # Mahdi HREEAF — Hybrid Rentier Employment Research مستودع **خاص** قابل للنقل: عقل المشروع (`project-brain/`) + بوابة Vercel (`apps/portal/`) + **Claude Code** كمستشار تدقيق محلي. ## البدء السريع ```powershell cd C:\mahdi npm run setup npm run dev ``` بوابة محلية: [http://localho | CLAUDE.md present (600 chars excerpted). | git repository present <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>gandalf <span class="muted mono">gandalf</span></h3>
+        <p class="desc">اكتُشف من cursor — C:\gandalf</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 3</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>CLAUDE.md present (600 chars excerpted). <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>apccasystems.com <span class="muted mono">apccasystemscom</span></h3>
+        <p class="desc">اكتُشف من cursor — C:\apccasystems.com</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 3</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>CLAUDE.md present (600 chars excerpted). <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>APCA-SmartHelp <span class="muted mono">apca-smarthelp</span></h3>
+        <p class="desc">اكتُشف من cursor — C:\Belt\APCA-SmartHelp</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 3</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>README.md excerpt: # APCA SmartHelp © 2026 APCA Systems — Amal Al-Hayat for Systems &amp; Electronic Control.   Developed by Suhib Asrawi. All rights reserved.   **Rights contact:** innervision2016@gmail.com Local-first **PDF → semantic help** system inspired by JavaHelp / CHM / JAR HelpSets, with hybr | CLAUDE.md present (600 chars excerpted). | git repository present <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>MyTasks <span class="muted mono">mytasks</span></h3>
+        <p class="desc">اكتُشف من cursor — C:\MyTasks</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 3</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>CLAUDE.md present (600 chars excerpted). <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>esolutionsv <span class="muted mono">esolutionsv</span></h3>
+        <p class="desc">اكتُشف من cursor — C:\esolutionsv</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 3</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>package.json name=esolutionsv version=0.1.0 | README.md excerpt: # وادي السيليكون للحلول الإلكترونية — تصور رقمي تصور أولي مستقل لمنصة مبيعات وتسليم لشركة **Silicon Valley for Electronic Solutions** (علامة eSolutionsV)، بعد مراجعة [esolutionsv.com](https://www.esolutionsv.com/). هذا **ليس** نظاماً رسمياً للشركة. أرقام الفرص والتسليم داخل المنص | CLAUDE.md present (600 chars excerpted). | git repository present <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>smart-agent-hub <span class="muted mono">smart-agent-hub</span></h3>
+        <p class="desc">اكتُشف من codex+cursor — C:\AIPRO</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 3</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>package.json name=smart-agent-hub version=0.1.0 | README.md excerpt: # Smart Agent Hub - منصة إدارة الوكلاء الذكية منصة متكاملة لإدارة وكلاء الذكاء الاصطناعي الذين يعملون كوسطاء بين مقدمي الخدمات والعملاء، مع تكامل واتساب وقاعدة بيانات متقدمة. ## 🚀 المميزات الرئيسية ### للآدمن - ✅ لوحة تحكم شاملة لإدارة الوكلاء - ✅ إنشاء وتعديل الوكلاء مع قواعد س | AGENTS.md present (600 chars excerpted). | git repository present <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>the-farm-dairy <span class="muted mono">the-farm-dairy</span></h3>
+        <p class="desc">اكتُشف من claude+codex+cursor — C:\thefarmdairy</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 3</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>package.json name=the-farm-dairy version=0.1.0 | README.md excerpt: # المزرعة للألبان — تصور التحول الرقمي تصور أولي مستقل لمنظومة رقمية وأتمتة لشركة **المزرعة للألبان** في الأردن، مبني بعد مراجعة الموقع العام [mazraadairy.com](https://mazraadairy.com/). هذا **ليس** نظاماً رسمياً للشركة. الأرقام التشغيلية داخل المنصة **بيانات تجريبية**. حصة السوق | AGENTS.md present (600 chars excerpted). | git repository present <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>jitan-group <span class="muted mono">jitan-group</span></h3>
+        <p class="desc">اكتُشف من claude+codex+cursor — C:\jitan_group</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 3</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>package.json name=jitan-group version=0.1.0 | README.md excerpt: # مجموعة جيتان — تصور رقمي تصور أولي مستقل لمنظومة رقمية وأتمتة لـ **مجموعة جيتان** وعلاماتها: **برادايس**، **فلافل هاوس**، **داليا**، و**سيلين** (Cilin Trading على الموقع)، بعد مراجعة [jitangroup.com](https://jitangroup.com/) و[paradisebakeries.com](https://www.paradisebakeries. | AGENTS.md present (600 chars excerpted). | git repository present <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>gepico <span class="muted mono">gepico</span></h3>
+        <p class="desc">اكتُشف من claude+codex+cursor — C:\gepico</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 3</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>package.json name=gepico version=0.1.0 | README.md excerpt: # GEPICO — تصور التحول الرقمي تصور أولي مستقل لمنظومة رقمية وأتمتة لـ **مؤسسة الخليج الفنية الصناعية (GEPICO)** في الأردن، مبني بعد مراجعة الموقع العام [gepico.com](https://gepico.com/). هذا **ليس** نظاماً رسمياً للشركة. الأرقام التشغيلية داخل المنصة **بيانات تجريبية**. ## التشغي | AGENTS.md present (600 chars excerpted). | git repository present <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>rz-packaging <span class="muted mono">rz-packaging</span></h3>
+        <p class="desc">اكتُشف من claude+codex+cursor — C:\rz</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 3</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>package.json name=rz-packaging version=0.1.0 | README.md excerpt: # RZ / الهدف الدولية — تصور رقمي للتعبئة والتغليف تصور أولي مستقل لمنظومة رقمية وأتمتة عروض لشركة **الهدف الدولية للاستيراد والصناعة (RZ)** بعد مراجعة [rz.jo](https://www.rz.jo/) و[alhadaf-int.com](https://alhadaf-int.com/). هذا **ليس** نظاماً رسمياً للشركة. أرقام العروض والمخزون | AGENTS.md present (600 chars excerpted). | git repository present <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>chatbase <span class="muted mono">chatbase</span></h3>
+        <p class="desc">اكتُشف من cursor — C:\airealpro\chatbase</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 3</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>README.md excerpt: # OmniAgent (AI-Native SaaS Blueprint) ## Ultra Pro Max Plus Infinity Edition &gt; **عقل هندسي (وضع التنفيذ):** اقرأ `PORTFOLIO.md` أولاً. هذا README رؤية. القرص اليوم: وثائق + مجلدات فارغة — لا كود تشغيل. &gt; **Repository Base:** `C:\airealpro\chatbase`   &gt; **Template Archetype:** Bo | CLAUDE.md present (600 chars excerpted). <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>crf-audit <span class="muted mono">crf-audit</span></h3>
+        <p class="desc">اكتُشف من cursor — C:\CRF Audit</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 3</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>package.json name=crf-audit version=0.1.0 | README.md excerpt: # CRF Audit Platform منصة تصور رقمية عربية (RTL) لتدقيق امتثال **Cybersecurity Regulatory Framework (CRF)** لقطاع CST. ## المصدر - `CRF Audit Form.xlsx` — الأوراق: Cover · Company&#39;s Details · Audit · Audit Result - ورقة **Audit**: 215 ضابطاً عبر 6 مجالات مع طرق حل وأدلة مقترحة ## | CLAUDE.md present (600 chars excerpted). | git repository present <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>arc_solver_web <span class="muted mono">arcsolverweb</span></h3>
+        <p class="desc">اكتُشف من codex+cursor — C:\arc_solver_web</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 3</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>package.json name=arc_solver_web version=1.0.0 | CLAUDE.md present (600 chars excerpted). | git repository present <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>nour-industrial-ai <span class="muted mono">nour-industrial-ai</span></h3>
+        <p class="desc">اكتُشف من claude+codex+cursor — C:\NoorPlasticFactory</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 3</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>package.json name=nour-industrial-ai version=0.1.0 | README.md excerpt: # نور العرب — تصور الذكاء الصناعي منصة عرض تفاعلية ومقترح أولي مستقل لشركة **نور العرب للصناعات البلاستيكية — الأردن**. ليست نظاماً رسمياً تابعاً للشركة، ولا تفترض أن العمليات الحالية تعمل بالصورة المعروضة. الهدف أن يرى فريق الإدارة كيف يمكن ربط المبيعات وعروض الأسعار والإنتاج وا | AGENTS.md present (600 chars excerpted). | git repository present <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>al-majjarra <span class="muted mono">al-majjarra</span></h3>
+        <p class="desc">اكتُشف من claude+codex+cursor — C:\almajjarra</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 3</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>package.json name=al-majjarra version=0.1.0 | README.md excerpt: # المجرة لحلول الأعمال الزراعية — تصور رقمي تصور أولي مستقل لمنظومة رقمية وأتمتة لشركة **المجرة لحلول الأعمال الزراعية** (علامة Galaxy)، بعد مراجعة [almajjarra.com](https://almajjarra.com/). هذا **ليس** نظاماً رسمياً للشركة. أرقام الماء والإنتاج داخل المنصة **بيانات تجريبية**. مي | AGENTS.md present (600 chars excerpted). | git repository present <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>AlMara3i <span class="muted mono">almara3i</span></h3>
+        <p class="desc">اكتُشف من cursor — C:\AlMara3i</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 3</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>CLAUDE.md present (600 chars excerpted). <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>attmp <span class="muted mono">attmp</span></h3>
+        <p class="desc">اكتُشف من codex+cursor — C:\attmp</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 3</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>CLAUDE.md present (600 chars excerpted). | git repository present <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>banoon-kids <span class="muted mono">banoon-kids</span></h3>
+        <p class="desc">اكتُشف من codex+cursor — C:\Factories\Banoon</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 3</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>package.json name=banoon-kids version=0.1.0 | README.md excerpt: # بنون كيدز — تصور رقمي للمبيعات والمدارس تصور أولي مستقل لمنصة عربية لعلامة **بنون كيدز** التابعة لـ**شركة دلتا للصناعات البلاستيكية**، بعد مراجعة [banoonkids.com](https://www.banoonkids.com/). هذا **ليس** نظاماً رسمياً للشركة. أرقام المدارس والكراتين داخل المنصة **بيانات تجريبي | AGENTS.md present (146 chars excerpted). | git repository present <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>albayrouty <span class="muted mono">albayrouty</span></h3>
+        <p class="desc">اكتُشف من codex+cursor — C:\Factories\albayrouty</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 3</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>package.json name=albayrouty version=0.1.0 | README.md excerpt: # البيروتي — تصور رقمي للمبيعات مصدر عام: https://albayrouty.com/ هذا ليس نظاماً رسمياً للشركة. | AGENTS.md present (144 chars excerpted). | git repository present <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>arc_prize_2026 <span class="muted mono">arcprize2026</span></h3>
+        <p class="desc">اكتُشف من cursor — C:\ArabBank\arc_prize_2026</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 3</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>README.md excerpt: # ARC Prize 2026 Paper Track Goal: build a serious paper-track submission around a reproducible ARC reasoning system, not a one-off notebook. ## Working Thesis ARC tasks are best attacked as **program synthesis under visual invariants**, but the winning paper should explain *why* | CLAUDE.md present (600 chars excerpted). <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>rctc-skill <span class="muted mono">rctc-skill</span></h3>
+        <p class="desc">اكتُشف من claude+codex+cursor — C:\rctc-skill</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 3</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>README.md excerpt: # 🧠 RCTC Method — Sohaib&#39;s Prompt Engineering Skill &lt;div align=&quot;center&quot;&gt; ![RCTC Banner](https://img.shields.io/badge/RCTC-Sohaib&#39;s%20Method-6C3483?style=for-the-badge&amp;logo=anthropic&amp;logoColor=white) ![Version](https://img.shields.io/badge/version-1.0.0-brightgreen?style=for-the- | CLAUDE.md present (600 chars excerpted). | git repository present <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>zaha-almajali <span class="muted mono">zaha-almajali</span></h3>
+        <p class="desc">اكتُشف من claude+codex+cursor — C:\zahaalmajali</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 3</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>package.json name=zaha-almajali version=0.1.0 | AGENTS.md present (600 chars excerpted). | git repository present <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>khudhni <span class="muted mono">khudhni</span></h3>
+        <p class="desc">اكتُشف من claude — C:\ArabBank\khudhni</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 3</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>README.md excerpt: # خذني بطريقك — Khudhni Bi Tariqak **Slug:** `khudhni`   **Status:** Walking skeleton (2026-09-04). **Not launch-ready.** No real payments. منصة أردنية لمشاركة رحلات **مجدولة ومتكررة** (ممر يومي)، وليست أوبر عند الطلب. ## التشغيل المحلي PHP المحمول (لأن PHP على ويندوز هنا بلا امت | CLAUDE.md present (600 chars excerpted). | git repository present <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>ghayari <span class="muted mono">ghayari</span></h3>
+        <p class="desc">اكتُشف من claude+codex+cursor — C:\ArabBank\ghayari</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 3</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>package.json name=ghayari version=0.1.0 | README.md excerpt: # غياري / Ghayari Lebanon-first marketplace for auto parts: search by OEM or vehicle, compare **part + delivery = total**, order COD, follow a real timeline. Launch geography: **Beirut and suburbs**. Arabic RTL first. This repository is independent of خذني بطريقك. ## Slice you ca | AGENTS.md present (600 chars excerpted). | git repository present <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>project-iso <span class="muted mono">project-iso</span></h3>
+        <p class="desc">اكتُشف من claude+codex — C:\projectIso</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 3</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>package.json name=project-iso version=0.1.0 | README.md excerpt: # Project ISO رفيق دراسة عربي RTL بأسلوب مصانع المجرة/بنون (Next.js 16، shadcn/radix-nova، صدق المصدر). ## ماذا يوجد في المجلد | ملف | الحقيقة | |-----|---------| | Advisera ISO 42001 LI | الكورس الحي على training.advisera.com (عداد 0.77%) | | PECB ISO 22301 PDFs | كتيبات تسويق + | AGENTS.md present (600 chars excerpted). <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>apcasystems <span class="muted mono">apcasystems</span></h3>
+        <p class="desc">اكتُشف من cursor — C:\apcasystems</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 3</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>CLAUDE.md present (600 chars excerpted). <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>Muqasa-Jo <span class="muted mono">muqasa-jo-2</span></h3>
+        <p class="desc">اكتُشف من claude+codex+continue+cursor+vscode — C:\muqasa-jo</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 3</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>package.json name=Muqasa-Jo version=0.1.0 | README.md excerpt: # Muqasa-Jo This is a NextJS starter for Muqasa-Jo, an online auction platform. To get started, take a look at src/app/page.tsx. | CLAUDE.md present (600 chars excerpted). | git repository present <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>Muqasa-Jo <span class="muted mono">muqasa-jo</span></h3>
+        <p class="desc">اكتُشف من claude+codex+continue+cursor+vscode — C:\muqasa</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 3</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>package.json name=Muqasa-Jo version=0.1.0 | README.md excerpt: # Muqasa-Jo This is a NextJS starter for Muqasa-Jo, an online auction platform. To get started, take a look at src/app/page.tsx. | CLAUDE.md present (600 chars excerpted). | git repository present <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>nextn <span class="muted mono">nextn</span></h3>
+        <p class="desc">اكتُشف من codex+cursor — C:\Hissah-github</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 3</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>package.json name=nextn version=0.1.0 | README.md excerpt: # Hissah Hissah is an Arabic-first tutoring marketplace that connects students, parents, verified teachers, and administrators through one web platform and one Flutter mobile app. Production target: - Web: `https://hissah.vercel.app` - Repository: `https://github.com/Suhib-byte/H | CLAUDE.md present (600 chars excerpted). | git repository present <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>bug_bounty_12w <span class="muted mono">bugbounty12w</span></h3>
+        <p class="desc">اكتُشف من codex+cursor — C:\ArabBank\bug_bounty_12w</p></div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: 3</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>README.md excerpt: # Bug Bounty 12-Week → HackerOne Top 1000 **Source of truth:** `curriculum/bug_bounty_12w.json`   **Integrations:** OpenClaw (coach) + GreatMinds (tasks/habits) --- ## Quick links - **Authorized testing prompts (reduce refusals):** `tools/AUTHORIZED_TESTING_PROMPTS.md` - **Which  | CLAUDE.md present (600 chars excerpted). | git repository present <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>أكاديمية أبكا لمهارات وسلامة الذكاء الاصطناعي الصناعي <span class="muted mono">giz-apca-industrial-ai</span></h3>
+        </div>
+        <div class="meta"><span class="badge" style="--c:#60a5fa">مفتوح</span> <span class="chip">الأولوية: —</span> <div class="bar"><div class="fill" style="width:85%"></div><span>85%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">✓ ما تم إنجازه <span class="muted">(1)</span></div><ul><li>Gate B golden journey live (AR/EN) on Vercel with tests+build green <span class="muted mono small">2026-09-14</span></li></ul></div><div class="sec"><div class="sec-t">▹ الخطوات التالية <span class="muted">(1)</span></div><ul><li>Gate C: retrieval evaluation fixtures + Postgres/auth adapters for multi-tenant pilot <span class="muted mono small">2026-09-14</span></li></ul></div><div class="sec"><div class="sec-t">✦ مقترحات النماذج (Claude / Opus / Fable…) <span class="muted">(1)</span></div><ul><li>Add Postgres + real auth adapters behind existing domain types before pilot with live TVET institutions; keep mock AI as default for rehearsals. <span class="badge model" style="--c:#9ca3af">أخرى</span> <span class="muted mono small">2026-09-14</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(2)</span></h4>
+          <table class="entries"><thead><tr><th>التاريخ</th><th>النوع</th><th>العنوان</th><th>التقدّم</th><th>النموذج</th></tr></thead><tbody>
+          <tr><td class="mono">2026-09-14 15:49</td><td>✦ إنجاز رئيسي</td><td><strong>GitHub + Vercel production live</strong><div class="body">Shipped kazoya/apca-industrial-ai-academy + Vercel production READY at apca-industrial-ai-academy.vercel.app. Gate B complete.</div></td><td class="num">85%</td><td><span class="badge model" style="--c:#d97757">كلود (عام)</span></td></tr><tr><td class="mono">2026-09-14 15:47</td><td>↗ تقدّم</td><td><strong>Gate B golden vertical slice implemented</strong><div class="body">Built bilingual Next.js demonstrator in web/: diagnostic→pathway→scenario (bypass refusal+citation)→assessment (non-compensable safety)→passport→instructor→GIZ dashboard→evidence export. 11 vitest tests green; next build green. Mock AI + localStorage seed (documented in DECISION_LOG).</div></td><td class="num">70%</td><td><span class="badge model" style="--c:#d97757">كلود (عام)</span></td></tr>
+          </tbody></table>
+        </div>
+      </div>
+    </section>
+    <h2 class="group">بانتظار ردّك <span class="muted">(1)</span></h2>
+    
+    <section class="project">
+      <header>
+        <div><h3>براءة الشوبكي <span class="muted mono">bara-ah-alshobaki</span></h3>
+        <p class="desc">منصة تجريبية فاخرة لمنتجات غذائية حرفية أردنية: زيوت وخل ومستخلصات نباتية.</p></div>
+        <div class="meta"><span class="badge" style="--c:#f59e0b">بانتظار ردّك</span> <span class="chip">الأولوية: 2</span> <div class="bar"><div class="fill" style="width:92%"></div><span>92%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">✓ ما تم إنجازه <span class="muted">(1)</span></div><ul><li>Bilingual Next.js 16 premium demo live on Vercel (muqasa) and GitHub (kazoya/bara-ah-alshobaki) with vote section, i18n, theme controls, handoff zip <span class="muted mono small">2026-09-13</span></li></ul></div><div class="sec"><div class="sec-t">▹ الخطوات التالية <span class="muted">(1)</span></div><ul><li>Await client assets: product photos with لوغو براءة, SVG logo, real phone/email, product names/prices/SKUs <span class="muted mono small">2026-09-13</span></li></ul></div><div class="sec"><div class="sec-t">✦ مقترحات النماذج (Claude / Opus / Fable…) <span class="muted">(1)</span></div><ul><li>After Claude Pass 2: keep ALLOW_MOCK_PAYMENTS off on shared Preview unless actively testing unlock; document CSP hash sync when preferenceScript changes. <span class="badge model" style="--c:#9ca3af">أخرى</span> <span class="muted mono small">2026-09-13</span></li></ul></div><div class="sec"><div class="sec-t">≡ القيود والقواعد <span class="muted">(1)</span></div><ul><li>No invented certifications/awards; contact and images remain DEMO placeholders until client provides real materials <span class="muted mono small">2026-09-13</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(3)</span></h4>
+          <table class="entries"><thead><tr><th>التاريخ</th><th>النوع</th><th>العنوان</th><th>التقدّم</th><th>النموذج</th></tr></thead><tbody>
+          <tr><td class="mono">2026-09-13 23:13</td><td>↗ تقدّم</td><td><strong>Pass-2 security fixes + legal drafts</strong><div class="body">## Pass 2 fixes + Preview<br>- SEO: layout robots + empty sitemap when NEXT_PUBLIC_SEO_INDEX!=true<br>- Mock payments require ALLOW_MOCK_PAYMENTS=true; blocked on Vercel Production<br>- Legal draft pages + locked admin<br>- Contact size + local rate limit<br>- CSP hash + HSTS<br>- Local typecheck/unit/lint/build green<br><br>## Blocked for owner<br>- Supabase project keys<br>- AUDIO_CONSENT checklist signatures<br>- Explicit OK before Production promote<br><br>Evidence: docs/coordination/* , Preview redeploy after build</div></td><td class="num">92%</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-13 23:06</td><td>↗ تقدّم</td><td><strong>Phase A foundation + Claude review fixes</strong><div class="body">## Done<br>- BASELINE + PROJECT_STATE + coordination docs<br>- Removed Critical public/audio leak; private/audio README only<br>- Supabase migration + RLS (not auto-provisioned)<br>- Mock payments fail-closed on VERCEL_ENV=production; HMAC secret min length; security headers; dynamicParams=false<br>- Claude Code pass-1 High findings accepted in DECISIONS.md<br>- npm typecheck + unit + build green locally<br><br>## Evidence<br>- docs/coordination/BASELINE.md, CLAUDE_REVIEW.md, TASK_BOARD.md<br>- prebuild check-no-public-audio<br><br>## Blocked<br>- AUDIO_CONSENT + licensed private audio<br>- Supabase project link keys (manual)<br>- Production deploy needs explicit owner OK<br><br>## Next<br>- Claude pass-2 review<br>- Preview deploy<br>- Phase B data layer when secrets available</div></td><td class="num">90%</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr><tr><td class="mono">2026-09-13 19:11</td><td>✦ إنجاز رئيسي</td><td><strong>Demo shipped to GitHub + Vercel</strong><div class="body">Shipped full bilingual premium demo (ar default RTL / en LTR): botanical quiet-luxury theme, display controls, botanical canvas, vote/coffee section, Unsplash placeholders, SEO, handoff docs + zip.<br><br>**Evidence**<br>- GitHub: https://github.com/kazoya/bara-ah-alshobaki<br>- Production: https://baraahalshobaki.vercel.app (team muqasa)<br>- Zip: C:\\bara.ah_alshobaki\\handoff-bara-ah-chatgpt.zip<br>- `npm run build` succeeded locally and on Vercel<br><br>**Next**<br>- Client: branded photos with logo, real contact, SVG logo, product SKUs/prices<br>- Optional: alias `bara-ah-alshobaki.vercel.app` if desired</div></td><td class="num">85%</td><td><span class="badge model" style="--c:#9ca3af">أخرى</span></td></tr>
+          </tbody></table>
+        </div>
+      </div>
+    </section>
+    <h2 class="group">سكون <span class="muted">(3)</span></h2>
+    
+    <section class="project">
+      <header>
+        <div><h3>flutter_sms_gateway <span class="muted mono">fluttersmsgateway</span></h3>
+        <p class="desc">اكتُشف من codex — C:\atalkingQMS\flutter_sms_gateway</p></div>
+        <div class="meta"><span class="badge" style="--c:#6b7280">سكون</span> <span class="chip">الأولوية: 5</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>README.md excerpt: # qms_sms_gateway يتكون المشروع الآن من جزأين: - تطبيق Flutter/Android الحالي لإرسال SMS وواتساب من الهاتف. - [خدمة WhatsApp الثنائية الاتجاه](backend/README.md) المبنية على PHP وMariaDB وWhatsApp Cloud API وOpenAI. A new Flutter project. ## Getting Started This project is a star | CLAUDE.md present (600 chars excerpted). <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>نظام الجودة (QMS) — مجمّد <span class="muted mono">saqrandrakan</span></h3>
+        <p class="desc">اكتُشف من claude+codex+cursor — C:\atalkingQMS</p></div>
+        <div class="meta"><span class="badge" style="--c:#6b7280">سكون</span> <span class="chip">الأولوية: 5</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>package.json name=saqrandrakan version=1.0.0 | README.md excerpt: # Saqr &amp; Rakan - Multi-Brand Agricultural Export Platform A modern, multi-brand website supporting three agricultural export businesses: - Fresh Anatolia (freshanatolia.com) - WA Apple (waapple.org) - Amon Vegetables (amon-vegetables.com) ## Features - 🌾 Multi-brand support with | CLAUDE.md present (600 chars excerpted). | git repository present <span class="muted mono small">2026-09-10</span></li></ul></div><div class="sec"><div class="sec-t">≡ القيود والقواعد <span class="muted">(1)</span></div><ul><li>FROZEN BY OWNER — NO ACTION. List only. Do not edit code, deploy, or open hunts on this tree. <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <header>
+        <div><h3>flutter_app <span class="muted mono">flutterapp</span></h3>
+        <p class="desc">اكتُشف من cursor — C:\restaurant\hot_restaurant_ordering\flutter_app</p></div>
+        <div class="meta"><span class="badge" style="--c:#6b7280">سكون</span> <span class="chip">الأولوية: 5</span> <div class="bar"><div class="fill" style="width:0%"></div><span>0%</span></div></div>
+      </header>
+      <div class="cols">
+        <div>
+          <h4>العقل الهندسي (لقطة حالية)</h4>
+          <div class="sec"><div class="sec-t">◎ ما توصلنا إليه <span class="muted">(1)</span></div><ul><li>README.md excerpt: # flutter_app A new Flutter project. ## Getting Started This project is a starting point for a Flutter application. A few resources to get you started if this is your first Flutter project: - [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter) - [Write your first  | CLAUDE.md present (600 chars excerpted). <span class="muted mono small">2026-09-10</span></li></ul></div>
+        </div>
+        <div>
+          <h4>سجل التقدّم في الفترة <span class="muted">(0)</span></h4>
+          <p class="muted">لا مدخلات في هذه الفترة.</p>
+        </div>
+      </div>
+    </section>
+  <h2 class="group">العقل العام للمنصة</h2><section class="project"><h4>ما تعلّمناه (دروس) <span class="muted">(3)</span></h4><ul><li>Master Brain platform root is C:\master-brain (port 127.0.0.1:4545). Kit zips stay in C:\project1\master. Default project id is project1-commerce-intelligence. QMS (saqrandrakan) is dormant. Never print MB_PASSWORD or MB_OPS_TOKEN. Never overwrite an existing CLAUDE.md. <span class="badge model" style="--c:#d97757">كلود (عام)</span></li><li>mintty-arabic-bidi — Arabic in Windows Terminal/conhost/Cursor looks reversed because they paint logical order LTR. Working setup: Git mintty -o Bidi=2 (not default 1 — default disables bidi on Claude Code&#39;s alternate screen) + winpty + font Courier New or Simplified Arabic Fixed (Cascadia/Consolas draw boxes). Proven launcher: C:\Belt\scripts\claude-ar.ps1; ArabBank copy: C:\ArabBank\files\arabic-terminal\Open-ArabicClaude.ps1. <span class="badge model" style="--c:#9ca3af">أخرى</span></li><li>C:\master هو مقر التوجيه والتعاون. منصة العقل تبقى نسخة واحدة في C:\master-brain على 4545. الجسر منفصل على 4560. <span class="badge model" style="--c:#9ca3af">أخرى</span></li></ul></section><section class="project"><h4>المهارات المكتسبة <span class="muted">(2)</span></h4><ul><li>rctc-method — RCTC Role/Context/Task/Constraints is the command template in Project1 Master Brain UI. <span class="chip">installed</span> <a href="https://github.com/kazoya/rctc-skill">https://github.com/kazoya/rctc-skill</a> <span class="badge model" style="--c:#c8ad73">كلود فابل</span></li><li>agent-collaboration-bridge — مهارة غرفة التعاون المحمولة: سجل JSON ذري بين Cursor وClaude وCodex وChatGPT على المنفذ 4560. <span class="chip">installed</span> <span class="badge model" style="--c:#9ca3af">أخرى</span></li></ul></section><section class="project"><h4>الأدوات والتكاملات <span class="muted">(1)</span></h4><ul><li>master-brain — Local Master Brain HTTP + MCP + CLI <span class="chip">installed</span> <span class="badge model" style="--c:#d97757">كلود (عام)</span></li></ul></section>
+  <footer>ماستر برين — منصة المتابعة والعقل الهندسي · v1.2.0 · 2026-09-14 16:29</footer>
+</div></body></html>

@@ -1,0 +1,237 @@
+{
+  "version": 1,
+  "updated": "2026-09-14T12:37:48.683Z",
+  "projects": [
+    {
+      "id": "aipro",
+      "path": "C:\\AI_Pro",
+      "missing": false
+    },
+    {
+      "id": "al-majjarra",
+      "path": "C:\\almajjarra",
+      "missing": false
+    },
+    {
+      "id": "albayrouty",
+      "path": "C:\\Factories\\albayrouty",
+      "missing": false
+    },
+    {
+      "id": "almara3i",
+      "path": "C:\\AlMara3i",
+      "missing": false
+    },
+    {
+      "id": "apca-smarthelp",
+      "path": "C:\\Belt\\APCA-SmartHelp",
+      "missing": false
+    },
+    {
+      "id": "apcasystems",
+      "path": "C:\\apcasystems",
+      "missing": false
+    },
+    {
+      "id": "apccasystemscom",
+      "path": "C:\\apccasystems.com",
+      "missing": false
+    },
+    {
+      "id": "arabbank",
+      "path": "C:\\ArabBank",
+      "missing": false
+    },
+    {
+      "id": "arcprize2026",
+      "path": "C:\\ArabBank\\arc_prize_2026",
+      "missing": false
+    },
+    {
+      "id": "arcsolverweb",
+      "path": "C:\\arc_solver_web",
+      "missing": false
+    },
+    {
+      "id": "attmp",
+      "path": "C:\\attmp",
+      "missing": false
+    },
+    {
+      "id": "banoon-kids",
+      "path": "C:\\Factories\\Banoon",
+      "missing": false
+    },
+    {
+      "id": "bara-ah-alshobaki",
+      "path": "C:\\bara.ah_alshobaki",
+      "missing": false
+    },
+    {
+      "id": "belt",
+      "path": "C:\\Belt",
+      "missing": false
+    },
+    {
+      "id": "bugbounty12w",
+      "path": "C:\\ArabBank\\bug_bounty_12w",
+      "missing": false
+    },
+    {
+      "id": "chatbase",
+      "path": "C:\\airealpro\\chatbase",
+      "missing": false
+    },
+    {
+      "id": "controlling-ai",
+      "path": "C:\\projectz\\controllingAI",
+      "missing": false
+    },
+    {
+      "id": "crf-audit",
+      "path": "C:\\CRF Audit",
+      "missing": false
+    },
+    {
+      "id": "dashboard",
+      "path": "C:\\Users\\pscx9\\.cursor\\portfolio\\dashboard",
+      "missing": false
+    },
+    {
+      "id": "esolutionsv",
+      "path": "C:\\esolutionsv",
+      "missing": false
+    },
+    {
+      "id": "factories",
+      "path": "C:\\Factories",
+      "missing": false
+    },
+    {
+      "id": "flutterapp",
+      "path": "C:\\restaurant\\hot_restaurant_ordering\\flutter_app",
+      "missing": false
+    },
+    {
+      "id": "fluttersmsgateway",
+      "path": "C:\\atalkingQMS\\flutter_sms_gateway",
+      "missing": false
+    },
+    {
+      "id": "gandalf",
+      "path": "C:\\gandalf",
+      "missing": false
+    },
+    {
+      "id": "gepico",
+      "path": "C:\\gepico",
+      "missing": false
+    },
+    {
+      "id": "ghayari",
+      "path": "C:\\ArabBank\\ghayari",
+      "missing": false
+    },
+    {
+      "id": "giz-apca-industrial-ai",
+      "path": "C:\\GIZ_Training\\apca-industrial-ai-academy",
+      "missing": false
+    },
+    {
+      "id": "jitan-group",
+      "path": "C:\\jitan_group",
+      "missing": false
+    },
+    {
+      "id": "khudhni",
+      "path": "C:\\ArabBank\\khudhni",
+      "missing": false
+    },
+    {
+      "id": "mahdi-hreeaf",
+      "path": "C:\\mahdi",
+      "missing": false
+    },
+    {
+      "id": "master",
+      "path": "C:\\master",
+      "missing": false
+    },
+    {
+      "id": "muqasa-jo",
+      "path": "C:\\muqasa",
+      "missing": false
+    },
+    {
+      "id": "muqasa-jo-2",
+      "path": "C:\\muqasa-jo",
+      "missing": false
+    },
+    {
+      "id": "mytasks",
+      "path": "C:\\MyTasks",
+      "missing": false
+    },
+    {
+      "id": "nextn",
+      "path": "C:\\Hissah-github",
+      "missing": false
+    },
+    {
+      "id": "nour-industrial-ai",
+      "path": "C:\\NoorPlasticFactory",
+      "missing": false
+    },
+    {
+      "id": "project-iso",
+      "path": "C:\\projectIso",
+      "missing": false
+    },
+    {
+      "id": "project1-commerce-intelligence",
+      "path": "C:\\project1",
+      "missing": false
+    },
+    {
+      "id": "rctc-skill",
+      "path": "C:\\rctc-skill",
+      "missing": false
+    },
+    {
+      "id": "rz-packaging",
+      "path": "C:\\rz",
+      "missing": false
+    },
+    {
+      "id": "saqrandrakan",
+      "path": "C:\\atalkingQMS",
+      "missing": false
+    },
+    {
+      "id": "site-creator-vinext-starter",
+      "path": "C:\\Users\\pscx9\\Documents\\Risha360",
+      "missing": false
+    },
+    {
+      "id": "smart-agent-hub",
+      "path": "C:\\AIPRO",
+      "missing": false
+    },
+    {
+      "id": "the-farm-dairy",
+      "path": "C:\\thefarmdairy",
+      "missing": false
+    },
+    {
+      "id": "wathiqa",
+      "path": "C:\\Wathiqa",
+      "missing": false
+    },
+    {
+      "id": "zaha-almajali",
+      "path": "C:\\zahaalmajali",
+      "missing": false
+    }
+  ],
+  "sessions": []
+}

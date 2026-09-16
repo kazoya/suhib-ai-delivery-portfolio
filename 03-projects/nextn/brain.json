@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "updated": "2026-09-10T12:10:53.408Z",
+  "sections": {
+    "done": [],
+    "findings": [
+      {
+        "id": "b-6ef13dc8",
+        "text": "package.json name=nextn version=0.1.0 | README.md excerpt: # Hissah Hissah is an Arabic-first tutoring marketplace that connects students, parents, verified teachers, and administrators through one web platform and one Flutter mobile app. Production target: - Web: `https://hissah.vercel.app` - Repository: `https://github.com/Suhib-byte/H | CLAUDE.md present (600 chars excerpted). | git repository present",
+        "date": "2026-09-10T12:10:53.408Z",
+        "by": "claude",
+        "source": "seed"
+      }
+    ],
+    "current": [],
+    "next": [],
+    "improvements": [],
+    "suggestions": [],
+    "decisions": [],
+    "blockers": [],
+    "constraints": []
+  }
+}

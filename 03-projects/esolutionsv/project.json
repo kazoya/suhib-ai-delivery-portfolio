@@ -1,0 +1,26 @@
+{
+  "id": "esolutionsv",
+  "name": {
+    "ar": "esolutionsv",
+    "en": "esolutionsv"
+  },
+  "description": {
+    "ar": "اكتُشف من cursor — C:\\esolutionsv",
+    "en": "Discovered via cursor — C:\\esolutionsv"
+  },
+  "status": "open",
+  "priority": 3,
+  "revenue": "unknown",
+  "progress": 0,
+  "tags": [
+    "discovered",
+    "cursor",
+    "node",
+    "nextjs"
+  ],
+  "sessions": [],
+  "links": [],
+  "owner": "Suhib Asrawi",
+  "created": "2026-09-10T12:10:53.335Z",
+  "updated": "2026-09-10T12:10:53.335Z"
+}

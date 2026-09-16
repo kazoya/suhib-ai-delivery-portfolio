@@ -1,0 +1,49 @@
+import { ImageResponse } from "next/og";
+import fs from "node:fs/promises";
+import path from "node:path";
+import { owner } from "@/data/portfolio";
+
+export const alt = "Suhib Asrawi — AI-agent-driven delivery portfolio";
+export const size = { width: 1200, height: 630 };
+export const contentType = "image/png";
+
+export default async function OgImage() {
+  const font = await fs.readFile(path.join(process.cwd(), "app/fonts/DroidArabicKufi-Bold.ttf"));
+  return new ImageResponse(
+    (
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          padding: 64,
+          background: "linear-gradient(135deg, #0f6e56 0%, #16211c 60%, #2b2413 100%)",
+          color: "#fff",
+          fontFamily: "Kufi",
+          direction: "rtl",
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+          <div style={{ width: 64, height: 64, borderRadius: 18, background: "linear-gradient(135deg,#4fc9a3,#e2b34b)" }} />
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <div style={{ fontSize: 40, fontWeight: 700 }}>{owner.name}</div>
+            <div style={{ fontSize: 22, opacity: 0.85 }}>{owner.titleEn}</div>
+          </div>
+        </div>
+        <div style={{ fontSize: 46, lineHeight: 1.4, maxWidth: 1000 }}>{owner.tagline}</div>
+        <div style={{ display: "flex", gap: 28, fontSize: 22, opacity: 0.9 }}>
+          <span>46 مشروعاً</span>
+          <span>·</span>
+          <span>6 روابط إنتاج</span>
+          <span>·</span>
+          <span>Vitest 52/52</span>
+          <span>·</span>
+          <span>github.com/kazoya</span>
+        </div>
+      </div>
+    ),
+    { ...size, fonts: [{ name: "Kufi", data: font, weight: 700, style: "normal" }] },
+  );
+}

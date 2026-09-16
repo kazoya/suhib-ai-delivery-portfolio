@@ -1,0 +1,24 @@
+{
+  "id": "apca-smarthelp",
+  "name": {
+    "ar": "APCA-SmartHelp",
+    "en": "APCA-SmartHelp"
+  },
+  "description": {
+    "ar": "اكتُشف من cursor — C:\\Belt\\APCA-SmartHelp",
+    "en": "Discovered via cursor — C:\\Belt\\APCA-SmartHelp"
+  },
+  "status": "open",
+  "priority": 3,
+  "revenue": "unknown",
+  "progress": 0,
+  "tags": [
+    "discovered",
+    "cursor"
+  ],
+  "sessions": [],
+  "links": [],
+  "owner": "Suhib Asrawi",
+  "created": "2026-09-10T12:10:53.345Z",
+  "updated": "2026-09-10T12:10:53.345Z"
+}

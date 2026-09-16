@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "updated": "2026-09-14T07:18:21.354Z",
+  "sections": {
+    "done": [
+      {
+        "id": "b-441ba802",
+        "text": "دُمج AlMithaliya في C:\\Factories\\ACI (نقل .git + node_modules) وحُذف C:\\Factories\\AlMithaliya. حزمة تحسين: files\\al-mithaliya-improvement-handoff.zip (~285 KB). الإنتاج ما زال https://al-mithaliya-dairy.vercel.app",
+        "date": "2026-09-14T05:45:14.822Z",
+        "by": "opus",
+        "source": "mcp"
+      },
+      {
+        "id": "b-202b8c6c",
+        "text": "إرسال al-mithaliya-improvement-handoff.zip لوكيل التحسين؛ عند عودة التعديلات دمجها في C:\\Factories\\ACI ثم push/Vercel.",
+        "date": "2026-09-14T05:45:16.646Z",
+        "by": "opus",
+        "source": "mcp",
+        "updated": "2026-09-14T06:38:00.076Z",
+        "movedFrom": "next"
+      },
+      {
+        "id": "b-93d5ce7b",
+        "text": "حزمة AlMithaliya-Improved مدمجة ومنشورة: https://al-mithaliya-dairy.vercel.app (commit 7037dc9)",
+        "date": "2026-09-14T06:38:02.695Z",
+        "by": "opus",
+        "source": "mcp"
+      },
+      {
+        "id": "b-f07f6534",
+        "text": "C:\\Factories\\ACI = مؤسسة صناعات الكيماويات الزراعية (aci.com.jo). المثالية عادت إلى C:\\Factories\\AlMithaliya. GitHub kazoya/ACI.",
+        "date": "2026-09-14T07:16:53.916Z",
+        "by": "opus",
+        "source": "mcp"
+      },
+      {
+        "id": "b-9f2c3ddc",
+        "text": "ACI منشور: https://aci-agrochemicals.vercel.app · GitHub kazoya/ACI · Vercel READY",
+        "date": "2026-09-14T07:18:21.354Z",
+        "by": "opus",
+        "source": "mcp"
+      }
+    ],
+    "findings": [
+      {
+        "id": "b-b996ff83",
+        "text": "CLAUDE.md present (600 chars excerpted).",
+        "date": "2026-09-10T12:10:53.399Z",
+        "by": "claude",
+        "source": "seed"
+      },
+      {
+        "id": "b-23f9d5bd",
+        "text": "نموذج Samsung Levant SIC 2026 JO مطمّر في iframe mena.samsung.com/levant/samsung-innovation-campus-2026-jo. التعبئة تمّت عبر UIA على نافذة Comet. ComboBox النموذج قد يظهر bounding box على شريط التبويبات — لا تُضغط click_input على ComboBox إذا top<80.",
+        "date": "2026-09-12T20:07:23.725Z",
+        "by": "other",
+        "source": "mcp"
+      },
+      {
+        "id": "b-b6a2262f",
+        "text": "ACI (C:\\Factories\\ACI): بدأ 2026-09-14 كنسخة من AlMithaliya ثم توقف قبل إعادة العلامة/المحتوى/النشر/الـ ZIP. المثالية منشورة: https://al-mithaliya-dairy.vercel.app",
+        "date": "2026-09-14T04:59:05.244Z",
+        "by": "opus",
+        "source": "mcp"
+      }
+    ],
+    "current": [],
+    "next": [],
+    "improvements": [],
+    "suggestions": [
+      {
+        "id": "b-d5b7bf48",
+        "text": "بعد عودة تحسينات الوكيل: اقترح فصل صفحات المصنع الذكي العامة إن لم تخدم سرد الألبان، واستبدالها بمسار «من الحليب إلى الرف» أعمق مع صور خط حقيقية.",
+        "date": "2026-09-14T05:45:17.089Z",
+        "by": "opus",
+        "source": "mcp",
+        "status": "proposed"
+      }
+    ],
+    "decisions": [],
+    "blockers": [],
+    "constraints": []
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "smart-agent-hub",
+  "name": {
+    "ar": "smart-agent-hub",
+    "en": "smart-agent-hub"
+  },
+  "description": {
+    "ar": "اكتُشف من codex+cursor — C:\\AIPRO",
+    "en": "Discovered via codex+cursor — C:\\AIPRO"
+  },
+  "status": "open",
+  "priority": 3,
+  "revenue": "unknown",
+  "progress": 0,
+  "tags": [
+    "discovered",
+    "codex",
+    "cursor",
+    "node",
+    "nextjs",
+    "docker"
+  ],
+  "sessions": [],
+  "links": [],
+  "owner": "Suhib Asrawi",
+  "created": "2026-09-10T12:10:53.330Z",
+  "updated": "2026-09-10T12:10:53.330Z"
+}

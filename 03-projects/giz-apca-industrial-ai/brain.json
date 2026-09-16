@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "updated": "2026-09-14T12:50:10.295Z",
+  "sections": {
+    "done": [
+      {
+        "id": "b-94ecac6e",
+        "text": "Gate B golden journey live (AR/EN) on Vercel with tests+build green",
+        "date": "2026-09-14T12:50:09.798Z",
+        "by": "human",
+        "source": "mcp",
+        "evidence": "https://apca-industrial-ai-academy.vercel.app"
+      }
+    ],
+    "findings": [],
+    "current": [],
+    "next": [
+      {
+        "id": "b-ed9e676c",
+        "text": "Gate C: retrieval evaluation fixtures + Postgres/auth adapters for multi-tenant pilot",
+        "date": "2026-09-14T12:50:10.295Z",
+        "by": "human",
+        "source": "mcp"
+      }
+    ],
+    "improvements": [],
+    "suggestions": [
+      {
+        "id": "b-3f2a482c",
+        "text": "Add Postgres + real auth adapters behind existing domain types before pilot with live TVET institutions; keep mock AI as default for rehearsals.",
+        "date": "2026-09-14T12:49:19.831Z",
+        "by": "other",
+        "source": "mcp",
+        "status": "proposed"
+      }
+    ],
+    "decisions": [],
+    "blockers": [],
+    "constraints": []
+  }
+}

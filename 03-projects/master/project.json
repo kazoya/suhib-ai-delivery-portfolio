@@ -1,0 +1,28 @@
+{
+  "id": "master",
+  "name": {
+    "ar": "المقر الرئيسي / Master HQ",
+    "en": "Master HQ"
+  },
+  "description": {
+    "ar": "المقر الرئيسي للتعاون بين Cursor وClaude Code وCodex وChatGPT: Cursor مدير التنفيذ، Claude Code عمق الكود، الباقي صور وتحسين وإدارة مكتب.",
+    "en": "Main HQ for multi-agent collaboration: Cursor Auto directs and executes, Claude Code leads code intelligence, Codex and ChatGPT advise, improve, and produce images/office work."
+  },
+  "status": "open",
+  "priority": 1,
+  "revenue": "unknown",
+  "progress": 70,
+  "tags": [
+    "hq",
+    "collaboration",
+    "cursor",
+    "claude-code",
+    "codex",
+    "chatgpt"
+  ],
+  "sessions": [],
+  "links": [],
+  "owner": "Suhib Asrawi",
+  "created": "2026-09-12T13:56:27.596Z",
+  "updated": "2026-09-12T14:06:28.720Z"
+}

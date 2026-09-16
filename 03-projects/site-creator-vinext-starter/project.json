@@ -1,0 +1,28 @@
+{
+  "id": "site-creator-vinext-starter",
+  "name": {
+    "ar": "site-creator-vinext-starter",
+    "en": "site-creator-vinext-starter"
+  },
+  "description": {
+    "ar": "اكتُشف من claude+codex+cursor — C:\\Users\\pscx9\\Documents\\Risha360",
+    "en": "Discovered via claude+codex+cursor — C:\\Users\\pscx9\\Documents\\Risha360"
+  },
+  "status": "open",
+  "priority": 3,
+  "revenue": "unknown",
+  "progress": 78,
+  "tags": [
+    "discovered",
+    "claude",
+    "codex",
+    "cursor",
+    "node",
+    "nextjs"
+  ],
+  "sessions": [],
+  "links": [],
+  "owner": "Suhib Asrawi",
+  "created": "2026-09-10T12:10:53.197Z",
+  "updated": "2026-09-13T10:19:42.983Z"
+}

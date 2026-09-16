@@ -1,0 +1,28 @@
+{
+  "id": "the-farm-dairy",
+  "name": {
+    "ar": "the-farm-dairy",
+    "en": "the-farm-dairy"
+  },
+  "description": {
+    "ar": "اكتُشف من claude+codex+cursor — C:\\thefarmdairy",
+    "en": "Discovered via claude+codex+cursor — C:\\thefarmdairy"
+  },
+  "status": "open",
+  "priority": 3,
+  "revenue": "unknown",
+  "progress": 0,
+  "tags": [
+    "discovered",
+    "claude",
+    "codex",
+    "cursor",
+    "node",
+    "nextjs"
+  ],
+  "sessions": [],
+  "links": [],
+  "owner": "Suhib Asrawi",
+  "created": "2026-09-10T12:10:53.324Z",
+  "updated": "2026-09-10T12:10:53.324Z"
+}
