@@ -102,7 +102,7 @@ export function ProjectExplorer({ projects }: { projects: Project[] }) {
                 empty && "cursor-not-allowed opacity-40 hover:text-muted",
               )}
             >
-              {t} <span className="opacity-70">({n})</span>
+              {t} ({n})
             </button>
           );
         })}
