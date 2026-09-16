@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Briefcase, CheckCircle2, ExternalLink, FileText, ShieldCheck } from "lucide-react";
-import { capabilities, docs, enterpriseBackground, honesty, howIWork, kpis, owner, projects } from "@/data/portfolio";
+import { capabilities, deploymentStats, docs, enterpriseBackground, honesty, howIWork, kpis, owner, projects } from "@/data/portfolio";
 import { eras, method } from "@/data/journey";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { LevelBadge } from "@/components/shared/badge";
@@ -88,6 +88,9 @@ export default function HomePage() {
               {l.label} <ExternalLink className="size-3.5" />
             </a>
           ))}
+          <Link href="/platform#deployments" className="inline-flex items-center gap-1 font-semibold text-primary hover:underline">
+            و{deploymentStats.urls - liveLinks.length} رابطاً آخر <ArrowLeft className="size-3.5" />
+          </Link>
         </div>
       </section>
 

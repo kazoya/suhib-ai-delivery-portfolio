@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
-import { entriesByType, platformSummary, projectsByStatus } from "@/data/portfolio";
+import { ArrowLeft, ExternalLink } from "lucide-react";
+import { deployments, deploymentStats, entriesByType, platformSummary, projectsByStatus } from "@/data/portfolio";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { PlatformDiagram } from "@/components/diagrams/platform-diagram";
 import { ProgressBars } from "@/components/charts/progress-bars";
@@ -52,6 +52,32 @@ export default function PlatformPage() {
       </ul>
 
       <div className="reveal"><PlatformDiagram /></div>
+
+      <section id="deployments" className="mt-12 scroll-mt-24">
+        <SectionHeading
+          eyebrow="النشر"
+          title={`${deploymentStats.urls} رابطاً حيّاً على Vercel من ${deploymentStats.repos} مشروعاً`}
+          lead={`تُحقق من كل رابط بطلب HTTP يوم ${deploymentStats.verified}. ${deploymentStats.products} منتجاً ومنصة، و${deploymentStats.factories} موقع مصنع أردني (20 منها من قالب واحد)، و${deploymentStats.customDomains} نطاقات مخصصة.`}
+        />
+        <div className="grid gap-5 lg:grid-cols-2">
+          {(["product", "factory"] as const).map((kind) => (
+            <div key={kind} className="card reveal p-5">
+              <h3 className="font-bold">{kind === "product" ? "منتجات ومنصات" : "مواقع المصانع"}</h3>
+              <ul className="mt-3 grid gap-1.5 text-sm sm:grid-cols-2">
+                {deployments.filter((d) => d.kind === kind).map((d) => (
+                  <li key={d.url}>
+                    <a href={d.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 hover:text-primary">
+                      <ExternalLink className="size-3.5 shrink-0 text-muted" />
+                      <span>{d.label}</span>
+                      {d.customDomain ? <span className="rounded-full bg-primary-soft px-1.5 text-[10px] font-bold text-primary">نطاق مخصص</span> : null}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <section className="mt-12">
         <SectionHeading eyebrow="توزيع العمل" title="طرف واحد يقرر، وثلاثة أدوار للوكلاء" lead="كما هو مكتوب في المنصة. لا يدّعي وكيل أنه نفّذ عملاً لم يكتبه في السجل مع دليله، ولا يُفوَّض قرار مالي أو نشر خارجي." />

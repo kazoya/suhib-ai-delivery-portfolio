@@ -71,6 +71,7 @@ Environment: Windows 11, Node 24, Next.js 16.3.1 production build served locally
 | `npm run typecheck` | pass |
 | `npm run build` | pass, 51 static pages |
 | `npm run test` (Playwright, desktop 1440 + mobile 390) | 119 passed, 17 skipped by design (axe and print run once), 0 failed |
+| Live Vercel URLs from the Vercel dashboard, checked with HTTP requests on 2026-09-16 | 35 of 36 respond 200; `aipro-brown.vercel.app` returns 404 and is excluded |
 | axe WCAG 2.1 AA, 8 pages × light/dark | 0 serious or critical violations (JSON per page in `docs/reports/axe/`) |
 | Horizontal overflow at 390px | none on 12 routes |
 | Keyboard: skip link, visible focus, palette focus trap, Escape, arrows, Enter | pass |

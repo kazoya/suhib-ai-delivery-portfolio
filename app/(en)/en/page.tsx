@@ -7,7 +7,7 @@ import { GithubIcon } from "@/components/shared/github-icon";
 import { PrintButton } from "@/components/shared/print-button";
 import { ContactCta } from "@/components/shared/contact-cta";
 import { StatusBadge } from "@/components/shared/badge";
-import { kpisEn, owner, projects } from "@/data/portfolio";
+import { deploymentStats, kpisEn, owner, projects } from "@/data/portfolio";
 import { coreSkills, education, eras, experience, method, selectedProjectsCv } from "@/data/journey";
 import { alternatesFor, ogEn, profilePageLd } from "@/lib/seo";
 
@@ -127,9 +127,10 @@ export default function EnglishPage() {
           </div>
           <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-1 text-sm text-muted">
             <li className="inline-flex items-center gap-1.5 font-bold text-primary"><CheckCircle2 className="size-4" /> Live:</li>
-            {["https://baraahalshobaki.vercel.app", "https://aci-agrochemicals.vercel.app", "https://al-mithaliya-dairy.vercel.app", "https://apca-industrial-ai-academy.vercel.app", "https://ghayari.vercel.app", "https://wathiqa-eight.vercel.app"].map((u) => (
+            {["https://law.risha360.com", "https://v.muqasa-jo.com", "https://www.zahaalaw.com", "https://baraahalshobaki.vercel.app", "https://apca-industrial-ai-academy.vercel.app", "https://ghayari.vercel.app"].map((u) => (
               <li key={u}><a href={u} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">{u.replace(/^https?:\/\//, "")}</a></li>
             ))}
+            <li><Link href="/platform#deployments" className="font-semibold text-primary hover:underline">and {deploymentStats.urls - 6} more (full list) →</Link></li>
           </ul>
         </section>
 

@@ -85,14 +85,14 @@ export const owner = {
 
 export const kpis = [
   { value: "20+", label: "عاماً في بناء الأنظمة وتكاملها ودعمها", hint: "من إدارة الشبكات 2003 إلى وكلاء الذكاء الاصطناعي" },
-  { value: "6", label: "منصات حيّة على Vercel", hint: "ثنائية اللغة، منشورة من GitHub" },
+  { value: "35", label: "رابطاً حيّاً على Vercel", hint: "34 مشروعاً · 3 نطاقات مخصصة · تُحقق منها 2026-09-16" },
   { value: "67", label: "اختباراً آلياً أخضر في مشروعين", hint: "Vitest 52 + Playwright 4 + Vitest 11" },
   { value: "2", label: "نظامان إنتاجيان لعملاء", hint: "منصة MTZ بنكية · ريشة 360 على Forge" },
 ];
 
 export const kpisEn = [
   { value: "20+", label: "years building, integrating and supporting systems", hint: "from network administration in 2003 to AI agents" },
-  { value: "6", label: "live platforms on Vercel", hint: "bilingual, deployed from GitHub" },
+  { value: "35", label: "live URLs on Vercel", hint: "34 projects · 3 custom domains · verified 2026-09-16" },
   { value: "67", label: "green automated tests across two projects", hint: "Vitest 52 + Playwright 4 + Vitest 11" },
   { value: "2", label: "client production systems", hint: "a banking MTZ platform · Risha360 on Forge" },
 ];
@@ -256,7 +256,7 @@ export const projects: Project[] = [
     role: "المالك التقني: القالب، سير العمل، مراجعة اقتراحات الوكيل، قرار الدمج والنشر.",
     outcome: "موقعان حيّان على Vercel من GitHub.",
     evidenceType: "روابط حيّة + GitHub",
-    limitation: "أصول المصانع (صور وشعارات) تجريبية حتى يوفّرها العميل.",
+    limitation: "أصول المصانع (صور وشعارات) تجريبية حتى يوفّرها العميل. إلى جانب هذين الموقعين، 20 موقع مصنع آخر من القالب نفسه حيّة على Vercel (القائمة في صفحة المنصة).",
     milestones: [
       { date: "2026-09-14", title: "دمج تحسينات المثالية للألبان ونشرها على Vercel" },
       { date: "2026-09-14", title: "فصل القالب وبناء ACI للكيماويات الزراعية" },
@@ -277,6 +277,7 @@ export const projects: Project[] = [
       "al-mithaliya-dairy.vercel.app — Vercel production READY (commit 7037dc9)",
       "aci-agrochemicals.vercel.app — READY",
       "GitHub kazoya/AlMithaliya و kazoya/ACI",
+      "22 موقع مصنع حيّاً على Vercel من القالب نفسه (تُحقق منها 2026-09-16)",
       "عائق مسجَّل بصدق: انقطاع جلسة ترك ACI نسخة غير معاد علامتها قبل إكمالها لاحقاً",
     ],
     links: [
@@ -479,8 +480,8 @@ export const enterpriseBackground = [
 ];
 
 export const capabilities: { name: string; evidence: string; level: Confidence }[] = [
-  { name: "Next.js ثنائي اللغة RTL/LTR + سمات", evidence: "7 مشاريع، 6 منها منشورة", level: "عالي" },
-  { name: "نشر على Vercel من GitHub", evidence: "6 روابط إنتاج READY", level: "عالي" },
+  { name: "Next.js ثنائي اللغة RTL/LTR + سمات", evidence: "34 مشروعاً منشوراً على Vercel، منها 22 موقع مصنع", level: "عالي" },
+  { name: "نشر على Vercel من GitHub", evidence: "35 رابطاً حيّاً (34 مشروعاً) تُحقق منها 2026-09-16", level: "عالي" },
   { name: "Laravel (أدوار، middleware، ترحيلات، آلة حالة)", evidence: "ريشة 360: PR #3 في الإنتاج، PayoutReviewService", level: "عالي" },
   { name: "نشر Laravel على Forge (migrate + pm2)", evidence: "ce79801 / 652d826، migration Ran", level: "عالي" },
   { name: "PostgreSQL + Prisma مع أقفال واستمرارية", evidence: "Project1 S1", level: "عالي" },
@@ -530,6 +531,57 @@ export const docs = [
   { slug: "cover-letters", file: "07-cover-letter-templates.md", title: "قوالب رسائل التقديم", blurb: "قالب لوظيفة تقنية وقالب لمشروع تعاقدي." },
   { slug: "gaps", file: "08-honest-gaps.md", title: "الفجوات الصادقة وخطة أسبوعين", blurb: "ما ينقص البروفايل الآن وخطة يوم بيوم." },
 ];
+
+/* ---------- live Vercel deployments (verified with HTTP 200 on 2026-09-16) ---------- */
+
+export type Deployment = { label: string; url: string; kind: "product" | "factory"; repo?: string; customDomain?: boolean };
+
+export const deployments: Deployment[] = [
+  { label: "ريشة 360 — القانون", url: "https://law.risha360.com", kind: "product", repo: "law-risha360", customDomain: true },
+  { label: "منصة ريشة 360", url: "https://risha360-platform.vercel.app", kind: "product", repo: "risha360-platform" },
+  { label: "مقاصة جو", url: "https://v.muqasa-jo.com", kind: "product", repo: "muqasa", customDomain: true },
+  { label: "مقاصة (نسخة Vercel)", url: "https://muqasa.vercel.app", kind: "product", repo: "muqasa" },
+  { label: "زها المجالي — محاماة", url: "https://www.zahaalaw.com", kind: "product", repo: "zaha-almajali", customDomain: true },
+  { label: "أكاديمية APCA (مُظهِر)", url: "https://apca-industrial-ai-academy.vercel.app", kind: "product", repo: "apca-industrial-ai-academy" },
+  { label: "براءة الشوبكي", url: "https://baraahalshobaki.vercel.app", kind: "product", repo: "bara-ah-alshobaki" },
+  { label: "سمسار العرب", url: "https://simsar-alarab.vercel.app", kind: "product", repo: "simsar-alarab" },
+  { label: "وثيقة", url: "https://wathiqa-eight.vercel.app", kind: "product", repo: "Wathiqa" },
+  { label: "غياري", url: "https://ghayari.vercel.app", kind: "product", repo: "ghayari" },
+  { label: "VStrata", url: "https://vstrata.vercel.app", kind: "product", repo: "VStrata" },
+  { label: "البيروتي — مقاصة", url: "https://albayrouty-muqasa.vercel.app", kind: "product", repo: "AlBayrouty" },
+  { label: "NNS Perchance Catcher", url: "https://nns-perchance-catcher.vercel.app", kind: "product" },
+  { label: "ACI للكيماويات الزراعية", url: "https://aci-agrochemicals.vercel.app", kind: "factory", repo: "ACI" },
+  { label: "المثالية للألبان", url: "https://al-mithaliya-dairy.vercel.app", kind: "factory", repo: "AlMithaliya" },
+  { label: "مجموعة عبد", url: "https://abdulgroup.vercel.app", kind: "factory", repo: "AbdulGroup" },
+  { label: "Wales", url: "https://wales-jo.vercel.app", kind: "factory", repo: "Wales" },
+  { label: "VIP Armouring", url: "https://viparmouring.vercel.app", kind: "factory", repo: "VipArmouring" },
+  { label: "Universal Jordan", url: "https://universaljordan.vercel.app", kind: "factory", repo: "UniversalJordan" },
+  { label: "TransWorld Apparel", url: "https://transworldapparel.vercel.app", kind: "factory", repo: "TransWorldApparel" },
+  { label: "Top", url: "https://top-jo.vercel.app", kind: "factory", repo: "Top" },
+  { label: "ثمار", url: "https://themar-nine.vercel.app", kind: "factory", repo: "Themar" },
+  { label: "Tello Socks", url: "https://tellosocks.vercel.app", kind: "factory", repo: "TelloSocks" },
+  { label: "طيبة", url: "https://tayyiba-muqasa.vercel.app", kind: "factory", repo: "Tayyiba" },
+  { label: "تفاصيل", url: "https://tafaseel-beta.vercel.app", kind: "factory", repo: "Tafaseel" },
+  { label: "مجموعة الرياض", url: "https://riyadhgrp.vercel.app", kind: "factory", repo: "RiyadhGrp" },
+  { label: "Primo Cafe", url: "https://primocafe-pi.vercel.app", kind: "factory", repo: "PrimoCafe" },
+  { label: "Point Comfort", url: "https://pointcomfort.vercel.app", kind: "factory", repo: "PointComfort" },
+  { label: "National Paints", url: "https://nationalpaints.vercel.app", kind: "factory", repo: "NationalPaints" },
+  { label: "Movetco", url: "https://movetco.vercel.app", kind: "factory", repo: "Movetco" },
+  { label: "المزارع الحديثة", url: "https://modernfarms.vercel.app", kind: "factory", repo: "ModernFarms" },
+  { label: "خضري", url: "https://khudari.vercel.app", kind: "factory", repo: "Khudari" },
+  { label: "Joswe", url: "https://joswe-muqasa.vercel.app", kind: "factory", repo: "Joswe" },
+  { label: "Jordina", url: "https://jordina.vercel.app", kind: "factory", repo: "Jordina" },
+  { label: "Jopack", url: "https://jopack-kappa.vercel.app", kind: "factory", repo: "Jopack" },
+];
+
+export const deploymentStats = {
+  urls: deployments.length,
+  repos: new Set(deployments.map((d) => d.repo ?? d.url)).size,
+  products: deployments.filter((d) => d.kind === "product").length,
+  factories: deployments.filter((d) => d.kind === "factory").length,
+  customDomains: deployments.filter((d) => d.customDomain).length,
+  verified: "2026-09-16",
+};
 
 /* ---------- chart data (all from report-202609141629-all-ar.json) ---------- */
 
