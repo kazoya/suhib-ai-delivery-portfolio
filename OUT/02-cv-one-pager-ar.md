@@ -2,7 +2,7 @@
 
 **مستشار تقني أول · مهندس حلول · وكلاء الذكاء الاصطناعي والأتمتة وتكامل الأنظمة**  
 عمّان، الأردن · عن بُعد أولاً · حضور ميداني في السعودية عند الحاجة · عربي (أم) / إنجليزي (مهني)  
-البريد: Suhib.Asrawi@gmail.com · LinkedIn: linkedin.com/in/suhib-asrawi-0a6136264 · GitHub: github.com/kazoya · مستقل: kazoyan · بعيد: suhib_asrawi
+البريد: Suhib.Asrawi@gmail.com · LinkedIn: linkedin.com/in/suhib-al-saleh-0a6136264 · GitHub: github.com/kazoya · مستقل: Asrawi · بعيد: suhib_asrawi
 
 ---
 
@@ -39,4 +39,4 @@
 ---
 
 ### English (short)
-**Suhib Asrawi — Senior Technology Consultant · Solutions Architect · AI Agents, Automation & Systems Integration.** 20+ years building, integrating and supporting enterprise systems (Java, C#, SQL Server, Oracle; banking leave import, access control and attendance, queue management). Current work: Arabic knowledge assistants (RAG), multi-agent hubs, WhatsApp operations automation, and bilingual platforms shipped on Vercel and Forge. Uses coding agents as governed accelerators; decisions and evidence stay with him. Email: Suhib.Asrawi@gmail.com · LinkedIn: linkedin.com/in/suhib-asrawi-0a6136264 · GitHub: kazoya.
+**Suhib Asrawi — Senior Technology Consultant · Solutions Architect · AI Agents, Automation & Systems Integration.** 20+ years building, integrating and supporting enterprise systems (Java, C#, SQL Server, Oracle; banking leave import, access control and attendance, queue management). Current work: Arabic knowledge assistants (RAG), multi-agent hubs, WhatsApp operations automation, and bilingual platforms shipped on Vercel and Forge. Uses coding agents as governed accelerators; decisions and evidence stay with him. Email: Suhib.Asrawi@gmail.com · LinkedIn: linkedin.com/in/suhib-al-saleh-0a6136264 · GitHub: kazoya.

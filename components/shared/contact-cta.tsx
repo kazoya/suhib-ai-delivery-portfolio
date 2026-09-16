@@ -77,7 +77,7 @@ export function ContactCta({ locale = "ar", compact = false, className }: { loca
           ) : null}
           <li>
             <a href={owner.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-primary">
-              <LinkedinIcon className="size-4 text-primary" /> <span className="ltr">linkedin.com/in/suhib-asrawi-0a6136264</span>
+              <LinkedinIcon className="size-4 text-primary" /> <span className="ltr">linkedin.com/in/suhib-al-saleh-0a6136264</span>
             </a>
           </li>
           <li>

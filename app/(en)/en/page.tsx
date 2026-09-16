@@ -151,7 +151,7 @@ export default function EnglishPage() {
                 <li className="inline-flex items-center gap-1.5"><MapPin className="size-4" /> {owner.locationEn}</li>
                 <li className="inline-flex items-center gap-1.5"><Mail className="size-4" /> <a className="hover:text-primary" href={`mailto:${owner.email}`}>{owner.email}</a></li>
                 {owner.publicPhone ? <li className="inline-flex items-center gap-1.5"><Phone className="size-4" /> {owner.phone}</li> : null}
-                <li className="inline-flex items-center gap-1.5"><LinkedinIcon className="size-4" /> <a className="hover:text-primary" href={owner.linkedin}>linkedin.com/in/suhib-asrawi-0a6136264</a></li>
+                <li className="inline-flex items-center gap-1.5"><LinkedinIcon className="size-4" /> <a className="hover:text-primary" href={owner.linkedin}>linkedin.com/in/suhib-al-saleh-0a6136264</a></li>
                 <li className="inline-flex items-center gap-1.5"><GithubIcon className="size-4" /> <a className="hover:text-primary" href={owner.github}>github.com/{owner.githubHandle}</a></li>
                 {owner.employers.map((e) => <li key={e.url}><a className="hover:text-primary" href={e.url}>{e.label}</a></li>)}
               </ul>

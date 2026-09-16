@@ -67,13 +67,13 @@ export const owner = {
   location: "عمّان، الأردن · عن بُعد أولاً · حضور ميداني في السعودية عند الحاجة",
   locationEn: "Amman, Jordan · Remote-first · On-site in Saudi Arabia when required",
   email: "Suhib.Asrawi@gmail.com",
-  linkedin: "https://linkedin.com/in/suhib-asrawi-0a6136264",
+  linkedin: "https://www.linkedin.com/in/suhib-al-saleh-0a6136264/",
   /** Present in the ATS CV. Rendered only when publicPhone is true (owner decision). */
   phone: "+962 787 523 192",
   publicPhone: false,
   github: "https://github.com/kazoya",
   githubHandle: "kazoya",
-  mostaql: "https://mostaql.com/u/kazoyan",
+  mostaql: "https://mostaql.com/u/Asrawi",
   baeed: "https://baeed.com/u/suhib_asrawi",
   employers: [
     { label: "apcasystems.com", url: "https://apcasystems.com" },

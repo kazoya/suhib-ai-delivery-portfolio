@@ -33,7 +33,7 @@ export default function CvPage() {
             <li className="inline-flex items-center gap-1.5"><MapPin className="size-4" /> {owner.location}</li>
             <li className="inline-flex items-center gap-1.5"><Mail className="size-4" /> <a className="ltr hover:text-primary" href={`mailto:${owner.email}`} itemProp="email">{owner.email}</a></li>
             {owner.publicPhone ? <li className="inline-flex items-center gap-1.5"><Phone className="size-4" /> <span className="ltr">{owner.phone}</span></li> : null}
-            <li className="inline-flex items-center gap-1.5"><LinkedinIcon className="size-4" /> <a className="ltr hover:text-primary" href={owner.linkedin} itemProp="sameAs">linkedin.com/in/suhib-asrawi-0a6136264</a></li>
+            <li className="inline-flex items-center gap-1.5"><LinkedinIcon className="size-4" /> <a className="ltr hover:text-primary" href={owner.linkedin} itemProp="sameAs">linkedin.com/in/suhib-al-saleh-0a6136264</a></li>
             <li className="inline-flex items-center gap-1.5"><GithubIcon className="size-4" /> <a className="ltr hover:text-primary" href={owner.github} itemProp="sameAs">github.com/{owner.githubHandle}</a></li>
             {owner.employers.map((e) => <li key={e.url} className="ltr"><a className="hover:text-primary" href={e.url}>{e.label}</a></li>)}
           </ul>
