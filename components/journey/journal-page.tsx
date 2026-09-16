@@ -8,6 +8,8 @@ import { JournalEntries } from "@/components/journey/journal-entries";
 import Image from "next/image";
 import { eras, funGallery, security } from "@/data/journey";
 import { t, type Locale } from "@/lib/i18n";
+import { HeroNodeField, JournalReadingProgress } from "@/components/effects/hero-effects";
+import { LiveAmmanClock } from "@/components/effects/live-amman-clock";
 
 const copy = {
   ar: {
@@ -94,9 +96,15 @@ export function JournalPageContent({ locale = "ar" }: { locale?: Locale }) {
   const c = copy[locale];
   return (
     <div className="container-x py-12">
+      <JournalReadingProgress />
       {/* hero */}
-      <header className="max-w-3xl">
-        <div className="eyebrow">{c.eyebrow}</div>
+      <div className="relative">
+        <HeroNodeField />
+      <header className="relative max-w-3xl">
+        <div className="flex flex-wrap items-center gap-3">
+          <div className="eyebrow">{c.eyebrow}</div>
+          <LiveAmmanClock locale={locale} />
+        </div>
         <h1 className="h-display mt-2" style={{ textWrap: "balance" }}>
           {c.h1}
           <span className="cursor-blink" aria-hidden="true" />
@@ -114,6 +122,7 @@ export function JournalPageContent({ locale = "ar" }: { locale?: Locale }) {
           ))}
         </ol>
       </header>
+      </div>
 
       {/* recruiter view */}
       <section id="recruiter" className="mt-14 scroll-mt-24" aria-labelledby="recruiter-t">
