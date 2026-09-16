@@ -3,7 +3,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { owner } from "@/data/portfolio";
 
-export const alt = "Suhib Asrawi — AI-agent-driven delivery portfolio";
+export const alt = "Suhib Asrawi — Senior Technology Consultant & Solutions Architect";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -29,18 +29,18 @@ export default async function OgImage() {
           <div style={{ width: 64, height: 64, borderRadius: 18, background: "linear-gradient(135deg,#4fc9a3,#e2b34b)" }} />
           <div style={{ display: "flex", flexDirection: "column" }}>
             <div style={{ fontSize: 40, fontWeight: 700 }}>{owner.name}</div>
-            <div style={{ fontSize: 22, opacity: 0.85 }}>{owner.titleEn}</div>
+            <div style={{ fontSize: 22, opacity: 0.85 }}>مستشار تقني أول · مهندس حلول · وكلاء الذكاء الاصطناعي وتكامل الأنظمة</div>
           </div>
         </div>
-        <div style={{ fontSize: 46, lineHeight: 1.4, maxWidth: 1000 }}>{owner.tagline}</div>
+        <div style={{ fontSize: 44, lineHeight: 1.4, maxWidth: 1050 }}>{owner.tagline}</div>
         <div style={{ display: "flex", gap: 28, fontSize: 22, opacity: 0.9 }}>
-          <span>46 مشروعاً</span>
+          <span>+20 عاماً</span>
           <span>·</span>
-          <span>6 روابط إنتاج</span>
+          <span>6 منصات حيّة</span>
           <span>·</span>
-          <span>Vitest 52/52</span>
+          <span>Java · C# · SQL Server · Oracle · AI agents</span>
           <span>·</span>
-          <span>github.com/kazoya</span>
+          <span>عمّان</span>
         </div>
       </div>
     ),

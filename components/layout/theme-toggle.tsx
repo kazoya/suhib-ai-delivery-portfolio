@@ -2,6 +2,7 @@
 
 import { useSyncExternalStore } from "react";
 import { Moon, Sun } from "lucide-react";
+import type { Locale } from "@/lib/i18n";
 
 type Theme = "light" | "dark";
 
@@ -13,7 +14,7 @@ function subscribe(cb: () => void) {
 const getSnapshot = (): Theme => (document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light");
 const getServerSnapshot = (): Theme => "light";
 
-export function ThemeToggle() {
+export function ThemeToggle({ locale = "ar" }: { locale?: Locale }) {
   const theme = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   function toggle() {
@@ -22,7 +23,7 @@ export function ThemeToggle() {
     try { localStorage.setItem("theme", next); } catch { /* private mode */ }
   }
 
-  const label = theme === "dark" ? "الوضع الفاتح" : "الوضع الداكن";
+  const label = locale === "en" ? (theme === "dark" ? "Light mode" : "Dark mode") : theme === "dark" ? "الوضع الفاتح" : "الوضع الداكن";
   return (
     <button
       type="button"
