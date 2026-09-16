@@ -266,7 +266,7 @@ export const projects: Project[] = [
       { src: "/screenshots/al-mithaliya.webp", alt: "الصفحة الرئيسية لموقع المثالية للألبان", width: 1280, height: 766 },
       { src: "/screenshots/aci.webp", alt: "الصفحة الرئيسية لموقع ACI للكيماويات الزراعية", width: 1280, height: 766 },
     ],
-    stack: ["Next.js 16", "Tailwind 4", "shadcn", "Recharts", "Vercel", "GitHub"],
+    stack: ["Next.js", "Tailwind 4", "shadcn", "Recharts", "Vercel", "GitHub"],
     problem: "مصانع أردنية بلا حضور رقمي مقنع؛ المطلوب مواقع عرض سريعة قابلة للتحسين بوكيل خارجي ثم الدمج والنشر.",
     built: [
       "المثالية للألبان: صفحة مبيعات، قائمة جانبية قابلة للطي، تقييم آيزو، noindex حتى الاعتماد.",
@@ -313,7 +313,7 @@ export const projects: Project[] = [
       { date: "2026-09-13", title: "التمرير الأمني الثاني ومسودات الصفحات القانونية" },
     ],
     screenshots: [{ src: "/screenshots/baraah.webp", alt: "الصفحة الرئيسية لمتجر براءة الشوبكي التجريبي", width: 1280, height: 800 }],
-    stack: ["Next.js 16", "Supabase + RLS", "CSP hash", "HSTS", "Vercel"],
+    stack: ["Next.js", "Supabase + RLS", "CSP hash", "HSTS", "Vercel"],
     problem: "عميل يحتاج عرضاً مقنعاً لمنتجات زيوت وخل ومستخلصات نباتية قبل توفير أصوله (صور، شعار، أسعار).",
     built: [
       "متجر ثنائي اللغة (ar RTL افتراضي / en)، سمة «هدوء نباتي فاخر»، تحكم بالعرض، قسم تصويت/قهوة، SEO محجوب حتى NEXT_PUBLIC_SEO_INDEX=true.",
@@ -392,7 +392,7 @@ export const projects: Project[] = [
     evidenceType: "رابط حيّ",
     limitation: "IPN الحي كان 404 آخر فحص؛ لا خطوة تالية مسجَّلة.",
     screenshots: [{ src: "/screenshots/wathiqa.webp", alt: "واجهة وثيقة لرفع ملف PDF ومحادثته", width: 1280, height: 800 }],
-    stack: ["Next.js", "PayPal subscriptions", "OpenAI (اختياري)"],
+    stack: ["Next.js", "Vercel", "PayPal subscriptions", "OpenAI (اختياري)"],
     problem: "قراءة ملفات PDF طويلة بالعربية مرهقة؛ المطلوب وكيل محادثة يجيب من الملف نفسه.",
     built: [
       "رفع PDF حتى 40 MB، ساعة مجانية، اشتراك PayPal (_xclick-subscriptions) من 12$ شهرياً.",
@@ -417,7 +417,7 @@ export const projects: Project[] = [
     evidenceType: "رابط حيّ + سكربتات فحص",
     limitation: "لا GPS حقيقي، لا OCR، لا PayPal حيّ؛ بيانات بذرة.",
     screenshots: [{ src: "/screenshots/ghayari.webp", alt: "الصفحة الرئيسية لسوق غياري لقطع السيارات", width: 1280, height: 800 }],
-    stack: ["Next.js", "COD state machine", "PDF investor brief", "AR/EN/FR"],
+    stack: ["Next.js", "Vercel", "COD state machine", "PDF investor brief", "AR/EN/FR"],
     problem: "شراء قطع غيار في بيروت بلا شفافية سعر التوصيل الكلي.",
     built: [
       "بحث بـ OEM أو المركبة، فرز بأفضل تطابق / أقل إجمالي / الأقرب، طلب COD بأسعار من الخادم.",
