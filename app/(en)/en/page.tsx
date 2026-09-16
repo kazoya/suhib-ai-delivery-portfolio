@@ -10,6 +10,8 @@ import { StatusBadge } from "@/components/shared/badge";
 import { deploymentStats, kpisEn, owner, projects } from "@/data/portfolio";
 import { coreSkills, education, eras, experience, method, selectedProjectsCv } from "@/data/journey";
 import { alternatesFor, ogEn, profilePageLd } from "@/lib/seo";
+import { HeroNodeField } from "@/components/effects/hero-effects";
+import { LiveAmmanClock } from "@/components/effects/live-amman-clock";
 
 export const metadata: Metadata = {
   title: { absolute: `${owner.nameEn} — Senior Technology Consultant & Solutions Architect · AI Agents and Systems Integration` },
@@ -31,10 +33,14 @@ export default function EnglishPage() {
       {/* HERO */}
       <section className="hero-mesh relative overflow-hidden">
         <div className="grid-lines absolute inset-0 -z-0" aria-hidden="true" />
+        <HeroNodeField />
         <div className="container-x relative py-16 sm:py-24">
           <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:items-center">
             <div className="max-w-3xl">
-              <div className="eyebrow reveal in">{owner.titleEn}</div>
+              <div className="reveal in flex flex-wrap items-center gap-3">
+                <div className="eyebrow">{owner.titleEn}</div>
+                <LiveAmmanClock locale="en" />
+              </div>
               <h1 className="h-display reveal in mt-2" style={{ textWrap: "balance" }}>{owner.taglineEn}</h1>
               <p className="lead reveal in mt-5 max-w-2xl">{owner.summaryEn}</p>
               <div className="reveal in mt-7 flex flex-wrap gap-3">
