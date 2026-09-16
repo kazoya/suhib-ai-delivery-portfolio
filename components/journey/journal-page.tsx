@@ -5,7 +5,8 @@ import { MethodStrip } from "@/components/journey/method-strip";
 import { TechnologyGenerations } from "@/components/journey/technology-generations";
 import { ClientMode, RecruiterView } from "@/components/journey/recruiter-view";
 import { JournalEntries } from "@/components/journey/journal-entries";
-import { eras } from "@/data/journey";
+import Image from "next/image";
+import { eras, funGallery, security } from "@/data/journey";
 import { t, type Locale } from "@/lib/i18n";
 
 const copy = {
@@ -33,6 +34,14 @@ const copy = {
     entriesEyebrow: "مدخلات هندسية",
     entriesTitle: "خمسة قرارات هندسية موثّقة بالكامل",
     entriesLead: "لكل مدخل: التحدي، السياق والقيود، القرار، التنفيذ، التحقق، النتيجة، الدرس، وكيف يظهر المبدأ في عملي اليوم.",
+    secEyebrow: "الأمن التطبيقي",
+    secTitle: "الأمن بالأدلة لا بالألقاب",
+    secLead: "الطبقة نفسها من التشخيص، لكن من جهة المهاجم: كل مختبر في PortSwigger محلول، وتقارير هندسة عكسية، وتقييمات أمن تطبيقات للتنفيذيين.",
+    secPractice: "ما أفعله فعلاً",
+    secShot: "لوحة PortSwigger — لقطة حقيقية 2026-09-16",
+    funEyebrow: "على الهامش",
+    funTitle: "حين دخل الذكاء الاصطناعي عالمنا",
+    funLead: "ثلاث صور مولّدة بالذكاء الاصطناعي صنعتها في حزيران 2026 للمرح. زينة لا دليل، وشريك عمل لا بديل.",
     truthTitle: "ملاحظة صدق",
     truth: [
       "خبرات DOS والوسائط واستعادة البيانات خبرات عملية تأسيسية؛ لا أدّعي تخصصاً حالياً في DOS، ولا شهادة تحقيق جنائي رقمي، ولا استعادة غير مقيدة لأجهزة iPhone.",
@@ -64,6 +73,14 @@ const copy = {
     entriesEyebrow: "Engineering entries",
     entriesTitle: "Five fully documented engineering decisions",
     entriesLead: "Each entry: challenge, context and constraints, decision, implementation, verification, result, lesson, and how the principle appears in my work today.",
+    secEyebrow: "Application security",
+    secTitle: "Security by evidence, not by titles",
+    secLead: "The same diagnostic layer, seen from the attacker's side: every PortSwigger lab solved, reverse-engineering reports, and application-security assessments for executives.",
+    secPractice: "What I actually do",
+    secShot: "PortSwigger dashboard — real capture, 2026-09-16",
+    funEyebrow: "On the side",
+    funTitle: "When AI walked into our world",
+    funLead: "Three AI-generated illustrations I made in June 2026, for fun. Decoration, not evidence; a work partner, not a replacement.",
     truthTitle: "Truthfulness note",
     truth: [
       "DOS, multimedia and data-recovery experiences are hands-on foundations; I claim no current DOS specialisation, no digital-forensics certification, and no unrestricted iPhone recovery.",
@@ -140,6 +157,47 @@ export function JournalPageContent({ locale = "ar" }: { locale?: Locale }) {
       <section id="entries" className="mt-16 scroll-mt-24" aria-labelledby="entries-t">
         <SectionHeading id="entries-t" eyebrow={c.entriesEyebrow} title={c.entriesTitle} lead={c.entriesLead} />
         <JournalEntries locale={locale} />
+      </section>
+
+      {/* security */}
+      <section id="security" className="mt-16 scroll-mt-24" aria-labelledby="security-t">
+        <SectionHeading id="security-t" eyebrow={c.secEyebrow} title={c.secTitle} lead={c.secLead} />
+        <div className="grid gap-5 lg:grid-cols-[1.1fr_1fr]">
+          <figure className="card reveal overflow-hidden">
+            <Image src={security.screenshot.src} alt={t(security.screenshot.alt, locale)} width={security.screenshot.width} height={security.screenshot.height} sizes="(min-width: 1024px) 55vw, 100vw" className="h-auto w-full" />
+            <figcaption className="px-4 py-2 text-xs text-muted">{c.secShot}</figcaption>
+          </figure>
+          <div className="grid content-start gap-4">
+            <ul className="grid gap-2 sm:grid-cols-2">
+              {security.facts.map((f) => (
+                <li key={f.value} className="card reveal p-4">
+                  <div className="ltr text-end text-2xl font-bold text-primary">{f.value}</div>
+                  <div className="text-xs text-muted">{t(f.label, locale)}</div>
+                </li>
+              ))}
+            </ul>
+            <div className="card reveal p-4">
+              <div className="text-xs font-bold text-muted">{c.secPractice}</div>
+              <ul className="mt-2 grid gap-1.5 text-sm">
+                {security.practice.map((p) => <li key={p.en} className="flex gap-2"><span className="mt-2.5 size-1.5 shrink-0 rounded-full bg-primary" />{t(p, locale)}</li>)}
+              </ul>
+            </div>
+            <p className="rounded-xl border border-gold/40 bg-gold-soft p-3 text-xs">{t(security.disclaimer, locale)}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* fun */}
+      <section id="fun" className="mt-16 scroll-mt-24" aria-labelledby="fun-t">
+        <SectionHeading id="fun-t" eyebrow={c.funEyebrow} title={c.funTitle} lead={c.funLead} />
+        <ul className="grid gap-4 md:grid-cols-3">
+          {funGallery.map((g) => (
+            <li key={g.src} className="card reveal overflow-hidden">
+              <Image src={g.src} alt={t(g.caption, locale)} width={g.width} height={g.height} sizes="(min-width: 768px) 33vw, 100vw" className="h-auto w-full" />
+              <p className="px-4 py-3 text-xs text-muted">{t(g.caption, locale)}</p>
+            </li>
+          ))}
+        </ul>
       </section>
 
       {/* truth */}

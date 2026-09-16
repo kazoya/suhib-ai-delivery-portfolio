@@ -383,6 +383,9 @@ export const tracks: Track[] = [
   { id: "integration", category: "integration", title: { ar: "التكامل", en: "Integration" }, items: [
     { label: "Windows services", era: "enterprise", current: true }, { label: "Service Broker / MSMQ / IBM MQ", era: "enterprise", current: true }, { label: "Device SDKs (Miditec, ZKTeco)", era: "enterprise", current: true }, { label: "RFID / biometrics / ANPR", era: "enterprise", current: true }, { label: "Multi-agent hub", era: "ai", current: true },
   ] },
+  { id: "security", category: "systems", title: { ar: "الأمن", en: "Security" }, items: [
+    { label: "Recovery & Safe Mode", era: "early" }, { label: "Network hardening", era: "infra" }, { label: "App-security assessments", era: "enterprise", current: true }, { label: "Burp Suite Pro · PortSwigger 273/273", era: "ai", current: true }, { label: "APK reverse-engineering reports", era: "ai", current: true },
+  ] },
   { id: "automation", category: "automation", title: { ar: "الأتمتة", en: "Automation" }, items: [
     { label: "Scripts", era: "infra" }, { label: "Scheduled jobs / SQL Agent", era: "enterprise", current: true }, { label: "WinCC scripting", era: "enterprise", current: true }, { label: "Workflow automation", era: "ai", current: true }, { label: "WhatsApp operations flows", era: "ai", current: true },
   ] },
@@ -397,7 +400,7 @@ export const recruiterView: { q: L; a: L }[] = [
   { q: { ar: "من هو صهيب؟", en: "Who is Suhib?" }, a: { ar: "مهندس برمجيات ومستشار تقني من عمّان، أكثر من 20 عاماً في بناء الأنظمة المؤسسية والتشغيلية وتكاملها ودعمها وتشخيصها.", en: "A software engineer and technology consultant from Amman with 20+ years building, integrating, supporting and troubleshooting enterprise and operational systems." } },
   { q: { ar: "ماذا يعمل الآن؟", en: "What does he do now?" }, a: { ar: "مستشار تقني أول ومهندس حلول في APCA Systems (منذ 2018)، ومهندس برمجيات لأنظمة الدخول وقواعد البيانات والتكامل في Signals Control (منذ 2018): وكلاء ذكاء اصطناعي، أتمتة، وتكامل أنظمة.", en: "Senior Technology Consultant & Solutions Architect at APCA Systems (since 2018) and Software Engineer for access control, databases and integration at Signals Control (since 2018): AI agents, automation and systems integration." } },
   { q: { ar: "ما مستوى أقدميته؟", en: "How senior is he?" }, a: { ar: "أول/معماري. يقود التصميم والتسليم، يشخّص الإنتاج، ويوجّه المهندسين والوكلاء؛ يعمل مباشرة مع التنفيذيين.", en: "Senior / architect level. Leads design and delivery, diagnoses production, mentors engineers and directs AI agents; works directly with executives." } },
-  { q: { ar: "على أي أنظمة عمل؟", en: "What systems has he worked on?" }, a: { ar: "أنظمة بنكية (استيراد إجازات على منصة MTZ)، تحكم بالدخول والحضور (Miditec، ZKTeco، RFID، بصمة، ANPR)، إدارة طوابير، مساعدات معرفة عربية، منصات عقارية، ومواقع ومنصات عربية ثنائية اللغة.", en: "Banking (leave import on an MTZ platform), access control and attendance (Miditec, ZKTeco, RFID, fingerprint, ANPR), queue management, Arabic knowledge assistants, a real-estate platform, and bilingual Arabic web platforms." } },
+  { q: { ar: "على أي أنظمة عمل؟", en: "What systems has he worked on?" }, a: { ar: "أنظمة بنكية (استيراد إجازات على منصة MTZ)، تحكم بالدخول والحضور (Miditec، ZKTeco، RFID، بصمة، ANPR)، إدارة طوابير، مساعدات معرفة عربية، منصات عقارية، مواقع ومنصات عربية ثنائية اللغة، وتقييمات أمن تطبيقات (PortSwigger 273/273، Burp Suite Pro).", en: "Banking (leave import on an MTZ platform), access control and attendance (Miditec, ZKTeco, RFID, fingerprint, ANPR), queue management, Arabic knowledge assistants, a real-estate platform, bilingual Arabic web platforms, and application-security assessments (PortSwigger 273/273, Burp Suite Pro)." } },
   { q: { ar: "ماذا يحل لمؤسستي؟", en: "What can he solve for my organisation?" }, a: { ar: "أنظمة لا تتحدث مع بعضها، عمليات متكررة تحتاج أتمتة، نظام إنتاجي يتعطل، مساعد معرفة على وثائقكم، أو معمارية تقنية قبل الإنفاق.", en: "Systems that do not talk to each other, repetitive operations that need automation, a production system that keeps failing, a knowledge assistant over your documents, or technical architecture before you spend." } },
   { q: { ar: "أين يعمل؟", en: "Where can he work?" }, a: { ar: "عمّان، الأردن. عن بُعد أولاً، وحضور ميداني في السعودية والخليج عند الحاجة.", en: "Amman, Jordan. Remote-first, on-site in Saudi Arabia and the GCC when required." } },
   { q: { ar: "كيف أتواصل معه؟", en: "How can I contact him?" }, a: { ar: "البريد أو LinkedIn أدناه، أو GitHub لمراجعة الكود العام.", en: "Email or LinkedIn below, or GitHub to review public code." } },
@@ -511,6 +514,40 @@ export const journalEntries: JournalEntry[] = [
   },
 ];
 
+/* ---------------------------------------------------------- security */
+
+export type SecurityFact = { value: string; label: L };
+
+/** PortSwigger Web Security Academy dashboard, screenshot supplied by the owner on 2026-09-16. */
+export const security = {
+  screenshot: { src: "/screenshots/portswigger.webp", width: 910, height: 611, alt: { ar: "لوحة PortSwigger Web Security Academy: المستوى Expert، 273 من 273 مختبراً محلولة، جاهز لامتحان Burp Suite Certified Practitioner", en: "PortSwigger Web Security Academy dashboard: Expert level, 273 of 273 labs solved, ready for the Burp Suite Certified Practitioner exam" } },
+  facts: [
+    { value: "273 / 273", label: { ar: "مختبراً محلولاً في PortSwigger Web Security Academy", en: "labs solved in the PortSwigger Web Security Academy" } },
+    { value: "Expert", label: { ar: "المستوى: 61 مبتدئ · 173 ممارس · 39 خبير", en: "level: 61 apprentice · 173 practitioner · 39 expert" } },
+    { value: "100%", label: { ar: "مختبرات الثغرات مكتملة", en: "vulnerability labs complete" } },
+    { value: "READY", label: { ar: "خطوات التحضير لامتحان BSCP مكتملة (23/23 · 8/8 · 5/5 · 1/1)", en: "BSCP exam-preparation steps complete (23/23 · 8/8 · 5/5 · 1/1)" } },
+  ] as SecurityFact[],
+  practice: [
+    { ar: "تقييمات أمن التطبيقات مع تقارير مخاطر للتنفيذيين (من السيرة، APCA Systems).", en: "Application-security assessments with risk reporting for executives (CV, APCA Systems)." },
+    { ar: "عمل يدوي بـ Burp Suite Professional على تطبيقات ويب حقيقية ضمن نطاق مصرّح به.", en: "Hands-on Burp Suite Professional work on real web applications within an authorised scope." },
+    { ar: "تقارير هندسة عكسية لتطبيقات Android (APK): فك الحزمة، تتبع الاتصالات، وتوثيق الأسرار المضمّنة.", en: "Reverse-engineering reports for Android apps (APK): unpacking, traffic tracing, and documenting embedded secrets." },
+    { ar: "تقوية تطبيقات الويب في مشاريعي: CSP بهاش، HSTS، تحديد معدل، مدفوعات تفشل مغلقةً، Origin/CSRF.", en: "Hardening in my own projects: hashed CSP, HSTS, rate limiting, fail-closed payments, Origin/CSRF checks." },
+  ],
+  disclaimer: {
+    ar: "جاهز لامتحان Burp Suite Certified Practitioner ولم أتقدّم له بعد؛ لا أدّعي الشهادة. صيد الثغرات مسار جانبي ضمن نطاقات مصرّح بها، لا خدمة اختراق تجارية.",
+    en: "Ready for the Burp Suite Certified Practitioner exam, not yet taken; I do not claim the certification. Bug hunting is a side track within authorised scopes, not a commercial penetration-testing service.",
+  },
+};
+
+/* --------------------------------------------------------------- fun gallery */
+
+/** AI-generated illustrations the owner made in June 2026 — decoration, never evidence. */
+export const funGallery: { src: string; width: number; height: number; caption: L }[] = [
+  { src: "/fun/ai-partner-1.webp", width: 1200, height: 800, caption: { ar: "«أنا أزداد مهارة، أبو شريك، لأساعدك على تذكّر مهامك». أول ما طلبته من المساعد: أن يتذكر بدلاً مني.", en: "\"I am getting better, partner, so I can help you remember your tasks.\" The first thing I asked an assistant for: remember on my behalf." } },
+  { src: "/fun/ai-partner-2.webp", width: 1200, height: 800, caption: { ar: "«بلاش تتنمر، الله يرحم لما كنت تتعلم مني كيف تحل اكس أوه». النسخة الثانية من المزحة نفسها.", en: "\"Don't bully me, remember when you learned tic-tac-toe from me.\" Second cut of the same joke." } },
+  { src: "/fun/ai-partner-3.webp", width: 1200, height: 960, caption: { ar: "«شريك نجاح، مو بس ذكاء اصطناعي». مكتب APCA كما تخيّله النموذج: فكرة منك، تنفيذ سوي، نتيجة.", en: "\"A partner in success, not just AI.\" The APCA office as the model imagined it: your idea, joint execution, a result." } },
+];
+
 /* --------------------------------------------------- CV (from the ATS PDF) */
 
 export type Experience = { role: L; org: L; place: L; period: L; bullets: L[] };
@@ -602,7 +639,9 @@ export const coreSkills: { group: L; items: string }[] = [
   { group: { ar: "البرمجة والخلفيات", en: "Programming & backend" }, items: "Java, C#, Dart/Flutter, SQL, T-SQL, XML, REST APIs" },
   { group: { ar: "منصات البيانات", en: "Data platforms" }, items: "Microsoft SQL Server, Oracle, SSIS, RDLC, query tuning, clustering" },
   { group: { ar: "التكامل", en: "Integration" }, items: "SQL Server Service Broker, MSMQ, IBM MQ, Windows services, scheduled jobs, device SDKs" },
-  { group: { ar: "الأنظمة والبنية التحتية", en: "Systems & infrastructure" }, items: "Windows installation/recovery, boot diagnostics, Safe Mode/recovery environments, PC/laptop repair, network administration, printer/peripheral troubleshooting, Linux/Ubuntu desktop troubleshooting" },
+  { group: { ar: "الأنظمة والبنية التحتية", en: "Systems & infrastructure" }, items: "Windows installation/recovery, boot diagnostics, Safe Mode/recovery environments, PC/laptop repair, network administration, printer/peripheral troubleshooting, Linux/Ubuntu desktop troubleshooting, VMware" },
+  { group: { ar: "استعادة البيانات", en: "Data recovery" }, items: "Hands-on recovery of deleted or inaccessible files from HDD, USB flash, microSD, Android storage and damaged media; non-destructive practice (never write back to the source); multiple tools per situation" },
+  { group: { ar: "أمن التطبيقات", en: "Application security" }, items: "Application-security assessments with risk reporting, Burp Suite Professional, PortSwigger Web Security Academy 273/273 labs (BSCP exam-ready), APK reverse-engineering reports, CSP/HSTS/rate limiting/CSRF hardening" },
   { group: { ar: "الذكاء الاصطناعي والأتمتة", en: "AI & automation" }, items: "Multi-agent systems, RAG / semantic search, knowledge assistants, workflow automation, WinCC scripting" },
   { group: { ar: "الأنظمة التشغيلية", en: "Operational systems" }, items: "Access control, RFID, biometrics, ANPR, ZKTeco, Miditec, queue management (QMS), HR leave and attendance interfaces" },
   { group: { ar: "التسليم", en: "Delivery" }, items: "Production diagnostics, hotfix engineering, rollback-safe releases, technical mentorship, digital transformation" },
