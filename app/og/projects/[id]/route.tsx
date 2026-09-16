@@ -3,15 +3,15 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { owner, projects, statusLabel } from "@/data/portfolio";
 
-export const alt = "Project case study — Suhib Asrawi";
-export const size = { width: 1200, height: 630 };
-export const contentType = "image/png";
+export const dynamic = "force-static";
+const size = { width: 1200, height: 630 };
 
 export function generateStaticParams() {
   return projects.map((p) => ({ id: p.id }));
 }
 
-export default async function ProjectOg({ params }: { params: Promise<{ id: string }> }) {
+/** Per-project Open Graph card, referenced from the project page metadata. */
+export async function GET(_req: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const p = projects.find((x) => x.id === id);
   const font = await fs.readFile(path.join(process.cwd(), "app/fonts/DroidArabicKufi-Bold.ttf"));

@@ -79,7 +79,7 @@ export const projectLd = (id: string) => {
     creator: { "@id": `${base}/#person` },
     ...(live ? { applicationCategory: "WebApplication", operatingSystem: "Web", installUrl: live.url, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } } : {}),
     keywords: p.stack.join(", "),
-    ...(p.screenshots?.[0] ? { image: `${base}${p.screenshots[0].src}` } : {}),
+    image: p.screenshots?.[0] ? `${base}${p.screenshots[0].src}` : `${base}/og/projects/${p.id}`,
   };
 };
 

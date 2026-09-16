@@ -65,7 +65,7 @@ for (const r of ROUTES) {
       descriptions.set(r.path, desc ?? "");
 
       await expect(page.locator('meta[property="og:title"]')).toHaveCount(1);
-      await expect(page.locator('meta[property="og:image"]').first()).toHaveAttribute("content", /\/og(\?|$)|opengraph-image/);
+      await expect(page.locator('meta[property="og:image"]').first()).toHaveAttribute("content", /\/og(\/|\?|$)/);
 
       if (r.hreflang) {
         await expect(page.locator('link[rel="alternate"][hreflang="ar"]')).toHaveCount(1);

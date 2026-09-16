@@ -3,7 +3,13 @@ import { expect, test } from "@playwright/test";
 test.describe("command palette", () => {
   test("opens with Ctrl+K, filters in Arabic, arrows + Enter navigate, Escape closes, focus is trapped", async ({ page }) => {
     await page.goto("/");
-    await page.keyboard.press("Control+k");
+    await page.waitForLoadState("networkidle");
+    await expect
+      .poll(async () => {
+        await page.keyboard.press("Control+k");
+        return page.getByRole("dialog").count();
+      }, { timeout: 10_000 })
+      .toBe(1);
     const dialog = page.getByRole("dialog", { name: "لوحة الأوامر" });
     await expect(dialog).toBeVisible();
     const input = page.locator("#command-palette-input");
@@ -33,7 +39,14 @@ test.describe("command palette", () => {
 
   test("searches in English on /en", async ({ page }) => {
     await page.goto("/en");
-    await page.keyboard.press("Control+k");
+    await page.waitForLoadState("networkidle");
+    // the keydown listener is attached after hydration; retry the shortcut until the dialog appears
+    await expect
+      .poll(async () => {
+        await page.keyboard.press("Control+k");
+        return page.getByRole("dialog").count();
+      }, { timeout: 10_000 })
+      .toBe(1);
     await page.locator("#command-palette-input").fill("journal");
     await expect(page.getByRole("option").first()).toContainText(/journal/i);
   });

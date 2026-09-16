@@ -1,0 +1,91 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ملخص إعادة بناء المحفظة — 2026-09-16</title>
+<style>
+body{font-family:"Segoe UI",Tahoma,system-ui,sans-serif;max-width:900px;margin:0 auto;padding:24px 18px;line-height:1.9;color:#16211c;background:#f6f4ee}
+h1{font-size:1.6rem} h2{font-size:1.2rem;margin-top:2rem;border-bottom:1px solid #d9dcd2;padding-bottom:.3rem;color:#0f6e56}
+table{width:100%;border-collapse:collapse;font-size:.92rem;background:#fff} th,td{border:1px solid #d9dcd2;padding:6px 10px;text-align:right} th{background:#eef0e9}
+code{background:#eef0e9;padding:1px 6px;border-radius:4px;direction:ltr;unicode-bidi:embed}
+.box{background:#fff;border:1px solid #d9dcd2;border-radius:12px;padding:14px 18px;margin:12px 0}
+.gold{background:#f6ead0;border-color:#c9b27a}
+a{color:#0f6e56}
+</style></head><body>
+<h1>ملخص إعادة بناء المحفظة وصفحة السجل الهندسي</h1>
+<p>التاريخ: 2026-09-16 · الموقع: <a href="https://suhib-ai-delivery-portfolio.vercel.app">suhib-ai-delivery-portfolio.vercel.app</a> · السجل: <a href="https://suhib-ai-delivery-portfolio.vercel.app/journal">/journal</a> · الإنجليزية: <a href="https://suhib-ai-delivery-portfolio.vercel.app/en/journal">/en/journal</a></p>
+
+<h2>١. كيف عملتُ</h2>
+<ol>
+<li><b>الفحص أولاً:</b> قرأت المستودع كاملاً (البيانات، الصفحات، المكونات، التصميم، البيانات الوصفية)، وسجّلت خط الأساس: lint وtypecheck وbuild خضراء، بلا اختبارات، وبلا لقطات شاشة. النتائج في <code>docs/AUDIT.md</code>.</li>
+<li><b>مصادر الحقيقة:</b> السيرة الذاتية PDF التي أرسلتها (<code>Suhib_Asrawi_ATS_CV_Updated_Systems.pdf</code>)، وبيانات المنصة المصدَّرة يوم 2026-09-14، والوثائق الثمانية في <code>OUT/</code>. لم يُنشر أي شيء خارج هذه المصادر.</li>
+<li><b>البيانات قبل الصفحات:</b> ملف جديد <code>data/journey.ts</code> يحوي العصور الأربعة، الفصول العشرة، الذاكرات الهندسية، الطريقة، أجيال التقنية، نظرة المسؤول عن التوظيف، مشكلات أصحاب الأعمال، خمسة مدخلات هندسية، والخبرة والتعليم من السيرة. كل نص بالعربية والإنجليزية.</li>
+<li><b>إعادة تموضع:</b> العنوان صار «مستشار تقني أول · مهندس حلول · وكلاء الذكاء الاصطناعي والأتمتة وتكامل الأنظمة»، والأرقام في الواجهة صارت أدلة (+20 عاماً، 6 منصات حيّة، 67 اختباراً أخضر، نظامان إنتاجيان لعملاء) بدل 46 مشروعاً و12% إنجازاً.</li>
+<li><b>الصفحات:</b> أعدت بناء <code>/journal</code> كرحلة خبرة، وجعلت <code>/en</code> صفحة إنجليزية حقيقية LTR بترويسة وتذييل ولوحة أوامر إنجليزية، وحوّلت صفحات المشاريع إلى دراسات حالة بلقطات حقيقية، وبنيت صفحة سيرة A4 من بيانات موثّقة بلا أي عبارة «أضف قبل الإرسال».</li>
+<li><b>التحقق:</b> 119 اختبار Playwright (مسارات، H1 واحد، lang/dir، canonical، بلا نصوص جلسات، بلا تمرير أفقي على 390px، لوحة الأوامر بالكيبورد، الطباعة)، فحص axe على 8 صفحات في الوضعين بلا مخالفات جسيمة، وLighthouse على أربع صفحات.</li>
+<li><b>النشر:</b> commits صغيرة قابلة للمراجعة على فرع main، ثم دفع إلى GitHub فنشر Vercel تلقائياً.</li>
+</ol>
+
+<h2>٢. على ماذا اعتمدت</h2>
+<div class="box">
+<ul>
+<li><b>السيرة الذاتية PDF (2026-09-16):</b> الخبرات الست بتواريخها، التعليم (بكالوريوس نظم معلومات حاسوبية، جامعة العلوم التطبيقية 2002، رخصة 1590)، المهارات الأساسية، المشاريع المختارة، قنوات التواصل.</li>
+<li><b>تصدير منصة المتابعة (2026-09-14):</b> أدلة المشاريع (اختبارات، commits، روابط النشر) والمحطات.</li>
+<li><b>وثائق OUT الثمانية:</b> البروفايل، دراسات الحالة، مصفوفة القدرات، التموضع.</li>
+<li><b>لقطات حقيقية</b> من المواقع الستة الحيّة التُقطت بمتصفح بلا واجهة، وقُصّ منها شريط الاتصال الذي يحوي أرقام هواتف المصانع.</li>
+<li><b>موجز المهمة:</b> رحلة «من DOS إلى وكلاء الذكاء الاصطناعي»، فصول مقترحة، ذاكرات هندسية، «المكدّس تغيّر. الطريقة لم تتغيّر»، نظرة المسؤول عن التوظيف، ووضع أصحاب الأعمال.</li>
+</ul>
+</div>
+
+<h2>٣. الخبرات كما تظهر الآن في الموقع (مضافاً إليها ما في السيرة)</h2>
+<table><tr><th>الفترة</th><th>الدور</th><th>الجهة</th><th>أبرز ما فيه</th></tr>
+<tr><td dir="ltr">2018 – الآن</td><td>مستشار تقني أول ومهندس حلول</td><td>APCA Systems — عمّان · عن بُعد للخليج</td><td>SmartHelp CX (RAG باستشهاد برقم الصفحة)، مركز متعدد الوكلاء، تدفقات واتساب (FIFO، idempotency، تحويل بشري)، Smart Queue، مقاصة جو، استشارات تحول رقمي</td></tr>
+<tr><td dir="ltr">أيار 2018 – الآن</td><td>مهندس برمجيات — التحكم بالدخول وقواعد البيانات والتكامل</td><td>Signals Control (Miditec / MTZ)</td><td>SQL Server وSSIS وRDLC وSQL Agent، WinCC، محرك استيراد إجازات بنكي Java/Oracle (تحقق ثم علِّم، تراجع آمن)، تكامل Miditec وZKTeco وRFID والبصمة وANPR والوجه مع الموارد البشرية</td></tr>
+<tr><td dir="ltr">2017 – 2018</td><td>مدير مكتب، المكتب التنفيذي</td><td>مجموعة السعيد الاقتصادية</td><td>أرشفة رقمية آمنة، عمليات تقنية المعلومات، توظيف وتوجيه</td></tr>
+<tr><td dir="ltr">2007 – 2015</td><td>معلم علوم حاسوب</td><td>مدرسة المتنبي الثانوية</td><td>تدريس الصفوف 7–12، إدارة المختبرات والعتاد وشبكة المدرسة، دعم وتشخيص واستعادة</td></tr>
+<tr><td dir="ltr">2004 – 2007</td><td>مهندس شبكات</td><td>Fast Systems — الأردن</td><td>إصلاح حواسيب، شبكات محلية، تثبيت واستعادة أنظمة، تشخيص إقلاع، طرفيات وطابعات</td></tr>
+<tr><td dir="ltr">2003 – 2004</td><td>مدير شبكات</td><td>North Sea for Equipment and Commercial Agencies — الإمارات</td><td>إدارة شبكات وبنية تحتية، دعم محطات Windows</td></tr>
+<tr><td>قبل 2002 (بلا تواريخ عمداً)</td><td>سنوات الحوسبة الأولى</td><td>—</td><td>DOS وسطر الأوامر، تعريف الأقراص المضغوطة وبطاقات الصوت، Windows 95، الوضع الآمن وScanDisk وHiren's BootCD، استعادة بيانات من أقراص وUSB وmicroSD وأندرويد، أدوات وسائط (Sound Forge، Movavi، iPhoto Plus) كخبرة تاريخية</td></tr>
+</table>
+<p><b>التعليم:</b> بكالوريوس نظم معلومات حاسوبية — جامعة العلوم التطبيقية، الأردن (2002)، رخصة مزاولة رقم 1590. تطوير مهني: Java للخلفيات، تطبيقات Windows، SQL متقدم وSSIS، أمن المعلومات والنسخ الاحتياطي، تكامل الأنظمة. اللغات: العربية (أم)، الإنجليزية (كفاءة مهنية).</p>
+<p><b>المهارات الأساسية:</b> Java، C#، Dart/Flutter، SQL/T-SQL، XML، REST · SQL Server، Oracle، SSIS، RDLC، ضبط الاستعلامات، التجميع · Service Broker، MSMQ، IBM MQ، خدمات Windows، وظائف مجدولة، SDK الأجهزة · أنظمة متعددة الوكلاء، RAG، مساعدات معرفة، أتمتة سير العمل، WinCC · تحكم بالدخول، RFID، بصمة، ANPR، ZKTeco، Miditec، QMS · تشخيص الإنتاج، إصلاحات عاجلة، إصدارات آمنة التراجع، تحول رقمي · Next.js، Laravel، PostgreSQL/Supabase، Vercel/Forge، Playwright/Vitest.</p>
+
+<h2>٤. ما تغيّر في الموقع</h2>
+<ul>
+<li><b>/journal:</b> من نص محادثة خام إلى رحلة خبرة: أربعة عصور، عشرة فصول (من «قبل أن يصبح Plug &amp; Play فعلاً Plug &amp; Play» إلى «ما أبنيه الآن»)، بطاقة ذاكرة هندسية ودرس لكل فصل مع رابط دليل، قسم «المكدّس تغيّر. الطريقة لم تتغيّر» (راقب → اعزل → شخّص → احفظ → أصلح → تحقق → أتمِت)، مكوّن أجيال التقنية بفلاتر، نظرة المسؤول عن التوظيف في 30 ثانية، قسم «ماذا تحتاج؟» لأصحاب الأعمال، وخمسة مدخلات هندسية (التحدي، السياق، القرار، التنفيذ، التحقق، النتيجة، الدرس، كيف يظهر اليوم).</li>
+<li><b>الرئيسية:</b> بطل يقود بالدور والنتائج والخلفية المؤسسية، لقطة حقيقية، أرقام أدلة، تلميح للرحلة، دراسات حالة بدور ونتيجة ودليل، ونداء تواصل واضح.</li>
+<li><b>/en:</b> إنجليزية حقيقية LTR بـ <code>lang="en"</code>، وترجمة كاملة للرحلة في <code>/en/journal</code>، وسيرة إنجليزية قابلة للطباعة، وروابط hreflang في الاتجاهين.</li>
+<li><b>دراسات الحالة:</b> حالة (حيّ، تجريبي، نموذج أولي، محاكاة، نظام داخلي) بدل النسب، دوري، النتيجة المتحقَّق منها، ضوابط الأمان، القيد الحالي، محطات منتقاة، لقطات حقيقية، وصورة Open Graph خاصة بكل مشروع.</li>
+<li><b>/cv:</b> سيرة A4 من بيانات موثّقة: البريد وLinkedIn وGitHub ومواقع أصحاب العمل، بلا عبارات «أضف قبل الإرسال». الهاتف محجوب حتى تقرر نشره.</li>
+<li><b>الصدق:</b> «أكاديمية APCA — مُظهِر مقترح متوافق مع أهداف GIZ» مع إخلاء صريح؛ لا تواريخ للسنوات الأولى؛ خبرات DOS والوسائط واستعادة البيانات مصنّفة تأسيسية لا مهارات 2026؛ وكلاء البرمجة أداة تحت قيود مكتوبة والقرار عندك.</li>
+<li><b>SEO والبنية:</b> H1 واحد لكل صفحة، canonical ذاتي، عناوين وأوصاف فريدة، Person/WebSite/ProfilePage/SoftwareApplication، خريطة موقع محدّثة.</li>
+</ul>
+
+<h2>٥. نتائج التحقق</h2>
+<table><tr><th>الفحص</th><th>النتيجة</th></tr>
+<tr><td>lint · typecheck · build</td><td>خضراء (51 صفحة ثابتة)</td></tr>
+<tr><td>Playwright (سطح مكتب 1440 + جوال 390)</td><td>119 نجحت، 0 فشلت، 17 متخطاة بالتصميم</td></tr>
+<tr><td>axe WCAG 2.1 AA (8 صفحات × فاتح/داكن)</td><td>0 مخالفات جسيمة أو حرجة</td></tr>
+<tr><td>تمرير أفقي على 390px</td><td>لا يوجد على 12 مساراً</td></tr>
+</table>
+<p>Lighthouse على البناء الإنتاجي محلياً (الأرقام تتغير بضع نقاط بين التشغيلات):</p>
+<table><tr><th>الصفحة</th><th>الجهاز</th><th>الأداء</th><th>الوصول</th><th>الممارسات</th><th>SEO</th><th>LCP</th></tr><tr><td dir='ltr'>en-journal</td><td>سطح مكتب</td><td>100</td><td>100</td><td>100</td><td>100</td><td dir='ltr'>671 ms</td></tr><tr><td dir='ltr'>en-journal</td><td>جوال</td><td>93</td><td>100</td><td>100</td><td>100</td><td dir='ltr'>3231 ms</td></tr><tr><td dir='ltr'>home</td><td>سطح مكتب</td><td>100</td><td>100</td><td>100</td><td>100</td><td dir='ltr'>696 ms</td></tr><tr><td dir='ltr'>home</td><td>جوال</td><td>92</td><td>100</td><td>100</td><td>100</td><td dir='ltr'>3303 ms</td></tr><tr><td dir='ltr'>journal</td><td>سطح مكتب</td><td>100</td><td>100</td><td>100</td><td>100</td><td dir='ltr'>711 ms</td></tr><tr><td dir='ltr'>journal</td><td>جوال</td><td>92</td><td>100</td><td>100</td><td>100</td><td dir='ltr'>3392 ms</td></tr><tr><td dir='ltr'>project</td><td>سطح مكتب</td><td>100</td><td>100</td><td>100</td><td>100</td><td dir='ltr'>693 ms</td></tr><tr><td dir='ltr'>project</td><td>جوال</td><td>92</td><td>100</td><td>100</td><td>100</td><td dir='ltr'>3314 ms</td></tr></table>
+
+<h2>٦. قرارات تنتظرك</h2>
+<div class="box gold">
+<ul>
+<li>نشر رقم الهاتف علناً: غيّر <code>owner.publicPhone</code> إلى <code>true</code> في <code>data/portfolio.ts</code>.</li>
+<li>نسخة عامة مخفّفة من Project1 (README + مخطط + ملف اختبار واحد) لتصبح أقوى محاكاة مرئية.</li>
+<li>لقطات داخلية إضافية لكل دراسة حالة، وترجمة دراسات الحالة إلى الإنجليزية إن كان جمهورك الأساسي إنجليزياً.</li>
+<li>إعادة تشغيل Lighthouse على نشر Vercel نفسه.</li>
+</ul>
+</div>
+
+<h2>٧. ملفات هذه الحزمة</h2>
+<ul>
+<li><code>SUMMARY-ar.html</code> — هذا الملف.</li>
+<li><code>JOURNAL_REDESIGN_REPORT.md</code> — التقرير التقني الكامل بالإنجليزية.</li>
+<li><code>AUDIT.md</code> — الفحص الأولي ومعايير القبول.</li>
+<li><code>screenshots/</code> — قبل/بعد على 390 و768 و1440.</li>
+<li><code>reports/</code> — نتائج axe وLighthouse بصيغة JSON.</li>
+<li><code>Suhib_Asrawi_ATS_CV_Updated_Systems.pdf</code> — السيرة التي اعتمدتُ عليها.</li>
+</ul>
+<p style="color:#5b655f;font-size:.9rem">أُنشئ في 2026-09-16 · الكود على GitHub <code>kazoya/suhib-ai-delivery-portfolio</code></p>
+</body></html>

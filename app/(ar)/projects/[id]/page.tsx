@@ -22,9 +22,8 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     title,
     description: p.short,
     alternates: alternatesFor(`/projects/${p.id}`),
-    // no `images` here: the route's own opengraph-image.tsx supplies the per-project card
-    openGraph: { ...ogAr, images: undefined, type: "article", title, description: p.short, url: `/projects/${p.id}` },
-    twitter: { card: "summary_large_image", title, description: p.shortEn },
+    openGraph: { ...ogAr, images: [{ url: `/og/projects/${p.id}`, width: 1200, height: 630, alt: p.nameEn }], type: "article", title, description: p.short, url: `/projects/${p.id}` },
+    twitter: { card: "summary_large_image", images: [`/og/projects/${p.id}`], title, description: p.shortEn },
   };
 }
 

@@ -264,7 +264,7 @@ export const projects: Project[] = [
     ],
     screenshots: [
       { src: "/screenshots/al-mithaliya.webp", alt: "الصفحة الرئيسية لموقع المثالية للألبان", width: 1280, height: 766 },
-      { src: "/screenshots/aci.webp", alt: "الصفحة الرئيسية لموقع ACI للكيماويات الزراعية", width: 1280, height: 800 },
+      { src: "/screenshots/aci.webp", alt: "الصفحة الرئيسية لموقع ACI للكيماويات الزراعية", width: 1280, height: 766 },
     ],
     stack: ["Next.js 16", "Tailwind 4", "shadcn", "Recharts", "Vercel", "GitHub"],
     problem: "مصانع أردنية بلا حضور رقمي مقنع؛ المطلوب مواقع عرض سريعة قابلة للتحسين بوكيل خارجي ثم الدمج والنشر.",
