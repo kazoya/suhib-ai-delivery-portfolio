@@ -9,14 +9,14 @@ import { ContactCta } from "@/components/shared/contact-cta";
 import { StatusBadge } from "@/components/shared/badge";
 import { kpisEn, owner, projects } from "@/data/portfolio";
 import { coreSkills, education, eras, experience, method, selectedProjectsCv } from "@/data/journey";
-import { alternatesFor, profilePageLd } from "@/lib/seo";
+import { alternatesFor, ogEn, profilePageLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: { absolute: `${owner.nameEn} — Senior Technology Consultant & Solutions Architect · AI Agents and Systems Integration` },
   description:
     "Suhib Asrawi, Senior Technology Consultant and Solutions Architect in Amman, Jordan: 20+ years building, integrating and supporting enterprise systems (Java, C#, SQL Server, Oracle), now applying that depth to AI agents and automation. Six live platforms, two client production systems, printable CV.",
   alternates: alternatesFor("/en", { ar: "/", en: "/en" }),
-  openGraph: { url: "/en" },
+  openGraph: { ...ogEn, url: "/en" },
 };
 
 const featuredIds = ["risha360", "project1", "master-brain", "factories", "baraah", "giz-apca"];
@@ -58,15 +58,15 @@ export default function EnglishPage() {
               </div>
             ) : null}
           </div>
-          <dl className="reveal in mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="reveal in mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4" aria-label="Verified figures">
             {kpisEn.map((k) => (
-              <div key={k.label} className="card p-5">
-                <dd className="text-3xl font-bold text-primary">{k.value}</dd>
-                <dt className="mt-1 text-sm font-medium">{k.label}</dt>
+              <li key={k.label} className="card p-5">
+                <div className="text-3xl font-bold text-primary">{k.value}</div>
+                <div className="mt-1 text-sm font-medium">{k.label}</div>
                 <div className="text-xs text-muted">{k.hint}</div>
-              </div>
+              </li>
             ))}
-          </dl>
+          </ul>
         </div>
       </section>
 

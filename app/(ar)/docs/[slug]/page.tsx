@@ -5,7 +5,7 @@ import { FileDown } from "lucide-react";
 import { docs } from "@/data/portfolio";
 import { getAllDocSlugs, getDoc } from "@/lib/docs";
 import { cn } from "@/lib/utils";
-import { alternatesFor } from "@/lib/seo";
+import { alternatesFor, ogAr } from "@/lib/seo";
 
 export function generateStaticParams() {
   return getAllDocSlugs().map((slug) => ({ slug }));
@@ -14,7 +14,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const d = docs.find((x) => x.slug === slug);
-  return d ? { title: d.title, description: d.blurb, alternates: alternatesFor(`/docs/${d.slug}`), openGraph: { title: d.title, description: d.blurb, url: `/docs/${d.slug}` } } : {};
+  return d ? { title: d.title, description: d.blurb, alternates: alternatesFor(`/docs/${d.slug}`), openGraph: { ...ogAr, title: d.title, description: d.blurb, url: `/docs/${d.slug}` } } : {};
 }
 
 export default async function DocPage({ params }: { params: Promise<{ slug: string }> }) {

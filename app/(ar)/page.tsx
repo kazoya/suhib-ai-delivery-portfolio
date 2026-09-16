@@ -8,14 +8,14 @@ import { SectionHeading } from "@/components/shared/section-heading";
 import { LevelBadge } from "@/components/shared/badge";
 import { ProjectCard } from "@/components/projects/project-card";
 import { ContactCta } from "@/components/shared/contact-cta";
-import { alternatesFor, profilePageLd } from "@/lib/seo";
+import { alternatesFor, ogAr, profilePageLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: { absolute: `${owner.name} — مستشار تقني أول ومهندس حلول · وكلاء الذكاء الاصطناعي وتكامل الأنظمة` },
   description:
     "صهيب عسراوي، مستشار تقني أول ومهندس حلول من عمّان: أكثر من عشرين عاماً في بناء الأنظمة المؤسسية وتكاملها ودعمها، وعمل حالي في وكلاء الذكاء الاصطناعي والأتمتة. ست منصات حيّة، نظامان إنتاجيان لعملاء، وسجل هندسي من DOS إلى الذكاء الاصطناعي.",
   alternates: alternatesFor("/", { ar: "/", en: "/en" }),
-  openGraph: { url: "/" },
+  openGraph: { ...ogAr, url: "/" },
 };
 
 const liveLinks = [
@@ -66,15 +66,15 @@ export default function HomePage() {
             ) : null}
           </div>
 
-          <dl className="reveal in mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="reveal in mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4" aria-label="أرقام موثّقة">
             {kpis.map((k) => (
-              <div key={k.label} className="card p-5">
-                <dd className="ltr text-end text-3xl font-bold text-primary">{k.value}</dd>
-                <dt className="mt-1 text-sm font-medium">{k.label}</dt>
+              <li key={k.label} className="card p-5">
+                <div className="ltr text-end text-3xl font-bold text-primary">{k.value}</div>
+                <div className="mt-1 text-sm font-medium">{k.label}</div>
                 <div className="text-xs text-muted">{k.hint}</div>
-              </div>
+              </li>
             ))}
-          </dl>
+          </ul>
           <p className="mt-4 text-xs text-muted">{owner.sourceNote}</p>
         </div>
       </section>
@@ -152,7 +152,7 @@ export default function HomePage() {
         <SectionHeading
           eyebrow="الخلفية المؤسسية"
           title="أنظمة إنتاجية لعملاء قبل الويب الحديث وبعده"
-          lead="Java وC# وSQL Server وOracle وأجهزة ميدانية. هذه هي الأنظمة التي تعلّمت منها كيف تفشل الأنظمة وكيف تتصل."
+          lead="Java، C#، SQL Server، Oracle، وأجهزة ميدانية. هذه هي الأنظمة التي تعلّمت منها كيف تفشل الأنظمة وكيف تتصل."
         />
         <div className="grid gap-3 sm:grid-cols-2">
           {enterpriseBackground.map((e) => (

@@ -61,7 +61,7 @@ export const owner = {
   tagline: "مهندس نظم وبرمجيات بخبرة تتجاوز عشرين عاماً، يقود بناء منصات عربية آمنة وتكامل الأنظمة المؤسسية من الفكرة إلى الإنتاج.",
   taglineEn: "Systems and software engineer with 20+ years of depth, leading secure bilingual platforms and enterprise integration from concept to production.",
   summary:
-    "خلفية مؤسسية في Java وC# وSQL Server وOracle (أنظمة بنكية، تحكم بالدخول والحضور، إدارة طوابير)، وعمل حالي في وكلاء الذكاء الاصطناعي وأتمتة العمليات وتكامل الأنظمة. أستخدم وكلاء البرمجة كأداة تسريع تحت قيود مكتوبة، ويبقى القرار والدليل عندي: اختبار أخضر، commit، أو رابط نشر قبل أن يُحسب أي إنجاز.",
+    "خلفية مؤسسية في Java، C#، SQL Server، Oracle (أنظمة بنكية، تحكم بالدخول والحضور، إدارة طوابير)، وعمل حالي في وكلاء الذكاء الاصطناعي وأتمتة العمليات وتكامل الأنظمة. أستخدم وكلاء البرمجة كأداة تسريع تحت قيود مكتوبة، ويبقى القرار والدليل عندي: اختبار أخضر، commit، أو رابط نشر قبل أن يُحسب أي إنجاز.",
   summaryEn:
     "An enterprise background in Java, C#, SQL Server and Oracle (banking, access control and attendance, queue management), and current work in AI agents, operations automation and systems integration. I use coding agents as governed accelerators under written constraints; the decisions and the evidence stay with me: a green test, a commit or a deploy URL before anything counts as done.",
   location: "عمّان، الأردن · عن بُعد أولاً · حضور ميداني في السعودية عند الحاجة",
@@ -174,7 +174,7 @@ export const projects: Project[] = [
       { date: "2026-09-14", title: "تصدير التقارير التي بُنيت منها هذه المحفظة" },
     ],
     stack: ["Node.js بلا اعتماديات", "CLI", "HTTP API", "MCP", "PBKDF2-HMAC-SHA512", "HTML/PDF/XLSX/MD/JSON"],
-    problem: "عشرات المشاريع موزّعة على جلسات Cursor وClaude وCodex بلا ذاكرة مشتركة، ولا طريقة لمعرفة ما أُنجز فعلاً وما هو ادّعاء.",
+    problem: "عشرات المشاريع موزّعة على جلسات وكلاء برمجة مختلفة بلا ذاكرة مشتركة، ولا طريقة لمعرفة ما أُنجز فعلاً وما هو ادّعاء.",
     built: [
       "كتالوج عمليات واحد (src/ops.js) يُعرض بثلاث قنوات: أداة MCP، POST /api/op/<name>، وأمر CLI — فتتصرف القنوات الثلاث بالطريقة نفسها.",
       "مخزن ملفات لكل مشروع: project.json + brain.json + journal/ تُولَّد منها BRAIN.md تلقائياً.",
@@ -193,7 +193,7 @@ export const projects: Project[] = [
     timeline: [
       { date: "2026-09-10", title: "تثبيت المنصة وتسجيل Project1 افتراضياً", kind: "milestone", by: "Claude" },
       { date: "2026-09-12", title: "إنشاء Master HQ وجسر التعاون على 4560", progress: 45, kind: "milestone", by: "Cursor" },
-      { date: "2026-09-12", title: "تطبيق مراجعة Claude T1–T3 على الجسر الحي", progress: 70, kind: "progress", by: "Cursor" },
+      { date: "2026-09-12", title: "تطبيق مراجعة مستقلة T1–T3 على الجسر الحي", progress: 70, kind: "progress", by: "Cursor" },
     ],
   },
   {
@@ -332,7 +332,7 @@ export const projects: Project[] = [
     constraints: ["لا شهادات أو جوائز مخترَعة", "التواصل والصور DEMO حتى يرسل العميل مواده"],
     timeline: [
       { date: "2026-09-13", title: "الديمو منشور على GitHub + Vercel", progress: 85, kind: "milestone", by: "Cursor" },
-      { date: "2026-09-13", title: "أساس المرحلة A + إصلاحات مراجعة Claude", progress: 90, kind: "progress", by: "Cursor" },
+      { date: "2026-09-13", title: "أساس المرحلة A + إصلاحات المراجعة المستقلة", progress: 90, kind: "progress", by: "Cursor" },
       { date: "2026-09-13", title: "إصلاحات الأمان (تمرير 2) + مسودات قانونية", progress: 92, kind: "progress", by: "Cursor" },
     ],
   },
@@ -515,7 +515,7 @@ export const howIWork = [
 export const honesty = [
   "منصة المتابعة تسجّل 46 مبادرة؛ معظمها مخزون مكتشَف لا عمل مكتمل. المعروض هنا هو ما له دليل فقط.",
   "أقوى مشروع محاكاة (Project1) مستودع خاص، ودليله اختبارات وسجلات لا رابط عام.",
-  "Java وC# وSQL Server وOracle أساس مؤسسي حالي؛ Next.js وLaravel لغتا العمل للمنصات العربية الحديثة.",
+  "Java، C#، SQL Server، Oracle أساس مؤسسي حالي؛ Next.js وLaravel لغتا العمل للمنصات العربية الحديثة.",
   "خبرات DOS والوسائط واستعادة البيانات خبرات عملية تأسيسية، لا شهادات ولا تخصص حالي.",
   "أستخدم وكلاء البرمجة كأداة تسريع تحت قيود مكتوبة؛ القرار والمسؤولية عندي.",
 ];
@@ -554,7 +554,7 @@ export const entriesByType = [
 ];
 
 export const entriesByModel = [
-  { key: "other", label: "Cursor / وكلاء أخرى", value: 66 },
+  { key: "other", label: "وكلاء تنفيذ", value: 66 },
   { key: "fable", label: "Claude Fable", value: 22 },
   { key: "opus", label: "Claude Opus", value: 7 },
   { key: "claude", label: "Claude (عام)", value: 4 },

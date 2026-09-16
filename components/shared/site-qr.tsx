@@ -12,7 +12,7 @@ export function SiteQr({ size = 96, label = "امسح لفتح المحفظة" }
   const url = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
   return (
     <div className="card inline-flex flex-col items-center gap-2 p-3">
-      <QRCodeSVG value={url} size={size} bgColor="transparent" fgColor="currentColor" level="M" title={label} />
+      <QRCodeSVG value={url} size={size} bgColor="transparent" fgColor="currentColor" level="M" title={label} aria-label={label} role="img" />
       <span className="text-[11px] text-muted">{label}</span>
     </div>
   );

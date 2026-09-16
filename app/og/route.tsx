@@ -3,11 +3,11 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { owner } from "@/data/portfolio";
 
-export const alt = "Suhib Asrawi — Senior Technology Consultant & Solutions Architect";
-export const size = { width: 1200, height: 630 };
-export const contentType = "image/png";
+export const dynamic = "force-static";
+const size = { width: 1200, height: 630 };
 
-export default async function OgImage() {
+/** Site-wide Open Graph image, referenced from both root layouts. */
+export async function GET() {
   const font = await fs.readFile(path.join(process.cwd(), "app/fonts/DroidArabicKufi-Bold.ttf"));
   return new ImageResponse(
     (

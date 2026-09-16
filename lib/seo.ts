@@ -83,6 +83,15 @@ export const projectLd = (id: string) => {
   };
 };
 
+const ogImage = { url: "/og", width: 1200, height: 630, alt: "Suhib Asrawi — Senior Technology Consultant & Solutions Architect" };
+
+/**
+ * Next.js replaces a nested `openGraph` object instead of merging it, so every
+ * page spreads one of these bases before adding its own url/title.
+ */
+export const ogAr = { type: "profile" as const, locale: "ar_JO", alternateLocale: ["en_US"], siteName: `${owner.name} — Portfolio`, images: [ogImage] };
+export const ogEn = { type: "profile" as const, locale: "en_US", alternateLocale: ["ar_JO"], siteName: `${owner.nameEn} — Portfolio`, images: [ogImage] };
+
 /** Self-referencing canonical + hreflang pair for the two localised roots. */
 export const alternatesFor = (path: string, pair?: { ar: string; en: string }) => ({
   canonical: path,

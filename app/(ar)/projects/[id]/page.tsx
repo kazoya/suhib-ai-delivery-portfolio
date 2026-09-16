@@ -7,7 +7,7 @@ import { projects, statusLabel } from "@/data/portfolio";
 import { Chip, StatusBadge } from "@/components/shared/badge";
 import { ProjectCard } from "@/components/projects/project-card";
 import { ContactCta } from "@/components/shared/contact-cta";
-import { alternatesFor, projectLd } from "@/lib/seo";
+import { alternatesFor, ogAr, projectLd } from "@/lib/seo";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ id: p.id }));
@@ -22,7 +22,8 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     title,
     description: p.short,
     alternates: alternatesFor(`/projects/${p.id}`),
-    openGraph: { title, description: p.short, url: `/projects/${p.id}`, type: "article" },
+    // no `images` here: the route's own opengraph-image.tsx supplies the per-project card
+    openGraph: { ...ogAr, images: undefined, type: "article", title, description: p.short, url: `/projects/${p.id}` },
     twitter: { card: "summary_large_image", title, description: p.shortEn },
   };
 }

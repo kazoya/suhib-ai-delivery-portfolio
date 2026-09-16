@@ -23,7 +23,7 @@ export function TechnologyGenerations({ locale = "ar" }: { locale?: Locale }) {
   const visible = tracks.filter((tr) => filter === "all" || tr.category === filter);
 
   return (
-    <div className="card p-4 sm:p-6">
+    <div className="card overflow-hidden p-4 sm:p-6">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div role="tablist" aria-label={c.filters} className="flex flex-wrap gap-1 rounded-full border border-line bg-surface p-1">
           {FILTERS.map((f) => (
@@ -49,8 +49,8 @@ export function TechnologyGenerations({ locale = "ar" }: { locale?: Locale }) {
         </ul>
       </div>
 
-      <div id={`${id}-panel`} role="tabpanel" className="mt-5 overflow-x-auto">
-        <div className="ltr min-w-[640px]">
+      <div id={`${id}-panel`} role="tabpanel" dir="ltr" className="mt-5 overflow-x-auto">
+        <div className="min-w-[640px]">
           <div className="grid grid-cols-[140px_repeat(4,1fr)] gap-2 border-b border-line pb-2 text-[11px] font-bold uppercase tracking-wider text-muted">
             <div />
             {eras.map((e) => <div key={e.id}>{t(e.label, locale)}</div>)}

@@ -6,13 +6,13 @@ import { PrintButton } from "@/components/shared/print-button";
 import { ContactCta } from "@/components/shared/contact-cta";
 import { owner } from "@/data/portfolio";
 import { coreSkills, education, experience, selectedProjectsCv } from "@/data/journey";
-import { alternatesFor, profilePageLd } from "@/lib/seo";
+import { alternatesFor, ogAr, profilePageLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "السيرة الذاتية — صهيب عسراوي، مستشار تقني أول ومهندس حلول",
   description: "سيرة صهيب عسراوي القابلة للطباعة (A4): أكثر من عشرين عاماً في الأنظمة المؤسسية وتكاملها، Java وC# وSQL Server وOracle، وكلاء الذكاء الاصطناعي والأتمتة، وخبرة ميدانية في الشبكات والأجهزة.",
   alternates: alternatesFor("/cv"),
-  openGraph: { title: "السيرة الذاتية — صهيب عسراوي", url: "/cv", type: "profile" },
+  openGraph: { ...ogAr, title: "السيرة الذاتية — صهيب عسراوي", url: "/cv" },
 };
 
 export default function CvPage() {

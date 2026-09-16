@@ -15,10 +15,10 @@ export function PlatformDiagram() {
         مخطط المنصة: من أمر المالك إلى عقل المشروع
       </figcaption>
       <div dir="ltr">
-      <svg viewBox="0 0 980 420" className="mx-auto min-w-[720px] w-full" role="img" aria-describedby="pd-desc">
+      <svg viewBox="0 0 980 420" className="mx-auto min-w-[720px] w-full" role="img" aria-labelledby="pd-title" aria-describedby="pd-desc">
         <desc id="pd-desc">
-          المالك يرسل أمراً من اللوحة أو الـ CLI أو MCP إلى كتالوج عمليات واحد، فيُبنى برومبت بسياق المشروع ويُشغَّل Claude Code داخل مجلد المشروع،
-          وتُكتب النتيجة في سجل المشروع وعقله، ثم تُولَّد التقارير. جسر منفصل ينسّق Cursor وClaude وCodex وChatGPT.
+          المالك يرسل أمراً من اللوحة أو الـ CLI أو MCP إلى كتالوج عمليات واحد، فيُبنى برومبت بسياق المشروع ويُشغَّل وكيل البرمجة داخل مجلد المشروع،
+          وتُكتب النتيجة في سجل المشروع وعقله، ثم تُولَّد التقارير. جسر منفصل ينسّق أربعة وكلاء برمجة تحت إشراف المالك.
         </desc>
         <defs>
           <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">

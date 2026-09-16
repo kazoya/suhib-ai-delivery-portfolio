@@ -8,13 +8,13 @@ import { ProgressBars } from "@/components/charts/progress-bars";
 import { ActivityChart } from "@/components/charts/activity-chart";
 import { TrajectoryChart } from "@/components/charts/trajectory-chart";
 import { ShareBars } from "@/components/charts/share-bars";
-import { alternatesFor } from "@/lib/seo";
+import { alternatesFor, ogAr } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "منصة المتابعة — حوكمة 46 مبادرة متتبَّعة",
   description: "Master Brain: منصة Node.js بلا اعتماديات بناها صهيب عسراوي لحوكمة محفظة من 46 مبادرة متتبَّعة: عقل هندسي لكل مشروع، كتالوج عمليات واحد عبر CLI وHTTP وMCP، وتقارير. الأرقام من تقرير 2026-09-14.",
   alternates: alternatesFor("/platform"),
-  openGraph: { title: "منصة المتابعة — Master Brain", url: "/platform" },
+  openGraph: { ...ogAr, title: "منصة المتابعة — Master Brain", url: "/platform" },
 };
 
 const facts = [
@@ -41,15 +41,15 @@ export default function PlatformPage() {
         lead={`منصة Node.js بلا اعتماديات بنيتها لحوكمة المحفظة وتوجيه وكلاء البرمجة تحت قيود مكتوبة. هذه الصفحة دليل على الحوكمة لا على الإنجاز: معظم المبادرات مخزون مكتشَف، والمعروض في الأعمال ما له دليل فقط. الأرقام من تقرير الفترة ${platformSummary.period} الصادر ${platformSummary.generated}.`}
       />
 
-      <dl className="reveal mb-8 grid gap-3 sm:grid-cols-4">
+      <ul className="reveal mb-8 grid gap-3 sm:grid-cols-4" aria-label="أرقام المنصة">
         {facts.map((f) => (
-          <div key={f.k} className="card p-4">
-            <dd className="ltr text-end text-2xl font-bold text-primary">{f.v}</dd>
-            <dt className="text-sm">{f.k}</dt>
+          <li key={f.k} className="card p-4">
+            <div className="ltr text-end text-2xl font-bold text-primary">{f.v}</div>
+            <div className="text-sm">{f.k}</div>
             <div className="text-xs text-muted">{f.hint}</div>
-          </div>
+          </li>
         ))}
-      </dl>
+      </ul>
 
       <div className="reveal"><PlatformDiagram /></div>
 
