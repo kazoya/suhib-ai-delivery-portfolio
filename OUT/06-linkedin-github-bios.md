@@ -4,18 +4,18 @@
 **Software Engineer · AI-Agent-Driven Delivery | Next.js · Laravel · PostgreSQL | Arabic-first RTL platforms**
 
 ## LinkedIn — About (عربي)
-مهندس برمجيات أردني. خلفيتي المؤسسية Java وC# وSQL في أنظمة بنكية وأنظمة حضور ودخول وطوابير خدمة. منذ 2026 أعمل بنموذج مختلف: أدير محفظة مشاريع ويب عربية عبر وكلاء برمجية (Cursor، Claude Code، Codex) من منصة متابعة بنيتها بنفسي، لكل مشروع فيها «عقل هندسي» يسجّل ما أُنجز وما يجري وما يلي والقيود.
+مستشار تقني أول ومهندس حلول من عمّان بخبرة تتجاوز عشرين عاماً. خلفيتي المؤسسية Java وC# وSQL Server وOracle في أنظمة بنكية وأنظمة حضور ودخول وطوابير خدمة، وعملي الحالي وكلاء ذكاء اصطناعي وأتمتة وتكامل أنظمة. أستخدم وكلاء البرمجة كأداة تسريع تحت قيود مكتوبة من منصة متابعة بنيتها بنفسي، لكل مشروع فيها «عقل هندسي» يسجّل ما أُنجز وما يجري وما يلي والقيود.
 
-ما نشرته مؤخراً: منصة ذكاء تجاري بحلقة محاكاة كاملة (Next.js/PostgreSQL، 52 اختباراً)، أدوار مشاهير في إنتاج منصة Laravel، موقعا مصنعين ومتجر تجريبي فاخر ثنائي اللغة على Vercel، ومُظهِر أكاديمية ذكاء اصطناعي صناعي لـ GIZ.
+ما نشرته مؤخراً: منصة ذكاء تجاري بحلقة محاكاة كاملة (Next.js/PostgreSQL، 52 اختباراً)، أدوار مشاهير في إنتاج منصة Laravel، موقعا مصنعين ومتجر تجريبي فاخر ثنائي اللغة على Vercel، ومُظهِر أكاديمية ذكاء اصطناعي صناعي مقترح متوافق مع أهداف GIZ (ليس اعتماداً من GIZ).
 
 قاعدتي: كل تقدّم له دليل (اختبار أخضر، commit، رابط نشر)، وكل مشروع له قيود مكتوبة لا تُرفع من الواجهة.
 
 أبحث عن: تعاقد عن بُعد أو دور هندسي لائق في منتجات عربية/ثنائية اللغة أو فرق تريد تبنّي وكلاء الذكاء الاصطناعي بحوكمة.
 
 ## LinkedIn — About (English)
-Software engineer from Jordan with an enterprise Java/C#/SQL background (banking imports, access control, queue management). Since 2026 I run a portfolio of Arabic-first web products through AI coding agents (Cursor, Claude Code, Codex) from a self-built tracking platform where every project keeps an "engineering mind": done, in progress, next, constraints.
+Senior Technology Consultant and Solutions Architect in Amman with 20+ years across enterprise systems (Java, C#, SQL Server, Oracle; banking imports, access control, queue management), now applying that depth to AI agents, automation and systems integration. I use coding agents as governed accelerators from a self-built tracking platform where every project keeps an "engineering mind": done, in progress, next, constraints. Decisions and evidence stay with me.
 
-Recently shipped: a commerce-intelligence simulator (Next.js/PostgreSQL, 52 passing tests), celebrity self-service roles live on a Laravel production platform, two factory sites and a premium bilingual store on Vercel, and a GIZ industrial-AI academy demonstrator.
+Recently shipped: a commerce-intelligence simulator (Next.js/PostgreSQL, 52 passing tests), celebrity self-service roles live on a Laravel production platform, two factory sites and a premium bilingual store on Vercel, and a proposed GIZ-aligned industrial-AI academy demonstrator (not a GIZ product).
 
 My rule: every claim has evidence (green tests, a commit, a deploy URL), and every project has written guardrails that the UI cannot lift.
 
@@ -32,7 +32,7 @@ in dependency-free Node.js (CLI + HTTP + MCP).
 Public work:
 - bara-ah-alshobaki   — premium bilingual Next.js 16 store demo (Vercel)
 - ACI / AlMithaliya   — Jordanian factory sites (Vercel)
-- apca-industrial-ai-academy — GIZ industrial-AI skills & safety demonstrator
+- apca-industrial-ai-academy — industrial-AI skills & safety demonstrator (proposed, GIZ-aligned; not a GIZ product)
 - rctc-skill          — Role / Context / Task / Constraints prompt template
 
 Rules I work by: buyHalt stays true, no invented numbers, evidence or it

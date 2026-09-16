@@ -10,45 +10,91 @@ export type Confidence = "عالي" | "متوسط" | "استكشافي" | "تا�
 export type ProjectLink = { label: string; url: string };
 export type TimelineEntry = { date: string; title: string; progress?: number; kind: "progress" | "milestone" | "blocker" | "note"; by: string };
 
+export type StatusKey = "live" | "pilot" | "prototype" | "simulation" | "internal";
+export type Milestone = { date: string; title: string };
+export type Screenshot = { src: string; alt: string; width: number; height: number };
+
 export type Project = {
   id: string;
   name: string;
   nameEn: string;
   short: string;
+  shortEn: string;
+  /** Internal completion figure from the tracking platform. Not rendered on public cards. */
   progress: number;
   status: string;
+  statusKey: StatusKey;
   tier: Tier;
   stack: string[];
   problem: string;
+  role: string;
+  outcome: string;
+  evidenceType: string;
   built: string[];
   evidence: string[];
   links: ProjectLink[];
   note?: string;
+  /** Raw platform log, kept for the internal record; public pages render `milestones`. */
   timeline?: TimelineEntry[];
+  milestones?: Milestone[];
   constraints?: string[];
+  security?: string[];
+  limitation?: string;
+  screenshots?: Screenshot[];
+};
+
+export const statusLabel: Record<StatusKey, { ar: string; en: string }> = {
+  live: { ar: "حيّ", en: "Live" },
+  pilot: { ar: "تجريبي", en: "Pilot" },
+  prototype: { ar: "نموذج أولي", en: "Prototype" },
+  simulation: { ar: "محاكاة", en: "Simulation" },
+  internal: { ar: "نظام داخلي", en: "Internal system" },
 };
 
 export const owner = {
   name: "صهيب عسراوي",
   fullName: "صهيب محمود صالح العسراوي",
   nameEn: "Suhib Asrawi",
-  title: "مهندس برمجيات · قائد تسليم رقمي بوكلاء الذكاء الاصطناعي",
-  titleEn: "Software Engineer · AI-Agent-Driven Delivery",
-  tagline: "منصات ويب عربية تصل إلى الإنتاج، ويديرها نظام يسجّل كل خطوة بدليلها.",
-  location: "الأردن · عن بُعد",
+  fullNameEn: "Suhib Mahmoud Saleh Asrawi",
+  title: "مستشار تقني أول · مهندس حلول · وكلاء الذكاء الاصطناعي والأتمتة وتكامل الأنظمة",
+  titleEn: "Senior Technology Consultant · Solutions Architect · AI Agents, Automation & Systems Integration",
+  tagline: "مهندس نظم وبرمجيات بخبرة تتجاوز عشرين عاماً، يقود بناء منصات عربية آمنة وتكامل الأنظمة المؤسسية من الفكرة إلى الإنتاج.",
+  taglineEn: "Systems and software engineer with 20+ years of depth, leading secure bilingual platforms and enterprise integration from concept to production.",
+  summary:
+    "خلفية مؤسسية في Java وC# وSQL Server وOracle (أنظمة بنكية، تحكم بالدخول والحضور، إدارة طوابير)، وعمل حالي في وكلاء الذكاء الاصطناعي وأتمتة العمليات وتكامل الأنظمة. أستخدم وكلاء البرمجة كأداة تسريع تحت قيود مكتوبة، ويبقى القرار والدليل عندي: اختبار أخضر، commit، أو رابط نشر قبل أن يُحسب أي إنجاز.",
+  summaryEn:
+    "An enterprise background in Java, C#, SQL Server and Oracle (banking, access control and attendance, queue management), and current work in AI agents, operations automation and systems integration. I use coding agents as governed accelerators under written constraints; the decisions and the evidence stay with me: a green test, a commit or a deploy URL before anything counts as done.",
+  location: "عمّان، الأردن · عن بُعد أولاً · حضور ميداني في السعودية عند الحاجة",
+  locationEn: "Amman, Jordan · Remote-first · On-site in Saudi Arabia when required",
+  email: "Suhib.Asrawi@gmail.com",
+  linkedin: "https://linkedin.com/in/suhib-asrawi-0a6136264",
+  /** Present in the ATS CV. Rendered only when publicPhone is true (owner decision). */
+  phone: "+962 787 523 192",
+  publicPhone: false,
   github: "https://github.com/kazoya",
   githubHandle: "kazoya",
   mostaql: "https://mostaql.com/u/kazoyan",
   baeed: "https://baeed.com/u/suhib_asrawi",
+  employers: [
+    { label: "apcasystems.com", url: "https://apcasystems.com" },
+    { label: "muqasa.jo", url: "https://muqasa.jo" },
+  ],
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://suhib-ai-delivery-portfolio.vercel.app",
-  sourceNote: "المصدر: حزمة Master Brain المصدَّرة بتاريخ 2026-09-14 (46 مشروعاً · 99 مدخل تقدّم). لا رقم هنا مُقدَّر.",
+  sourceNote: "الأرقام في هذا الموقع من تقارير منصة المتابعة (تصدير 2026-09-14) ومن السيرة الذاتية المعتمدة. لا رقم هنا مُقدَّر.",
 };
 
 export const kpis = [
-  { value: "46", label: "مشروعاً في منصة المتابعة", hint: "متوسط الإنجاز 12%" },
-  { value: "6", label: "روابط إنتاج حيّة على Vercel", hint: "READY وقت التصدير" },
-  { value: "52/52", label: "اختبار Vitest في Project1", hint: "+ Playwright 4/4" },
-  { value: "99", label: "مدخل تقدّم موثّق", hint: "10–14 أيلول 2026" },
+  { value: "20+", label: "عاماً في بناء الأنظمة وتكاملها ودعمها", hint: "من إدارة الشبكات 2003 إلى وكلاء الذكاء الاصطناعي" },
+  { value: "6", label: "منصات حيّة على Vercel", hint: "ثنائية اللغة، منشورة من GitHub" },
+  { value: "67", label: "اختباراً آلياً أخضر في مشروعين", hint: "Vitest 52 + Playwright 4 + Vitest 11" },
+  { value: "2", label: "نظامان إنتاجيان لعملاء", hint: "منصة MTZ بنكية · ريشة 360 على Forge" },
+];
+
+export const kpisEn = [
+  { value: "20+", label: "years building, integrating and supporting systems", hint: "from network administration in 2003 to AI agents" },
+  { value: "6", label: "live platforms on Vercel", hint: "bilingual, deployed from GitHub" },
+  { value: "67", label: "green automated tests across two projects", hint: "Vitest 52 + Playwright 4 + Vitest 11" },
+  { value: "2", label: "client production systems", hint: "a banking MTZ platform · Risha360 on Forge" },
 ];
 
 export const projects: Project[] = [
@@ -60,6 +106,19 @@ export const projects: Project[] = [
     progress: 83,
     status: "حلقة محاكاة مكتملة",
     tier: "live",
+    shortEn: "Cross-border commerce simulator with a full loop from discovery to a simulated purchase, and a kill switch the UI cannot lift.",
+    statusKey: "simulation",
+    role: "المالك والمعماري: تصميم حلقة المحاكاة، سياسة الإيقاف، وإسناد أجزاء من التنفيذ لوكلاء برمجة تحت مراجعة مزدوجة.",
+    outcome: "حلقة محاكاة مكتملة بـ 56 اختباراً أخضر، بلا مسار يرفع الإيقاف من الواجهة.",
+    evidenceType: "اختبارات + مراجعتان مستقلتان",
+    security: ["buyHalt=true ثابت في طبقة البيانات", "فحوص Origin/CSRF على كتابات المالك", "مفاتيح eBay في .env.local فقط"],
+    limitation: "المستودع خاص؛ الدليل اختبارات وسجلات لا رابط عام. الخطوة التالية نسخة عامة مخفّفة بلا مفاتيح.",
+    milestones: [
+      { date: "2026-09-10", title: "واجهة تحكم ثنائية اللغة — Vitest 28/28" },
+      { date: "2026-09-12", title: "مركز الجاهزية يولّد المهام من فحوص حقيقية — Vitest 52/52" },
+      { date: "2026-09-14", title: "eBay Sandbox موثَّق وفلاتر الاكتشاف محفوظة" },
+      { date: "2026-09-14", title: "حلقة المحاكاة مكتملة: مسودة محلية وشراء محاكى" },
+    ],
     stack: ["Next.js", "PostgreSQL", "Prisma", "Vitest", "Playwright", "eBay Sandbox", "NextAuth"],
     problem: "اختبار جدوى تجارة إلكترونية عابرة للحدود (اكتشاف منتج → تسعير → إدراج → شراء) دون المخاطرة بمال حقيقي أو انتهاك سياسات المنصات.",
     built: [
@@ -73,8 +132,8 @@ export const projects: Project[] = [
       "Vitest 28 → 40 → 43 → 49 → 52/52 خلال أسبوع",
       "Playwright 4/4 (landing public، overview→login، health 403، liveness 200)",
       "pnpm prove:csv و pnpm prove:readiness",
-      "مراجعة واجهة عدائية بنموذج Opus: PASS بلا ثغرات رفع الإيقاف",
-      "مراجعة Claude Code Reviewer: PASS مع 4 ثغرات رُقّعت (G1–G4)",
+      "مراجعة واجهة عدائية مستقلة: PASS بلا ثغرات رفع الإيقاف",
+      "مراجعة كود مستقلة ثانية: PASS مع 4 ثغرات رُقّعت (G1–G4)",
     ],
     links: [],
     note: "مستودع خاص على GitHub (kazoya/Project1). الإيراد الحيّ محجوب بالسياسة عمداً.",
@@ -84,7 +143,7 @@ export const projects: Project[] = [
       { date: "2026-09-10", title: "واجهة تحكم فاخرة ثنائية اللغة — Vitest 28/28", progress: 55, kind: "milestone", by: "Claude Fable" },
       { date: "2026-09-11", title: "جسر تعاون ثلاثي الوكلاء مع failover", progress: 58, kind: "progress", by: "Claude Fable" },
       { date: "2026-09-11", title: "معاينة تسعير CSV محلية — Vitest 40/40", progress: 62, kind: "progress", by: "Claude Fable" },
-      { date: "2026-09-11", title: "ترقيع ثغرات مراجعة Claude — Vitest 43/43", progress: 63, kind: "progress", by: "Claude Fable" },
+      { date: "2026-09-11", title: "ترقيع ثغرات المراجعة المستقلة — Vitest 43/43", progress: 63, kind: "progress", by: "Claude Fable" },
       { date: "2026-09-12", title: "مركز الجاهزية S1 — Vitest 49/49", progress: 66, kind: "progress", by: "Claude Fable" },
       { date: "2026-09-12", title: "تقوية S1 وبدء S2/S3 — Vitest 52/52", progress: 70, kind: "progress", by: "Claude Fable" },
       { date: "2026-09-14", title: "eBay Sandbox موثَّق وفلاتر الاكتشاف محفوظة", progress: 75, kind: "milestone", by: "Claude Fable" },
@@ -101,6 +160,19 @@ export const projects: Project[] = [
     progress: 70,
     status: "تعمل يومياً",
     tier: "live",
+    shortEn: "Dependency-free portfolio platform: one operation catalogue exposed as MCP tool, HTTP API and CLI, with a per-project engineering mind and reports.",
+    statusKey: "internal",
+    role: "المصمم والمنفذ الوحيد: كتالوج العمليات، المصادقة، التقارير، وجسر التعاون.",
+    outcome: "منصة تعمل يومياً وتتابع 46 مبادرة مسجَّلة؛ هذه المحفظة مولَّدة من تقاريرها.",
+    evidenceType: "نظام داخلي + مراجعة مستقلة",
+    security: ["PBKDF2-HMAC-SHA512 بـ 210,000 تكرار", "كوكي جلسة HMAC httpOnly SameSite=Lax", "لا CORS عمداً"],
+    limitation: "تعمل على جهاز المالك محلياً؛ لا نسخة عامة.",
+    milestones: [
+      { date: "2026-09-10", title: "تثبيت المنصة وتسجيل أول مشروع" },
+      { date: "2026-09-12", title: "جسر التعاون بين الوكلاء مع اتفاقية CLAIM/RELEASE" },
+      { date: "2026-09-12", title: "تطبيق مراجعة مستقلة T1–T3 على الجسر الحي" },
+      { date: "2026-09-14", title: "تصدير التقارير التي بُنيت منها هذه المحفظة" },
+    ],
     stack: ["Node.js بلا اعتماديات", "CLI", "HTTP API", "MCP", "PBKDF2-HMAC-SHA512", "HTML/PDF/XLSX/MD/JSON"],
     problem: "عشرات المشاريع موزّعة على جلسات Cursor وClaude وCodex بلا ذاكرة مشتركة، ولا طريقة لمعرفة ما أُنجز فعلاً وما هو ادّعاء.",
     built: [
@@ -114,7 +186,7 @@ export const projects: Project[] = [
     evidence: [
       "هذه المحفظة نفسها مُولَّدة من تقارير المنصة (46 مشروعاً، 99 مدخل تقدّم)",
       "اكتشاف تلقائي لـ 47 مشروعاً من 12 جذراً للجلسات",
-      "مراجعة Claude Code T1–T3 طُبّقت على الجسر الحي 2026-09-12",
+      "مراجعة مستقلة T1–T3 طُبّقت على الجسر الحي 2026-09-12",
     ],
     links: [{ label: "مهارة RCTC على GitHub", url: "https://github.com/kazoya/rctc-skill" }],
     note: "منصة محلية على جهاز المالك (127.0.0.1:4545).",
@@ -132,6 +204,19 @@ export const projects: Project[] = [
     progress: 78,
     status: "أدوار في الإنتاج",
     tier: "live",
+    shortEn: "Laravel + Next.js talent platform: celebrity self-service roles in production, and an influencer collaboration hub with a locked payout state machine.",
+    statusKey: "live",
+    role: "مهندس الخلفية والواجهة: الأدوار والصلاحيات، آلة حالة الصرف، النشر على Forge، وتشخيص الإنتاج.",
+    outcome: "أدوار الدخول الذاتي للمشاهير في الإنتاج على Laravel Forge، ومركز التعاون جاهز للدمج باختباراته.",
+    evidenceType: "إنتاج لعميل + PR وترحيل",
+    security: ["endpoint تعديل ذاتي يرفض الحقول المحظورة", "آلة حالة صرف مقفولة", "صلاحيتان إداريتان منفصلتان لمراجعة الآيبان والصرف"],
+    limitation: "منصة عميل بلا رابط عام؛ مركز التعاون بانتظار اختبارات PHPUnit قبل PR.",
+    milestones: [
+      { date: "2026-09-10", title: "إصلاح تفعيل الحساب ونشره على الإنتاج" },
+      { date: "2026-09-10", title: "أدوار المشاهير في الإنتاج (Forge، PR #3 / #26)" },
+      { date: "2026-09-12", title: "مركز تعاون المؤثرين: لوحات الإدارة وآلة حالة الصرف" },
+      { date: "2026-09-13", title: "حزمة إحاطة للإدارة بالعربية" },
+    ],
     stack: ["Laravel", "Next.js", "Laravel Forge", "PHPUnit", "Spatie", "pm2"],
     problem: "منصة مواهب ومؤثرين تحتاج دخولاً ذاتياً للمشاهير وتعديلاً مقيّداً لملفاتهم، ثم منظومة عروض واتفاقيات ومهام وصرف.",
     built: [
@@ -166,6 +251,21 @@ export const projects: Project[] = [
     progress: 85,
     status: "منشوران على Vercel",
     tier: "live",
+    shortEn: "Two Jordanian factory sites in Next.js, live on Vercel within a day through a copy → improve → review → merge → deploy workflow.",
+    statusKey: "live",
+    role: "المالك التقني: القالب، سير العمل، مراجعة اقتراحات الوكيل، قرار الدمج والنشر.",
+    outcome: "موقعان حيّان على Vercel من GitHub.",
+    evidenceType: "روابط حيّة + GitHub",
+    limitation: "أصول المصانع (صور وشعارات) تجريبية حتى يوفّرها العميل.",
+    milestones: [
+      { date: "2026-09-14", title: "دمج تحسينات المثالية للألبان ونشرها على Vercel" },
+      { date: "2026-09-14", title: "فصل القالب وبناء ACI للكيماويات الزراعية" },
+      { date: "2026-09-14", title: "ACI حيّ مع واتساب مبيعات وحاسبة عائد" },
+    ],
+    screenshots: [
+      { src: "/screenshots/al-mithaliya.webp", alt: "الصفحة الرئيسية لموقع المثالية للألبان", width: 1280, height: 766 },
+      { src: "/screenshots/aci.webp", alt: "الصفحة الرئيسية لموقع ACI للكيماويات الزراعية", width: 1280, height: 800 },
+    ],
     stack: ["Next.js 16", "Tailwind 4", "shadcn", "Recharts", "Vercel", "GitHub"],
     problem: "مصانع أردنية بلا حضور رقمي مقنع؛ المطلوب مواقع عرض سريعة قابلة للتحسين بوكيل خارجي ثم الدمج والنشر.",
     built: [
@@ -199,6 +299,19 @@ export const projects: Project[] = [
     progress: 92,
     status: "بانتظار أصول العميل",
     tier: "live",
+    shortEn: "Bilingual Next.js 16 premium store demo for artisan food products, with two security passes before any production use.",
+    statusKey: "pilot",
+    role: "المهندس المسؤول: المتجر، السمة، تمريرا الأمان، وقرار حجب SEO حتى الاعتماد.",
+    outcome: "ديمو حيّ على Vercel بفحوص typecheck/unit/lint/build خضراء وتمريرَي مراجعة أمنية منفّذين.",
+    evidenceType: "رابط حيّ + GitHub + مراجعتان",
+    security: ["mock payments تفشل مغلقةً في الإنتاج", "CSP بهاش + HSTS", "تحديد معدل للتواصل", "Supabase RLS"],
+    limitation: "بانتظار أصول العميل؛ الصور والتواصل تجريبية.",
+    milestones: [
+      { date: "2026-09-13", title: "الديمو منشور على GitHub وVercel" },
+      { date: "2026-09-13", title: "إصلاحات المراجعة الأمنية الأولى" },
+      { date: "2026-09-13", title: "التمرير الأمني الثاني ومسودات الصفحات القانونية" },
+    ],
+    screenshots: [{ src: "/screenshots/baraah.webp", alt: "الصفحة الرئيسية لمتجر براءة الشوبكي التجريبي", width: 1280, height: 800 }],
     stack: ["Next.js 16", "Supabase + RLS", "CSP hash", "HSTS", "Vercel"],
     problem: "عميل يحتاج عرضاً مقنعاً لمنتجات زيوت وخل ومستخلصات نباتية قبل توفير أصوله (صور، شعار، أسعار).",
     built: [
@@ -210,7 +323,7 @@ export const projects: Project[] = [
       "baraahalshobaki.vercel.app — Production على فريق muqasa",
       "github.com/kazoya/bara-ah-alshobaki",
       "typecheck / unit / lint / build خضراء محلياً وعلى Vercel",
-      "تمريرا مراجعة Claude: pass-1 High مقبولة في DECISIONS.md، pass-2 منفّذة",
+      "تمريرا مراجعة أمنية مستقلة: pass-1 High مقبولة في DECISIONS.md، pass-2 منفّذة",
     ],
     links: [
       { label: "الموقع الحي", url: "https://baraahalshobaki.vercel.app" },
@@ -225,16 +338,28 @@ export const projects: Project[] = [
   },
   {
     id: "giz-apca",
-    name: "أكاديمية APCA للذكاء الاصطناعي الصناعي — GIZ",
-    nameEn: "APCA Industrial AI Skills & Safety Academy (GIZ)",
+    name: "أكاديمية APCA للذكاء الاصطناعي الصناعي — مُظهِر مقترح متوافق مع أهداف GIZ",
+    nameEn: "APCA Industrial AI Academy — proposed GIZ-aligned demonstrator",
     short: "مُظهِر تعليمي ثنائي اللغة لمؤسسات التدريب المهني: تشخيص → مسار → سيناريو → تقييم أمان → جواز مهارات.",
     progress: 85,
-    status: "Gate B مكتمل",
+    status: "مُظهِر مقترح — Gate B مكتمل",
     tier: "live",
+    shortEn: "Bilingual TVET demonstrator: diagnostic → pathway → scenario → non-compensable safety assessment → skills passport. A proposed demonstrator aligned with GIZ's stated objectives, not a GIZ product.",
+    statusKey: "pilot",
+    role: "المصمم والمنفذ: أنواع النطاق، بوابة السلامة، الرحلة الكاملة، والنشر.",
+    outcome: "مُظهِر حيّ على Vercel بـ 11 اختباراً أخضر.",
+    evidenceType: "رابط حيّ + GitHub + اختبارات",
+    security: ["تقييم سلامة غير قابل للتعويض", "ذكاء اصطناعي محاكى وبذرة حتمية موثّقة"],
+    limitation: "مُظهِر مقترح متوافق مع أهداف GIZ المعلنة؛ لا يمثّل موافقة أو اعتماداً أو شراكة مع GIZ. المرحلة التالية قاعدة بيانات ومصادقة حقيقية.",
+    milestones: [
+      { date: "2026-09-14", title: "الشريحة الرأسية الكاملة من التشخيص إلى جواز المهارات" },
+      { date: "2026-09-14", title: "11 اختباراً أخضر ونشر على Vercel" },
+    ],
+    screenshots: [{ src: "/screenshots/apca-academy.webp", alt: "الصفحة الرئيسية لمُظهِر أكاديمية APCA للذكاء الاصطناعي الصناعي", width: 1280, height: 800 }],
     stack: ["Next.js", "Vitest", "Tailwind 4", "Vercel"],
     problem: "مؤسسات التدريب المهني (TVET) تحتاج مُظهِراً لمهارات وسلامة الذكاء الاصطناعي الصناعي قبل تجربة ميدانية.",
     built: [
-      "رحلة ذهبية كاملة: تشخيص → مسار → سيناريو (رفض التجاوز + استشهاد) → تقييم بسلامة غير قابلة للتعويض → جواز مهارات → لوحة مدرّب → لوحة GIZ → تصدير أدلة.",
+      "رحلة كاملة: تشخيص → مسار → سيناريو (رفض التجاوز + استشهاد) → تقييم بسلامة غير قابلة للتعويض → جواز مهارات → لوحة مدرّب → لوحة جهة مانحة → تصدير أدلة.",
       "ذكاء اصطناعي محاكى وبذرة localStorage موثّقة في DECISION_LOG لتبقى التمارين حتمية.",
     ],
     evidence: [
@@ -259,6 +384,13 @@ export const projects: Project[] = [
     progress: 0,
     status: "منتج حيّ بلا متابعة",
     tier: "product",
+    shortEn: "A PDF chat agent that answers in a WhatsApp-style conversation, published with a subscription model.",
+    statusKey: "prototype",
+    role: "المهندس والناشر.",
+    outcome: "منتج منشور يعمل للاستخدام المجاني؛ مسار الاشتراك غير موثَّق حياً.",
+    evidenceType: "رابط حيّ",
+    limitation: "IPN الحي كان 404 آخر فحص؛ لا خطوة تالية مسجَّلة.",
+    screenshots: [{ src: "/screenshots/wathiqa.webp", alt: "واجهة وثيقة لرفع ملف PDF ومحادثته", width: 1280, height: 800 }],
     stack: ["Next.js", "PayPal subscriptions", "OpenAI (اختياري)"],
     problem: "قراءة ملفات PDF طويلة بالعربية مرهقة؛ المطلوب وكيل محادثة يجيب من الملف نفسه.",
     built: [
@@ -277,6 +409,13 @@ export const projects: Project[] = [
     progress: 0,
     status: "شريحة قابلة للتشغيل",
     tier: "product",
+    shortEn: "Beirut-first auto-parts marketplace: OEM search, part + delivery = total comparison, COD orders with a real timeline.",
+    statusKey: "prototype",
+    role: "المهندس: آلة حالة الطلبات، سجل التدقيق، الموجز الاستثماري.",
+    outcome: "شريحة قابلة للتشغيل منشورة على Vercel بقواعد صدق مكتوبة.",
+    evidenceType: "رابط حيّ + سكربتات فحص",
+    limitation: "لا GPS حقيقي، لا OCR، لا PayPal حيّ؛ بيانات بذرة.",
+    screenshots: [{ src: "/screenshots/ghayari.webp", alt: "الصفحة الرئيسية لسوق غياري لقطع السيارات", width: 1280, height: 800 }],
     stack: ["Next.js", "COD state machine", "PDF investor brief", "AR/EN/FR"],
     problem: "شراء قطع غيار في بيروت بلا شفافية سعر التوصيل الكلي.",
     built: [
@@ -295,6 +434,12 @@ export const projects: Project[] = [
     progress: 0,
     status: "نواة متحققة محلياً",
     tier: "explore",
+    shortEn: "Fully local PDF → semantic help system: FTS5 + FAISS + Ollama with page-level citations.",
+    statusKey: "prototype",
+    role: "المصمم والمنفذ؛ يرتبط بمساعد APCA SmartHelp CX الذي أقوده في العمل.",
+    outcome: "نواة متحققة محلياً وجاهزة لعرض معرفة على وثائق شركة.",
+    evidenceType: "كود + README + سكربت إعداد",
+    limitation: "لا نشر عام؛ يعمل محلياً على وثائق الشركة.",
     stack: ["Python", "Node", "SQLite FTS5", "FAISS / hnswlib", "Ollama", "Sentence Transformers"],
     problem: "كتيبات تقنية عربية/إنجليزية بصيغة PDF/EPUB يصعب البحث فيها داخل الشركة دون إرسالها للسحابة.",
     built: [
@@ -312,6 +457,12 @@ export const projects: Project[] = [
     progress: 0,
     status: "هيكل سير",
     tier: "explore",
+    shortEn: "Walking skeleton for a Jordanian scheduled ride-sharing platform: Laravel + Filament backend and a Flutter RTL app.",
+    statusKey: "prototype",
+    role: "المهندس.",
+    outcome: "هيكل سير باختبارات في الذاكرة؛ ليس جاهزاً للإطلاق.",
+    evidenceType: "كود",
+    limitation: "لا مدفوعات حقيقية؛ التوكن في الذاكرة فقط.",
     stack: ["Laravel", "Filament", "SQLite", "Flutter", "PHPUnit"],
     problem: "ممرات يومية مشتركة في الأردن، لا أوبر عند الطلب.",
     built: ["خلفية Laravel + Filament باختبارات في الذاكرة عبر SQLite.", "تطبيق Flutter RTL بدخول حقيقي ومعمل ممر، التوكن في الذاكرة فقط."],
@@ -321,7 +472,7 @@ export const projects: Project[] = [
 ];
 
 export const enterpriseBackground = [
-  { project: "استيراد إجازات بنكي / MTZ", what: "محرك استيراد إنتاجي، تحقق ثم تعليم، جدولة، تشخيص، حزمة تراجع", tech: "Java 8، Oracle، Task Scheduler", status: "في الإنتاج" },
+  { project: "استيراد إجازات بنكي / MTZ", what: "محرك استيراد إنتاجي، تحقق ثم تعليم، جدولة، تشخيص، حزمة تراجع", tech: "Java، Oracle، Task Scheduler", status: "في الإنتاج" },
   { project: "APCA Smart Queue", what: "دور ذكي وتجربة انتظار/نداء", tech: "QMS", status: "منتج قائم" },
   { project: "التحكم بالدخول والحضور", what: "Miditec وZKTeco إلى الموارد البشرية", tech: "Java/C#، SDK، SQL Server", status: "خبرة إنتاجية ممتدة" },
   { project: "مقاصة جو", what: "ثقة وتقييم عقاري؛ وثائق المستثمرين", tech: "ويب، APIs", status: "موقع يعمل" },
@@ -345,32 +496,33 @@ export const capabilities: { name: string; evidence: string; level: Confidence }
   { name: "RAG محلي (FTS5 + FAISS + Ollama)", evidence: "APCA SmartHelp", level: "متوسط" },
   { name: "منتج SaaS باشتراك (PayPal)", evidence: "وثيقة: IPN الحي غير موثَّق", level: "متوسط" },
   { name: "آلة حالة طلبات COD وسجل تدقيق", evidence: "غياري", level: "متوسط" },
-  { name: "Java 8 + Oracle للمؤسسات", evidence: "استيراد إجازات بنكي (ملف القدرات)", level: "تاريخي" },
-  { name: "C# / SQL Server / SSIS / RDLC / WINCC", evidence: "ملف القدرات", level: "تاريخي" },
-  { name: "أجهزة ميدانية (Miditec, ZKTeco, RFID)", evidence: "ملف القدرات", level: "تاريخي" },
+  { name: "Java + Oracle للمؤسسات", evidence: "محرك استيراد إجازات بنكي في الإنتاج (Signals Control)", level: "عالي" },
+  { name: "C# / SQL Server / SSIS / RDLC / WinCC", evidence: "أنظمة خلفية وغرف تحكم في الإنتاج (Signals Control)", level: "عالي" },
+  { name: "أجهزة ميدانية (Miditec, ZKTeco, RFID, ANPR)", evidence: "تكامل SDK مع الموارد البشرية (Signals Control)", level: "عالي" },
   { name: "Filament admin + Flutter RTL", evidence: "خذني بطريقك (هيكل سير)", level: "استكشافي" },
   { name: "Python للنماذج (ARC Prize)", evidence: "arc_solver_web · arc_prize_2026 بنسبة 0%", level: "استكشافي" },
 ];
 
 export const howIWork = [
-  { title: "مجلد لكل مشروع", text: "project.json + brain.json + journal/ تُولَّد منها BRAIN.md تلقائياً، فلا يضيع سياق بين الجلسات." },
-  { title: "أدوار مكتوبة للوكلاء", text: "Cursor مدير التنفيذ، Claude Code مراجعة الكود والمعمارية، Codex وثائق وسكربتات، ChatGPT صور وصياغة." },
-  { title: "أمر بقالب RCTC", text: "Role / Context / Task / Constraints. الأمر يصل الوكيل مع سياق المشروع كاملاً وقواعد العمل وأوامر التسجيل." },
-  { title: "مهمة واحدة في كل مرة", text: "مهلة 20 دقيقة. الوكيل الذي لا يعرف قراراً يسأل المالك (ask_owner) بدل التخمين." },
-  { title: "دليل أو لم يحدث", text: "اختبارات خضراء، commit، رابط نشر، أو تسجيل «لم يُنفَّذ» صراحةً في السجل." },
-  { title: "قيود لا تُرفع من الواجهة", text: "لا شراء حيّ، لا نشر بلا إذن، لا أرقام أو شهادات مخترَعة، لا مفاتيح خارج .env.local." },
+  { title: "القرار عندي، التنفيذ موزَّع", text: "أحدد المعمارية والقيود والمعيار، ثم أوزّع التنفيذ بين نفسي ووكلاء برمجة بأدوار مكتوبة: تنفيذ، مراجعة كود، وثائق." },
+  { title: "مجلد وعقل هندسي لكل مشروع", text: "ما أُنجز، ما يجري، ما يلي، والقيود، في ملفات أراجعها أنا لا الوكيل، فلا يضيع سياق بين الجلسات." },
+  { title: "أمر بقالب RCTC", text: "Role / Context / Task / Constraints. كل توجيه يحمل سياق المشروع كاملاً وقواعد العمل، فلا مجال للتخمين." },
+  { title: "مهمة واحدة في كل مرة", text: "الوكيل الذي لا يعرف قراراً يوقف العمل ويسألني بدل أن يخمّن. القرار التقني والمالي لا يُفوَّض." },
+  { title: "دليل أو لم يحدث", text: "اختبار أخضر، commit، رابط نشر، أو تسجيل «لم يُنفَّذ» صراحةً. لا يُحسب إنجاز بلا دليل." },
+  { title: "قيود لا تُرفع من الواجهة", text: "لا شراء حيّ، لا نشر بلا إذن، لا أرقام أو شهادات مخترَعة، لا مفاتيح خارج .env.local. تُفرض في طبقة لا يصل إليها المستخدم." },
 ];
 
 export const honesty = [
-  "نحو 35 مشروعاً في المنصة بنسبة 0%: مخزون مكتشَف من الجلسات، لا إنجاز مكتمل.",
-  "أهم مشروع (Project1) مستودع خاص، ودليله اختبارات وسجلات لا رابط عام.",
-  "Next.js وLaravel لغتا العمل الحاليتان؛ الأساس المؤسسي Java وC# وSQL.",
-  "صيد الجوائز والـ CTF مسار جانبي لا محور توظيف.",
+  "منصة المتابعة تسجّل 46 مبادرة؛ معظمها مخزون مكتشَف لا عمل مكتمل. المعروض هنا هو ما له دليل فقط.",
+  "أقوى مشروع محاكاة (Project1) مستودع خاص، ودليله اختبارات وسجلات لا رابط عام.",
+  "Java وC# وSQL Server وOracle أساس مؤسسي حالي؛ Next.js وLaravel لغتا العمل للمنصات العربية الحديثة.",
+  "خبرات DOS والوسائط واستعادة البيانات خبرات عملية تأسيسية، لا شهادات ولا تخصص حالي.",
+  "أستخدم وكلاء البرمجة كأداة تسريع تحت قيود مكتوبة؛ القرار والمسؤولية عندي.",
 ];
 
 export const docs = [
   { slug: "profile", file: "01-profile-ar.md", title: "البروفايل المهني", blurb: "عنوان وظيفي مقترح، نبذة، مهارات مرتّبة بقوة الدليل، أسلوب العمل مع الوكلاء." },
-  { slug: "cv", file: "02-cv-one-pager-ar.md", title: "سيرة صفحة واحدة", blurb: "جاهزة للنسخ إلى مستقل وبعيد وLinkedIn، مع ملخص إنجليزي." },
+  { slug: "cv", file: "02-cv-one-pager-ar.md", title: "سيرة صفحة واحدة (نص)", blurb: "نسخة نصية للنسخ إلى مستقل وبعيد وLinkedIn؛ النسخة المنسّقة في صفحة السيرة." },
   { slug: "case-studies", file: "03-portfolio-case-studies.md", title: "دراسات الحالة", blurb: "عشر دراسات: المشكلة → ما بُني → الدليل → الحالة." },
   { slug: "capabilities", file: "04-capability-matrix.md", title: "مصفوفة القدرات", blurb: "قدرة | دليل المشروع | مستوى الثقة." },
   { slug: "positioning", file: "05-positioning.md", title: "التموضع في السوق", blurb: "خمسة أدوار مستهدفة، أنواع المشاريع المناسبة، وما يُرفض." },

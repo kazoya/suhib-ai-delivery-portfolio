@@ -4,12 +4,12 @@
 
 | القدرة | دليل المشروع | مستوى الثقة |
 |---|---|---|
-| Next.js ثنائي اللغة RTL/LTR + سمات | Project1، براءة الشوبكي (Next.js 16)، GIZ APCA، المثالية، ACI، وثيقة، غياري | عالي |
+| Next.js ثنائي اللغة RTL/LTR + سمات | Project1، براءة الشوبكي (Next.js 16)، أكاديمية APCA (مُظهِر مقترح)، المثالية، ACI، وثيقة، غياري | عالي |
 | نشر على Vercel من GitHub | 6 روابط إنتاج READY (المثالية، ACI، براءة، APCA Academy، غياري، وثيقة) | عالي |
 | Laravel (أدوار، middleware، ترحيلات، آلة حالة) | ريشة 360: PR #3 في الإنتاج، Influencer Hub، PayoutReviewService | عالي |
 | نشر Laravel على Forge (migrate + pm2) | ريشة 360: ce79801 / 652d826، migration Ran | عالي |
 | PostgreSQL + Prisma مع أقفال واستمرارية | Project1 S1 «Postgres persistence + lock» | عالي |
-| اختبارات آلية (Vitest / Playwright / PHPUnit) | Project1 52/52 + Playwright 4/4؛ GIZ 11؛ ريشة 6 ملفات Feature | عالي |
+| اختبارات آلية (Vitest / Playwright / PHPUnit) | Project1 52/52 + Playwright 4/4؛ أكاديمية APCA 11؛ ريشة 6 ملفات Feature | عالي |
 | بناء منصة Node.js بلا اعتماديات (CLI + HTTP + MCP) | Master Brain: `ops.js` كتالوج واحد بثلاث قنوات، كاتب xlsx يدوي | عالي |
 | مصادقة وجلسات آمنة | Master Brain: PBKDF2-HMAC-SHA512 ×210k، كوكي HMAC httpOnly | عالي |
 | تقوية أمان تطبيقات ويب | براءة: CSP hash، HSTS، rate limit، fail-closed payments؛ Project1: Origin/CSRF | عالي |
