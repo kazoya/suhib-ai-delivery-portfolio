@@ -1,7 +1,7 @@
 import { test } from "@playwright/test";
 import fs from "node:fs";
 
-/** Captures after-state screenshots for the redesign report (not assertions). */
+/** Captures reference screenshots into test-results/visual (ignored); the committed docs/screenshots are frozen evidence. */
 const SHOTS: { path: string; name: string }[] = [
   { path: "/", name: "home" },
   { path: "/journal", name: "journal" },
@@ -17,13 +17,13 @@ for (const s of SHOTS) {
       await page.setViewportSize({ width: 768, height: 1024 });
       await page.goto(s.path);
       await page.evaluate(() => document.querySelectorAll(".reveal").forEach((e) => e.classList.add("in")));
-      fs.mkdirSync("docs/screenshots", { recursive: true });
-      await page.screenshot({ path: `docs/screenshots/after-${s.name}-768.png`, fullPage: false });
+      fs.mkdirSync("test-results/visual", { recursive: true });
+      await page.screenshot({ path: `test-results/visual/after-${s.name}-768.png`, fullPage: false });
       await page.setViewportSize({ width: 1440, height: 900 });
     }
     await page.goto(s.path);
     await page.evaluate(() => document.querySelectorAll(".reveal").forEach((e) => e.classList.add("in")));
-    fs.mkdirSync("docs/screenshots", { recursive: true });
-    await page.screenshot({ path: `docs/screenshots/after-${s.name}-${w}.png`, fullPage: s.name === "journal" && w === 1440 });
+    fs.mkdirSync("test-results/visual", { recursive: true });
+    await page.screenshot({ path: `test-results/visual/after-${s.name}-${w}.png`, fullPage: s.name === "journal" && w === 1440 });
   });
 }
