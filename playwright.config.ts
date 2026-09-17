@@ -1,6 +1,7 @@
 import { defineConfig, devices } from "@playwright/test";
 
 const PORT = 3100;
+const HOST = "127.0.0.1";
 
 export default defineConfig({
   testDir: "./tests/e2e",
@@ -9,7 +10,7 @@ export default defineConfig({
   retries: 0,
   reporter: [["list"], ["html", { open: "never", outputFolder: "playwright-report" }]],
   use: {
-    baseURL: `http://localhost:${PORT}`,
+    baseURL: `http://${HOST}:${PORT}`,
     trace: "retain-on-failure",
   },
   projects: [
@@ -17,8 +18,10 @@ export default defineConfig({
     { name: "mobile", use: { ...devices["Pixel 7"], viewport: { width: 390, height: 844 } } },
   ],
   webServer: {
-    command: `npx next start -p ${PORT}`,
-    url: `http://localhost:${PORT}/`,
+    // Pin the loopback host: this works in restricted CI/container runners
+    // where enumerating network interfaces is intentionally unavailable.
+    command: `npx next start -H ${HOST} -p ${PORT}`,
+    url: `http://${HOST}:${PORT}/`,
     reuseExistingServer: true,
     timeout: 60_000,
   },

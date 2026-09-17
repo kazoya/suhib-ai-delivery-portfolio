@@ -8,10 +8,11 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
+    "verify:assets": "node scripts/verify-public-assets.mjs",
     "test": "playwright test",
     "test:e2e": "playwright test",
     "test:a11y": "playwright test tests/e2e/a11y.spec.ts",
-    "verify": "npm run lint && npm run typecheck && npm run build && npm run test"
+    "verify": "npm run lint && npm run typecheck && npm run verify:assets && npm run build && npm run test"
   },
   "dependencies": {
     "clsx": "^2.1.1",
