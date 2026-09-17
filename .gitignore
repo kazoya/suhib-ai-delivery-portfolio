@@ -26,3 +26,9 @@ build.log
 # playwright
 /playwright-report/
 /test-results/
+
+# Master Brain record (owner-only, kept out of the public repo)
+/project.json
+/brain.json
+/BRAIN.md
+/journal/
