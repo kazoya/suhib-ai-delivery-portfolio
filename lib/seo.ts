@@ -4,6 +4,7 @@ const base = owner.siteUrl.replace(/\/$/, "");
 
 export const keywords = [
   "Suhib Asrawi",
+  "صهيب الصالح",
   "صهيب عسراوي",
   "Solutions Architect Jordan",
   "Senior Technology Consultant",

@@ -52,7 +52,7 @@ export const statusLabel: Record<StatusKey, { ar: string; en: string }> = {
 };
 
 export const owner = {
-  name: "صهيب عسراوي",
+  name: "صهيب الصالح",
   fullName: "صهيب محمود صالح العسراوي",
   nameEn: "Suhib Asrawi",
   fullNameEn: "Suhib Mahmoud Saleh Asrawi",

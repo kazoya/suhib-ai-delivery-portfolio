@@ -9,10 +9,10 @@ import { coreSkills, education, experience, selectedProjectsCv } from "@/data/jo
 import { alternatesFor, ogAr, profilePageLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "السيرة الذاتية — صهيب عسراوي، مستشار تقني أول ومهندس حلول",
-  description: "سيرة صهيب عسراوي القابلة للطباعة (A4): أكثر من عشرين عاماً في الأنظمة المؤسسية وتكاملها، Java وC# وSQL Server وOracle، وكلاء الذكاء الاصطناعي والأتمتة، وخبرة ميدانية في الشبكات والأجهزة.",
+  title: "السيرة الذاتية — صهيب الصالح، مستشار تقني أول ومهندس حلول",
+  description: "سيرة صهيب الصالح القابلة للطباعة (A4): أكثر من عشرين عاماً في الأنظمة المؤسسية وتكاملها، Java وC# وSQL Server وOracle، وكلاء الذكاء الاصطناعي والأتمتة، وخبرة ميدانية في الشبكات والأجهزة.",
   alternates: alternatesFor("/cv"),
-  openGraph: { ...ogAr, title: "السيرة الذاتية — صهيب عسراوي", url: "/cv" },
+  openGraph: { ...ogAr, title: "السيرة الذاتية — صهيب الصالح", url: "/cv" },
 };
 
 export default function CvPage() {

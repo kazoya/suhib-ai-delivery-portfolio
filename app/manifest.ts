@@ -4,7 +4,7 @@ export const dynamic = "force-static";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "صهيب عسراوي — مستشار تقني أول ومهندس حلول",
+    name: "صهيب الصالح — مستشار تقني أول ومهندس حلول",
     short_name: "Suhib Asrawi",
     description: "تكامل الأنظمة المؤسسية، الأتمتة، ووكلاء الذكاء الاصطناعي. من DOS إلى الذكاء الاصطناعي.",
     start_url: "/",

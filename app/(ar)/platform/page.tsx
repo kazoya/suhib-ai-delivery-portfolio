@@ -12,7 +12,7 @@ import { alternatesFor, ogAr } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "منصة المتابعة — حوكمة 46 مبادرة متتبَّعة",
-  description: "Master Brain: منصة Node.js بلا اعتماديات بناها صهيب عسراوي لحوكمة محفظة من 46 مبادرة متتبَّعة: عقل هندسي لكل مشروع، كتالوج عمليات واحد عبر CLI وHTTP وMCP، وتقارير. الأرقام من تقرير 2026-09-14.",
+  description: "Master Brain: منصة Node.js بلا اعتماديات بناها صهيب الصالح لحوكمة محفظة من 46 مبادرة متتبَّعة: عقل هندسي لكل مشروع، كتالوج عمليات واحد عبر CLI وHTTP وMCP، وتقارير. الأرقام من تقرير 2026-09-14.",
   alternates: alternatesFor("/platform"),
   openGraph: { ...ogAr, title: "منصة المتابعة — Master Brain", url: "/platform" },
 };
