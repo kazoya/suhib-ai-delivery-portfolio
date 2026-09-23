@@ -16,7 +16,7 @@ import { LiveAmmanClock } from "@/components/effects/live-amman-clock";
 export const metadata: Metadata = {
   title: { absolute: `${owner.nameEn} — Senior Technology Consultant & Solutions Architect · AI Agents and Systems Integration` },
   description:
-    "Suhib Asrawi, Senior Technology Consultant and Solutions Architect in Amman, Jordan: 20+ years building, integrating and supporting enterprise systems (Java, C#, SQL Server, Oracle), now applying that depth to AI agents and automation. Six live platforms, two client production systems, printable CV.",
+    "Suhib Al-Saleh, Senior Technology Consultant and Solutions Architect in Amman, Jordan: 20+ years building, integrating and supporting enterprise systems (Java, C#, SQL Server, Oracle), now applying that depth to AI agents and automation. Six live platforms, two client production systems, printable CV.",
   alternates: alternatesFor("/en", { ar: "/", en: "/en" }),
   openGraph: { ...ogEn, url: "/en" },
 };

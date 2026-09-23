@@ -3,6 +3,7 @@ import { owner, projects } from "@/data/portfolio";
 const base = owner.siteUrl.replace(/\/$/, "");
 
 export const keywords = [
+  "Suhib Al-Saleh",
   "Suhib Asrawi",
   "صهيب الصالح",
   "صهيب عسراوي",
@@ -84,7 +85,7 @@ export const projectLd = (id: string) => {
   };
 };
 
-const ogImage = { url: "/og", width: 1200, height: 630, alt: "Suhib Asrawi — Senior Technology Consultant & Solutions Architect" };
+const ogImage = { url: "/og", width: 1200, height: 630, alt: "Suhib Al-Saleh — Senior Technology Consultant & Solutions Architect" };
 
 /**
  * Next.js replaces a nested `openGraph` object instead of merging it, so every

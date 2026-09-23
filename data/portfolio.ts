@@ -54,7 +54,7 @@ export const statusLabel: Record<StatusKey, { ar: string; en: string }> = {
 export const owner = {
   name: "صهيب الصالح",
   fullName: "صهيب محمود صالح العسراوي",
-  nameEn: "Suhib Asrawi",
+  nameEn: "Suhib Al-Saleh",
   fullNameEn: "Suhib Mahmoud Saleh Asrawi",
   title: "مستشار تقني أول · مهندس حلول · وكلاء الذكاء الاصطناعي والأتمتة وتكامل الأنظمة",
   titleEn: "Senior Technology Consultant · Solutions Architect · AI Agents, Automation & Systems Integration",

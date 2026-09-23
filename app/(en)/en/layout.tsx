@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: `%s | ${owner.nameEn}`,
   },
   description:
-    "Suhib Asrawi: Senior Technology Consultant and Solutions Architect in Amman, Jordan. 20+ years across enterprise integration (Java, C#, SQL Server, Oracle), AI agents and automation. Live bilingual platforms and client production systems.",
+    "Suhib Al-Saleh: Senior Technology Consultant and Solutions Architect in Amman, Jordan. 20+ years across enterprise integration (Java, C#, SQL Server, Oracle), AI agents and automation. Live bilingual platforms and client production systems.",
   keywords,
   authors: [{ name: owner.nameEn, url: owner.linkedin }],
   creator: owner.nameEn,
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: `${owner.nameEn} — ${owner.titleEn}`,
     description: owner.taglineEn,
     url: "/en",
-    images: [{ url: "/og", width: 1200, height: 630, alt: "Suhib Asrawi — Senior Technology Consultant & Solutions Architect" }],
+    images: [{ url: "/og", width: 1200, height: 630, alt: "Suhib Al-Saleh — Senior Technology Consultant & Solutions Architect" }],
   },
   twitter: { card: "summary_large_image", images: ["/og"], title: `${owner.nameEn} — ${owner.titleEn}`, description: owner.taglineEn },
   robots: { index: true, follow: true },
