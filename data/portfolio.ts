@@ -449,9 +449,10 @@ export const projects: Project[] = [
       "حاسبة عرض سعر تُظهر تكلفة المزوّدين وهامش الربح داخلياً، حاسبة عائد، ومولّد برومبت RCTC لنموذج العمل.",
     ],
     evidence: ["nexa-agents-ai.vercel.app", "npm test: 11 اختبار منطق", "e2e: 16/16 على الرابط العام، axe بلا مخالفات جسيمة"],
+    // الرابط الأول هو الرابط الأساسي في البطاقة: المنصة نفسها. الحجز رابط ثانوي.
     links: [
-      { label: "احجز ديمو", url: "https://nexa-agents-ai.vercel.app/contact" },
-      { label: "الموقع الحي", url: "https://nexa-agents-ai.vercel.app" },
+      { label: "زيارة المنصة", url: "https://nexa-agents-ai.vercel.app/ar" },
+      { label: "احجز ديمو", url: "https://nexa-agents-ai.vercel.app/ar/contact" },
     ],
   },
   {
@@ -577,7 +578,7 @@ export const deployments: Deployment[] = [
   { label: "سمسار العرب", url: "https://simsar-alarab.vercel.app", kind: "product", repo: "simsar-alarab" },
   { label: "وثيقة", url: "https://wathiqa-eight.vercel.app", kind: "product", repo: "Wathiqa" },
   { label: "غياري", url: "https://ghayari.vercel.app", kind: "product", repo: "ghayari" },
-  { label: "NEXA — وكلاء الذكاء الاصطناعي", url: "https://nexa-agents-ai.vercel.app", kind: "product", repo: "nexa-ai-agents" },
+  { label: "NEXA — وكلاء الذكاء الاصطناعي", url: "https://nexa-agents-ai.vercel.app/ar", kind: "product", repo: "nexa-ai-agents" },
   { label: "VStrata", url: "https://vstrata.vercel.app", kind: "product", repo: "VStrata" },
   { label: "البيروتي — مقاصة", url: "https://albayrouty-muqasa.vercel.app", kind: "product", repo: "AlBayrouty" },
   { label: "NNS Perchance Catcher", url: "https://nns-perchance-catcher.vercel.app", kind: "product" },
