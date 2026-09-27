@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import { projects } from "../../data/portfolio";
 
 test.describe("command palette", () => {
   test("opens with Ctrl+K, filters in Arabic, arrows + Enter navigate, Escape closes, focus is trapped", async ({ page }) => {
@@ -74,19 +75,44 @@ test.describe("journal", () => {
 });
 
 test.describe("projects", () => {
+  test("NEXA: card opens the platform (not /contact); case study lists platform then booking", async ({ page }) => {
+    const nexa = projects.find((p) => p.id === "nexa-ai-agents")!;
+    expect(nexa.links[0].url).toBe("https://nexa-agents-ai.vercel.app/ar");
+    expect(nexa.links.some((l) => /\/contact$/.test(l.url) && l !== nexa.links[0])).toBe(true);
+    expect(projects.filter((p) => /nexa/i.test(p.id + p.nameEn))).toHaveLength(1);
+    await page.goto("/projects");
+    const card = page.locator("main article").filter({ hasText: "NEXA" });
+    await expect(card).toHaveCount(1);
+    await expect(card.locator('a[href^="https://nexa-agents-ai.vercel.app"]')).toHaveAttribute("href", "https://nexa-agents-ai.vercel.app/ar");
+    await card.getByRole("link", { name: /NEXA/ }).click();
+    await expect(page).toHaveURL(/\/projects\/nexa-ai-agents$/);
+    const links = page.locator('aside a[href^="https://nexa-agents-ai.vercel.app"]');
+    await expect(links.nth(0)).toHaveAttribute("href", "https://nexa-agents-ai.vercel.app/ar");
+    await expect(links.nth(0)).toContainText("زيارة المنصة");
+    await expect(links.nth(1)).toHaveAttribute("href", "https://nexa-agents-ai.vercel.app/ar/contact");
+    await expect(links.nth(1)).toContainText("احجز ديمو");
+  });
+
   test("tier + tech filters combine without dead ends", async ({ page }) => {
     await page.goto("/projects");
+    // الأعداد المتوقعة تُشتق من السجل القانوني data/portfolio.ts فلا تحتاج تعديلاً يدوياً مع كل مشروع جديد
+    const products = projects.filter((p) => p.tier === "product");
+    const productsOnVercel = products.filter((p) => p.stack.includes("Vercel")).length;
+    expect(productsOnVercel, "fixture: at least one published product runs on Vercel").toBeGreaterThan(0);
+    expect(products.some((p) => p.stack.includes("Laravel")), "fixture: Laravel must be absent from published products").toBe(false);
+    expect(projects.some((p) => p.stack.includes("Laravel")), "fixture: Laravel exists elsewhere so its chip renders").toBe(true);
+
     await page.getByRole("tab", { name: /منتج منشور/ }).click();
-    // all three published products are deployed on Vercel → the chip stays enabled and yields results
+    // published products deployed on Vercel → the chip stays enabled and yields results
     const vercel = page.getByRole("button", { name: /^Vercel/ });
     await expect(vercel).toBeEnabled();
     await vercel.click();
-    await expect(page.locator("main article")).toHaveCount(3);
+    await expect(page.locator("main article")).toHaveCount(productsOnVercel);
     // a technology absent from this tier is disabled instead of producing an empty page
     await expect(page.getByRole("button", { name: /^Laravel/ })).toBeDisabled();
     // clearing works from the status line
     await page.getByRole("button", { name: "مسح الفلاتر" }).first().click();
-    await expect(page.locator("main article")).toHaveCount(11);
+    await expect(page.locator("main article")).toHaveCount(projects.length);
   });
 
 
