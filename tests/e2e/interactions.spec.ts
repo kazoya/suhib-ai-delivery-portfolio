@@ -77,16 +77,16 @@ test.describe("projects", () => {
   test("tier + tech filters combine without dead ends", async ({ page }) => {
     await page.goto("/projects");
     await page.getByRole("tab", { name: /منتج منشور/ }).click();
-    // both published products are deployed on Vercel → the chip stays enabled and yields results
+    // all three published products are deployed on Vercel → the chip stays enabled and yields results
     const vercel = page.getByRole("button", { name: /^Vercel/ });
     await expect(vercel).toBeEnabled();
     await vercel.click();
-    await expect(page.locator("main article")).toHaveCount(2);
+    await expect(page.locator("main article")).toHaveCount(3);
     // a technology absent from this tier is disabled instead of producing an empty page
     await expect(page.getByRole("button", { name: /^Laravel/ })).toBeDisabled();
     // clearing works from the status line
     await page.getByRole("button", { name: "مسح الفلاتر" }).first().click();
-    await expect(page.locator("main article")).toHaveCount(10);
+    await expect(page.locator("main article")).toHaveCount(11);
   });
 
 
