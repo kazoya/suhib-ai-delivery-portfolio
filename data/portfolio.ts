@@ -85,14 +85,14 @@ export const owner = {
 
 export const kpis = [
   { value: "20+", label: "عاماً في بناء الأنظمة وتكاملها ودعمها", hint: "من إدارة الشبكات 2003 إلى وكلاء الذكاء الاصطناعي" },
-  { value: "35", label: "رابطاً حيّاً على Vercel", hint: "34 مشروعاً · 3 نطاقات مخصصة · تُحقق منها 2026-09-16" },
+  { value: "37", label: "رابطاً حيّاً على Vercel", hint: "36 مشروعاً · 3 نطاقات مخصصة · تُحقق من BetterSelf في 2026-09-28" },
   { value: "67", label: "اختباراً آلياً أخضر في مشروعين", hint: "Vitest 52 + Playwright 4 + Vitest 11" },
   { value: "2", label: "نظامان إنتاجيان لعملاء", hint: "منصة MTZ بنكية · ريشة 360 على Forge" },
 ];
 
 export const kpisEn = [
   { value: "20+", label: "years building, integrating and supporting systems", hint: "from network administration in 2003 to AI agents" },
-  { value: "35", label: "live URLs on Vercel", hint: "34 projects · 3 custom domains · verified 2026-09-16" },
+  { value: "37", label: "live URLs on Vercel", hint: "36 projects · 3 custom domains · BetterSelf verified 2026-09-28" },
   { value: "67", label: "green automated tests across two projects", hint: "Vitest 52 + Playwright 4 + Vitest 11" },
   { value: "2", label: "client production systems", hint: "a banking MTZ platform · Risha360 on Forge" },
 ];
@@ -479,6 +479,45 @@ export const projects: Project[] = [
     links: [],
   },
   {
+    id: "betterself-os",
+    name: "BetterSelf OS — مساعد الأولويات",
+    nameEn: "BetterSelf OS — priority assistant",
+    short: "مساعد أولويات ثنائي اللغة يحوّل قائمة مشتتة إلى خطوة تالية واحدة، مع خصوصية افتراضية وموافقة مستقلة لتدريب الذكاء الاصطناعي.",
+    progress: 100,
+    status: "نموذج تفاعلي منشور",
+    tier: "product",
+    shortEn: "A bilingual priority assistant that turns a scattered task list into one clear next move, with privacy by default and separate AI-training consent.",
+    statusKey: "prototype",
+    role: "صاحب الفكرة ومدير المنتج؛ تحديد منطق الأولوية، ضوابط الخصوصية، وتجربة العربية والإنجليزية، مع تنفيذ موجّه بمساعدة نموذج OpenAI متقدم.",
+    outcome: "تجربة Next.js منشورة وقابلة للاستخدام: اقتراح خطوة، اختيار يدوي، إنجاز، تقدم مرئي، ومساحات حياة بخريطة قرار واضحة.",
+    evidenceType: "رابط حيّ + مستودع عام + بناء إنتاجي + اختبار متصفح",
+    limitation: "البيانات تجريبية ومحلية في الجلسة؛ لا حسابات ولا مزامنة دائمة ولا تدريب فعلي للنموذج في هذه النسخة.",
+    stack: ["Next.js 16", "React 19", "TypeScript", "Vercel", "Lucide", "RTL/LTR", "UX/UI"],
+    problem: "تراكم المهام يجعل المستخدم يقضي وقتاً في ترتيب القائمة بدلاً من تنفيذ أهم حركة، بينما قد تُخفى موافقات استخدام البيانات داخل إعدادات عامة.",
+    built: [
+      "خمس مساحات حياة وخريطة حالات وطابور قرار يرتبان العناصر حسب أثرها ويقترحان خطوة تالية واحدة.",
+      "إجراء إنجاز يزيل المهمة من الطابور ويحدّث تقدم اليوم، مع واجهة عربية RTL وإنجليزية LTR كاملة.",
+      "موافقة تدريب AI منفصلة وواضحة ومتوقفة افتراضياً؛ الاقتراح في النموذج يعمل محلياً.",
+      "مفاجأة قابلة للوصول بعد ست مرات hover أو tap تشرح اقتصاد التوكنز وتسوّق لمهارة RCTC بلغز صغير.",
+    ],
+    evidence: [
+      "betterself-os.vercel.app — Vercel production READY",
+      "github.com/kazoya/BetterSelfOS — مستودع عام",
+      "npm run lint وnpm run build ناجحان في 2026-09-28",
+      "اختبار متصفح: الاقتراح والإنجاز وتبديل اللغة والموافقة والسر المخفي",
+    ],
+    links: [
+      { label: "جرّب BetterSelf", url: "https://betterself-os.vercel.app" },
+      { label: "GitHub", url: "https://github.com/kazoya/BetterSelfOS" },
+    ],
+    milestones: [
+      { date: "2026-09-27", title: "تحويل الفكرة إلى Next.js ونشرها على Vercel" },
+      { date: "2026-09-28", title: "ترقية تجربة القرار والإنجاز والتحقق على سطح المكتب والهاتف" },
+    ],
+    constraints: ["تدريب AI متوقف افتراضياً", "لا تخزين نفسي أو مزامنة دائمة في النموذج", "لا ادعاء أن السذاجة نفسها تستهلك التوكنز"],
+    screenshots: [{ src: "/projects/betterself-os.png", alt: "واجهة BetterSelf OS العربية تعرض مساحات الحياة وخريطة الأولويات وطابور القرار", width: 1440, height: 1000 }],
+  },
+  {
     id: "khudhni",
     name: "خذني بطريقك — مشاركة رحلات مجدولة",
     nameEn: "Khudhni scheduled ride-sharing",
@@ -508,8 +547,8 @@ export const enterpriseBackground = [
 ];
 
 export const capabilities: { name: string; evidence: string; level: Confidence }[] = [
-  { name: "Next.js ثنائي اللغة RTL/LTR + سمات", evidence: "34 مشروعاً منشوراً على Vercel، منها 22 موقع مصنع", level: "عالي" },
-  { name: "نشر على Vercel من GitHub", evidence: "35 رابطاً حيّاً (34 مشروعاً) تُحقق منها 2026-09-16", level: "عالي" },
+  { name: "Next.js ثنائي اللغة RTL/LTR + سمات", evidence: "36 مشروعاً منشوراً على Vercel، منها 22 موقع مصنع", level: "عالي" },
+  { name: "نشر على Vercel من GitHub", evidence: "37 رابطاً حيّاً (36 مشروعاً)، وآخر تحقق BetterSelf في 2026-09-28", level: "عالي" },
   { name: "Laravel (أدوار، middleware، ترحيلات، آلة حالة)", evidence: "ريشة 360: PR #3 في الإنتاج، PayoutReviewService", level: "عالي" },
   { name: "نشر Laravel على Forge (migrate + pm2)", evidence: "ce79801 / 652d826، migration Ran", level: "عالي" },
   { name: "PostgreSQL + Prisma مع أقفال واستمرارية", evidence: "Project1 S1", level: "عالي" },
@@ -579,6 +618,7 @@ export const deployments: Deployment[] = [
   { label: "وثيقة", url: "https://wathiqa-eight.vercel.app", kind: "product", repo: "Wathiqa" },
   { label: "غياري", url: "https://ghayari.vercel.app", kind: "product", repo: "ghayari" },
   { label: "NEXA — وكلاء الذكاء الاصطناعي", url: "https://nexa-agents-ai.vercel.app/ar", kind: "product", repo: "nexa-ai-agents" },
+  { label: "BetterSelf OS — مساعد الأولويات", url: "https://betterself-os.vercel.app", kind: "product", repo: "BetterSelfOS" },
   { label: "VStrata", url: "https://vstrata.vercel.app", kind: "product", repo: "VStrata" },
   { label: "البيروتي — مقاصة", url: "https://albayrouty-muqasa.vercel.app", kind: "product", repo: "AlBayrouty" },
   { label: "NNS Perchance Catcher", url: "https://nns-perchance-catcher.vercel.app", kind: "product" },
@@ -612,7 +652,7 @@ export const deploymentStats = {
   products: deployments.filter((d) => d.kind === "product").length,
   factories: deployments.filter((d) => d.kind === "factory").length,
   customDomains: deployments.filter((d) => d.customDomain).length,
-  verified: "2026-09-16",
+  verified: "2026-09-28",
 };
 
 /* ---------- chart data (all from report-202609141629-all-ar.json) ---------- */
