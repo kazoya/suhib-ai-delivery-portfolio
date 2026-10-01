@@ -1,6 +1,6 @@
 # Suhib AI Delivery Portfolio
 
-محفظة أعمال صهيب عسراوي — Next.js 16 · Tailwind CSS 4 · Recharts · Vercel.  
+محفظة أعمال صهيب الصالح — Next.js 16 · Tailwind CSS 4 · Recharts · Vercel.  
 كل رقم فيها مأخوذ من حزمة Master Brain المصدَّرة بتاريخ 2026-09-14 (46 مشروعاً، 99 مدخل تقدّم)، لا شيء مُقدَّر.
 
 ## التشغيل
@@ -33,3 +33,18 @@ npm run lint
 ## إضافة مشروع أو تعديل رقم
 
 عدّل `data/portfolio.ts` فقط؛ الصفحات والرسوم ولوحة الأوامر وخريطة الموقع تُولَّد منه.
+
+<!-- rctc-dpf-dogfood-2026-09-19 -->
+## RCTC Digital Presence Factory
+
+Plan-only composition for delivery portfolios (no auto-deploy):
+
+```bash
+node C:/rctc-skill/digital-presence-factory/cli.js --type technical-delivery --source .
+```
+
+Quickstart: `C:/rctc-skill/docs/QUICKSTART_60S.md`
+
+Give RCTC one real developer problem. If it saves you time, Star [kazoya/rctc-skill](https://github.com/kazoya/rctc-skill) so another developer can find it. If you cannot sponsor the project, contribute a question, verified answer, compatibility result, example, recipe, skill, or share.
+<!-- rctc-dpf-dogfood-2026-09-19 -->
+

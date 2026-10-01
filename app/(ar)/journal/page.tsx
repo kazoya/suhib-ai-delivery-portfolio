@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { JournalPageContent } from "@/components/journey/journal-page";
-import { alternatesFor, ogAr, profilePageLd } from "@/lib/seo";
+import { alternatesFor, journalAlternates, ogAr, profilePageLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "السجل الهندسي — من DOS إلى وكلاء الذكاء الاصطناعي",
   description:
     "رحلة صهيب الصالح عبر أجيال الحوسبة: من تشخيص أنظمة DOS وإصلاح الأجهزة والشبكات واستعادة البيانات، إلى التكامل المؤسسي بـ Java وSQL Server وOracle، ثم الأتمتة ووكلاء الذكاء الاصطناعي. ذاكرات هندسية، أجيال التقنية، ونظرة للمسؤول عن التوظيف.",
-  alternates: alternatesFor("/journal", { ar: "/journal", en: "/en/journal" }),
+  alternates: alternatesFor("/journal", journalAlternates),
   openGraph: { ...ogAr, title: "السجل الهندسي — من DOS إلى وكلاء الذكاء الاصطناعي", description: "المكدّس تغيّر. الطريقة لم تتغيّر.", url: "/journal" },
 };
 

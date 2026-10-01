@@ -3,7 +3,7 @@ import AxeBuilder from "@axe-core/playwright";
 import fs from "node:fs";
 import path from "node:path";
 
-const PAGES = ["/", "/journal", "/projects", "/projects/project1", "/cv", "/platform", "/en", "/en/journal"];
+const PAGES = ["/", "/journal", "/projects", "/projects/project1", "/cv", "/platform", "/en", "/en/journal", "/fa", "/tr", "/ur", "/ru"];
 
 for (const p of PAGES) {
   for (const theme of ["light", "dark"] as const) {

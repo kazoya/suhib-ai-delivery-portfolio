@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { statusLabel, type Confidence, type StatusKey, type Tier } from "@/data/portfolio";
+import { t, type Locale } from "@/lib/i18n";
 
 const tierStyle: Record<Tier, string> = {
   live: "bg-primary-soft text-primary",
@@ -25,11 +26,11 @@ const statusStyle: Record<StatusKey, string> = {
   internal: "bg-surface-2 text-muted",
 };
 
-export function StatusBadge({ status, locale = "ar", className }: { status: StatusKey; locale?: "ar" | "en"; className?: string }) {
+export function StatusBadge({ status, locale = "ar", className }: { status: StatusKey; locale?: Locale; className?: string }) {
   return (
     <span className={cn("inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-bold", statusStyle[status], className)}>
       <span className="size-1.5 rounded-full bg-current" aria-hidden="true" />
-      {statusLabel[status][locale]}
+      {t(statusLabel[status], locale)}
     </span>
   );
 }

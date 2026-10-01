@@ -57,7 +57,7 @@ export default function PlatformPage() {
         <SectionHeading
           eyebrow="النشر"
           title={`${deploymentStats.urls} رابطاً حيّاً على Vercel من ${deploymentStats.repos} مشروعاً`}
-          lead={`تُحقق من كل رابط بطلب HTTP يوم ${deploymentStats.verified}. ${deploymentStats.products} منتجاً ومنصة، و${deploymentStats.factories} موقع مصنع أردني (20 منها من قالب واحد)، و${deploymentStats.customDomains} نطاقات مخصصة.`}
+          lead={`القائمة السابقة فُحصت في 2026-09-16، وBetterSelf في 2026-09-28. روابط 2026-09-29 (غنى ميديا، مختبر الأنماط، أبو عبدالله، إي مزاد، المهند) أُعيد فحصها فأعادت HTTP 200. ${deploymentStats.products} منتجاً ومنصة، و${deploymentStats.factories} موقع مصنع أردني (20 منها من قالب واحد)، و${deploymentStats.customDomains} نطاقات مخصصة.`}
         />
         <div className="grid gap-5 lg:grid-cols-2">
           {(["product", "factory"] as const).map((kind) => (

@@ -5,15 +5,12 @@ import { useRouter } from "next/navigation";
 import { ArrowLeft, ArrowRight, BookOpenText, FileText, FolderKanban, Home, LayoutDashboard, Mail, Search, UserRound } from "lucide-react";
 import { docs, projects, statusLabel } from "@/data/portfolio";
 import { chapters } from "@/data/journey";
-import type { Locale } from "@/lib/i18n";
+import { isLtr, localePath, t, type Locale } from "@/lib/i18n";
+import { navFor, shell, usesLatinName } from "@/lib/shell-copy";
 import { cn } from "@/lib/utils";
 
 type Item = { id: string; label: string; hint?: string; href: string; group: string; icon: React.ReactNode; keywords?: string };
 
-const copy = {
-  ar: { dialog: "لوحة الأوامر", placeholder: "ابحث عن مشروع أو صفحة أو فصل…", search: "بحث", none: "لا نتائج.", pages: "صفحات", projects: "الأعمال", chapters: "فصول السجل", docs: "الوثائق", contact: "تواصل" },
-  en: { dialog: "Command palette", placeholder: "Search a project, page or chapter…", search: "Search", none: "No results.", pages: "Pages", projects: "Projects", chapters: "Journal chapters", docs: "Documents", contact: "Contact" },
-};
 
 export function CommandPalette({ locale = "ar" }: { locale?: Locale }) {
   const router = useRouter();
@@ -23,33 +20,36 @@ export function CommandPalette({ locale = "ar" }: { locale?: Locale }) {
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
-  const c = copy[locale];
-  const Arrow = locale === "en" ? ArrowRight : ArrowLeft;
+  const c = shell.palette[locale];
+  const Arrow = isLtr(locale) ? ArrowRight : ArrowLeft;
 
   const items = useMemo<Item[]>(() => {
-    const pages: Item[] =
-      locale === "en"
-        ? [
-            { id: "home", label: "Home", href: "/en", group: c.pages, icon: <Home className="size-4" /> },
-            { id: "journal", label: "Engineering journal", hint: "DOS → AI agents", href: "/en/journal", group: c.pages, icon: <BookOpenText className="size-4" /> },
-            { id: "projects", label: "Projects (Arabic)", href: "/projects", group: c.pages, icon: <FolderKanban className="size-4" /> },
-            { id: "cv", label: "CV", hint: "printable", href: "/cv", group: c.pages, icon: <UserRound className="size-4" /> },
-            { id: "contact", label: "Contact", hint: "email · LinkedIn", href: "/en#contact", group: c.pages, icon: <Mail className="size-4" /> },
-            { id: "ar", label: "الموقع بالعربية", href: "/", group: c.pages, icon: <Home className="size-4" /> },
-          ]
-        : [
-            { id: "home", label: "الرئيسية", href: "/", group: c.pages, icon: <Home className="size-4" /> },
-            { id: "projects", label: "الأعمال", href: "/projects", group: c.pages, icon: <FolderKanban className="size-4" /> },
-            { id: "journal", label: "السجل الهندسي", hint: "من DOS إلى وكلاء الذكاء الاصطناعي", href: "/journal", group: c.pages, icon: <BookOpenText className="size-4" /> },
-            { id: "platform", label: "المنصة", hint: "مخططات ورسوم", href: "/platform", group: c.pages, icon: <LayoutDashboard className="size-4" /> },
-            { id: "cv", label: "السيرة الذاتية", hint: "قابلة للطباعة", href: "/cv", group: c.pages, icon: <UserRound className="size-4" /> },
-            { id: "contact", label: "تواصل", hint: "بريد · LinkedIn", href: "/#contact", group: c.pages, icon: <Mail className="size-4" /> },
-            { id: "en", label: "English", href: "/en", group: c.pages, icon: <FileText className="size-4" /> },
-          ];
+    const iconFor = (href: string) => {
+      if (href.includes("/journal")) return <BookOpenText className="size-4" />;
+      if (href.includes("/projects")) return <FolderKanban className="size-4" />;
+      if (href.includes("/platform")) return <LayoutDashboard className="size-4" />;
+      if (href.includes("/cv") || href.includes("/docs")) return <UserRound className="size-4" />;
+      return <Home className="size-4" />;
+    };
+    const pages: Item[] = navFor(locale).map((item) => ({
+      id: item.href,
+      label: item.label,
+      href: item.href,
+      group: c.pages,
+      icon: iconFor(item.href),
+    }));
+    pages.push({
+      id: "contact",
+      label: c.contact,
+      hint: "email · LinkedIn",
+      href: `${localePath(locale, "/")}#contact`,
+      group: c.pages,
+      icon: <Mail className="size-4" />,
+    });
     const proj: Item[] = projects.map((p) => ({
       id: `p-${p.id}`,
-      label: locale === "en" ? p.nameEn : p.name,
-      hint: statusLabel[p.statusKey][locale],
+      label: usesLatinName(locale) ? p.nameEn : p.name,
+      hint: t(statusLabel[p.statusKey], locale),
       href: `/projects/${p.id}`,
       group: c.projects,
       icon: <FolderKanban className="size-4" />,
@@ -57,13 +57,14 @@ export function CommandPalette({ locale = "ar" }: { locale?: Locale }) {
     }));
     const ch: Item[] = chapters.map((x) => ({
       id: `c-${x.id}`,
-      label: `${x.n} — ${locale === "en" ? x.title.en : x.title.ar}`,
-      href: `${locale === "en" ? "/en/journal" : "/journal"}#chapter-${x.id}`,
+      label: `${x.n} — ${t(x.title, locale)}`,
+      href: `${localePath(locale, "/journal")}#chapter-${x.id}`,
       group: c.chapters,
       icon: <BookOpenText className="size-4" />,
       keywords: `${x.title.ar} ${x.title.en}`,
     }));
-    const dd: Item[] = locale === "en" ? [] : docs.map((d) => ({ id: `d-${d.slug}`, label: d.title, hint: d.file, href: `/docs/${d.slug}`, group: c.docs, icon: <FileText className="size-4" /> }));
+    const showDocs = locale === "ar" || locale === "fa" || locale === "ur";
+    const dd: Item[] = showDocs ? docs.map((d) => ({ id: `d-${d.slug}`, label: d.title, hint: d.file, href: `/docs/${d.slug}`, group: c.docs, icon: <FileText className="size-4" /> })) : [];
     return [...pages, ...proj, ...ch, ...dd];
   }, [locale, c]);
 

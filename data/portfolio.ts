@@ -43,12 +43,12 @@ export type Project = {
   screenshots?: Screenshot[];
 };
 
-export const statusLabel: Record<StatusKey, { ar: string; en: string }> = {
-  live: { ar: "حيّ", en: "Live" },
-  pilot: { ar: "تجريبي", en: "Pilot" },
-  prototype: { ar: "نموذج أولي", en: "Prototype" },
-  simulation: { ar: "محاكاة", en: "Simulation" },
-  internal: { ar: "نظام داخلي", en: "Internal system" },
+export const statusLabel: Record<StatusKey, { ar: string; en: string; fa: string; tr: string; ur: string; ru: string }> = {
+  live: { ar: "حيّ", en: "Live", fa: "در حال اجرا", tr: "Yayında", ur: "فعال", ru: "В эксплуатации" },
+  pilot: { ar: "تجريبي", en: "Pilot", fa: "آزمایشی", tr: "Pilot", ur: "آزمائشی", ru: "Пилот" },
+  prototype: { ar: "نموذج أولي", en: "Prototype", fa: "نمونهٔ اولیه", tr: "Prototip", ur: "پروٹوٹائپ", ru: "Прототип" },
+  simulation: { ar: "محاكاة", en: "Simulation", fa: "شبیه‌سازی", tr: "Simülasyon", ur: "سیمولیشن", ru: "Симуляция" },
+  internal: { ar: "نظام داخلي", en: "Internal system", fa: "سامانهٔ داخلی", tr: "Dahili sistem", ur: "اندرونی نظام", ru: "Внутренняя система" },
 };
 
 export const owner = {
@@ -85,14 +85,14 @@ export const owner = {
 
 export const kpis = [
   { value: "20+", label: "عاماً في بناء الأنظمة وتكاملها ودعمها", hint: "من إدارة الشبكات 2003 إلى وكلاء الذكاء الاصطناعي" },
-  { value: "37", label: "رابطاً حيّاً على Vercel", hint: "36 مشروعاً · 3 نطاقات مخصصة · تُحقق من BetterSelf في 2026-09-28" },
+  { value: "41", label: "رابطاً حيّاً على Vercel", hint: "41 مشروعاً · 3 نطاقات مخصصة · مقاصة على v.muqasa-jo.com فقط" },
   { value: "67", label: "اختباراً آلياً أخضر في مشروعين", hint: "Vitest 52 + Playwright 4 + Vitest 11" },
   { value: "2", label: "نظامان إنتاجيان لعملاء", hint: "منصة MTZ بنكية · ريشة 360 على Forge" },
 ];
 
 export const kpisEn = [
   { value: "20+", label: "years building, integrating and supporting systems", hint: "from network administration in 2003 to AI agents" },
-  { value: "37", label: "live URLs on Vercel", hint: "36 projects · 3 custom domains · BetterSelf verified 2026-09-28" },
+  { value: "41", label: "live URLs on Vercel", hint: "41 projects · 3 custom domains · Muqasa is v.muqasa-jo.com only" },
   { value: "67", label: "green automated tests across two projects", hint: "Vitest 52 + Playwright 4 + Vitest 11" },
   { value: "2", label: "client production systems", hint: "a banking MTZ platform · Risha360 on Forge" },
 ];
@@ -518,6 +518,38 @@ export const projects: Project[] = [
     screenshots: [{ src: "/projects/betterself-os.png", alt: "واجهة BetterSelf OS العربية تعرض مساحات الحياة وخريطة الأولويات وطابور القرار", width: 1440, height: 1000 }],
   },
   {
+    id: "expertech-control",
+    name: "ExperTech Control — لوحة تشغيل الخدمات",
+    nameEn: "ExperTech Control",
+    short: "لوحة عربية/إنجليزية للمواعيد والتقويم والعملاء وعروض الأسعار والعروض الترويجية والمنتجات والفواتير ونقطة البيع.",
+    progress: 85,
+    status: "نموذج محلي محفوظ على الجهاز",
+    tier: "product",
+    shortEn: "A bilingual local operations console for appointments, calendar, customers, quotes, promotions, products, invoices and POS.",
+    statusKey: "prototype",
+    role: "مالك اللوحة. السطح يغطي دورة المكتب من الحجز إلى الفاتورة، مع حفظ السجل على الجهاز واختبارات للقواعد.",
+    outcome: "موعد 30 أيلول 2026 الساعة 11:00 ثُبّت من الواجهة، والخانة 10:00 بقيت مغلقة لأن فيها حجزاً، والسجل كُتب في ملف الجهاز.",
+    evidenceType: "اختبارات قواعد + تحقق متصفح + ملف سجل",
+    limitation: "لا حسابات ولا دفع حقيقي ولا إرسال بريد. مستقلة عن نظام خبير التقنية التجاري. تحذير عدم تطابق العرض الأول في أدوات التطوير لم يمنع حفظ الموعد.",
+    stack: ["Next.js 16", "React 19", "TypeScript", "RTL/LTR", "JSON file store"],
+    problem: "نشاط خدمي يحتاج مواعيد وتقويماً وعروض أسعار ومنتجات وفواتير في سجل واحد، دون أن يضيع السجل عند إغلاق المتصفح.",
+    built: [
+      "مواعيد مع رفض التداخل وساعات عمل الأحد–الخميس، وتقويم، وعملاء، وخدمات، وفريق.",
+      "عروض أسعار تتحول إلى فاتورة، عروض ترويجية بتاريخ، مخزون، ضريبة، نقطة بيع ووردية.",
+      "صفحة حجز عامة بالاسم والجوال، وواجهة إنجليزية كاملة من زر واحد.",
+      "حفظ السجل في data/state.json مع مرآة في المتصفح.",
+    ],
+    evidence: [
+      "node --experimental-strip-types --test: 4/4 في 2026-09-30 (تعارض، ساعات، عرض، مخزون وضريبة)",
+      "المتصفح: خانة 10:00 معطّلة، تثبيت 11:00 أظهر «ثُبّت الموعد»، ثم تبديل English أظهر Appointments",
+      "data/state.json بعد الحفظ فيه 2026-09-30T11:00 confirmed إلى جانب 10:00",
+    ],
+    links: [],
+    note: "التشغيل المحلي: C:\\ExperTech على http://localhost:3029. محرّك قواعد إضافي بلا اعتماديات في C:\\master\\files\\diwan-console (8/8).",
+    milestones: [{ date: "2026-09-30", title: "حفظ الملف واختبارات القواعد وتحقق حجز من المتصفح" }],
+    constraints: ["محلي بلا مصادقة", "لا يمثّل نظام expert-tech.com.sa التجاري", "الأرقام في البيانات التجريبية ليست عملاء حقيقيين"],
+  },
+  {
     id: "khudhni",
     name: "خذني بطريقك — مشاركة رحلات مجدولة",
     nameEn: "Khudhni scheduled ride-sharing",
@@ -537,6 +569,156 @@ export const projects: Project[] = [
     evidence: ["الحالة المكتوبة: «Walking skeleton، ليس جاهزاً للإطلاق، لا مدفوعات حقيقية»"],
     links: [],
   },
+  {
+    id: "ghina-media-concept",
+    name: "غنى ميديا — مخطط حملات بقواعد ثابتة",
+    nameEn: "Ghina Media — rule-based campaign planner",
+    short: "تصور عربي مستقل لشركة غنى ميديا: خمسة أسئلة تُنتج خطة 30 يوماً وتقويماً وموجزاً، كل سبب مربوط بإجابة.",
+    progress: 0,
+    status: "تصور تجريبي منشور · noindex",
+    tier: "product",
+    shortEn: "Independent Arabic concept for Ghina Media: five answers produce an explained 30-day plan, calendar and brief. Not the company's official site.",
+    statusKey: "prototype",
+    role: "المهندس والمنفذ: الاستوديو، القواعد المرقّمة، والصفحات العامة من معلومات منشورة فقط.",
+    outcome: "ديمو حيّ على Vercel بلا خلفية ولا حساب ولا تسعير تلقائي.",
+    evidenceType: "رابط حيّ + مستودع",
+    limitation: "ليس موقع غنى ميديا الرسمي ولا معتمداً منها. noindex. لا تسعير تلقائي ولا إرسال نماذج.",
+    stack: ["Next.js 16", "React 19", "Tailwind 4", "Arabic RTL", "Vercel"],
+    problem: "عرض فكرة تخطيط نمو لشركة إعلام في إربد دون اختراع خدمات أو أسعار.",
+    built: [
+      "استوديو خطة: خمسة أسئلة، توصيات مفسّرة من قواعد ثابتة، خطة 30 يوماً بأربع مراحل، تقويم محتوى، موجز للطباعة وتصدير JSON/CSV ورسالة واتساب يرسلها الزائر بنفسه.",
+      "صفحات الخدمات والتدريب والأنشطة والتواصل من معلومات منشورة، مع بوابة موافقة بشرية لأفكار التحسين.",
+    ],
+    evidence: [
+      "ghina-media-concept.vercel.app — HTTP 200 في 2026-09-29، العنوان: غنى ميديا — تصوّر تجريبي مستقل",
+      "github.com/kazoya/ghina-media-concept",
+      "README: Next.js 16، بلا متغيرات بيئة، noindex، ليس الموقع الرسمي",
+    ],
+    links: [
+      { label: "التصور التجريبي", url: "https://ghina-media-concept.vercel.app/" },
+      { label: "GitHub", url: "https://github.com/kazoya/ghina-media-concept" },
+    ],
+  },
+  {
+    id: "quran-pattern-lab",
+    name: "مختبر الأنماط القرآنية",
+    nameEn: "Quran Pattern Lab",
+    short: "محرّك بحثي يعرض أنماطاً مرشّحة بين نص القرآن والأعداد، مع الآيات حرفياً من تنزيل ودليل العد، بلا ادّعاء إعجاز.",
+    progress: 0,
+    status: "نسخة بحثية أولية منشورة",
+    tier: "product",
+    shortEn: "Research preview that publishes candidate Quran–number patterns with verbatim Tanzil evidence. Not a miracle claim.",
+    statusKey: "pilot",
+    role: "المهندس: المحرّك، سلسلة الإثبات، وموقع النشر بأربع لغات.",
+    outcome: "موقع بحثي حيّ؛ الآيات تبقى بنص تنزيل الأصلي.",
+    evidenceType: "رابط حيّ + وسم إصدار",
+    limitation: "أنماط مرشّحة فقط. لم تُراجع علمياً. الفارسية والتركية ترجمة واجهة أولية لم يراجعها مترجم بشري.",
+    stack: ["Next.js", "Tanzil 1.1", "pnpm", "AR/FA RTL", "TR/EN LTR", "Vercel"],
+    problem: "عرض علاقات عددية مع النص القرآني بحيث يفتح كل رقم آياته وقاعدة عدّه، بلا توليد نص بالذكاء الاصطناعي.",
+    built: [
+      "موقع بأربع لغات من شجرة مسارات واحدة؛ النص القرآني لا يُترجم.",
+      "كل عدد يفتح الموضع المطابق مع قاعدة العد وملف التطبيع وسياسة البسملة.",
+    ],
+    evidence: [
+      "quran-pattern-lab.vercel.app — HTTP 200 في 2026-09-29",
+      "github.com/kazoya/quran-pattern-lab — وسم v0.1.2-research-preview حسب README",
+      "سياسة مكتوبة: الذكاء الاصطناعي لا يولّد نصاً قرآنياً ولا أعداداً ولا استنتاجات",
+    ],
+    links: [
+      { label: "المختبر", url: "https://quran-pattern-lab.vercel.app/" },
+      { label: "GitHub", url: "https://github.com/kazoya/quran-pattern-lab" },
+    ],
+  },
+  {
+    id: "abu-abdullah-fabrics",
+    name: "أبو عبدالله للأقمشة — من الفكرة إلى العينة",
+    nameEn: "Abu Abdullah Fabrics — idea to sample",
+    short: "تصور ثنائي اللغة لتاجر أقمشة: خمسة أسئلة ترتّب أمثلة قماش مع الأسباب، ثم طلب عينة عبر واتساب.",
+    progress: 0,
+    status: "تصور توضيحي منشور · noindex",
+    tier: "product",
+    shortEn: "Unofficial bilingual fabric-finder concept: five questions rank labelled examples, then a sample request opens WhatsApp.",
+    statusKey: "prototype",
+    role: "المهندس: المستكشف، الكتالوج التوضيحي، ومسار طلب العينة.",
+    outcome: "صفحة حيّة تساعد الزائر يصف ما يريد صناعته قبل طلب العينة.",
+    evidenceType: "رابط حيّ + مستودع",
+    limitation: "ليس موقعاً رسمياً. الكتالوج أمثلة عامة وليس مخزوناً. الحقول غير المؤكدة تبقى فارغة.",
+    stack: ["Next.js", "Tailwind", "Arabic RTL", "English", "Vercel"],
+    problem: "اختيار قماش لملابس أو برادي أو كنب يبدأ من الاستخدام لا من قائمة أصناف مخترَعة.",
+    built: [
+      "مستكشف بخمسة أسئلة وترتيب تفسيري، وكتالوج أمثلة معلّمة، وصفحة طلب تنسخ الملخص وتفتح واتساب التاجر.",
+      "ثيم فاتح وداكن وساعة عمّان، مع فصل رقم المطوّر عن رقم التاجر.",
+    ],
+    evidence: [
+      "abu-abdullah-fabrics.vercel.app — HTTP 200 في 2026-09-29، noindex",
+      "github.com/kazoya/abu-abdullah-fabrics",
+      "README: 13 اختبار منطق ومسار e2e محلي؛ الكتالوج ليس مخزوناً",
+    ],
+    links: [
+      { label: "التصور", url: "https://abu-abdullah-fabrics.vercel.app/" },
+      { label: "GitHub", url: "https://github.com/kazoya/abu-abdullah-fabrics" },
+    ],
+  },
+  {
+    id: "emazad",
+    name: "إي مزاد — واجهة مزادات توضيحية",
+    nameEn: "eMazad — auction showcase",
+    short: "واجهة عربية لمزادات الأردن (عقار، سيارات، نمر، أرقام) بخط نوتو كوفي، والمزادات المعروضة عينات.",
+    progress: 0,
+    status: "واجهة عرض منشورة",
+    tier: "product",
+    shortEn: "Arabic auction showcase for Jordan. Listed auctions are samples; live bidding stays on the official platform.",
+    statusKey: "prototype",
+    role: "المهندس: الواجهة والمسارات العامة وخط نوتو كوفي العربي.",
+    outcome: "موقع عرض حيّ يشرح خطوات المزاد دون تنفيذ مزايدة أو دفع.",
+    evidenceType: "رابط حيّ + مستودع",
+    limitation: "المزادات عينات عرض. المزايدة والدفع على المنصة الرسمية. لا يُعلَن فائز من هذه الواجهة.",
+    stack: ["Next.js 16", "Tailwind 4", "Noto Kufi Arabic", "Vercel"],
+    problem: "شرح تجربة مزاد أردني حديث قبل ربط المزايدة والدفع الفعليين.",
+    built: [
+      "صفحات المزادات والبيع والباقات ومن نحن، مع تنبيه أن المعروض عينات.",
+      "اعتماد خط Noto Kufi Arabic في الواجهة.",
+    ],
+    evidence: [
+      "emazad.vercel.app — HTTP 200 في 2026-09-29، العنوان: إي مزاد",
+      "github.com/kazoya/eMazad",
+      "تذييل الموقع: المزادات المعروضة عينات؛ المزايدة والدفع على المنصة الرسمية",
+    ],
+    links: [
+      { label: "إي مزاد", url: "https://emazad.vercel.app/" },
+      { label: "GitHub", url: "https://github.com/kazoya/eMazad" },
+    ],
+  },
+  {
+    id: "al-mohannad-plastic",
+    name: "المهند للصناعات البلاستيكية — تصور جودة",
+    nameEn: "Al Mohannad Plastic — quality concept",
+    short: "تصور مستقل لكتالوج وجودة مصنع بلاستيك في سحاب. التقييم ذاتي، وليس شهادة آيزو صادرة.",
+    progress: 0,
+    status: "تصور مستقل منشور · noindex",
+    tier: "explore",
+    shortEn: "Independent concept for a Sahab plastic-packaging catalog and a self-assessment quality view. Not an issued ISO certificate and not the company site.",
+    statusKey: "simulation",
+    role: "المهندس: التصور العام، مع إبقاء الشهادة والسعر والادعاء الغذائي قراراً بشرياً.",
+    outcome: "صفحة مفهوم حيّة تميّز التقييم الذاتي عن الاعتماد الرسمي.",
+    evidenceType: "رابط حيّ + مستودع",
+    limitation: "ليس موقع الشركة ولا نظام اعتماد. لا شهادة آيزو مخترَعة. الأرقام التجريبية للتوضيح.",
+    stack: ["Next.js", "Arabic RTL", "Vercel"],
+    problem: "عرض جودة وتعبئة بلا اختراع شهادة أو سعر أو ادعاء غذائي.",
+    built: [
+      "تصور كتالوج لتعبئة بلاستيكية، مع صفحات تقييم ذاتي تذكر أن الخط لا يتوقف من اللوحة.",
+      "رمز المطوّر يفتح واتساب المطوّر، منفصلاً عن قناة المصنع.",
+    ],
+    evidence: [
+      "al-mohannad-plastic.vercel.app — HTTP 200 في 2026-09-29، noindex",
+      "github.com/kazoya/AlMohannad",
+      "وصف الصفحة: تصور أولي مستقل، ليس اعتماد آيزو من جهة مانحة",
+    ],
+    links: [
+      { label: "التصور", url: "https://al-mohannad-plastic.vercel.app/" },
+      { label: "GitHub", url: "https://github.com/kazoya/AlMohannad" },
+    ],
+  },
 ];
 
 export const enterpriseBackground = [
@@ -547,8 +729,8 @@ export const enterpriseBackground = [
 ];
 
 export const capabilities: { name: string; evidence: string; level: Confidence }[] = [
-  { name: "Next.js ثنائي اللغة RTL/LTR + سمات", evidence: "36 مشروعاً منشوراً على Vercel، منها 22 موقع مصنع", level: "عالي" },
-  { name: "نشر على Vercel من GitHub", evidence: "37 رابطاً حيّاً (36 مشروعاً)، وآخر تحقق BetterSelf في 2026-09-28", level: "عالي" },
+  { name: "Next.js ثنائي اللغة RTL/LTR + سمات", evidence: "قائمة المنصة: 41 رابطاً حيّاً، منها مواقع مصانع وتصورات عربية مثل غنى ميديا", level: "عالي" },
+  { name: "نشر على Vercel من GitHub", evidence: "41 رابطاً حيّاً، ومقاصة على v.muqasa-jo.com بعد حذف النسخة الزائدة", level: "عالي" },
   { name: "Laravel (أدوار، middleware، ترحيلات، آلة حالة)", evidence: "ريشة 360: PR #3 في الإنتاج، PayoutReviewService", level: "عالي" },
   { name: "نشر Laravel على Forge (migrate + pm2)", evidence: "ce79801 / 652d826، migration Ran", level: "عالي" },
   { name: "PostgreSQL + Prisma مع أقفال واستمرارية", evidence: "Project1 S1", level: "عالي" },
@@ -610,7 +792,6 @@ export const deployments: Deployment[] = [
   { label: "ريشة 360 — القانون", url: "https://law.risha360.com", kind: "product", repo: "law-risha360", customDomain: true },
   { label: "منصة ريشة 360", url: "https://risha360-platform.vercel.app", kind: "product", repo: "risha360-platform" },
   { label: "مقاصة جو", url: "https://v.muqasa-jo.com", kind: "product", repo: "muqasa", customDomain: true },
-  { label: "مقاصة (نسخة Vercel)", url: "https://muqasa.vercel.app", kind: "product", repo: "muqasa" },
   { label: "زها المجالي — محاماة", url: "https://www.zahaalaw.com", kind: "product", repo: "zaha-almajali", customDomain: true },
   { label: "أكاديمية APCA (مُظهِر)", url: "https://apca-industrial-ai-academy.vercel.app", kind: "product", repo: "apca-industrial-ai-academy" },
   { label: "براءة الشوبكي", url: "https://baraahalshobaki.vercel.app", kind: "product", repo: "bara-ah-alshobaki" },
@@ -619,9 +800,14 @@ export const deployments: Deployment[] = [
   { label: "غياري", url: "https://ghayari.vercel.app", kind: "product", repo: "ghayari" },
   { label: "NEXA — وكلاء الذكاء الاصطناعي", url: "https://nexa-agents-ai.vercel.app/ar", kind: "product", repo: "nexa-ai-agents" },
   { label: "BetterSelf OS — مساعد الأولويات", url: "https://betterself-os.vercel.app", kind: "product", repo: "BetterSelfOS" },
+  { label: "غنى ميديا — تصور مستقل", url: "https://ghina-media-concept.vercel.app/", kind: "product", repo: "ghina-media-concept" },
+  { label: "مختبر الأنماط القرآنية", url: "https://quran-pattern-lab.vercel.app/", kind: "product", repo: "quran-pattern-lab" },
+  { label: "أبو عبدالله للأقمشة", url: "https://abu-abdullah-fabrics.vercel.app/", kind: "product", repo: "abu-abdullah-fabrics" },
+  { label: "إي مزاد", url: "https://emazad.vercel.app/", kind: "product", repo: "eMazad" },
   { label: "VStrata", url: "https://vstrata.vercel.app", kind: "product", repo: "VStrata" },
   { label: "البيروتي — مقاصة", url: "https://albayrouty-muqasa.vercel.app", kind: "product", repo: "AlBayrouty" },
   { label: "NNS Perchance Catcher", url: "https://nns-perchance-catcher.vercel.app", kind: "product" },
+  { label: "المهند للصناعات البلاستيكية", url: "https://al-mohannad-plastic.vercel.app/", kind: "factory", repo: "AlMohannad" },
   { label: "ACI للكيماويات الزراعية", url: "https://aci-agrochemicals.vercel.app", kind: "factory", repo: "ACI" },
   { label: "المثالية للألبان", url: "https://al-mithaliya-dairy.vercel.app", kind: "factory", repo: "AlMithaliya" },
   { label: "مجموعة عبد", url: "https://abdulgroup.vercel.app", kind: "factory", repo: "AbdulGroup" },
@@ -652,7 +838,7 @@ export const deploymentStats = {
   products: deployments.filter((d) => d.kind === "product").length,
   factories: deployments.filter((d) => d.kind === "factory").length,
   customDomains: deployments.filter((d) => d.customDomain).length,
-  verified: "2026-09-28",
+  verified: "2026-09-29",
 };
 
 /* ---------- chart data (all from report-202609141629-all-ar.json) ---------- */

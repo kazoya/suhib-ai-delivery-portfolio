@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { fontVariableClass } from "@/app/fonts";
 import { RootShell } from "@/components/layout/root-shell";
 import { owner } from "@/data/portfolio";
 import { keywords, personLd, websiteLd } from "@/lib/seo";
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "profile",
     locale: "en_US",
-    alternateLocale: ["ar_JO"],
+    alternateLocale: ["ar_JO", "fa_IR", "tr_TR", "ur_PK", "ru_RU"],
     siteName: `${owner.nameEn} — Portfolio`,
     title: `${owner.nameEn} — ${owner.titleEn}`,
     description: owner.taglineEn,
@@ -41,7 +42,7 @@ export const viewport: Viewport = {
 
 export default function EnglishLayout({ children }: { children: React.ReactNode }) {
   return (
-    <RootShell locale="en" jsonLd={[personLd, websiteLd]}>
+    <RootShell locale="en" fontClass={fontVariableClass("en")} jsonLd={[personLd, websiteLd]}>
       {children}
     </RootShell>
   );

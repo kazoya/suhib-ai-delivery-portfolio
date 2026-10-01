@@ -1,22 +1,15 @@
 import Link from "next/link";
 import { ArrowUpLeft, ArrowUpRight } from "lucide-react";
 import { journalEntries, eras } from "@/data/journey";
-import { t, type Locale } from "@/lib/i18n";
+import { isLtr, t, type Locale } from "@/lib/i18n";
+import { journalCopy } from "@/lib/journal-copy";
 
-const fields = [
-  ["challenge", { ar: "التحدي", en: "Challenge" }],
-  ["context", { ar: "السياق والقيود", en: "Context and constraints" }],
-  ["decision", { ar: "القرار", en: "Decision" }],
-  ["implementation", { ar: "التنفيذ", en: "Implementation" }],
-  ["verification", { ar: "التحقق", en: "Verification" }],
-  ["result", { ar: "النتيجة", en: "Result" }],
-  ["lesson", { ar: "الدرس", en: "Lesson learned" }],
-  ["today", { ar: "كيف يظهر المبدأ في عملي اليوم", en: "How the principle appears in my work today" }],
-] as const;
+const fieldKeys = ["challenge", "context", "decision", "implementation", "verification", "result", "lesson", "today"] as const;
 
 export function JournalEntries({ locale = "ar" }: { locale?: Locale }) {
-  const Arrow = locale === "en" ? ArrowUpRight : ArrowUpLeft;
-  const evidenceLabel = locale === "en" ? "Evidence" : "الدليل";
+  const copy = journalCopy[locale];
+  const Arrow = isLtr(locale) ? ArrowUpRight : ArrowUpLeft;
+  const evidenceLabel = copy.evidence;
   return (
     <div className="grid gap-6">
       {journalEntries.map((e) => (
@@ -27,9 +20,9 @@ export function JournalEntries({ locale = "ar" }: { locale?: Locale }) {
           </div>
           <h3 className="mt-2 text-xl font-bold leading-snug" style={{ textWrap: "balance" }}>{t(e.title, locale)}</h3>
           <dl className="mt-5 grid gap-x-8 gap-y-4 md:grid-cols-2">
-            {fields.map(([key, label]) => (
+            {fieldKeys.map((key) => (
               <div key={key} className={key === "today" ? "md:col-span-2 rounded-xl border border-primary/30 bg-primary-soft/40 p-4" : ""}>
-                <dt className="text-[11px] font-bold uppercase tracking-wider text-muted">{t(label, locale)}</dt>
+                <dt className="text-[11px] font-bold uppercase tracking-wider text-muted">{copy.fields[key]}</dt>
                 <dd className="mt-1 text-sm leading-relaxed">{t(e[key], locale)}</dd>
               </div>
             ))}

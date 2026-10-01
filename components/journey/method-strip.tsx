@@ -1,17 +1,13 @@
 import { method } from "@/data/journey";
 import { t, type Locale } from "@/lib/i18n";
-
-const copy = {
-  ar: { then: "في عصر DOS", now: "في الإنتاج اليوم" },
-  en: { then: "In the DOS era", now: "In production today" },
-};
+import { journalCopy } from "@/lib/journal-copy";
 
 /** "THE STACK CHANGED. THE METHOD DIDN'T." — seven steps, then vs now. */
 export function MethodStrip({ locale = "ar" }: { locale?: Locale }) {
-  const c = copy[locale];
+  const c = journalCopy[locale];
   return (
     <div className="method-strip rounded-2xl border border-line bg-surface p-4 sm:p-6">
-      <ol className="grid gap-3 md:grid-cols-7" aria-label={locale === "en" ? "The method" : "الطريقة"}>
+      <ol className="grid gap-3 md:grid-cols-7" aria-label={c.methodAria}>
         {method.map((m, i) => (
           <li key={m.step.en} className="method-step relative rounded-xl bg-surface-2/60 p-3">
             <div className="flex items-center gap-2">

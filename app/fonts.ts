@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
-import { Geist_Mono } from "next/font/google";
+import { Geist_Mono, Inter, Noto_Naskh_Arabic, Vazirmatn } from "next/font/google";
+import type { Locale } from "@/lib/i18n";
 
 export const arabic = localFont({
   src: [
@@ -15,3 +16,32 @@ export const arabic = localFont({
 });
 
 export const mono = Geist_Mono({ variable: "--font-mono-face", subsets: ["latin"], display: "swap" });
+
+/** Latin, Turkish, and Cyrillic. Self-hosted by next/font. */
+export const latin = Inter({
+  subsets: ["latin", "latin-ext", "cyrillic"],
+  variable: "--font-latin",
+  display: "swap",
+});
+
+/** Persian UI face. Covers the Arabic script with Persian letters. */
+export const persian = Vazirmatn({
+  subsets: ["arabic", "latin"],
+  variable: "--font-persian",
+  display: "swap",
+});
+
+/** Naskh that includes Urdu letters, readable at interface sizes. */
+export const naskh = Noto_Naskh_Arabic({
+  subsets: ["arabic", "latin"],
+  variable: "--font-naskh",
+  display: "swap",
+});
+
+export function fontVariableClass(locale: Locale) {
+  const base = `${arabic.variable} ${mono.variable}`;
+  if (locale === "fa") return `${base} ${persian.variable}`;
+  if (locale === "ur") return `${base} ${naskh.variable}`;
+  if (locale === "en" || locale === "tr" || locale === "ru") return `${base} ${latin.variable}`;
+  return base;
+}

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { recruiterView, clientProblems } from "@/data/journey";
 import { owner } from "@/data/portfolio";
 import { t, type Locale } from "@/lib/i18n";
+import { journalCopy } from "@/lib/journal-copy";
 
 export function RecruiterView({ locale = "ar" }: { locale?: Locale }) {
   return (
@@ -26,7 +27,7 @@ export function RecruiterView({ locale = "ar" }: { locale?: Locale }) {
 }
 
 export function ClientMode({ locale = "ar" }: { locale?: Locale }) {
-  const proofLabel = locale === "en" ? "Proof" : "الدليل";
+  const proofLabel = journalCopy[locale].proof;
   return (
     <ul className="grid gap-3 md:grid-cols-2">
       {clientProblems.map((p) => (

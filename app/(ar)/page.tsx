@@ -8,7 +8,7 @@ import { SectionHeading } from "@/components/shared/section-heading";
 import { LevelBadge } from "@/components/shared/badge";
 import { ProjectCard } from "@/components/projects/project-card";
 import { ContactCta } from "@/components/shared/contact-cta";
-import { alternatesFor, ogAr, profilePageLd } from "@/lib/seo";
+import { alternatesFor, homeAlternates, ogAr, profilePageLd } from "@/lib/seo";
 import { HeroNodeField } from "@/components/effects/hero-effects";
 import { LiveAmmanClock } from "@/components/effects/live-amman-clock";
 
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: { absolute: `${owner.name} — مستشار تقني أول ومهندس حلول · وكلاء الذكاء الاصطناعي وتكامل الأنظمة` },
   description:
     "صهيب الصالح، مستشار تقني أول ومهندس حلول من عمّان: أكثر من عشرين عاماً في بناء الأنظمة المؤسسية وتكاملها ودعمها، وعمل حالي في وكلاء الذكاء الاصطناعي والأتمتة. ست منصات حيّة، نظامان إنتاجيان لعملاء، وسجل هندسي من DOS إلى الذكاء الاصطناعي.",
-  alternates: alternatesFor("/", { ar: "/", en: "/en" }),
+  alternates: alternatesFor("/", homeAlternates),
   openGraph: { ...ogAr, url: "/" },
 };
 

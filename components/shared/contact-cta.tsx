@@ -4,35 +4,13 @@ import { LinkedinIcon } from "@/components/shared/linkedin-icon";
 import { GithubIcon } from "@/components/shared/github-icon";
 import { owner } from "@/data/portfolio";
 import type { Locale } from "@/lib/i18n";
+import { shell } from "@/lib/shell-copy";
 import { cn } from "@/lib/utils";
 
-const copy = {
-  ar: {
-    title: "هل لديك دور أو مشروع؟",
-    lead: "دور هندسي أو استشاري، أو مشروع تكامل وأتمتة أو ذكاء اصطناعي. عن بُعد أولاً، وميدانياً في السعودية والخليج عند الحاجة.",
-    role: "ناقش دوراً",
-    consult: "اطلب استشارة مشروع",
-    subjectRole: "دور هندسي — عبر المحفظة",
-    subjectConsult: "استشارة مشروع — عبر المحفظة",
-    email: "البريد",
-    cv: "السيرة الذاتية",
-  },
-  en: {
-    title: "Have a role or a project?",
-    lead: "An engineering or consulting role, or an integration, automation or AI project. Remote-first, on-site in Saudi Arabia and the GCC when required.",
-    role: "Discuss a role",
-    consult: "Request a project consultation",
-    subjectRole: "Engineering role — via portfolio",
-    subjectConsult: "Project consultation — via portfolio",
-    email: "Email",
-    cv: "CV",
-  },
-};
-
 export function ContactCta({ locale = "ar", compact = false, className }: { locale?: Locale; compact?: boolean; className?: string }) {
-  const c = copy[locale];
+  const c = shell.contact[locale];
   const mail = (subject: string) => `mailto:${owner.email}?subject=${encodeURIComponent(subject)}`;
-  const cvHref = locale === "en" ? "/en#contact" : "/cv";
+  const cvHref = locale === "en" ? "/en#cv" : "/cv";
 
   if (compact) {
     return (
@@ -85,7 +63,7 @@ export function ContactCta({ locale = "ar", compact = false, className }: { loca
               <GithubIcon className="size-4 text-primary" /> <span className="ltr">github.com/{owner.githubHandle}</span>
             </a>
           </li>
-          <li className="text-muted">{locale === "en" ? owner.locationEn : owner.location}</li>
+          <li className="text-muted">{shell.footer[locale].location}</li>
           <li>
             <Link href={cvHref} className="font-semibold text-primary hover:underline">{c.cv}</Link>
           </li>

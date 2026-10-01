@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 
 /** Every public route, its expected locale, and whether it must carry hreflang. */
-const ROUTES: { path: string; lang: "ar" | "en"; hreflang?: boolean }[] = [
+const ROUTES: { path: string; lang: "ar" | "en" | "fa" | "tr" | "ur" | "ru"; hreflang?: boolean }[] = [
   { path: "/", lang: "ar", hreflang: true },
   { path: "/journal", lang: "ar", hreflang: true },
   { path: "/projects", lang: "ar" },
@@ -14,7 +14,18 @@ const ROUTES: { path: string; lang: "ar" | "en"; hreflang?: boolean }[] = [
   { path: "/docs/cv", lang: "ar" },
   { path: "/en", lang: "en", hreflang: true },
   { path: "/en/journal", lang: "en", hreflang: true },
+  { path: "/fa", lang: "fa", hreflang: true },
+  { path: "/fa/journal", lang: "fa", hreflang: true },
+  { path: "/tr", lang: "tr", hreflang: true },
+  { path: "/tr/journal", lang: "tr", hreflang: true },
+  { path: "/ur", lang: "ur", hreflang: true },
+  { path: "/ur/journal", lang: "ur", hreflang: true },
+  { path: "/ru", lang: "ru", hreflang: true },
+  { path: "/ru/journal", lang: "ru", hreflang: true },
 ];
+
+const RTL = new Set(["ar", "fa", "ur"]);
+const HREFLANG = ["ar", "en", "fa", "tr", "ur", "ru", "x-default"];
 
 /** Strings that must never appear in public HTML. */
 const FORBIDDEN = [
@@ -46,7 +57,7 @@ for (const r of ROUTES) {
       expect(res?.status()).toBe(200);
 
       await expect(page.locator("html")).toHaveAttribute("lang", r.lang);
-      await expect(page.locator("html")).toHaveAttribute("dir", r.lang === "en" ? "ltr" : "rtl");
+      await expect(page.locator("html")).toHaveAttribute("dir", RTL.has(r.lang) ? "rtl" : "ltr");
 
       await expect(page.locator("h1")).toHaveCount(1);
       expect((await page.locator("h1").innerText()).trim().length).toBeGreaterThan(3);
@@ -68,8 +79,9 @@ for (const r of ROUTES) {
       await expect(page.locator('meta[property="og:image"]').first()).toHaveAttribute("content", /\/og(\/|\?|$)/);
 
       if (r.hreflang) {
-        await expect(page.locator('link[rel="alternate"][hreflang="ar"]')).toHaveCount(1);
-        await expect(page.locator('link[rel="alternate"][hreflang="en"]')).toHaveCount(1);
+        for (const code of HREFLANG) {
+          await expect(page.locator(`link[rel="alternate"][hreflang="${code}"]`)).toHaveCount(1);
+        }
       }
     });
 
@@ -84,7 +96,7 @@ for (const r of ROUTES) {
       }
       // GIZ may only appear when qualified as a proposed / aligned demonstrator
       if (body.includes("GIZ")) {
-        expect(body).toMatch(/مُظهِر مقترح|proposed|GIZ-aligned|متوافق مع أهداف/);
+        expect(body).toMatch(/مُظهِر مقترح|proposed|GIZ-aligned|متوافق مع أهداف|همسو با اهداف|önerilen bir gösterici|تجویز کردہ|предлагаемый/);
       }
       expect(html).toContain('type="application/ld+json"');
     });
@@ -117,7 +129,7 @@ test("sitemap and robots exist", async ({ request }) => {
   const sm = await request.get("/sitemap.xml");
   expect(sm.status()).toBe(200);
   const xml = await sm.text();
-  for (const p of ["/journal", "/en/journal", "/projects/project1", "/cv"]) expect(xml).toContain(p);
+  for (const p of ["/journal", "/en/journal", "/fa", "/tr", "/ur", "/ru", "/fa/journal", "/projects/project1", "/cv"]) expect(xml).toContain(p);
   const rb = await request.get("/robots.txt");
   expect(rb.status()).toBe(200);
   expect(await rb.text()).toContain("sitemap.xml");

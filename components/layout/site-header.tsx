@@ -7,42 +7,21 @@ import { Command, Mail, Menu, X } from "lucide-react";
 import { GithubIcon } from "@/components/shared/github-icon";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { BrandMark } from "@/components/layout/brand-mark";
+import { LanguageRail, LanguageSwitcher } from "@/components/layout/language-switcher";
 import { owner } from "@/data/portfolio";
-import type { Locale } from "@/lib/i18n";
+import { localePath, type Locale } from "@/lib/i18n";
+import { navFor, shell, usesLatinName, type NavItem } from "@/lib/shell-copy";
 import { cn } from "@/lib/utils";
-
-type NavItem = { href: string; label: string; match?: string };
-
-export const NAV: Record<Locale, NavItem[]> = {
-  ar: [
-    { href: "/", label: "الرئيسية" },
-    { href: "/projects", label: "الأعمال" },
-    { href: "/journal", label: "السجل الهندسي" },
-    { href: "/platform", label: "المنصة" },
-    { href: "/docs/profile", label: "الوثائق", match: "/docs" },
-    { href: "/cv", label: "السيرة" },
-    { href: "/en", label: "EN" },
-  ],
-  en: [
-    { href: "/en", label: "Home" },
-    { href: "/en/journal", label: "Journal" },
-    { href: "/projects", label: "Projects (AR)" },
-    { href: "/cv", label: "CV" },
-    { href: "/", label: "العربية" },
-  ],
-};
-
-const copy = {
-  ar: { home: "الصفحة الرئيسية", nav: "التنقل الرئيسي", palette: "افتح لوحة الأوامر", search: "بحث", menu: "القائمة", contact: "تواصل" },
-  en: { home: "Home page", nav: "Main navigation", palette: "Open the command palette", search: "Search", menu: "Menu", contact: "Contact" },
-};
 
 export function SiteHeader({ locale = "ar" }: { locale?: Locale }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const nav = NAV[locale];
-  const c = copy[locale];
+  const nav = navFor(locale);
+  const c = shell.header[locale];
+  const homeHref = localePath(locale, "/");
+  const contactHref = `${homeHref}#contact`;
+  const latinName = usesLatinName(locale);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -51,11 +30,9 @@ export function SiteHeader({ locale = "ar" }: { locale?: Locale }) {
   }, []);
 
   const isActive = (item: NavItem) => {
-    if (item.href === "/" || item.href === "/en") return pathname === item.href;
+    if (item.href === homeHref) return pathname === item.href;
     return pathname.startsWith(item.match ?? item.href);
   };
-
-  const contactHref = locale === "en" ? "/en#contact" : "/#contact";
 
   return (
     <header
@@ -64,12 +41,14 @@ export function SiteHeader({ locale = "ar" }: { locale?: Locale }) {
         scrolled ? "border-line bg-background/85 backdrop-blur-md" : "border-transparent bg-transparent",
       )}
     >
-      <div className="container-x flex h-16 items-center justify-between gap-4">
-        <Link href={locale === "en" ? "/en" : "/"} className="flex items-center gap-3" aria-label={c.home}>
+      <div className="container-x flex h-16 items-center justify-between gap-3">
+        <Link href={homeHref} className="flex min-w-0 items-center gap-3" aria-label={c.home}>
           <BrandMark />
-          <span className="leading-tight">
-            <span className="block text-base font-bold">{locale === "en" ? owner.nameEn : owner.name}</span>
-            <span className={cn("block text-[11px] text-muted", locale === "ar" && "ltr")}>{locale === "en" ? "Solutions Architect" : owner.nameEn}</span>
+          <span className="min-w-0 leading-tight">
+            <span className="block truncate text-base font-bold">{latinName ? owner.nameEn : owner.name}</span>
+            <span className={cn("block truncate text-[11px] text-muted", locale === "ar" && "ltr")}>
+              {locale === "ar" ? owner.nameEn : c.role}
+            </span>
           </span>
         </Link>
 
@@ -80,7 +59,7 @@ export function SiteHeader({ locale = "ar" }: { locale?: Locale }) {
               href={item.href}
               aria-current={isActive(item) ? "page" : undefined}
               className={cn(
-                "rounded-full px-3.5 py-1.5 text-sm font-medium text-muted transition hover:bg-surface-2 hover:text-foreground",
+                "rounded-full px-3 py-1.5 text-sm font-medium text-muted transition hover:bg-surface-2 hover:text-foreground",
                 isActive(item) && "bg-primary-soft text-primary hover:bg-primary-soft hover:text-primary",
               )}
             >
@@ -89,7 +68,7 @@ export function SiteHeader({ locale = "ar" }: { locale?: Locale }) {
           ))}
         </nav>
 
-        <div className="flex items-center gap-1.5">
+        <div className="flex shrink-0 items-center gap-1.5">
           <Link
             href={contactHref}
             className="hidden items-center gap-1.5 rounded-full bg-primary px-3.5 py-1.5 text-sm font-semibold text-primary-foreground transition hover:brightness-110 sm:inline-flex"
@@ -103,9 +82,10 @@ export function SiteHeader({ locale = "ar" }: { locale?: Locale }) {
             aria-label={c.palette}
           >
             <Command className="size-4" />
-            <span>{c.search}</span>
+            <span className="hidden xl:inline">{c.search}</span>
             <kbd className="ltr rounded-md bg-surface-2 px-1.5 text-[11px] font-mono">Ctrl K</kbd>
           </button>
+          <LanguageSwitcher locale={locale} />
           <a
             href={owner.github}
             target="_blank"
@@ -130,8 +110,9 @@ export function SiteHeader({ locale = "ar" }: { locale?: Locale }) {
       </div>
 
       {open ? (
-        <nav id="mobile-nav" className="container-x border-t border-line bg-background pb-4 pt-2 lg:hidden" aria-label={c.nav}>
-          <ul className="grid gap-1">
+        <nav id="mobile-nav" className="container-x border-t border-line bg-background pb-4 pt-3 lg:hidden" aria-label={c.nav}>
+          <LanguageRail locale={locale} onNavigate={() => setOpen(false)} />
+          <ul className="mt-2 grid gap-1">
             {nav.map((item) => (
               <li key={item.href}>
                 <Link

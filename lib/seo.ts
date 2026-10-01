@@ -1,4 +1,5 @@
 import { owner, projects } from "@/data/portfolio";
+import { LOCALE_META, LOCALES, type Locale } from "@/lib/i18n";
 
 const base = owner.siteUrl.replace(/\/$/, "");
 
@@ -52,11 +53,11 @@ export const websiteLd = {
   "@id": `${base}/#website`,
   url: base,
   name: `${owner.nameEn} — Portfolio`,
-  inLanguage: ["ar", "en"],
+  inLanguage: [...LOCALES],
   publisher: { "@id": `${base}/#person` },
 };
 
-export const profilePageLd = (path: string, lang: "ar" | "en") => ({
+export const profilePageLd = (path: string, lang: Locale) => ({
   "@context": "https://schema.org",
   "@type": "ProfilePage",
   url: `${base}${path}`,
@@ -91,11 +92,42 @@ const ogImage = { url: "/og", width: 1200, height: 630, alt: "Suhib Al-Saleh —
  * Next.js replaces a nested `openGraph` object instead of merging it, so every
  * page spreads one of these bases before adding its own url/title.
  */
-export const ogAr = { type: "profile" as const, locale: "ar_JO", alternateLocale: ["en_US"], siteName: `${owner.name} — Portfolio`, images: [ogImage] };
-export const ogEn = { type: "profile" as const, locale: "en_US", alternateLocale: ["ar_JO"], siteName: `${owner.nameEn} — Portfolio`, images: [ogImage] };
+const alternateOg = (locale: Locale) => LOCALES.filter((l) => l !== locale).map((l) => LOCALE_META[l].og);
 
-/** Self-referencing canonical + hreflang pair for the two localised roots. */
-export const alternatesFor = (path: string, pair?: { ar: string; en: string }) => ({
+export const ogFor = (locale: Locale) => ({
+  type: "profile" as const,
+  locale: LOCALE_META[locale].og,
+  alternateLocale: alternateOg(locale),
+  siteName: `${locale === "ar" || locale === "fa" || locale === "ur" ? owner.name : owner.nameEn} — Portfolio`,
+  images: [ogImage],
+});
+
+export const ogAr = ogFor("ar");
+export const ogEn = ogFor("en");
+
+/** Home and journal exist in every language. x-default stays Arabic. */
+export const homeAlternates = {
+  ar: "/",
+  en: "/en",
+  fa: "/fa",
+  tr: "/tr",
+  ur: "/ur",
+  ru: "/ru",
+  "x-default": "/",
+};
+
+export const journalAlternates = {
+  ar: "/journal",
+  en: "/en/journal",
+  fa: "/fa/journal",
+  tr: "/tr/journal",
+  ur: "/ur/journal",
+  ru: "/ru/journal",
+  "x-default": "/journal",
+};
+
+/** Self-referencing canonical plus optional hreflang map. */
+export const alternatesFor = (path: string, languages?: Record<string, string>) => ({
   canonical: path,
-  ...(pair ? { languages: { ar: pair.ar, en: pair.en, "x-default": pair.ar } } : {}),
+  ...(languages ? { languages } : {}),
 });

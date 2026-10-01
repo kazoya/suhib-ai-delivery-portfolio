@@ -103,6 +103,21 @@
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
+  html[lang="en"] body,
+  html[lang="tr"] body,
+  html[lang="ru"] body {
+    font-family: var(--font-latin), "Segoe UI", system-ui, sans-serif;
+  }
+  html[lang="fa"] body {
+    font-family: var(--font-persian), var(--font-arabic), system-ui, sans-serif;
+    line-height: 1.95;
+  }
+  html[lang="ur"] body {
+    font-family: var(--font-naskh), var(--font-arabic), system-ui, sans-serif;
+    line-height: 2.05;
+  }
+  html[lang="ur"] .h-display,
+  html[lang="fa"] .h-display { line-height: 1.45; }
   ::selection { background: color-mix(in srgb, var(--primary) 25%, transparent); }
   :focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 6px; }
   .tabular { font-variant-numeric: tabular-nums; }

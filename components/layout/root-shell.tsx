@@ -3,15 +3,17 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { CommandPalette } from "@/components/layout/command-palette";
 import { RevealObserver } from "@/components/layout/reveal-observer";
 import { arabic, mono } from "@/app/fonts";
-import type { Locale } from "@/lib/i18n";
+import { dirOf, type Locale } from "@/lib/i18n";
+import { shell } from "@/lib/shell-copy";
 
 // Runs before paint: applies the stored theme (or the OS one) to avoid a flash.
 const themeScript = `(function(){try{var t=localStorage.getItem("theme");var m=location.search.match(/[?&]theme=(dark|light)/);if(m){t=m[1]}if(t!=="light"&&t!=="dark"){t=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}document.documentElement.setAttribute("data-theme",t)}catch(e){}})();`;
 
-export function RootShell({ locale, jsonLd, children }: { locale: Locale; jsonLd: object[]; children: React.ReactNode }) {
-  const skip = locale === "en" ? "Skip to content" : "تخطَّ إلى المحتوى";
+export function RootShell({ locale, jsonLd, children, fontClass }: { locale: Locale; jsonLd: object[]; children: React.ReactNode; fontClass?: string }) {
+  const skip = shell.skip[locale];
+  const fonts = fontClass ?? `${arabic.variable} ${mono.variable}`;
   return (
-    <html lang={locale} dir={locale === "en" ? "ltr" : "rtl"} suppressHydrationWarning className={`${arabic.variable} ${mono.variable} h-full`}>
+    <html lang={locale} dir={dirOf(locale)} suppressHydrationWarning className={`${fonts} h-full`}>
       {/* eslint-disable-next-line @next/next/no-head-element -- this is the root <html> shell shared by both locale layouts */}
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />

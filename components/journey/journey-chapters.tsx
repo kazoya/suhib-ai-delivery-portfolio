@@ -1,16 +1,12 @@
 import Link from "next/link";
 import { ArrowUpLeft, ArrowUpRight, Quote } from "lucide-react";
 import { chapters, eras, type Chapter } from "@/data/journey";
-import { t, type Locale } from "@/lib/i18n";
-
-const labels = {
-  ar: { handsOn: "خبرة عملية", memory: "ذاكرة هندسية", lesson: "الدرس الذي بقي", today: "كيف يظهر في عملي اليوم", proof: "الدليل", classification: "التصنيف" },
-  en: { handsOn: "Hands-on", memory: "Engineering memory", lesson: "Lesson that survived", today: "How it shows up in my work today", proof: "Proof", classification: "Classification" },
-};
+import { isLtr, t, type Locale } from "@/lib/i18n";
+import { journalCopy } from "@/lib/journal-copy";
 
 function ChapterCard({ c, locale }: { c: Chapter; locale: Locale }) {
-  const l = labels[locale];
-  const Arrow = locale === "en" ? ArrowUpRight : ArrowUpLeft;
+  const l = journalCopy[locale];
+  const Arrow = isLtr(locale) ? ArrowUpRight : ArrowUpLeft;
   return (
     <article id={`chapter-${c.id}`} className="reveal scroll-mt-24 grid gap-5 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)]">
       <div className="card p-6 sm:p-7">
@@ -81,7 +77,7 @@ export function JourneyChapters({ locale = "ar" }: { locale?: Locale }) {
 /** Compact vertical map of the ten chapters, used as an in-page index. */
 export function JourneyIndex({ locale = "ar" }: { locale?: Locale }) {
   return (
-    <ol className="grid gap-1 sm:grid-cols-2 lg:grid-cols-5" aria-label={locale === "en" ? "Chapters" : "الفصول"}>
+    <ol className="grid gap-1 sm:grid-cols-2 lg:grid-cols-5" aria-label={journalCopy[locale].chapters}>
       {chapters.map((c) => (
         <li key={c.id}>
           <a href={`#chapter-${c.id}`} className="flex items-baseline gap-2 rounded-xl px-3 py-2 text-sm hover:bg-surface-2">

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "profile",
     locale: "ar_JO",
-    alternateLocale: ["en_US"],
+    alternateLocale: ["en_US", "fa_IR", "tr_TR", "ur_PK", "ru_RU"],
     siteName: `${owner.name} — Portfolio`,
     title: `${owner.name} — ${owner.title}`,
     description: owner.tagline,

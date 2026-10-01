@@ -2,15 +2,11 @@
 
 import { useId, useState } from "react";
 import { categoryLabel, eras, tracks, type Category } from "@/data/journey";
-import { t, type Locale } from "@/lib/i18n";
+import { dirOf, t, type Locale } from "@/lib/i18n";
+import { journalCopy } from "@/lib/journal-copy";
 import { cn } from "@/lib/utils";
 
 const FILTERS: (Category | "all")[] = ["all", "systems", "software", "data", "integration", "automation", "ai"];
-
-const copy = {
-  ar: { legendCurrent: "مهارة حالية", legendPast: "خبرة تاريخية أو تأسيسية", filters: "تصفية حسب المجال", count: (n: number) => `${n} مسارات` },
-  en: { legendCurrent: "Current skill", legendPast: "Historical or foundational", filters: "Filter by area", count: (n: number) => `${n} tracks` },
-};
 
 /**
  * Technology generations: one row per track, items ordered by era.
@@ -19,7 +15,8 @@ const copy = {
 export function TechnologyGenerations({ locale = "ar" }: { locale?: Locale }) {
   const [filter, setFilter] = useState<Category | "all">("all");
   const id = useId();
-  const c = copy[locale];
+  const c = journalCopy[locale];
+  const rtl = dirOf(locale) === "rtl";
   const visible = tracks.filter((tr) => filter === "all" || tr.category === filter);
 
   return (
@@ -58,7 +55,7 @@ export function TechnologyGenerations({ locale = "ar" }: { locale?: Locale }) {
           <p className="sr-only" aria-live="polite">{c.count(visible.length)}</p>
           {visible.map((tr) => (
             <div key={tr.id} className="grid grid-cols-[140px_repeat(4,1fr)] items-start gap-2 border-b border-line py-3 last:border-0">
-              <div className={cn("text-sm font-bold", locale === "ar" && "text-right")} dir={locale === "ar" ? "rtl" : "ltr"}>{t(tr.title, locale)}</div>
+              <div className={cn("text-sm font-bold", rtl && "text-right")} dir={rtl ? "rtl" : "ltr"}>{t(tr.title, locale)}</div>
               {eras.map((e) => {
                 const items = tr.items.filter((i) => i.era === e.id);
                 return (

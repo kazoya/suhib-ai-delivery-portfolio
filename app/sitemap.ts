@@ -13,6 +13,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { p: "/cv", priority: 0.8 },
     { p: "/en", priority: 0.8 },
     { p: "/en/journal", priority: 0.8 },
+    { p: "/fa", priority: 0.7 },
+    { p: "/fa/journal", priority: 0.7 },
+    { p: "/tr", priority: 0.7 },
+    { p: "/tr/journal", priority: 0.7 },
+    { p: "/ur", priority: 0.7 },
+    { p: "/ur/journal", priority: 0.7 },
+    { p: "/ru", priority: 0.7 },
+    { p: "/ru/journal", priority: 0.7 },
     { p: "/platform", priority: 0.6 },
   ].map(({ p, priority }) => ({ url: `${base}${p}`, lastModified, priority }));
   const proj = projects.map((p) => ({ url: `${base}/projects/${p.id}`, lastModified, priority: 0.7 }));

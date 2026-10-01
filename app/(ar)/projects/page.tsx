@@ -7,7 +7,7 @@ import { alternatesFor, ogAr } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "الأعمال — دراسات حالة بدور واضح ونتيجة موثّقة",
-  description: "عشر دراسات حالة من أعمال صهيب الصالح: أنظمة إنتاجية لعملاء، منصات عربية حيّة على Vercel وForge، محاكاة تجارية، ونماذج أولية. لكل مشروع: المشكلة، دوره، النتيجة، الدليل، والقيود.",
+  description: `${projects.length} دراسة حالة من أعمال صهيب الصالح: أنظمة إنتاجية لعملاء، منصات عربية حيّة على Vercel وForge، محاكاة تجارية، ونماذج أولية. لكل مشروع: المشكلة، دوره، النتيجة، الدليل، والقيود.`,
   alternates: alternatesFor("/projects"),
   openGraph: { ...ogAr, title: "الأعمال — دراسات حالة", url: "/projects" },
 };
@@ -18,7 +18,7 @@ export default function ProjectsPage() {
       <SectionHeading
         as="h1"
         eyebrow="الأعمال"
-        title="عشر دراسات حالة بدور واضح ونتيجة موثّقة"
+        title={`${projects.length} دراسة حالة بدور واضح ونتيجة موثّقة`}
         lead="الحالة على كل بطاقة: حيّ، تجريبي، نموذج أولي، محاكاة، أو نظام داخلي. الأنظمة المؤسسية لعملاء (بنوك، تحكم بالدخول) مذكورة في السيرة بلا روابط عامة. منصة المتابعة تسجّل 46 مبادرة؛ المعروض هنا ما له دليل."
       />
       <ProjectExplorer projects={projects} />

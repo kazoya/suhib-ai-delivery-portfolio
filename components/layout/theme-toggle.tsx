@@ -3,6 +3,7 @@
 import { useSyncExternalStore } from "react";
 import { Moon, Sun } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
+import { themeLabel } from "@/lib/shell-copy";
 
 type Theme = "light" | "dark";
 
@@ -23,7 +24,7 @@ export function ThemeToggle({ locale = "ar" }: { locale?: Locale }) {
     try { localStorage.setItem("theme", next); } catch { /* private mode */ }
   }
 
-  const label = locale === "en" ? (theme === "dark" ? "Light mode" : "Dark mode") : theme === "dark" ? "الوضع الفاتح" : "الوضع الداكن";
+  const label = themeLabel(locale, theme);
   return (
     <button
       type="button"
