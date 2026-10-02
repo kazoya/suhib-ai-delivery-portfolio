@@ -1,38 +1,45 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpLeft, ExternalLink, Lock } from "lucide-react";
-import { statusLabel, type Project } from "@/data/portfolio";
+import { ArrowUpLeft, ArrowUpRight, ExternalLink, Lock } from "lucide-react";
+import type { Project } from "@/data/portfolio";
 import { Chip, StatusBadge } from "@/components/shared/badge";
+import { projectsCopy } from "@/lib/page-copy";
+import { isLtr, localePath, type Locale } from "@/lib/i18n";
+import { projectSummary, projectTitle } from "@/lib/project-summaries";
 
-export function ProjectCard({ p, compact = false }: { p: Project; compact?: boolean }) {
+export function ProjectCard({ p, compact = false, locale = "ar" }: { p: Project; compact?: boolean; locale?: Locale }) {
   const shot = p.screenshots?.[0];
   const live = p.links.find((l) => !/github\.com/.test(l.url));
+  const copy = projectsCopy[locale];
+  const Arrow = isLtr(locale) ? ArrowUpRight : ArrowUpLeft;
+  const title = projectTitle(p, locale);
+  const summary = locale === "ar" ? p.problem : projectSummary(p, locale);
   return (
     <article className="card reveal group relative flex flex-col overflow-hidden transition hover:-translate-y-0.5 hover:shadow-md">
       {shot && !compact ? (
         <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-line bg-surface-2">
-          <Image src={shot.src} alt={shot.alt} fill sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" className="object-cover object-top" />
+          <Image src={shot.src} alt={locale === "ar" ? shot.alt : title} fill sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" className="object-cover object-top" />
         </div>
       ) : null}
       <div className="flex flex-1 flex-col gap-3 p-5">
         <div className="flex items-start justify-between gap-3">
           <h3 className="text-lg font-bold leading-snug">
-            <Link href={`/projects/${p.id}`} className="after:absolute after:inset-0 hover:text-primary">
-              {p.name}
+            <Link href={localePath(locale, `/projects/${p.id}`)} className="after:absolute after:inset-0 hover:text-primary">
+              {title}
             </Link>
           </h3>
-          <StatusBadge status={p.statusKey} className="shrink-0" />
+          <StatusBadge status={p.statusKey} locale={locale} className="shrink-0" />
         </div>
-        <p className="text-sm">{p.problem}</p>
-        {!compact ? (
+        <p className="text-sm">{summary}</p>
+        {locale === "ar" && !compact ? (
           <dl className="grid gap-1 text-xs">
-            <div className="flex gap-2"><dt className="shrink-0 font-bold text-muted">دوري:</dt><dd>{p.role}</dd></div>
-            <div className="flex gap-2"><dt className="shrink-0 font-bold text-muted">النتيجة:</dt><dd>{p.outcome}</dd></div>
-            <div className="flex gap-2"><dt className="shrink-0 font-bold text-muted">الدليل:</dt><dd>{p.evidenceType}</dd></div>
+            <div className="flex gap-2"><dt className="shrink-0 font-bold text-muted">{copy.role}:</dt><dd>{p.role}</dd></div>
+            <div className="flex gap-2"><dt className="shrink-0 font-bold text-muted">{copy.outcome}:</dt><dd>{p.outcome}</dd></div>
+            <div className="flex gap-2"><dt className="shrink-0 font-bold text-muted">{copy.evidence}:</dt><dd>{p.evidenceType}</dd></div>
           </dl>
-        ) : (
+        ) : locale === "ar" ? (
           <p className="text-xs text-muted">{p.outcome}</p>
-        )}
+        ) : null}
         {!compact ? (
           <div className="flex flex-wrap gap-1.5">
             {p.stack.slice(0, 5).map((s) => <Chip key={s}>{s}</Chip>)}
@@ -40,14 +47,17 @@ export function ProjectCard({ p, compact = false }: { p: Project; compact?: bool
         ) : null}
         <div className="mt-auto flex items-center justify-between gap-3 pt-1 text-sm">
           <span className="relative z-10 inline-flex items-center gap-1 font-medium text-primary">
-            دراسة الحالة <ArrowUpLeft className="size-4 transition group-hover:-translate-x-0.5" />
+            {copy.caseStudy} <Arrow className="size-4 transition group-hover:-translate-x-0.5 rtl:group-hover:translate-x-0.5" />
           </span>
           {live ? (
             <a href={live.url} target="_blank" rel="noopener noreferrer" className="relative z-10 inline-flex items-center gap-1 text-muted hover:text-foreground">
-              <ExternalLink className="size-4" /> {statusLabel[p.statusKey].ar === "حيّ" ? "الموقع الحي" : live.label}
+              <ExternalLink className="size-4" />{" "}
+              {locale === "ar"
+                ? (p.statusKey === "live" ? copy.liveSite : live.label)
+                : (p.statusKey === "live" ? copy.liveSite : <span className="ltr">{live.url.replace(/^https?:\/\//, "")}</span>)}
             </a>
           ) : (
-            <span className="inline-flex items-center gap-1 text-xs text-muted"><Lock className="size-3.5" /> بلا رابط عام</span>
+            <span className="inline-flex items-center gap-1 text-xs text-muted"><Lock className="size-3.5" /> {copy.noPublic}</span>
           )}
         </div>
       </div>

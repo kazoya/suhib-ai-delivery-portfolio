@@ -1,5 +1,5 @@
 import { owner, projects } from "@/data/portfolio";
-import { LOCALE_META, LOCALES, type Locale } from "@/lib/i18n";
+import { LOCALE_META, LOCALES, localePath, type Locale } from "@/lib/i18n";
 
 const base = owner.siteUrl.replace(/\/$/, "");
 
@@ -131,3 +131,11 @@ export const alternatesFor = (path: string, languages?: Record<string, string>) 
   canonical: path,
   ...(languages ? { languages } : {}),
 });
+
+/** Every locale of one path. x-default stays the Arabic URL. */
+export function pathAlternates(path: string): Record<string, string> {
+  const canonical = path.startsWith("/") ? path : `/${path}`;
+  const languages: Record<string, string> = { "x-default": canonical };
+  for (const locale of LOCALES) languages[locale] = localePath(locale, canonical);
+  return languages;
+}

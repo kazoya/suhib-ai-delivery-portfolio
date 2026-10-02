@@ -22,6 +22,16 @@ const ROUTES: { path: string; lang: "ar" | "en" | "fa" | "tr" | "ur" | "ru"; hre
   { path: "/ur/journal", lang: "ur", hreflang: true },
   { path: "/ru", lang: "ru", hreflang: true },
   { path: "/ru/journal", lang: "ru", hreflang: true },
+  { path: "/en/projects", lang: "en" },
+  { path: "/en/projects/project1", lang: "en" },
+  { path: "/en/cv", lang: "en" },
+  { path: "/en/platform", lang: "en" },
+  { path: "/fa/projects", lang: "fa" },
+  { path: "/fa/projects/giz-apca", lang: "fa" },
+  { path: "/fa/cv", lang: "fa" },
+  { path: "/tr/platform", lang: "tr" },
+  { path: "/ur/projects", lang: "ur" },
+  { path: "/ru/cv", lang: "ru" },
 ];
 
 const RTL = new Set(["ar", "fa", "ur"]);
@@ -109,9 +119,22 @@ for (const r of ROUTES) {
   });
 }
 
+test("internal links stay in the current language", async ({ page }) => {
+  for (const r of ["/en", "/fa", "/tr", "/ur", "/ru", "/fa/journal", "/en/projects"]) {
+    await page.goto(r);
+    const locale = r.split("/").filter(Boolean)[0];
+    const hrefs = await page.locator('a[href^="/"]:not([hreflang])').evaluateAll((els) => els.map((e) => (e as HTMLAnchorElement).getAttribute("href")!));
+    for (const h of hrefs) {
+      const path = h.split("#")[0].split("?")[0];
+      if (!path || path.startsWith("/api/") || path.startsWith("/og")) continue;
+      expect(path === `/${locale}` || path.startsWith(`/${locale}/`), `${h} on ${r} leaves ${locale}`).toBe(true);
+    }
+  }
+});
+
 test("internal links resolve", async ({ page, request }) => {
   const seen = new Set<string>();
-  for (const r of ["/", "/journal", "/projects", "/en", "/en/journal", "/cv"]) {
+  for (const r of ["/", "/journal", "/projects", "/en", "/fa", "/tr", "/en/journal", "/cv"]) {
     await page.goto(r);
     const hrefs = await page.locator('a[href^="/"]').evaluateAll((els) => els.map((e) => (e as HTMLAnchorElement).getAttribute("href")!));
     for (const h of hrefs) {

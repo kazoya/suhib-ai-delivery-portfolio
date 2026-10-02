@@ -212,49 +212,33 @@ export const shell = {
 
 const navLabel: Record<Locale, { home: string; projects: string; journal: string; platform: string; docs: string; cv: string }> = {
   ar: { home: "الرئيسية", projects: "الأعمال", journal: "السجل الهندسي", platform: "المنصة", docs: "الوثائق", cv: "السيرة" },
-  en: { home: "Home", projects: "Projects (AR)", journal: "Journal", platform: "Platform", docs: "Docs", cv: "CV" },
-  fa: { home: "خانه", projects: "نمونه‌کارها (عربی)", journal: "دفتر مهندسی", platform: "سکو", docs: "سندها", cv: "رزومه" },
-  tr: { home: "Ana sayfa", projects: "Projeler (AR)", journal: "Günlük", platform: "Platform", docs: "Belgeler", cv: "Özgeçmiş" },
-  ur: { home: "مرکز", projects: "کام (عربی)", journal: "جرنل", platform: "پلیٹ فارم", docs: "دستاویزات", cv: "سی وی" },
-  ru: { home: "Главная", projects: "Проекты (AR)", journal: "Журнал", platform: "Платформа", docs: "Документы", cv: "Резюме" },
+  en: { home: "Home", projects: "Projects", journal: "Journal", platform: "Platform", docs: "Docs", cv: "CV" },
+  fa: { home: "خانه", projects: "نمونه‌کارها", journal: "دفتر مهندسی", platform: "سکو", docs: "سندها", cv: "رزومه" },
+  tr: { home: "Ana sayfa", projects: "Projeler", journal: "Günlük", platform: "Platform", docs: "Belgeler", cv: "Özgeçmiş" },
+  ur: { home: "مرکز", projects: "کام", journal: "جرنل", platform: "پلیٹ فارم", docs: "دستاویزات", cv: "سی وی" },
+  ru: { home: "Главная", projects: "Проекты", journal: "Журнал", platform: "Платформа", docs: "Документы", cv: "Резюме" },
 };
 
 export function navFor(locale: Locale): NavItem[] {
   const l = navLabel[locale];
-  if (locale === "ar") {
-    return [
-      { href: "/", label: l.home },
-      { href: "/projects", label: l.projects },
-      { href: "/journal", label: l.journal },
-      { href: "/platform", label: l.platform },
-      { href: "/docs/profile", label: l.docs, match: "/docs" },
-      { href: "/cv", label: l.cv },
-    ];
-  }
   return [
     { href: localePath(locale, "/"), label: l.home },
+    { href: localePath(locale, "/projects"), label: l.projects },
     { href: localePath(locale, "/journal"), label: l.journal },
-    { href: "/projects", label: l.projects },
-    { href: "/cv", label: l.cv },
+    { href: localePath(locale, "/platform"), label: l.platform },
+    { href: localePath(locale, "/docs/profile"), label: l.docs, match: localePath(locale, "/docs") },
+    { href: localePath(locale, "/cv"), label: l.cv },
   ];
 }
 
 export function footerLinks(locale: Locale): [string, string][] {
   const l = navLabel[locale];
-  if (locale === "ar") {
-    return [
-      ["/projects", "الأعمال"],
-      ["/journal", "السجل الهندسي"],
-      ["/platform", "المنصة"],
-      ["/docs/profile", "الوثائق"],
-      ["/cv", "السيرة الذاتية"],
-    ];
-  }
   return [
-    [localePath(locale, "/"), l.home],
+    [localePath(locale, "/projects"), l.projects],
     [localePath(locale, "/journal"), l.journal],
-    ["/projects", l.projects],
-    ["/cv", l.cv],
+    [localePath(locale, "/platform"), l.platform],
+    [localePath(locale, "/docs/profile"), l.docs],
+    [localePath(locale, "/cv"), locale === "ar" ? "السيرة الذاتية" : l.cv],
   ];
 }
 

@@ -57,9 +57,11 @@ export function LocaleHome({ locale }: { locale: Exclude<Locale, "ar"> }) {
                 <Link href={journal} className="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-5 py-2.5 font-semibold transition hover:border-primary">
                   {c.ctaJournal} <Arrow className="size-4" />
                 </Link>
-                <a href={locale === "en" ? "#cv" : "#cv-links"} className="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-5 py-2.5 font-semibold transition hover:border-primary">
-                  {c.ctaCv}
-                </a>
+                {locale === "en" ? (
+                  <a href="#cv" className="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-5 py-2.5 font-semibold transition hover:border-primary">{c.ctaCv}</a>
+                ) : (
+                  <Link href={localePath(locale, "/cv")} className="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-5 py-2.5 font-semibold transition hover:border-primary">{c.ctaCv}</Link>
+                )}
               </div>
             </div>
             {cover ? (
@@ -131,7 +133,7 @@ export function LocaleHome({ locale }: { locale: Exclude<Locale, "ar"> }) {
                   </div>
                   <p className="text-sm text-muted">{blurb}</p>
                   <div className="mt-auto flex flex-wrap gap-3 pt-2 text-sm">
-                    <Link href={`/projects/${p.id}`} className="inline-flex items-center gap-1 font-semibold text-primary hover:underline">
+                    <Link href={localePath(locale, `/projects/${p.id}`)} className="inline-flex items-center gap-1 font-semibold text-primary hover:underline">
                       {c.caseStudy} <Arrow className="size-3.5" />
                     </Link>
                     {live ? (
@@ -149,18 +151,15 @@ export function LocaleHome({ locale }: { locale: Exclude<Locale, "ar"> }) {
             {liveUrls.map((u) => (
               <li key={u}><a href={u} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">{u.replace(/^https?:\/\//, "")}</a></li>
             ))}
-            <li><Link href="/platform#deployments" className="font-semibold text-primary hover:underline">{c.more(deploymentStats.urls - liveUrls.length)} →</Link></li>
+            <li><Link href={`${localePath(locale, "/platform")}#deployments`} className="font-semibold text-primary hover:underline">{c.more(deploymentStats.urls - liveUrls.length)} →</Link></li>
           </ul>
         </section>
 
         {locale === "en" ? <EnglishCv /> : (
-          <section id="cv-links" className="scroll-mt-24 py-14">
+          <section className="py-14">
             <h2 className="h-section">{c.cvCardTitle}</h2>
             <p className="mt-2 max-w-2xl text-sm text-muted">{c.cvCardLead}</p>
-            <div className="mt-5 flex flex-wrap gap-3">
-              <Link href="/cv" className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 font-semibold text-primary-foreground hover:brightness-110">{c.cvArabic}</Link>
-              <Link href="/en#cv" className="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-5 py-2.5 font-semibold hover:border-primary">{c.cvEnglish}</Link>
-            </div>
+            <Link href={localePath(locale, "/cv")} className="mt-5 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 font-semibold text-primary-foreground hover:brightness-110">{c.ctaCv}</Link>
           </section>
         )}
 
@@ -172,14 +171,15 @@ export function LocaleHome({ locale }: { locale: Exclude<Locale, "ar"> }) {
   );
 }
 
-function EnglishCv() {
+export function EnglishCv({ titleAs = "h2" }: { titleAs?: "h1" | "h2" }) {
+  const Title = titleAs;
   const c = homeCopy.en;
   return (
     <section id="cv" className="scroll-mt-24 py-14">
       <div className="no-print mb-4 flex flex-wrap items-center justify-between gap-3">
         <div>
           <div className="eyebrow">{c.cvEyebrow}</div>
-          <h2 className="h-section">{c.cvTitle}</h2>
+          <Title className={titleAs === "h1" ? "h-display" : "h-section"}>{c.cvTitle}</Title>
         </div>
         <PrintButton label={c.print} />
       </div>

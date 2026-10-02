@@ -3,14 +3,14 @@ import { Briefcase, Mail, MessageSquareText, Phone } from "lucide-react";
 import { LinkedinIcon } from "@/components/shared/linkedin-icon";
 import { GithubIcon } from "@/components/shared/github-icon";
 import { owner } from "@/data/portfolio";
-import type { Locale } from "@/lib/i18n";
+import { localePath, type Locale } from "@/lib/i18n";
 import { shell } from "@/lib/shell-copy";
 import { cn } from "@/lib/utils";
 
 export function ContactCta({ locale = "ar", compact = false, className }: { locale?: Locale; compact?: boolean; className?: string }) {
   const c = shell.contact[locale];
   const mail = (subject: string) => `mailto:${owner.email}?subject=${encodeURIComponent(subject)}`;
-  const cvHref = locale === "en" ? "/en#cv" : "/cv";
+  const cvHref = localePath(locale, "/cv");
 
   if (compact) {
     return (

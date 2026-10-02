@@ -53,6 +53,19 @@ export function localePath(locale: Locale, path: string): string {
   return p === "/" ? `/${locale}` : `/${locale}${p}`;
 }
 
+/** Keep an internal link inside the current locale. External and hash-only hrefs pass through. */
+export function localizeHref(locale: Locale, href: string): string {
+  if (!href.startsWith("/") || href.startsWith("//")) return href;
+  const hashAt = href.indexOf("#");
+  const beforeHash = hashAt === -1 ? href : href.slice(0, hashAt);
+  const hash = hashAt === -1 ? "" : href.slice(hashAt);
+  const queryAt = beforeHash.indexOf("?");
+  const pathname = queryAt === -1 ? beforeHash : beforeHash.slice(0, queryAt);
+  const query = queryAt === -1 ? "" : beforeHash.slice(queryAt);
+  const localized = localePath(locale, pathname || "/");
+  return `${localized}${query}${hash}`;
+}
+
 const PREFIXED = new Set<string>(["en", "fa", "tr", "ur", "ru"]);
 
 export function localeFromPath(pathname: string): Locale {
@@ -60,13 +73,11 @@ export function localeFromPath(pathname: string): Locale {
   return first && isLocale(first) && PREFIXED.has(first) ? first : "ar";
 }
 
-/** Home and journal exist in every language. Other routes stay on their real URL, or return home. */
+/** The same page in another language. Arabic is unprefixed; every other locale keeps the path. */
 export function switchLocaleHref(pathname: string, next: Locale): string {
   const current = localeFromPath(pathname);
   const parts = pathname.split("/").filter(Boolean);
   const restParts = current === "ar" ? parts : parts.slice(1);
   const rest = `/${restParts.join("/")}`.replace(/\/$/, "") || "/";
-  if (rest === "/" || rest === "/journal") return localePath(next, rest);
-  if (next === "ar") return rest;
-  return localePath(next, "/");
+  return localePath(next, rest);
 }

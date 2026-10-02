@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowUpLeft, ArrowUpRight } from "lucide-react";
 import { journalEntries, eras } from "@/data/journey";
-import { isLtr, t, type Locale } from "@/lib/i18n";
+import { isLtr, localizeHref, t, type Locale } from "@/lib/i18n";
 import { journalCopy } from "@/lib/journal-copy";
 
 const fieldKeys = ["challenge", "context", "decision", "implementation", "verification", "result", "lesson", "today"] as const;
@@ -28,7 +28,7 @@ export function JournalEntries({ locale = "ar" }: { locale?: Locale }) {
             ))}
           </dl>
           {e.evidence ? (
-            <Link href={e.evidence.href} className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
+            <Link href={localizeHref(locale, e.evidence.href)} className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
               {evidenceLabel}: {t(e.evidence.label, locale)} <Arrow className="size-4" />
             </Link>
           ) : null}

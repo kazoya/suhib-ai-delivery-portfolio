@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowUpLeft, ArrowUpRight, Quote } from "lucide-react";
 import { chapters, eras, type Chapter } from "@/data/journey";
-import { isLtr, t, type Locale } from "@/lib/i18n";
+import { isLtr, localizeHref, t, type Locale } from "@/lib/i18n";
 import { journalCopy } from "@/lib/journal-copy";
 
 function ChapterCard({ c, locale }: { c: Chapter; locale: Locale }) {
@@ -42,7 +42,7 @@ function ChapterCard({ c, locale }: { c: Chapter; locale: Locale }) {
           <div className="text-[11px] font-bold uppercase tracking-wider text-primary">{l.today}</div>
           <p className="mt-2 text-sm leading-relaxed">{t(c.today, locale)}</p>
           {c.proof ? (
-            <Link href={c.proof.href} className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
+            <Link href={localizeHref(locale, c.proof.href)} className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
               {l.proof}: {t(c.proof.label, locale)} <Arrow className="size-4" />
             </Link>
           ) : null}

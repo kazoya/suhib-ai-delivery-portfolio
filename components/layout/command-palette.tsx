@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { ArrowLeft, ArrowRight, BookOpenText, FileText, FolderKanban, Home, LayoutDashboard, Mail, Search, UserRound } from "lucide-react";
 import { docs, projects, statusLabel } from "@/data/portfolio";
+import { docTitles } from "@/lib/page-copy";
 import { chapters } from "@/data/journey";
 import { isLtr, localePath, t, type Locale } from "@/lib/i18n";
 import { navFor, shell, usesLatinName } from "@/lib/shell-copy";
@@ -50,7 +51,7 @@ export function CommandPalette({ locale = "ar" }: { locale?: Locale }) {
       id: `p-${p.id}`,
       label: usesLatinName(locale) ? p.nameEn : p.name,
       hint: t(statusLabel[p.statusKey], locale),
-      href: `/projects/${p.id}`,
+      href: localePath(locale, `/projects/${p.id}`),
       group: c.projects,
       icon: <FolderKanban className="size-4" />,
       keywords: `${p.name} ${p.nameEn} ${p.stack.join(" ")}`,
@@ -63,8 +64,7 @@ export function CommandPalette({ locale = "ar" }: { locale?: Locale }) {
       icon: <BookOpenText className="size-4" />,
       keywords: `${x.title.ar} ${x.title.en}`,
     }));
-    const showDocs = locale === "ar" || locale === "fa" || locale === "ur";
-    const dd: Item[] = showDocs ? docs.map((d) => ({ id: `d-${d.slug}`, label: d.title, hint: d.file, href: `/docs/${d.slug}`, group: c.docs, icon: <FileText className="size-4" /> })) : [];
+    const dd: Item[] = docs.map((d) => ({ id: `d-${d.slug}`, label: docTitles[d.slug]?.[locale].title ?? d.title, hint: d.file, href: localePath(locale, `/docs/${d.slug}`), group: c.docs, icon: <FileText className="size-4" /> }));
     return [...pages, ...proj, ...ch, ...dd];
   }, [locale, c]);
 

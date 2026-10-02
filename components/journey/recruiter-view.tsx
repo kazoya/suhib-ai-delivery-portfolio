@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { recruiterView, clientProblems } from "@/data/journey";
 import { owner } from "@/data/portfolio";
-import { t, type Locale } from "@/lib/i18n";
+import { localizeHref, t, type Locale } from "@/lib/i18n";
 import { journalCopy } from "@/lib/journal-copy";
 
 export function RecruiterView({ locale = "ar" }: { locale?: Locale }) {
@@ -34,7 +34,7 @@ export function ClientMode({ locale = "ar" }: { locale?: Locale }) {
         <li key={p.need.en} className="card reveal flex flex-col gap-2 p-4">
           <div className="font-bold">{t(p.need, locale)}</div>
           <p className="text-sm text-muted">{t(p.answer, locale)}</p>
-          <Link href={p.href} className="mt-auto inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
+          <Link href={localizeHref(locale, p.href)} className="mt-auto inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
             {proofLabel}: {t(p.proof, locale)}
           </Link>
         </li>
