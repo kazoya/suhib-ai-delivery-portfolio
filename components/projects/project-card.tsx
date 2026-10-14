@@ -15,9 +15,9 @@ export function ProjectCard({ p, compact = false, locale = "ar" }: { p: Project;
   const title = projectTitle(p, locale);
   const summary = locale === "ar" ? p.problem : projectSummary(p, locale);
   return (
-    <article className="card reveal group relative flex flex-col overflow-hidden transition hover:-translate-y-0.5 hover:shadow-md">
+    <article className="card reveal group relative flex flex-col overflow-hidden">
       {shot && !compact ? (
-        <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-line bg-surface-2">
+        <div className="lux-frame relative aspect-[16/10] w-full overflow-hidden border-b border-line bg-surface-2">
           <Image src={shot.src} alt={locale === "ar" ? shot.alt : title} fill sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" className="object-cover object-top" />
         </div>
       ) : null}

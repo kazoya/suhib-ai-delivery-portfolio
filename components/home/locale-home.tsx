@@ -65,8 +65,8 @@ export function LocaleHome({ locale }: { locale: Exclude<Locale, "ar"> }) {
               </div>
             </div>
             {cover ? (
-              <div className="reveal in hidden lg:block">
-                <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-line bg-surface shadow-lg">
+              <div className="lux-stage reveal in relative hidden lg:block">
+                <div className="lux-frame relative aspect-[16/10] overflow-hidden rounded-2xl border border-line bg-surface shadow-lg">
                   <Image src={cover.src} alt={c.coverAlt} fill priority sizes="(min-width: 1024px) 40vw, 0px" className="object-cover object-top" />
                 </div>
                 <div className="mt-2 text-xs text-muted">{c.coverCaption}</div>

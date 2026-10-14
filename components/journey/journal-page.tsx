@@ -18,7 +18,7 @@ export function JournalPageContent({ locale = "ar" }: { locale?: Locale }) {
     <div className="container-x py-12">
       <JournalReadingProgress />
       {/* hero */}
-      <div className="relative">
+      <div className="lux-hero relative">
         <HeroNodeField />
       <header className="relative max-w-3xl">
         <div className="flex flex-wrap items-center gap-3">

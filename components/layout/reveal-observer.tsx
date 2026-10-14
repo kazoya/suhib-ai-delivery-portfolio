@@ -14,7 +14,17 @@ export function RevealObserver() {
       (entries) => entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } }),
       { rootMargin: "0px 0px -8% 0px", threshold: 0.05 },
     );
-    els.forEach((e) => io.observe(e));
+    const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    els.forEach((e) => {
+      if (!calm) {
+        const group = e.parentElement?.querySelectorAll(":scope > .reveal");
+        if (group && group.length > 1) {
+          const idx = Array.prototype.indexOf.call(group, e);
+          if (idx > 0) e.style.transitionDelay = `${Math.min(idx, 7) * 55}ms`;
+        }
+      }
+      io.observe(e);
+    });
     return () => io.disconnect();
   }, [pathname]);
   return null;

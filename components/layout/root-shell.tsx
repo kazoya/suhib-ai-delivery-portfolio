@@ -2,6 +2,7 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { CommandPalette } from "@/components/layout/command-palette";
 import { RevealObserver } from "@/components/layout/reveal-observer";
+import { AtelierLight } from "@/components/effects/atelier-light";
 import { arabic, mono } from "@/app/fonts";
 import { dirOf, type Locale } from "@/lib/i18n";
 import { shell } from "@/lib/shell-copy";
@@ -35,6 +36,7 @@ export function RootShell({ locale, jsonLd, children, fontClass }: { locale: Loc
         <SiteFooter locale={locale} />
         <CommandPalette locale={locale} />
         <RevealObserver />
+        <AtelierLight />
       </body>
     </html>
   );

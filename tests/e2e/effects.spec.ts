@@ -76,6 +76,29 @@ test.describe("effects layer", () => {
     expect(clocks).toBe(1);
   });
 
+  test("atelier light follows the pointer across the hero", async ({ page }) => {
+    await page.goto("/");
+    await expect(page.locator("html")).toHaveAttribute("data-lux", "ready");
+    const card = page.locator(".hero-mesh .card").first();
+    await card.hover();
+    await expect(page.locator("html")).toHaveAttribute("data-lux", "live");
+    await expect.poll(() => card.evaluate((el) => el.style.getPropertyValue("--spot-x"))).toMatch(/px$/);
+    const lux = await page.locator(".hero-mesh").evaluate((el) => el.style.getPropertyValue("--lux-x"));
+    expect(lux.endsWith("%")).toBe(true);
+    const beam = await page.locator("header").evaluate((el) => getComputedStyle(el, "::after").opacity);
+    expect(Number(beam)).toBeGreaterThan(0);
+  });
+
+  test("reduced motion keeps the lamp still", async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: "reduce" });
+    await page.goto("/");
+    await expect(page.locator("html")).toHaveAttribute("data-lux", "still");
+    await page.locator(".hero-mesh .card").first().hover();
+    await expect(page.locator("html")).toHaveAttribute("data-lux", "still");
+    const spot = await page.locator(".hero-mesh .card").first().evaluate((el) => el.style.getPropertyValue("--spot-x"));
+    expect(spot).toBe("");
+  });
+
   test("reading progress exists only on journal pages and never blocks the skip link", async ({ page }) => {
     await page.goto("/journal");
     await expect(page.locator('[data-effect="reading-progress"]')).toHaveCount(1);

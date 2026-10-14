@@ -63,8 +63,8 @@ export default function HomePage() {
               </div>
             </div>
             {shots[0]?.screenshots?.[0] ? (
-              <div className="reveal in relative hidden lg:block">
-                <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-line bg-surface shadow-lg">
+              <div className="lux-stage reveal in relative hidden lg:block">
+                <div className="lux-frame relative aspect-[16/10] overflow-hidden rounded-2xl border border-line bg-surface shadow-lg">
                   <Image src={shots[0].screenshots[0].src} alt={shots[0].screenshots[0].alt} fill priority sizes="(min-width: 1024px) 40vw, 0px" className="object-cover object-top" />
                 </div>
                 <div className="mt-2 text-xs text-muted">لقطة حقيقية: {shots[0].name.split(" — ")[0]}</div>
